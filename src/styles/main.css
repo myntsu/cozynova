@@ -1,0 +1,94 @@
+body {
+  overflow: hidden;
+}
+
+main {
+    background-image: url("../assets/img/bg/tinywow_wallpaperflare.com_wallpaper_7445962.webp");
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+  
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    height: 100vh;
+
+    text-align: center;
+  }
+  
+  main::after {
+    content: "";
+    position: absolute;
+    background-color: hsl(var(--bg-dark));
+    inset: 0;
+    z-index: -2;
+    opacity: 0.75;
+  }
+
+  .welcome-title {
+    font-size: 4rem;
+    word-break: keep-all;
+  }
+
+  .welcome-title span {
+    color: hsl(var(--header-light));
+    font-weight: 700;
+  }
+
+  .welcome-sub-title {
+    font-size: 1.5rem;
+  }
+
+  #confirmation-title {
+    display: none;
+  }
+
+  .initial-msg {
+    position: absolute;
+    top: 40%;
+    left: center;
+    z-index: 2;
+
+    font-size: 2rem;
+    opacity: 1;
+
+    transition: 500ms ease;
+  }
+
+  .initial-msg b:hover {
+    text-decoration: underline;
+  }
+
+  .opacity-layout {
+    position: absolute;
+    content: '';
+    top: -10%;
+    left: 0;
+
+    width: 100%;
+    height: 200vh;
+    background-color: hsl(var(--bg-dark));
+    opacity: 1;
+    z-index: 1;
+
+    transition: 1200ms ease;
+  }
+
+  #confirmation-title:checked ~ .initial-msg {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  #confirmation-title:checked ~ .opacity-layout {
+    left: 100%;
+    visibility: hidden;
+    opacity: 0;
+  }
