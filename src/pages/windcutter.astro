@@ -1,10 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import Header from '../components/windcutter/Header.astro';
 import '../styles/windcutter.css';
 ---
 
-<Layout title="Cozynova Main Hub">
+<script src="/src/js/windcutter.js"></script>
+
+<Layout 
+title="Wind Cutter • Myndi" 
+ogTitle="Wind Cutter Guide" 
+ogDescription="Comprehensive, concise and dynamic Ragnarok Online guide." 
+ogUrl="https://cozynova.online/wind-cutter/" 
+canonical="https://cozynova.online/wind-cutter/">
 	
 	<Header></Header>
 	
@@ -983,7 +990,3 @@ import '../styles/windcutter.css';
 
 	
 </Layout>
-
-<!-- JS -->
-<script src="/src/js/windcutter.js"></script>
-
