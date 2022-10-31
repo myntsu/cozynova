@@ -1,0 +1,430 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Wind Cutter Guide" />
+  <meta property="og:description" content="Comprehensive, concise and dynamic Ragnarok Online guide." />
+  <meta property="og:url" content="https://cozynova.netlify.app/" />
+  <meta property="og:image" content="https://www.novaragnarok.com/themes/new/img/logo.png" />
+  <meta property="og:image:alt" content="Logo" />
+  <meta property="og:image:width" content="320" />
+  <meta property="og:image:height" content="180" />
+
+  <link rel="canonical" href="https://cozynova.netlify.app/" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- DM Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <script defer src="https://kit.fontawesome.com/76c49369ed.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark px-3 px-lg-5 py-1 py-lg-0">
+	<div class="container-fluid">
+		<a href="/" id="Cozy-Nova" class="header">
+		<img src="assets/img/logo/memberLoginLogo.webp" alt="Logo" width="24" height="24" /> Cozy Nova
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0 site-navbar-list gap-0 gap-lg-2">
+			<li class="nav-item">
+			<a class="nav-link" aria-current="page" href="/">Home</a>
+			</li>
+			<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				Class Guides
+			</a>
+			<ul class="dropdown-menu">
+				<li>
+				<a class="dropdown-item" href="/wind-cutter">Wind Cutter</a>
+				</li>
+			</ul>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link disabled" href="#">Cards</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="/cooking">Halloween</a>
+			</li>
+		</ul>
+		</div>
+	</div>
+</nav>
+
+<!-- Slot -->
+<slot></slot>
+
+<footer>
+	<p>Created by <i class="fa-brands fa-discord"></i> Myndi#5041</p>
+	<span class="d-none d-md-inline">|</span>
+	<a href="https://www.buymeacoffee.com/myndi"><i class="fa-solid fa-mug-saucer"></i> <span>Buy me a coffee</span>
+	</a>
+</footer>
+
+<!-- Back to top button -->
+<button type="button" id="btn-back-to-top">
+	<i class="fas fa-arrow-up"></i>
+</button>
+
+<style is:global>
+	:root {
+	--accent: 124, 58, 237;
+	--accent-gradient: linear-gradient(
+		45deg,
+		rgb(var(--accent)),
+		#da62c4 30%,
+		white 60%
+	);
+	--light: 0, 0%, 99%; /* white */
+	--dark: 221, 44%, 19%; /* dark blue */
+	--gray: 223, 10%, 59%; /* gray */
+	--gray-dark: 0, 0%, 24%; /* actual dark */
+	--gray-darker: 0, 0%, 14%;
+
+	--header-light: 49, 85%, 65%; /* pale golden */
+
+	--link-light: 49, 100%, 100%;
+
+	--container-light: 221, 54%, 34%; /* lightless blue */
+	--container-lighter: 221, 54%, 40%;
+	--container-dark: 221, 50%, 27%; /* darker blue */
+
+	--important-light: 343, 84%, 57%; /* pale wine */
+	--important-lighter: 343, 100%, 66%;
+
+	--bg-light: 221, 40%, 49%; /* higher contrast/light than -dark */
+	--bg-dark: 221, 64%, 19%; /* higher contrast than -dark */
+
+	--text-gray: 0, 0%, 91%;
+
+	--number: 120, 68%, 62%;
+	--number-orange: 36, 90%, 60%;
+	--number-purple: 244, 55%, 70%;
+
+	--height: 2.5rem;
+	}
+
+	*,
+	*::before,
+	*::after {
+	box-sizing: border-box;
+	}
+
+	html {
+	overflow-x: hidden;
+	}
+
+	body {
+	color: hsl(var(--light));
+	background-color: hsl(var(--bg-dark));
+	font-size: 1rem;
+	font-family: "DM Sans", sans-serif;
+	font-weight: 400;
+	}
+
+	/* Navbar */
+	.navbar {
+	width: 100vw;
+	max-height: max-content;
+	background-color: hsl(var(--bg-dark)) !important;
+
+	border-bottom: 1px solid hsl(var(--container-light), 50%);
+	}
+
+	.container-fluid {
+	width: 100%;
+	max-width: 1000px;
+
+	margin: auto;
+	}
+
+	#Cozy-Nova {
+	display: flex;
+	align-items: center;
+	gap: 0.25em;
+
+	margin: 0;
+	margin-inline-end: 0.5em;
+
+	text-decoration: none;
+	text-transform: uppercase;
+	}
+
+	#Cozy-Nova:hover {
+	color: hsl(var(--header-light), 50%);
+	}
+
+	.site-navbar-list a {
+	color: hsl(var(--link-light));
+	text-decoration: none;
+	}
+
+	.site-navbar-list a:hover {
+	color: hsl(var(--link-light), 50%);
+	}
+
+	.dropdown-toggle {
+	display: flex;
+	align-items: center;
+	background-color: hsl(var(--bg-dark)) !important;
+	}
+
+	.dropdown-menu {
+	border: none;
+	background-color: hsl(var(--container-light));
+	overflow: hidden;
+	}
+
+	.dropdown-menu a:hover {
+	color: hsl(var(--light));
+	background-color: hsl(var(--container-lighter));
+	}
+
+	/* Footer */
+	footer {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1em;
+
+	width: 100vw;
+	margin-top: auto;
+	padding: 2em 0;
+
+	color: hsl(var(--light));
+	background-color: hsl(var(--bg-dark));
+
+	border-top: 1px solid hsl(var(--container-light), 50%);
+	}
+	footer p {
+	margin: 0;
+	padding: 0;
+	}
+
+	footer a {
+	text-decoration: none;
+	color: hsl(var(--important-lighter));
+	}
+
+	footer a:hover {
+	color: hsl(var(--important-light), 60%);
+	}
+
+	footer > a > span:hover {
+	text-decoration: underline;
+	}
+
+	@media only screen and (max-width: 570px) {
+	footer > * {
+		text-align: center;
+		width: 100%;
+		gap: 0;
+	}
+
+	footer p {
+		padding-top: 0.75em;
+	}
+
+	footer a {
+		padding-bottom: 0.75em;
+	}
+	}
+
+	/* Utility classes */
+	.shadow-container {
+	box-shadow: 1px 1px 2px hsl(var(--bg-dark), 20%);
+	}
+
+	.border-rounded {
+	border-radius: 0.5em;
+	}
+
+	.header {
+	color: hsl(var(--header-light));
+	font-weight: 700;
+	}
+
+	.number {
+	font-weight: bold;
+	color: hsl(var(--number));
+	}
+
+	.number-purple {
+	font-weight: bold;
+	color: hsl(var(--number-purple));
+	}
+
+	.important {
+	font-weight: 700;
+	text-decoration: none;
+	color: hsl(var(--important-light));
+	}
+
+	.important.link-contrast {
+	color: hsl(var(--important-lighter));
+	}
+
+	.important:hover {
+	color: hsl(var(--important-light), 50%);
+	}
+
+	.tip {
+	font-weight: bold;
+	color: hsl(var(--number-orange));
+	}
+
+	.tip-question {
+	display: inline-block;
+	margin: 0 0.1em;
+	padding: 0.1em 0.55em;
+	color: hsl(var(--link-light));
+	background-color: hsl(var(--number-orange));
+	border-radius: 0.25em;
+	font-size: 0.75rem;
+
+	user-select: none;
+	}
+
+	.tag {
+	display: inline-block;
+	margin: 0 0.1em;
+	padding: 0.1em 0.4em;
+	color: hsl(var(--text-gray));
+	background-color: hsl(var(--bg-dark));
+	border-radius: 0.25em;
+	font-size: 0.75rem;
+
+	user-select: none;
+	}
+
+	.code {
+	display: inline-flex;
+	align-items: center;
+
+	margin: 0 0.15em;
+	padding: 0.35em 0.75em;
+	color: hsl(var(--text-gray));
+	background-color: hsl(var(--gray-dark));
+	border-radius: 0.25em;
+
+	font-size: 0.9rem;
+	font-weight: 400;
+	}
+
+	.code.contrast {
+	background-color: hsl(var(--gray-darker));
+	}
+
+	.new,
+	.updated,
+	.wip {
+	padding: 0.2em 0.4em;
+	color: hsl(var(--text-gray));
+	border-radius: 0.5em;
+	font-size: 0.5rem;
+	text-transform: uppercase;
+	}
+
+	.new {
+	background-color: hsl(var(--important-lighter));
+	}
+
+	.updated {
+	background-color: hsl(var(--number-orange));
+	}
+
+	.wip {
+	background-color: hsl(var(--number-purple));
+	}
+
+	.skill {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: repeat(1, 1fr);
+	place-content: center;
+	gap: 0.5em;
+	padding: 0.35em 0.65em;
+	color: hsl(var(--light));
+	background-color: hsl(var(--bg-light), 50%);
+	border-radius: 0.5em;
+	font-weight: 700;
+	cursor: pointer;
+	text-decoration: none;
+	}
+
+	.skill:hover {
+	color: hsl(var(--gray-dark));
+	background-color: hsl(var(--light));
+	}
+
+	.skill:active {
+	opacity: 0.5;
+	}
+
+	#btn-back-to-top {
+	display: none;
+
+	bottom: 20px;
+	right: 20px;
+
+	width: 40px;
+	height: 40px;
+
+	color: hsl(var(--light));
+	background-color: hsl(var(--important-lighter));
+
+	border: none;
+	border-radius: 50%;
+
+	position: fixed;
+	}
+
+	#btn-back-to-top:hover {
+	background-color: hsl(var(--important-light));
+	}
+
+	#btn-back-to-top:active {
+	scale: 1.05;
+	}
+
+	.text-default {
+	display: block;
+	}
+
+	.text-swap {
+	display: none;
+	}
+</style>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</body>
+</html>
