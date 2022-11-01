@@ -1,3 +1,5 @@
 User-agent: *
-Allow: /
-Disallow: preloader
+Allow: /index
+Allow: /windcutter
+Disallow: /cooking
+Disallow: /preloader
