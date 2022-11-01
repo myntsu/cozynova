@@ -5,6 +5,7 @@ export interface Props {
   ogDescription?: string;
   ogUrl: string;
   canonical: string;
+  favicon?: string;
 }
 
 const { title = 'Cozy Nova' } = Astro.props as Props;
@@ -12,6 +13,7 @@ const { ogTitle = 'Cozy Nova' } = Astro.props as Props;
 const { ogDescription = 'Cozy Nova content page. No additional fetched information.' } = Astro.props as Props;
 const { ogUrl } = Astro.props as Props;
 const { canonical } = Astro.props as Props;
+const { favicon = '/favicon/sword.svg' } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -20,7 +22,7 @@ const { canonical } = Astro.props as Props;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href={favicon} />
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
   <meta property="og:type" content="website" />

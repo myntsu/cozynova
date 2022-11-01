@@ -65,6 +65,7 @@ body {
     color: hsl(var(--gray));
     font-size: .85rem;
     text-decoration-line: line-through;
+    max-width: 30ch;
     opacity: .5;
 }
 
@@ -80,6 +81,7 @@ form {
 
 .inner-wrapper {
     display: flex;
+    justify-content: space-between;
     gap: 1em;
 }
 
@@ -176,4 +178,15 @@ form {
 
 .forgot-links a:is(:hover, :focus-within) {
     color: hsl(var(--light), 50%);
+}
+
+@media only screen and (max-width: 570px) {
+    body {
+        padding: 0 1em;
+    }
+
+    .form-wrapper {
+        max-width: 100%;
+        padding: 5em 1em 3em;
+    }
 }
