@@ -1,5 +1,3 @@
-
-if (typeof window !== 'undefined') {
 // Enabling popover
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
@@ -64,5 +62,4 @@ function copyToClipboard(element) {
   $temp.val($(element).text()).select();
   document.execCommand("copy");
   $temp.remove();
-}
-}
+  }
