@@ -56,10 +56,30 @@ $(".autoloot").click(function() {
   $(".autoloot-text").slideToggle("slow");
 })
 
-function copyToClipboard(element) {
-  var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-  document.execCommand("copy");
-  $temp.remove();
-  }
+// function copyToClipboard(element) {
+//   var $temp = $("<input>");
+//   $("body").append($temp);
+//   $temp.val($(element).text()).select();
+//   document.execCommand("copy");
+//   $temp.remove();
+//   }
+
+let lootList = document.querySelector('#Autoloot')
+
+function copyClipBoard(value) {
+    let tempInput = document.createElement('TEXTAREA')
+    tempInput.value = value
+    document.body.appendChild(tempInput)
+    tempInput.select()
+    document.execCommand('copy')
+    document.body.removeChild(tempInput)
+}
+
+lootList.addEventListener('click', (e) => {
+  let copyBtn = e.target.closest('button')
+  if (!copyBtn) return
+  let text = copyBtn.closest('.shadow-container').querySelector('[id*="Autoloot"]').innerText
+  
+  console.dir(text)
+  copyClipBoard(text)
+})
