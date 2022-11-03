@@ -523,6 +523,8 @@ body::after {
 }
 
 #Status {
+  display: flex;
+  flex-direction: column;
   background-color: hsl(var(--container-light));
   border-radius: 0.5em;
 }
@@ -546,6 +548,11 @@ body::after {
 
 .split-status {
   width: calc(50% - 10px);
+}
+
+.split-status > p {
+  margin: 0;
+  font-weight: 700;
 }
 
 .stats-window-grid {
@@ -624,15 +631,25 @@ body::after {
   gap: 1em;
 }
 
-.battle-stats-grid > * {
+.battle-stats-grid > div {
   max-width: 200px;
-  border-radius: 0.5em;
+}
+
+.battle-stats-grid > div > div {
+  padding: .5em;
   background-color: hsl(var(--bg-light), 30%);
+  border-radius: 0.5em;
 }
 
 .battle-stats-grid p {
   display: flex;
   margin: 0;
+  font-weight: 700;
+}
+
+.battle-stats-grid p:nth-child(1) {
+  align-items: center;
+  gap: .25em;
 }
 
 .battle-stats-grid span:nth-child(1) {
@@ -641,17 +658,6 @@ body::after {
 
 .battle-stats-grid span {
   font-weight: 700;
-}
-
-.battle-stats-grid > div p:nth-child(1) {
-  color: hsl(var(--important-lighter));
-  text-shadow: 3px 3px 0px solid hsl(var(--light));
-  font-size: 0.85rem;
-  font-weight: 700;
-  top: -10px;
-  left: 15px;
-  z-index: 2;
-  user-select: none;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -1035,6 +1041,11 @@ body::after {
 }
 
 /* Item farming */
+#Farming img {
+  width: 24px;
+  height: 24px;
+}
+
 #Farming > div {
   color: hsl(var(--text-gray));
   background-color: hsl(var(--container-light));
@@ -1049,28 +1060,19 @@ body::after {
 }
 
 .farming-container {
-  padding: 1em;
+  padding: .5em 1em 1em;
   background-color: hsl(var(--container-lighter));
   border-radius: 0.5em;
-
-  position: relative;
 }
 
-.farming-container h3 {
-  position: absolute;
-  top: -10px;
-  left: 50px;
-}
-
-.farming-container h3 {
+.farming-container p {
   margin: 0;
 }
 
 .farming-container ul {
   list-style: none;
   margin: 0;
-  padding: 0;
-  padding-inline-start: 0.5em;
+  padding-inline-start: .5em;
 }
 
 .autoloot-list {
