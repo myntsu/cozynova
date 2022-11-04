@@ -63,90 +63,6 @@ body::after {
   background-color: var(--radio-color);
 }
 
-.theme-changer #dark-blue {
-  --radio-color: #2f529d;
-}
-
-.theme-changer #light {
-  --radio-color: #F7F7FF;
-}
-
-.theme-changer #red {
-  --radio-color: #f27d74;
-}
-
-.theme-changer #dark {
-  --radio-color: #5D5F71;
-}
-
-.theme-changer #green {
-  --radio-color: #B9F5D8;
-}
-
-.dark-blue,
-:root:has(#dark-blue:checked) {
-	--main-dark: 221, 60%, 19%;
-	--main-light: 221, 55%, 45%;
-
-	--main-light-1: 221, 60%, 27%;
-	--main-light-2: 221, 60%, 34%;
-	--main-light-3: 221, 60%, 40%;
-
-	--text: 0, 0%, 91%;
-	--header: 49, 85%, 65%;
-	--important: 343, 100%, 66%;
-	--number: 120, 68%, 62%;
-	--low-focus: 244, 55%, 70%;
-}
-
-.dark,
-:root:has(#dark:checked) {
-	--main-dark: 0, 0%, 15%;
-	--main-light: 0, 0%, 35%;
-
-	--main-light-1: 0, 0%, 20%;
-	--main-light-2: 0, 0%, 24%;
-	--main-light-3: 0, 0%, 29%;
-
-	--text: 0, 0%, 95%;
-	--header: 0, 70%, 60%;
-	--important: 211, 53%, 60%;
-	--number: 52, 100%, 65%;
-	--low-focus: 297, 15%, 60%;
-}
-
-.red,
-:root:has(#red:checked) {
-	--main-dark: 344, 58%, 12%;
-	--main-light: 344, 58%, 50%;
-
-	--main-light-1: 344, 58%, 20%;
-	--main-light-2: 344, 58%, 27%;
-	--main-light-3: 344, 58%, 34%;
-
-	--text: 0, 0%, 95%;
-	--header: 59, 98%, 84%;
-	--important: 221, 60%, 70%;
-	--number: 220, 65%, 75%;
-	--low-focus: 4, 60%, 75%;
-}
-
-.green,
-:root:has(#green:checked) {
-	--main-dark: 139, 17%, 14%;
-	--main-light: 139, 17%, 40%;
-
-	--main-light-1: 139, 17%, 20%;
-	--main-light-2: 139, 17%, 25%;
-	--main-light-3: 139, 17%, 29%;
-
-	--text: 0, 0%, 95%;
-	--header: 219, 80%, 70%;
-	--important: 40, 70%, 70%;
-	--number: 4, 88%, 70%;
-	--low-focus: 170, 80%, 85%;
-}
-
 /* Header */
 .header-container {
   width: 100%;
@@ -277,7 +193,8 @@ body::after {
   }
 
   .deploy-content-table {
-    margin-right: auto;
+    margin-inline-start: auto;
+    font-size: 1rem;
   }
 
   .theme-changer {
@@ -288,7 +205,7 @@ body::after {
   .theme-changer > fieldset {
     justify-content: center;
     width: 100%;
-    border-radius: 0 .5em 0 0;
+    border-radius: .5em 0 0 0;
   }
 }
 
@@ -875,8 +792,13 @@ body::after {
     grid-template-rows: repeat(2, 1fr);
   }
 
-  .battle-stats-grid > * {
+  .battle-stats-grid > div {
+    width: 100%;
     max-width: 100%;
+  }
+
+  .battle-stats-grid > div > div {
+    padding: .25em 1em;
   }
 }
 
