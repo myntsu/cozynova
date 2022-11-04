@@ -27,7 +27,7 @@ main {
   main::after {
     content: "";
     position: absolute;
-    background-color: hsl(var(--bg-dark));
+    background-color: hsl(var(--main-dark));
     inset: 0;
     z-index: -2;
     opacity: 0.75;
@@ -39,7 +39,7 @@ main {
   }
 
   .welcome-title span {
-    color: hsl(var(--header-light));
+    color: hsl(var(--header));
     font-weight: 700;
   }
 

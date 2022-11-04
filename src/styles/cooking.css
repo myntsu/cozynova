@@ -8,50 +8,43 @@ html {
     opacity: 0.5;
 }
 
-.code {
-    padding: .25em 1em;
-    color: hsl(var(--light)) !important;
-    background-color: hsl(var(--gray-dark));
-    border-radius: .5em;
-}
-
 .npc {
-    padding: .25em .75em;
-    color: hsl(var(--light)) !important;
-    background-color: hsl(var(--number));
-    border-radius: 1em;
-    font-weight: 700;
+    padding: .2em .35em;
+    color: hsl(var(--white)) !important;
+    background-color: hsl(var(--main-light-3));
+    border-radius: .25em;
+    font-size: .85rem;
 }
 
 .mob {
-    padding: .25em .75em;
-    color: hsl(var(--light)) !important;
-    background-color: hsl(var(--important-lighter));
-    border-radius: 1em;
-    font-weight: 700;
+    padding: .2em .35em;
+    color: hsl(var(--white)) !important;
+    background-color: hsl(var(--important));
+    border-radius: .25em;
+    font-size: .85rem;
 }
 
 .market {
-    padding: .25em .75em;
-    color: hsl(var(--light)) !important;
-    background-color: hsl(var(--header-light));
-    border-radius: 1em;
-    font-weight: 700;
+    padding: .25em 355em;
+    color: hsl(var(--white)) !important;
+    background-color: hsl(var(--header));
+    border-radius: .25em;
+    font-size: .85rem;
 }
 
 .location {
-    padding: .25em .75em;
-    color: hsl(var(--light)) !important;
-    background-color: hsl(var(--number-purple));
-    border-radius: 1em;
-    font-weight: 700;
+    padding: .2em .35em;
+    color: hsl(var(--white)) !important;
+    background-color: hsl(var(--low-focus));
+    border-radius: .25em;
+    font-size: .85rem;
 }
 
 .title {
     margin: 0 !important;
 
     
-    color: hsl(var(--header-light)) !important;
+    color: hsl(var(--header)) !important;
     font-size: 1.25rem !important;
     font-weight: 700 !important;
 
@@ -87,8 +80,8 @@ body {
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
 
-    color: hsl(var(--light));
-    background-color: hsl(var(--bg-dark));
+    color: hsl(var(--white));
+    background-color: hsl(var(--main-dark));
 }
 
 .body-container {
@@ -104,7 +97,7 @@ body {
   margin: 0;
   margin-inline-end: .25em;
 
-  color: hsl(var(--number-orange));
+  color: hsl(var(--curiosity));
 
   font-size: 2rem;
   font-weight: 700;
@@ -123,11 +116,11 @@ body {
     margin: 0;
     margin-bottom: .25em;
 
-    color: hsl(var(--header-light));
+    color: hsl(var(--header));
 }
 
 .body-container i {
-    color: hsl(var(--light));
+    color: hsl(var(--white));
 }
 
 @media only screen and (max-width: 1200px) {
@@ -145,7 +138,7 @@ body {
 small {
     font-size: .75rem;
     align-self: center;
-    color: hsl(var(--number-purple));
+    color: hsl(var(--low-focus));
     font-weight: 700;
 }
 
@@ -180,8 +173,8 @@ small {
     display: flex;
     align-items: center;
 
-    color: hsl(var(--text-gray));
-    background-color: hsl(var(--container-light));
+    color: hsl(var(--text));
+    background-color: hsl(var(--main-light-1));
     border-radius: 0.5em;
 
     cursor: pointer;
@@ -209,7 +202,7 @@ label > img {
 }
 
 .grid-dish-wrapper> div.container-switch {
-    background: hsl(var(--important-light));
+    background: hsl(var(--important));
 }
 
 /* Ingredients grid */
@@ -228,7 +221,7 @@ label > img {
     margin: 0;
     margin-bottom: .5em;
 
-    color: hsl(var(--header-light));
+    color: hsl(var(--header));
 }
 
 @media only screen and (max-width: 766px) {
@@ -240,7 +233,7 @@ label > img {
 }
 
 .ingredients-container i {
-    color: hsl(var(--light));
+    color: hsl(var(--white));
 }
 
 .ingredients-container b {
@@ -254,17 +247,12 @@ label > img {
     margin-block-end: 1em;
     
     font-size: .9rem;
-    color: hsl(var(--text-gray));
+    color: hsl(var(--text));
 }
 
 .ingredients-container > p > img {
     width: 24px;
     height: 24px;
-}
-
-.ingredients-container > p > span {
-    font-weight: 700;
-    color: hsl(var(--number-orange));
 }
 
 .grid-ingredient-wrapper {
@@ -302,7 +290,7 @@ label > img {
     padding: 1em;
 
     border-radius: .5em;
-    background-color: hsl(var(--container-light));
+    background-color: hsl(var(--main-light-1));
 }
 
 .ingredient-list ul:nth-child(1) {
@@ -328,7 +316,7 @@ label > img {
     width: 2em;
 
     font-weight: 700;
-    color: hsl(var(--number-orange));
+    color: hsl(var(--curiosity));
     text-align: center;
 }
 
@@ -348,17 +336,17 @@ label > img {
 
 .ingredient-list .btn-plus > i {
     margin: auto;
-    color: hsl(var(--light));
+    color: hsl(var(--white));
 }
 
 .ingredient-list .btn-plus:is(:hover, :active, :focus) i {
-    color: hsl(var(--light), 70%);
+    color: hsl(var(--white), 70%);
 }
 
 /* Modal */
 .modal-content {
-    color: hsl(var(--text-gray));
-    background-color: hsl(var(--container-light));
+    color: hsl(var(--text));
+    background-color: hsl(var(--main-light-1));
 }
 
 .modal-header {
@@ -366,8 +354,8 @@ label > img {
     margin: 0;
     padding: 1em;
     
-    color: hsl(var(--header-light));
-    background-color: hsl(var(--bg-dark));
+    color: hsl(var(--header));
+    background-color: hsl(var(--main-dark));
     font-weight: 700;
 }
 
@@ -387,8 +375,8 @@ label > img {
 }
 
 .modal-body table {
-    color: hsl(var(--text-gray));
-    border-color: hsl(var(--gray));
+    color: hsl(var(--text));
+    border-color: hsl(var(--black), 20%);
 }
 
 .modal-body table > thead > tr > th:nth-child(4) {
@@ -419,11 +407,11 @@ label > img {
 
 .modal-body a {
     text-decoration: none;
-    color: hsl(var(--light));
+    color: hsl(var(--white));
 }
 
 .modal-body a:hover {
-    color: hsl(var(--light), 50%);
+    color: hsl(var(--white), 50%);
 }
 
 .wiki-article {
@@ -439,18 +427,18 @@ label > img {
   width: 50px;
   height: 50px;
 
-  background-color: hsl(var(--important-lighter));
+  background-color: hsl(var(--important));
   border-radius: 50%;
 
   z-index: 1000;
 }
 
 .wiki-article a {
-  color: hsl(var(--light));
+  color: hsl(var(--white));
   font-size: 1.25rem;
   text-decoration: none;
 }
 
 .wiki-article:hover {
-  background-color: hsl(var(--important-light));
+  background-color: hsl(var(--important));
 }

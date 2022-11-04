@@ -56,14 +56,6 @@ $(".autoloot").click(function() {
   $(".autoloot-text").slideToggle("slow");
 })
 
-// function copyToClipboard(element) {
-//   var $temp = $("<input>");
-//   $("body").append($temp);
-//   $temp.val($(element).text()).select();
-//   document.execCommand("copy");
-//   $temp.remove();
-//   }
-
 let lootList = document.querySelector('#Autoloot')
 
 function copyClipBoard(value) {
@@ -78,8 +70,35 @@ function copyClipBoard(value) {
 lootList.addEventListener('click', (e) => {
   let copyBtn = e.target.closest('button')
   if (!copyBtn) return
-  let text = copyBtn.closest('.shadow-container').querySelector('[id*="Autoloot"]').innerText
+  let text = copyBtn.closest('.autoloot-selector').querySelector('[id*="Autoloot"]').innerText
   
   console.dir(text)
   copyClipBoard(text)
 })
+
+const colorThemes = document.querySelectorAll('[name="theme"]');
+
+// store theme
+const storeTheme = function (theme) {
+  localStorage.setItem("theme", theme);
+};
+
+// set theme when visitor returns
+const setTheme = function () {
+  const activeTheme = localStorage.getItem("theme");
+  colorThemes.forEach((themeOption) => {
+    if (themeOption.id === activeTheme) {
+      themeOption.checked = true;
+    }
+  });
+  // fallback for no :has() support
+  // document.documentElement.className = activeTheme;
+};
+
+colorThemes.forEach((themeOption) => {
+  themeOption.addEventListener("click", () => {
+    storeTheme(themeOption.id);
+  });
+});
+
+document.onload = setTheme();

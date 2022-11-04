@@ -54,6 +54,7 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 </head>
 
 <body>
+<a class="skip-link" href="#Main">Skip to main content</a>
 
 <nav class="navbar navbar-expand-lg navbar-dark px-3 px-lg-5 py-1 py-lg-0">
 	<div class="container-fluid">
@@ -89,8 +90,8 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	</div>
 </nav>
 
-<!-- Slot -->
-<slot></slot>
+	<!-- Slot -->
+	<slot></slot>
 
 <footer>
 	<p>Created by <i class="fa-brands fa-discord"></i> Myndi#5041</p>
@@ -106,40 +107,30 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 
 <style is:global>
 	:root {
-	--accent: 124, 58, 237;
-	--accent-gradient: linear-gradient(
-		45deg,
-		rgb(var(--accent)),
-		#da62c4 30%,
-		white 60%
-	);
-	--light: 0, 0%, 99%; /* white */
-	--dark: 221, 44%, 19%; /* dark blue */
-	--gray: 223, 10%, 59%; /* gray */
-	--gray-dark: 0, 0%, 24%; /* actual dark */
-	--gray-darker: 0, 0%, 14%;
+	--nav-link: 0, 0%, 100%; /* white */
+	
+	--white: 0, 0%, 100%;
+	--black: 0, 0%, 20%;
+	
+	--code: 0, 0%, 20%;
+	--code-contrast: 0, 0%, 10%;
+	--code-text: 0, 0%, 90%;
+	
+	--main-dark: 221, 64%, 19%; /* dark-blue */
+	--main-light: 221, 40%, 49%; /* light-blue */
 
-	--header-light: 49, 85%, 65%; /* pale golden */
+	--main-light-1: 221, 50%, 27%;
+	--main-light-2: 221, 54%, 34%;
+	--main-light-3: 221, 54%, 40%;
 
-	--link-light: 49, 100%, 100%;
+	--text: 0, 0%, 91%; /* snow */
+	--header: 49, 85%, 65%; /* golden */
+	--important: 343, 100%, 66%; /* red */
+	--number: 120, 68%, 62%; /* green */
+	--low-focus: 244, 55%, 70%; /* lavender */
 
-	--container-light: 221, 54%, 34%; /* lightless blue */
-	--container-lighter: 221, 54%, 40%;
-	--container-dark: 221, 50%, 27%; /* darker blue */
+	--curiosity: 36, 90%, 60%; /* orange */
 
-	--important-light: 343, 84%, 57%; /* pale wine */
-	--important-lighter: 343, 100%, 66%;
-
-	--bg-light: 221, 40%, 49%; /* higher contrast/light than -dark */
-	--bg-dark: 221, 64%, 19%; /* higher contrast than -dark */
-
-	--text-gray: 0, 0%, 91%;
-
-	--number: 120, 68%, 62%;
-	--number-orange: 36, 90%, 60%;
-	--number-purple: 244, 55%, 70%;
-
-	--height: 2.5rem;
 	}
 
 	*,
@@ -153,20 +144,42 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	}
 
 	body {
-	color: hsl(var(--light));
-	background-color: hsl(var(--bg-dark));
+	color: hsl(var(--white));
+	background-color: hsl(var(--main-dark));
 	font-size: 1rem;
 	font-family: "DM Sans", sans-serif;
 	font-weight: 400;
+	}
+
+	.skip-link {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+
+		padding: .5rem;
+
+		color: black;
+		background-color: white;
+		text-align: center;
+
+		z-index: 10;
+
+		translate: 0 -100%;
+		transition: translate 150ms ease-in-out;
+	}
+
+	.skip-link:is(:focus, :focus-within) {
+		translate: 0 0;
 	}
 
 	/* Navbar */
 	.navbar {
 	width: 100vw;
 	max-height: max-content;
-	background-color: hsl(var(--bg-dark)) !important;
+	background-color: hsl(var(--main-dark));
 
-	border-bottom: 1px solid hsl(var(--container-light), 50%);
+	border-bottom: 1px solid hsl(var(--main-light-2), 50%);
 	}
 
 	.container-fluid {
@@ -189,33 +202,37 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	}
 
 	#Cozy-Nova:hover {
-	color: hsl(var(--header-light), 50%);
+	color: hsl(var(--header), 50%);
 	}
 
 	.site-navbar-list a {
-	color: hsl(var(--link-light));
+	color: hsl(var(--nav-link));
 	text-decoration: none;
 	}
 
 	.site-navbar-list a:hover {
-	color: hsl(var(--link-light), 50%);
+	color: hsl(var(--nav-link), 50%);
 	}
 
 	.dropdown-toggle {
 	display: flex;
 	align-items: center;
-	background-color: hsl(var(--bg-dark)) !important;
+	background-color: hsl(var(--main-dark)) !important;
 	}
 
 	.dropdown-menu {
 	border: none;
-	background-color: hsl(var(--container-light));
+	background-color: hsl(var(--main-light-2));
 	overflow: hidden;
 	}
 
 	.dropdown-menu a:hover {
-	color: hsl(var(--light));
-	background-color: hsl(var(--container-lighter));
+	color: white;
+	background-color: hsl(var(--main-light-3));
+	}
+
+	.dropdown-item {
+		color: white;
 	}
 
 	/* Footer */
@@ -229,10 +246,10 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	margin-top: auto;
 	padding: 2em 0;
 
-	color: hsl(var(--light));
-	background-color: hsl(var(--bg-dark));
+	color: hsl(var(--white));
+	background-color: hsl(var(--main-dark));
 
-	border-top: 1px solid hsl(var(--container-light), 50%);
+	border-top: 1px solid hsl(var(--main-light-2), 50%);
 	}
 	footer p {
 	margin: 0;
@@ -241,11 +258,11 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 
 	footer a {
 	text-decoration: none;
-	color: hsl(var(--important-lighter));
+	color: hsl(var(--important));
 	}
 
 	footer a:hover {
-	color: hsl(var(--important-light), 60%);
+	color: hsl(var(--important), 60%);
 	}
 
 	footer > a > span:hover {
@@ -270,7 +287,7 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 
 	/* Utility classes */
 	.shadow-container {
-	box-shadow: 1px 1px 2px hsl(var(--bg-dark), 20%);
+	box-shadow: 1px 1px 2px hsl(var(--main-dark), 20%);
 	}
 
 	.border-rounded {
@@ -278,7 +295,7 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	}
 
 	.header {
-	color: hsl(var(--header-light));
+	color: hsl(var(--header));
 	font-weight: 700;
 	}
 
@@ -287,28 +304,28 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	color: hsl(var(--number));
 	}
 
-	.number-purple {
+	.low-focus {
 	font-weight: bold;
-	color: hsl(var(--number-purple));
+	color: hsl(var(--low-focus));
 	}
 
 	.important {
 	font-weight: 700;
 	text-decoration: none;
-	color: hsl(var(--important-light));
+	color: hsl(var(--important));
 	}
 
 	.important.link-contrast {
-	color: hsl(var(--important-lighter));
+	color: hsl(var(--important));
 	}
 
 	.important:hover {
-	color: hsl(var(--important-light), 50%);
+	color: hsl(var(--important), 50%);
 	}
 
 	.tip {
 	font-weight: bold;
-	color: hsl(var(--number-orange));
+	color: hsl(var(--curiosity));
 	}
 
 	.tip-question {
@@ -316,7 +333,7 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	margin: 0 0.1em;
 	padding: 0.1em 0.55em;
 	color: hsl(var(--link-light));
-	background-color: hsl(var(--number-orange));
+	background-color: hsl(var(--curiosity));
 	border-radius: 0.25em;
 	font-size: 0.75rem;
 
@@ -327,8 +344,8 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	display: inline-block;
 	margin: 0 0.1em;
 	padding: 0.1em 0.4em;
-	color: hsl(var(--text-gray));
-	background-color: hsl(var(--bg-dark));
+	color: hsl(var(--white));
+	background-color: hsl(var(--main-dark));
 	border-radius: 0.25em;
 	font-size: 0.75rem;
 
@@ -341,8 +358,8 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 
 	margin: 0 0.15em;
 	padding: 0.35em 0.75em;
-	color: hsl(var(--text-gray));
-	background-color: hsl(var(--gray-dark));
+	color: hsl(var(--code-text));
+	background-color: hsl(var(--code));
 	border-radius: 0.25em;
 
 	font-size: 0.9rem;
@@ -350,29 +367,29 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	}
 
 	.code.contrast {
-	background-color: hsl(var(--gray-darker));
+	background-color: hsl(var(--code-contrast));
 	}
 
 	.new,
 	.updated,
 	.wip {
 	padding: 0.2em 0.4em;
-	color: hsl(var(--text-gray));
+	color: hsl(var(--text));
 	border-radius: 0.5em;
 	font-size: 0.5rem;
 	text-transform: uppercase;
 	}
 
 	.new {
-	background-color: hsl(var(--important-lighter));
+	background-color: hsl(var(--important));
 	}
 
 	.updated {
-	background-color: hsl(var(--number-orange));
+	background-color: hsl(var(--curiosity));
 	}
 
 	.wip {
-	background-color: hsl(var(--number-purple));
+	background-color: hsl(var(--low-focus));
 	}
 
 	.skill {
@@ -382,8 +399,8 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	place-content: center;
 	gap: 0.5em;
 	padding: 0.35em 0.65em;
-	color: hsl(var(--light));
-	background-color: hsl(var(--bg-light), 50%);
+	color: hsl(var(--text));
+	background-color: hsl(var(--main-light));
 	border-radius: 0.5em;
 	font-weight: 700;
 	cursor: pointer;
@@ -391,8 +408,8 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	}
 
 	.skill:hover {
-	color: hsl(var(--gray-dark));
-	background-color: hsl(var(--light));
+	color: hsl(var(--black));
+	background-color: hsl(var(--white));
 	}
 
 	.skill:active {
@@ -408,8 +425,8 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	width: 40px;
 	height: 40px;
 
-	color: hsl(var(--light));
-	background-color: hsl(var(--important-lighter));
+	color: hsl(var(--white));
+	background-color: hsl(var(--important));
 
 	border: none;
 	border-radius: 50%;
@@ -418,7 +435,7 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	}
 
 	#btn-back-to-top:hover {
-	background-color: hsl(var(--important-light));
+	background-color: hsl(var(--important));
 	}
 
 	#btn-back-to-top:active {

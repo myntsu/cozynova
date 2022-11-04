@@ -31,7 +31,7 @@ body {
     width: 102%;
     height: 103%;
     background: linear-gradient(
-        to left,
+        130deg,
         hsl(var(--important-lighter)),
         hsl(var(--light)),
         hsl(var(--number-purple))
@@ -42,20 +42,20 @@ body {
     z-index: -1;
     rotate: 0deg;
 
-    animation: bgInc 4s ease-in-out infinite alternate;
+    animation: bgInc 4s linear infinite alternate;
 }
 
 @keyframes bgInc {
     0% {
-        background-size: 150%;
-        background-position: center left;
-        scale: .95;
+        background-size: 100%;
+        background-position: 0% 0%;
+        scale: 1;
     }
 
     100% {
-        background-size: 500%;
-        background-position: center right;
-        scale: 1;
+        background-size: 200%;
+        background-position: 100% 100%;
+        scale: .98;
     }
 }
 
