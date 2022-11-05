@@ -18,9 +18,10 @@ const setTheme = function () {
 };
 
 colorThemes.forEach((themeOption) => {
-  themeOption.addEventListener("input", () => {
+  themeOption.addEventListener("click", () => {
     storeTheme(themeOption.id);
-    document.documentElement.className = themeOption.id
+    // fallback for no :has() support
+    document.documentElement.className = themeOption.id;
   });
 });
   
