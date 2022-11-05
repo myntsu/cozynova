@@ -53,7 +53,12 @@ $(".consumables").click(function(){
 
 // Autoloot
 $(".autoloot").click(function() {
-  $(".autoloot-text").slideToggle("slow");
+  $(".autoloot-text").toggle();
+})
+
+//Starting point
+$(".starting-point").click(function() {
+  $(".starting-point-text").toggle()
 })
 
 let lootList = document.querySelector('#Autoloot')

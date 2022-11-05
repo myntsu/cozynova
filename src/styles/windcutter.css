@@ -1236,3 +1236,61 @@ input.code {
   background-color: hsl(var(--main-light-2));
   border-radius: 0.5em;
 }
+
+#New-Player .select {
+  display: flex;
+
+  padding: 1em;
+  margin-block-end: 1em;
+  background-color: hsl(var(--main-light-3));
+  border-radius: .5em;
+}
+
+#New-Player .select > div {
+  display: flex;
+  flex-direction: column;
+  gap: .25em;
+}
+
+#New-Player .select > div > div {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .5em;
+}
+
+#New-Player a {
+  color: hsl(var(--important));
+  text-decoration: none;
+  position: relative;
+}
+
+#New-Player a:hover {
+  color: hsl(var(--important), 50%);
+}
+
+#New-Player .select a:is(:hover, :focus-within)::before {
+  content: 'Test';
+  position: absolute;
+  top: 1rem;
+  left: 0;
+}
+
+
+#New-Player .select a:is(:hover, :focus-within)::after {
+  padding-inline-start: .5em;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: '\f3be';
+  font-size: .8rem;
+  color: hsl(var(--white));
+}
+
+.starting-point-text {
+  display: none;
+  margin: 0;
+}
+
+#Novice-Section ul {
+  /* padding-inline-start: 1em; */
+}
