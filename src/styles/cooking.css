@@ -10,7 +10,7 @@ html {
 
 .npc {
     padding: .2em .35em;
-    color: hsl(var(--white)) !important;
+    color: hsl(var(--text)) !important;
     background-color: hsl(var(--main-light-3));
     border-radius: .25em;
     font-size: .85rem;
@@ -202,6 +202,7 @@ label > img {
 }
 
 .grid-dish-wrapper> div.container-switch {
+    color: hsl(var(--white));
     background: hsl(var(--important));
 }
 
@@ -290,6 +291,7 @@ label > img {
     padding: 1em;
 
     border-radius: .5em;
+    color: hsl(var(--text));
     background-color: hsl(var(--main-light-1));
 }
 
@@ -316,7 +318,7 @@ label > img {
     width: 2em;
 
     font-weight: 700;
-    color: hsl(var(--curiosity));
+    color: hsl(var(--number));
     text-align: center;
 }
 
@@ -336,11 +338,11 @@ label > img {
 
 .ingredient-list .btn-plus > i {
     margin: auto;
-    color: hsl(var(--white));
+    color: hsl(var(--text));
 }
 
 .ingredient-list .btn-plus:is(:hover, :active, :focus) i {
-    color: hsl(var(--white), 70%);
+    color: hsl(var(--text), 70%);
 }
 
 /* Modal */
@@ -407,11 +409,11 @@ label > img {
 
 .modal-body a {
     text-decoration: none;
-    color: hsl(var(--white));
+    color: hsl(var(--text));
 }
 
 .modal-body a:hover {
-    color: hsl(var(--white), 50%);
+    color: hsl(var(--text), 70%);
 }
 
 .wiki-article {
@@ -427,7 +429,7 @@ label > img {
   width: 50px;
   height: 50px;
 
-  background-color: hsl(var(--important));
+  background-color: hsl(var(--important), 70%);
   border-radius: 50%;
 
   z-index: 1000;

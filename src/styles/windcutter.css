@@ -1,5 +1,9 @@
 body {
-  background-image: linear-gradient(0deg, hsl(var(--main-dark)) 80%, transparent),
+  background-image: 
+    linear-gradient(
+      0deg, 
+      hsl(var(--main-dark)) 81%, transparent
+      ),
     url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
 
   display: flex;
@@ -20,7 +24,11 @@ body::after {
   background-color: hsl(var(--main-dark));
   inset: 0;
   z-index: -2;
-  opacity: 0.75;
+  opacity: 0.91;
+}
+
+h2 {
+  color: hsl(var(--text)); 
 }
 
 .utility-toolbar {
@@ -64,21 +72,23 @@ body::after {
 }
 
 /* Header */
-.header-container {
+.build {
   width: 100%;
   max-width: 1000px;
   padding: 0em;
 
   background-color: hsl(var(--main-light-1));
-
-  border-radius: 0 0 .5em .5em;
-}
-
-.build {
   position: relative;
   isolation: isolate;
 
-  background-position: 50% 45%;
+  background-image: 
+    linear-gradient(
+      90deg, 
+      hsl(var(--main-dark)) -10%, transparent
+    ),
+    url('../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp');
+  background-position: 50% 35%;
+  background-size: cover;
 }
 
 .build::after {
@@ -86,15 +96,15 @@ body::after {
   position: absolute;
   z-index: -1;
   inset: 0;
-  background-color: hsl(var(--main-light-1));
-  opacity: 0.7;
+  background-color: hsl(var(--main-dark));
+  opacity: 0.65;
 }
 
 .updated-date-title {
   position: absolute;
   font-size: .75rem;
   right: 5px;
-  bottom: 60px;
+  bottom: 20px;
   color: hsl(var(--white), 70%);
   text-transform: uppercase;
   font-weight: 700;
@@ -104,7 +114,7 @@ body::after {
   position: absolute;
   font-size: .75rem;
   right: 5px;
-  bottom: 45px;
+  bottom: 5px;
   color: hsl(var(--white), 70%);
   text-transform: uppercase;
   font-weight: 700;
@@ -125,8 +135,16 @@ body::after {
 
 .headers-wrapper h2,
 .headers-wrapper p {
+  color: hsl(var(--white));
   font-size: 1rem;
   margin: 0;
+}
+
+/* Quick-nav */
+.shortcut-nav {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .content-table {
@@ -134,6 +152,9 @@ body::after {
   justify-content: center;
   text-align: center;
   
+  width: 100%;
+  max-width: 1000px;
+
   background-color: hsl(var(--main-dark));
   flex-wrap: wrap;
   word-break: keep-all;
@@ -172,22 +193,33 @@ body::after {
 }
 
 @media only screen and (max-width: 990px) {
+
+  body {
+    background-image: 
+      linear-gradient(
+        0deg, 
+        hsl(var(--main-dark)) 85%, transparent
+        ),
+      url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
+  }
+
   .content-table .link {
     width: 50% !important;
     outline: .1ex solid hsl(var(--white), 5%);
     outline-offset: -.2ex;
   }
-
-  .updated-date-title {
-    bottom: 105px;
-  }
-
-  .updated-date {
-    bottom: 90px;
-  }
 }
 
 @media only screen and (max-width: 570px) {
+  body {
+    background-image: 
+      linear-gradient(
+        0deg, 
+        hsl(var(--main-dark)) 90%, transparent
+        ),
+      url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
+  }
+
   .utility-toolbar {
     flex-wrap: wrap;
   }
@@ -215,14 +247,6 @@ body::after {
     outline: .1ex solid hsl(var(--white), 5%);
     outline-offset: -.2ex;
   }
-
-  .updated-date-title {
-    bottom: 195px;
-  }
-
-  .updated-date {
-    bottom: 180px;
-  }
 }
 
 .content-table a {
@@ -231,14 +255,14 @@ body::after {
 }
 
 .content-table a:hover {
-  background-color: hsl(var(--main-light-1));
+  background-color: hsl(var(--important));
 }
 
 #Content-Table {
 
   width: 100%;
   max-width: 1000px;
-  background-color: hsl(var(--main-light-1));
+  background-color: hsl(var(--main-dark));
 }
 
 .content-table-list {
@@ -275,7 +299,14 @@ body::after {
 @media only screen and (max-width: 1200px) {
   body {
     padding: 0 1.5rem;
+    background-image: 
+    linear-gradient(
+      0deg, 
+      hsl(var(--main-dark)) 85%, transparent
+      ),
+    url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
   }
+  
 }
 
 @media only screen and (max-width: 880px) {
@@ -554,7 +585,7 @@ body::after {
 }
 
 #Calculations h2 {
-  color: hsl(var(--white));
+  color: hsl(var());
 }
 
 #Calculations p {

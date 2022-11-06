@@ -11,1065 +11,1069 @@
             <label class="visually-hidden" for="dark">Dark</label>
             <input id="dark" type="radio" name="theme">
 
-            <label class="visually-hidden" for="red">Red</label>
-            <input id="red" type="radio" name="theme">
+            <label class="visually-hidden" for="light">Light</label>
+            <input id="light" type="radio" name="theme">
             
             <label class="visually-hidden" for="green">Green</label>
-            <input id="green" type="radio" name="theme">
+            <input id="green" type="radio" name="theme" disabled>
 
         </fieldset>
     </form>
 </div>
-<header class="build header-container" style="background-image: url('../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp');" role="banner">
-    <div class="headers-wrapper">
-      <p>Nova Ragnarok</p>
-      <h1 class="header">Wind Cutter</h1>
-      <h2><b>PVE</b> <span>• Rune Knight</span></h2>
-    </div>
-    <span class="updated-date-title">Last updated:</span>
-    <span class="updated-date">04/November/2022</span>
-    <nav class="content-table" role="navigation">
-      <a class="link" aria-current="page" href="#Equipment">Equipment</a>
-      <a class="link" href="#Stats">Stats</a>
-      <a class="link position-relative" href="#Consumables">Consumables</a>
-      <a class="link position-relative" href="#New-Player">New Player</a>
-    </nav>
-  </header>
+
+<header class="build" role="banner">
+  <div class="headers-wrapper">
+    <p>Nova Ragnarok</p>
+    <h1 class="header">Wind Cutter</h1>
+    <h2><b>PVE</b> <span>• Rune Knight</span></h2>
+  </div>
+  <span class="updated-date-title">Last updated:</span>
+  <span class="updated-date">04/November/2022</span>
+</header>
+
+<nav class="shortcut-nav" aria-label="Content table shortcuts" role="navigation">
+  <div class="content-table">
+    <a class="link" aria-current="page" href="#Equipment">Equipment</a>
+    <a class="link" href="#Stats">Stats</a>
+    <a class="link" href="#Consumables">Consumables</a>
+    <a class="link" href="#New-Player">New Player</a>
+  </div>
+</nav>
   
-  <div class="collapse" id="Content-Table" aria-label="Full content table list" role="navigation">
-    <div class="content-table-list">
-      <div><a href="#Introduction" class="">Introduction</a></div>
-      <div><a href="#Data" class="">Data</a></div>
-      <div><a href="#Equipment" class="">Equipment</a></div>
-      <div><a href="#Calculations" class="">Calculations</a></div>
-      <div><a href="#Status" class="">Status</a></div>
-      <div><a href="#Battle-Stats" class="">Battle Stats</a></div>
-      <div><a href="#Skills" class="">Skills</a></div>
-      <div><a href="#Consumables" class="">Consumables</a></div>
-      <div><a href="#Autoloot" class="">Autoloot</a></div>
-      <div><a href="#Farming-Equipment">Farming Equip</a></div>
-      <div><a href="#New-Player" class="">New Player</a></div>
+<div class="collapse" id="Content-Table" aria-label="Full content table list" role="navigation">
+  <div class="content-table-list">
+    <div><a href="#Introduction" class="">Introduction</a></div>
+    <div><a href="#Data" class="">Data</a></div>
+    <div><a href="#Equipment" class="">Equipment</a></div>
+    <div><a href="#Calculations" class="">Calculations</a></div>
+    <div><a href="#Status" class="">Status</a></div>
+    <div><a href="#Battle-Stats" class="">Battle Stats</a></div>
+    <div><a href="#Skills" class="">Skills</a></div>
+    <div><a href="#Consumables" class="">Consumables</a></div>
+    <div><a href="#Autoloot" class="">Autoloot</a></div>
+    <div><a href="#Farming-Equipment">Farming Equip</a></div>
+    <div><a href="#New-Player" class="">New Player</a></div>
+  </div>
+</div>
+  
+<main id="Main" class="main-container" role="main">
+
+  <div id="Introduction" class="mb-4">
+    <h2 class="fs-5">Introduction</h2>
+    <div id="Author" class="p-3">
+      <h3 class="fs-5 mt-2">Author</h3>
+      <p>Hello! My nickname is <a href="https://discord.com/users/124421052569878528/" target="_blank" class="important">Myndi <i class="fa-solid fa-link fa-xs"></i></a>.</p>
+      <p>I have been playing Ragnarok for around 2 years, and <a href="https://www.novaragnarok.com/wiki/Rune_Knight" target="_blank" class="important">Wind Cutter <i class="fa-solid fa-link fa-xs"></i></a> almost ever since.</p>
+      <p>My main goal is to have fun and help as many people as I can, so I made this guide for you! 💕</p>
+      <p class="mb-3">Hopefully this build is as helpful for you as it was for me. So without further ado, let's begin.</p>
+
+      <h3 class="fs-5">About this build</h3>
+      <p class="mb-1">My personal vision of this build is for Dungeon farming mainly, such as Einbech 3, Juperos, Thanatos, Odin 4, etc.</p>
+      <div class="py-2 m-0">
+        <div class="px-3 py-2 list-container shadow-container">
+          <p class="header">Pros</p>
+          <ul class="pros-list">
+            <li>Somewhat versatile</li>
+            <li>Cheap mid & lategame</li>
+            <li>100% DEF PEN</li>
+          </ul>
+        </div>
+        <div class="px-3 py-2 list-container shadow-container">
+          <p class="header">Cons</p>
+          <ul class="cons-list">
+            <li>Agi-up mobs</li>
+            <li>Short range</li>
+            <li>Minmax expensive</li>
+            <li>Not the highest damage</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-  
-  <main id="Main" class="main-container" role="main">
-  
-    <div id="Introduction" class="mb-4">
-      <h2 class="fs-5">Introduction</h2>
-      <div id="Author" class="p-3">
-        <h3 class="fs-5 mt-2">Author</h3>
-        <p>Hello! My nickname is <a href="https://discord.com/users/124421052569878528/" target="_blank" class="important">Myndi <i class="fa-solid fa-link fa-xs"></i></a>.</p>
-        <p>I have been playing Ragnarok for around 2 years, and <a href="https://www.novaragnarok.com/wiki/Rune_Knight" target="_blank" class="important">Wind Cutter <i class="fa-solid fa-link fa-xs"></i></a> almost ever since.</p>
-        <p>My main goal is to have fun and help as many people as I can, so I made this guide for you! 💕</p>
-        <p class="mb-3">Hopefully this build is as helpful for you as it was for me. So without further ado, let's begin.</p>
-  
-        <h3 class="fs-5">About this build</h3>
-        <p class="mb-1">My personal vision of this build is for Dungeon farming mainly, such as Einbech 3, Juperos, Thanatos, Odin 4, etc.</p>
-        <div class="py-2 m-0">
-          <div class="px-3 py-2 list-container shadow-container">
-            <p class="header">Pros</p>
-            <ul class="pros-list">
-              <li>Somewhat versatile</li>
-              <li>Cheap mid & lategame</li>
-              <li>100% DEF PEN</li>
-            </ul>
-          </div>
-          <div class="px-3 py-2 list-container shadow-container">
-            <p class="header">Cons</p>
-            <ul class="cons-list">
-              <li>Agi-up mobs</li>
-              <li>Short range</li>
-              <li>Minmax expensive</li>
-              <li>Not the highest damage</li>
-            </ul>
-          </div>
+
+  <section id="Data-Observations" class="mb-4">
+    <div id="Data" class="mb-3 mb-lg-0">
+      <h2 class="fs-5">Data</h2>
+      <div class="d-flex p-3">
+        <div class="d-flex gap-1 flex-column">
+          <p class="m-0 text-default"><b class="header">ACD required</b> <i class="fa-solid fa-angles-right fa-sm"></i> <span class="fw-bold">34%</span> </p>
+          <p class="m-0 text-default"><b class="header">ASPD required</b> <i class="fa-solid fa-angles-right fa-sm"></i> <span class="fw-bold">185</span></p>
+          <p class="m-0 text-default"><b class="header">Max. WC/s</b> <i class="fa-solid fa-angles-right fa-sm"></i> <span class="fw-bold">3</span></p>
+          <p class="m-0 text-swap">Has <span class="number">0.5</span>s Cast Delay, <span class="number">0.3</span>s CD.</p>
+          <p class="m-0 text-swap">It requires <span class="number">34%</span> ACD & <span class="number">185</span> ASPD.</p>
+          <p class="m-0 text-swap">The hit span can't go above <span class="number">3</span>.</p>
         </div>
+        <button class="toggle data ms-auto" type="button" aria-label="Toggle information in and out" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
       </div>
     </div>
-  
-    <section id="Data-Observations" class="mb-4">
-      <div id="Data" class="mb-3 mb-lg-0">
-        <h3 class="fs-5">Data</h3>
-        <div class="d-flex p-3">
-          <div class="d-flex gap-1 flex-column">
-            <p class="m-0 text-default"><b class="header">ACD required</b> <i class="fa-solid fa-angles-right fa-sm"></i> <span class="fw-bold">34%</span> </p>
-            <p class="m-0 text-default"><b class="header">ASPD required</b> <i class="fa-solid fa-angles-right fa-sm"></i> <span class="fw-bold">185</span></p>
-            <p class="m-0 text-default"><b class="header">Max. WC/s</b> <i class="fa-solid fa-angles-right fa-sm"></i> <span class="fw-bold">3</span></p>
-            <p class="m-0 text-swap">Has <span class="number">0.5</span>s Cast Delay, <span class="number">0.3</span>s CD.</p>
-            <p class="m-0 text-swap">It requires <span class="number">34%</span> ACD & <span class="number">185</span> ASPD.</p>
-            <p class="m-0 text-swap">The hit span can't go above <span class="number">3</span>.</p>
-          </div>
-          <button class="toggle data ms-auto" type="button" aria-label="Toggle information in and out" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
-        </div>
-      </div>
-  
-      <div id="Observations" class="m-0 p-0">
-        <h3 class="fs-5">Observations</h3>
-        <div class="p-3">
-          <p><b class="header">Equipment</b> shows the best gear by default. In some cases there's alternatives to select from.</p>
-          <p><b class="header">Status</b> calculations include bonuses from job levels, gear, runes and foods (<span class="low-focus">Imperfect Almighty</span>).</p>
-          <p class="m-0"><b class="header">Battle Stats</b> doesn't include RNG enchants, Pets (<span class="low-focus">Eggs</span>), Base Weapon Attack (<span class="number">280</span>), Refine Attack (<span class="number">+15; 105</span>) or Shadow Gear Refine Attack (<span class="number">+9; 9</span>).</p>
-        </div>
-      </div>
-    </section>
-  
-    <section id="Equipment" class="mb-4">
-      <!-- Tabs Buttons -->
-      <div class="d-flex flex-wrap" id="Equip-tab" role="tablist">
-        <h2 class="fs-5 me-auto">Equipment</h2>
-        <div class="tab-buttons">
-          <button class="active" id="gear-tab" data-bs-toggle="tab" data-bs-target="#gear-display" type="button" role="tab" aria-controls="gear-display" aria-selected="true">Gear</button>
-          <button id="shadow-tab" data-bs-toggle="tab" data-bs-target="#shadow-display" type="button" role="tab" aria-controls="shadow-display" aria-selected="false">Shadow</button>
-          <button id="cards-tab" data-bs-toggle="tab" data-bs-target="#cards-display" type="button" role="tab" aria-controls="cards-display" aria-selected="false">Cards</button>
-          <button id="enchants-tab" data-bs-toggle="tab" data-bs-target="#enchants-display" type="button" role="tab" aria-controls="enchants-display" aria-selected="false">Enchants</button>
-          <button id="pets-tab" data-bs-toggle="tab" data-bs-target="#pets-display" type="button" role="tab" aria-controls="pets-display" aria-selected="false">Pets</button>
-        </div>
-      </div>
-  
-      <!-- Tabs content -->
-      <div class="tab-content">
-  
-        <!-- Gear -->
-        <div id="gear-display" class="tab-pane fade show active" role="tabpanel" aria-labelledby="gear-tab" tabindex="0">
-  
-          <div class="gear-container m-0 p-0 py-4">
-            <div class="gear-col pt-1">
-              <div class="d-flex flex-column gear-slot gap-1 align-items-end justify-content-center">
-                <div class="d-flex justify-content-end gap-1"><span class="low-focus">+8</span><span>Black Ribbon</span><img src="https://www.novaragnarok.com/data/items/icons2/5899.png" alt="Black Ribbon"></div>
-                <div class="d-flex justify-content-end gap-1"><span>Blood Sucker</span><img src="https://www.novaragnarok.com/data/items/icons2/18754.png" alt="Blood Sucker"></div>
-                <div class="d-flex justify-content-end gap-1"><span class="low-focus">+15</span><span>Hypocrisy Edge</span><img src="https://www.novaragnarok.com/data/items/icons2/600008.png" alt="Hypocrisy Edge"></div>
-                <div class="d-flex justify-content-end gap-1"><span class="low-focus">+12</span><span>Temporal Str Manteau</span><img src="https://www.novaragnarok.com/data/items/icons2/20963.png" alt="Temporal Str Manteau"></div>
-                <div class="d-flex justify-content-end gap-1"><span>Brilliant Light Ruby Ring</span><img src="https://www.novaragnarok.com/data/items/icons2/490056.png" alt="Brilliant Light Ruby Ring"></div>
-              </div>
-            </div>
-            <div class="m-0 p-0">
-              <img src="https://i.gyazo.com/80c613b61018867fc96b478deb997543.png" class="img-equip" alt="Ragnarok Online character">
-            </div>
-            <div class="gear-col-2 pt-1">
-              <div class="d-flex flex-column gear-slot gap-1 align-items-start justify-content-center">
-                <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/400001.png" alt="Victory Wing Ears"><span>Victory Wing Ears</span></div>
-                <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/450127.png" alt="Automatic Armor A-type"><span>Automatic Armor A-type</span><span class="low-focus">+11</span></div>
-                <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/600008.png" alt="Hypocrisy Edge"><span>Hypocrisy Edge</span><span class="low-focus">+15</span></div>
-                <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/470066.png" alt="Illusion Sprint Shoes"><span>Illusion Sprint Shoes</span><span class="low-focus">+11</span></div>
-                <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/490057.png" alt="Brilliant Light Ruby Necklace"><span>Brilliant Light Ruby Necklace</span></div>
-              </div>
-            </div>
-          </div>
-  
-        </div>
-  
-        <!-- Shadow -->
-        <div id="shadow-display" class="tab-pane fade" role="tabpanel" aria-labelledby="shadow-tab" tabindex="0">
-  
-          <div class="gear-container m-0 p-0 py-4 ">
-            <div class="gear-col pt-1">
-              <div class="d-flex flex-column gear-slot gap-1 align-items-end justify-content-center">
-                <div class="d-flex justify-content-end gap-1"><span>Melee Amber [U]</span><img src="https://www.novaragnarok.com/data/items/icons2/1000377.png"></div>
-                <div class="d-flex justify-content-end gap-1"><span>Melee Amber [L]</span><img src="https://www.novaragnarok.com/data/items/icons2/1000377.png"></div>
-                <div class="d-flex justify-content-end gap-1"><span class="low-focus">+9</span><span>Perfect Size Shadow Gauntlet</span><img src="https://www.novaragnarok.com/data/items/icons2/24425.png"></div>
-                <div class="d-flex justify-content-end gap-1"><span>HP Absorb Onyx [G]</span><img src="https://www.novaragnarok.com/data/items/icons2/25209.png"></div>
-                <div class="d-flex justify-content-end gap-1"><span class="low-focus">+10</span><span>Almighty Shadow Focus</span><img src="https://www.novaragnarok.com/data/items/icons2/24339.png"></div>
-              </div>
-            </div>
-            <div class="m-0 p-0">
-              <img src="https://i.gyazo.com/80c613b61018867fc96b478deb997543.png" class="img-equip" alt="Ragnarok Online character">
-            </div>
-            <div class="gear-col-2 pt-1">
-              <div class="d-flex flex-column gear-slot gap-1 align-items-start justify-content-center">
-                <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/1000377.png"><span>Melee Amber [M]</span></div>
-                <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/24245.png"><span>Reload Shadow Armor</span><span class="low-focus">+9</span></div>
-                <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/24244.png"><span>Reload Shadow Shield</span><span class="low-focus">+9</span></div>
-                <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/24243.png"><span>Reload Shadow Boots</span><span class="low-focus">+9</span></div>
-                <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/24340.png"><span>Almighty Shadow Brooch</span><span class="low-focus">+10</span></div>
-              </div>
-            </div>
-          </div>
-  
-        </div>
-  
-        <!-- Cards -->
-        <div id="cards-display" class="tab-pane fade" role="tabpanel" aria-labelledby="cards-tab" tabindex="0">
-  
-          <div class="gear-container m-0 p-0 py-4 ">
-            <div class="gear-col pt-1">
-              <div class="d-flex flex-column gear-slot gap-1 align-items-end justify-content-center">
-                <div class="d-flex justify-content-end gap-1"><span>Purple Ferus</span><img src="https://www.novaragnarok.com/data/items/icons2/4009.png"></div>
-                <div class="d-flex justify-content-end gap-1"><span><i class="pe-2">Empty</i></span></div>
-                <div class="d-flex justify-content-end gap-1"><span>Contaminated Wanderer</span><img src="https://www.novaragnarok.com/data/items/icons2/4009.png"></div>
-                <div class="d-flex justify-content-end gap-1"><span>Happiness Giver</span><img src="https://www.novaragnarok.com/data/items/icons2/4009.png"></div>
-                <div class="d-flex justify-content-end gap-1"><span>Revolver Buffalo Bandit</span><img src="https://www.novaragnarok.com/data/items/icons2/4009.png"></div>
-              </div>
-            </div>
-            <div class="m-0 p-0">
-              <img src="https://i.gyazo.com/80c613b61018867fc96b478deb997543.png" class="img-equip" alt="Ragnarok Online character">
-            </div>
-            <div class="gear-col-2 pt-1">
-              <div class="d-flex flex-column gear-slot gap-1 align-items-start justify-content-center">
-                <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/4009.png">
-                  <select class="form-select">
-                    <option selected>Purple Ferus</option>
-                    <option>Furious Hero</option>
-                  </select>
-                </div>
-                <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/4009.png"><span>Mistress of Shelter</span></div>
-                <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/4009.png">
-                  <select class="form-select">
-                    <option selected>Rekenber Guard</option>
-                    <option>Contaminated Wanderer</option>
-                    <option>Greater Special Alnoldi</option>
-                  </select>
-                </div>
-                <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/4009.png">
-                  <select class="form-select">
-                    <option selected>Outrageous Cookie</option>
-                    <option>Ifodes</option>
-                  </select>
-                </div>
-                <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/4009.png">
-                  <select class="form-select">
-                    <option selected>Gigantes</option>
-                    <option>Shotgun Buffalo Bandit</option>
-                    <option>Chaotic Acolyte</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-        </div>
-  
-        <!-- Enchants -->
-        <div id="enchants-display" class="tab-pane fade position-relative" role="tabpanel" aria-labelledby="enchants-tab" tabindex="0">
-  
-          <div class="gear-container m-0 p-0 py-4">
-            <div class="gear-col pt-1">
-              <div class="d-flex flex-column gear-slot gap-1 align-items-end justify-content-center">
-                <div class="d-flex justify-content-end gap-1">
-                  <span>
-                    <i class="pe-2">Empty</i>
-                  </span>
-                </div>
-                <div class="d-flex justify-content-end gap-1">
-                  <span>
-                    <i class="pe-2">Empty</i>
-                  </span>
-                </div>
-                <div class="d-flex justify-content-end gap-1">
-                  <select class="form-select right">
-                    <option selected>Atk 3~5%, Melee 14~20%</option>
-                    <option>Atk 3~5%, Undead 14~20%</option>
-                    <option>Undead 14~20%, Undead 14~20%</option>
-                    <option>Neutral 14~20%, Melee 10~20%</option>
-                    <option>Neutral 14~20%, Formless 14~20%</option>
-                    <option>Ghost 14~20%, Demon 14~20%</option>
-                    <option>Ghost 14~20%, Formless 14~20%</option>
-                  </select>
-                </div>
-                <div class="d-flex justify-content-end gap-1">
-                  <select class="form-select right">
-                    <option selected>Atk 5%</option>
-                    <option>Atk 6%</option>
-                  </select>
-                </div>
-                <div class="d-flex justify-content-end gap-1">
-                  <select class="form-select right">
-                    <option selected>Anger Lv 5, Divine Evil Lv 5</option>
-                    <option>Anger Lv 5, Divine Evil Lv 4</option>
-                    <option>Anger Lv 5, Divine Evil Lv 3</option>
-                    <option>Anger Lv 4, Divine Evil Lv 3</option>
-                    <option>Anger Lv 3, Divine Evil Lv 3</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="m-0 p-0">
-              <img src="https://i.gyazo.com/80c613b61018867fc96b478deb997543.png" class="img-equip" alt="Ragnarok Online character">
-            </div>
-            <div class="gear-col-2 pt-1">
-              <div class="d-flex flex-column gear-slot gap-1 align-items-start justify-content-center">
-                <div class="d-flex justify-content-start gap-1">
-                  <select class="form-select">
-                    <option selected>10 Atk, 3% Atk</option>
-                    <option>3% After Cast Delay, 3% Atk</option>
-                    <option>[x2] 3% After Cast Delay</option>
-                  </select>
-                </div>
-                <div class="d-flex justify-content-start gap-1"><span>[x2] Power, Attacker Force</span></div>
-                <div class="d-flex justify-content-start gap-1">
-                  <select class="form-select">
-                    <option selected>Normal 6~10%</option>
-                    <option>Boss 6~10%</option>
-                  </select>
-                </div>
-                <div class="d-flex justify-content-start gap-1"><span>[x2] Powerful Nive Lv 2</span></div>
-                <div class="d-flex justify-content-start gap-1">
-                  <select class="form-select">
-                    <option selected>Anger Lv 5, Divine Evil Lv 5</option>
-                    <option>Anger Lv 5, Divine Evil Lv 4</option>
-                    <option>Anger Lv 5, Divine Evil Lv 3</option>
-                    <option>Anger Lv 4, Divine Evil Lv 3</option>
-                    <option>Anger Lv 3, Divine Evil Lv 3</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-        </div>
-  
-        <!-- Pets-->
-        <div id="pets-display" class="tab-pane fade position-relative" role="tabpanel" aria-labelledby="pets-tab" tabindex="0">
-  
-          <div class="gear-container m-0 p-0 py-4">
-            <div class="pet-row p-3">
-              <div class="pet-col">
-                <img src="https://www.novaragnarok.com/w/images/6/6a/OrcHeroPetWindow.jpg" alt="Orc Hero" width="96" height="125">
-                <a href="https://www.novaragnarok.com/?module=vending&action=view&id=9121" target="_blank" class="important">Orc Hero</a>
-                <p><img src="https://novaragnarok.com/data/items/icons2/9121.png" alt="Orc Hero"> Damage</p>
-              </div>
-              <div class="pet-col">
-                <img src="https://www.novaragnarok.com/w/images/9/95/PhreeoniPetWindow.jpg" alt="Phreeoni" width="96" height="125">
-                <a href="https://www.novaragnarok.com/?module=vending&action=view&id=9111" target="_blank" class="important">Phreooni</a>
-                <p><img src="https://novaragnarok.com/data/items/icons2/9111.png" alt="Phreooni Egg"> Utility</p>
-              </div>
-              <div class="pet-col">
-                <img src="https://www.novaragnarok.com/w/images/3/3a/IncubusPetWindow.jpg" alt="Incubus" width="96" height="125">
-                <a href="https://www.novaragnarok.com/?module=vending&action=view&id=9052" target="_blank" class="important">Incubus</a>
-                <p><img src="https://novaragnarok.com/data/items/icons2/9052.png" alt="Imcubus"> Farming</p>
-              </div>
-            </div>
-          </div>
-  
-        </div>
-  
-        <!-- Damage calculations -->
-        <div class="d-flex w-100 justify-content-center my-3">
-          <!-- Parent giving 100% width -->
-          <div id="Calculations" class="p-3">
-            <div class="d-flex">
-              <h2 class="fs-5 me-auto">
-                Damage calculations
-              </h2>
-              <div class="align-self-end pe-1 pb-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Upcoming: Swapping gear alters the damage values below">
-                <i class="fa-regular fa-lightbulb"></i>
-              </div>
-            </div>
-            <div class="calc-container border-rounded shadow-container row p-0 m-0 p-3">
-              <div class="header w-100 d-flex align-items-baseline m-0 p-0">
-                <p class="me-auto p-0 fw-bold">Average damage against</p>
-                <div class="fw-bold" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Disclaimer: This is flat damage, not damage per second."><i class="fa-solid fa-triangle-exclamation fa-sm text-white"></i></div>
-              </div>
-              <!-- Dummy -->
-              <div class="col-12 col-md-6 m-0 p-0 p-2">
-                <p class="header">Dummy</p>
-                <div class="d-flex flex-wrap gap-1">
-                  <p class="me-auto">Small</p>
-                  <p class="number">1,833,548</p>
-                </div>
-                <div class="d-flex flex-wrap gap-1">
-                  <p class="me-auto">Medium</p>
-                  <p class="number">2,114,918</p>
-                </div>
-                <div class="d-flex flex-wrap gap-1">
-                  <p class="me-auto">Large</p>
-                  <p class="number">2,437,674</p>
-                </div>
-                <hr>
-              </div>
-  
-              <!-- Einbech 3 -->
-              <div class="col-12 col-md-6 m-0 p-0 p-2">
-                <p class="header">Einbech 3 <img src="https://www.novaragnarok.com/data/items/icons2/29989.png" width="22" height="22" class="d-inline" alt="Fire Elemental Converter"></p>
-                <div class="d-flex flex-wrap gap-1">
-                  <p class="me-auto">Porcellio <span class="low-focus">(Earth 4)</span></p>
-                  <p class="number">3,447,567</p>
-                </div>
-                <div class="d-flex flex-wrap gap-1">
-                  <p class="me-auto">Abyssman <span class="low-focus">(Neutral 4)</span></p>
-                  <p class="number">2,437,674</p>
-                </div>
-                <div class="d-flex flex-wrap gap-1">
-                  <p class="me-auto">Mineral <span class="low-focus">(Neutral 4)</span></p>
-                  <p class="number">2,437,674</p>
-                </div>
-                <hr>
-              </div>
-  
-              <!-- Thanathos F12 -->
-              <div class="col-12 col-md-6 m-0 p-0 p-2">
-                <p class="header">Thanatos F12 <img src="https://www.novaragnarok.com/data/items/icons2/32107.png" width="22" height="22" alt="Holy Elemental Converter"></p>
-                <div class="d-flex flex-wrap gap-1">
-                  <p class="me-auto">Anger <span class="low-focus">(Fire 4)</span></p>
-                  <p class="number">2,685,556</p>
-                </div>
-                <div class="d-flex flex-wrap gap-1">
-                  <p class="me-auto">Horror <span class="low-focus">(Poison 4)</span></p>
-                  <p class="number">3,210,271</p>
-                </div>
-                <div class="d-flex flex-wrap gap-1">
-                  <p class="me-auto">Resentment <span class="low-focus">(Ghost 4)</span></p>
-                  <p class="number">2,842,091</p>
-                </div>
-                <div class="d-flex flex-wrap gap-1">
-                  <p class="me-auto">Regret <span class="low-focus">(Ghost 4)</span></p>
-                  <p class="number">3,320,425</p>
-                </div>
-                <hr class="d-block d-md-none">
-              </div>
-  
-              <!-- Juperos -->
-              <div class="col-12 col-md-6 m-0 p-0 p-2">
-                <p class="header">Juperos</p>
-                <div class="d-flex flex-wrap gap-1">
-                  <p class="me-auto">Apocalypse <span class="low-focus">(Holy 2)</span></p>
-                  <p class="number">2,437,674</p>
-                </div>
-                <div class="d-flex flex-wrap gap-1">
-                  <p class="me-auto">Archdam <span class="low-focus">(Ghost 2)</span></p>
-                  <p class="number">1,234,284</p>
-                </div>
-                <div class="d-flex flex-wrap gap-1">
-                  <p class="me-auto">Robot <span class="low-focus">(Dark 2)</span></p>
-                  <p class="number">2,437,674</p>
-                </div>
-                <div class="d-flex flex-wrap gap-1">
-                  <p class="me-auto">Excavator <span class="low-focus">(Poison 2)</span></p>
-                  <p class="number">1,833,548</p>
-                </div>
-              </div>
-  
-            </div>
-            <p class="ms-auto text-end" style="font-size: .75rem;"><span class="tip">How to calculate?</span> Refer to the <a href="https://zzyx.de/ro/s/p2dkgsgvqerl" target="_blank" class="important">Muh Calculator</a></p>
-          </div>
-        </div>
-  
-      </div> <!-- Tabs content -->
-    </section>
-  
-    <section id="Stats" class="mb-4">
-      <h2 class="fs-5">Stats</h2>
-      <div id="Stats-Container">
-        <!-- Status -->
-        <div id="Status" class="p-3">
-          <div>
-            <h3 class="fs-5 header">Status</h3>
-            <p>
-              They provide extra damage, debuff protection, carry capacity and more.
-            </p>
-            <p>
-              <span class="header">Str</span> & <span class="header">Dex</span> should be at 120 mininum, while the rest at 100, considering any buff.
-            </p>
-          </div>
-          <div class="p-3 shadow-container mt-auto">
-  
-            <div class="split-status">
-              <p><i class="fa-solid fa-list"></i> Base</p>
-              <div class="stats-window-grid">
-                <div>
-                  <p><b class="header">Str</b> <span>120</span></p>
-                  <p><b class="header">Agi</b> <span>100</span></p>
-                  <p><b class="header">Vit</b> <span>80</span></p>
-                </div>
-                <div>
-                  <p><b class="header">Int</b> <span>90</span></p>
-                  <p><b class="header">Dex</b> <span>120</span></p>
-                  <p><b class="header">Luk</b> <span>75</span></p>
-                </div>
-              </div>
-            </div>
-            <div class="split-status">
-              <p><i class="fa-solid fa-list"></i> All Buffs</p>
-              <div class="stats-window-grid">
-                <div>
-                  <p><b class="header">Str</b> <span>203</span></p>
-                  <p><b class="header">Agi</b> <span>139</span></p>
-                  <p><b class="header">Vit</b> <span>108</span></p>
-                </div>
-                <div>
-                  <p><b class="header">Int</b> <span>134</span></p>
-                  <p><b class="header">Dex</b> <span>157</span></p>
-                  <p><b class="header">Luk</b> <span>103</span></p>
-                </div>
-              </div>
-            </div>
-  
-          </div>
-        </div>
-        <!-- Battle Stats -->
-        <div id="Battle-Stats" class="p-3">
-          <div>
-            <h3 class="fs-5 header">Battle Stats</h3>
-            <p class="w-100">
-              The better the balance between them, higher the efficiency. There's no such thing as one greater than the other. As their % work as a product of the values.
-            </p>
-          </div>
-          <div class="battle-stats-window mt-auto shadow-container">
-            <div class="p-3">
-              <div class="battle-stats-grid">
-                <div>
-                  <p><i class="fa-solid fa-list"></i> Attack</p>
-                  <div>
-                    <p><span class="me-auto">Atk</span> <span>593</span></p>
-                    <p><span class="me-auto">Normal</span> <span>74%</span></p>
-                    <p><span class="me-auto">Boss</span> <span>74%</span></p>
-                  </div>
-                </div>
-                <div>
-                  <p><i class="fa-solid fa-list"></i> Size</p>
-                  <div>
-                    <p><span class="me-auto">Small</span> <span>42%</span></p>
-                    <p><span class="me-auto">Medium</span> <span>72%</span></p>
-                    <p><span class="me-auto">Large</span> <span>72%</span></p>
-                  </div>
-                </div>
-                <div>
-                  <p><i class="fa-solid fa-list"></i> Race</p>
-                  <div>
-                    <p><span class="me-auto">All</span> <span>14%</span></p>
-                    <p><span class="me-auto">Demon</span> <span>34%</span></p>
-                    <p><span class="me-auto">Angel</span> <span>34%</span></p>
-                  </div>
-                </div>
-                <div>
-                  <p><i class="fa-solid fa-list"></i> Others</p>
-                  <div>
-                    <p><span class="me-auto">Melee</span> <span>125%</span></p>
-                    <p><span class="me-auto">WC</span> <span>85%</span></p>
-                    <p><span class="me-auto">ACD</span> <span>34%</span></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  
-    <section id="Skills" class="mb-4">
-      <h2 class="fs-5">Skills</h2>
-  
-      <!-- Collapse all section -->
+
+    <div id="Observations" class="m-0 p-0">
+      <h2 class="fs-5">Observations</h2>
       <div class="p-3">
-        <h3 class="fs-5 header">Distribution priority</h3>
-        <p>This are the required skills points to perform the build accordingly. Any extra points can be allocated freely at your will.</p>
-  
-        <div class="skill-priority shadow-container">
-          <div>
-            <!-- 1st Job -->
-            <div class="skill-priority-cont">
-              <div>
-                <p class="header">1st job</p>
-              </div>
-              <div>
-                <div><a href="https://www.divine-pride.net/database/skill/2/sword-mastery" target="_blank" class="skill">1 <img src="https://static.divine-pride.net/images/skill/2.png" alt="Sword Mastery"></a> <span class="name-toggle">Sword Mastery</span></div>
-                <div><a href="https://www.divine-pride.net/database/skill/3/two-handed-sword-mastery" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/3.png" alt="Two-Handed Sword Mastery"></a> <span class="name-toggle">Two-Handed Sword Mastery</span></div>
-                <div><a href="https://www.divine-pride.net/database/skill/4/increase-hp-recovery" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/4.png" alt="Increase HP Recovery"></a> <span class="name-toggle">Increase HP Recovery</span></div>
-                <div><a href="https://www.divine-pride.net/database/skill/7/magnum-break" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/7.png" alt="Magnum Break"></a> <span class="name-toggle">Magnum Break</span></div>
-              </div>
-            </div>
-            <!-- 2nd job -->
-            <div class="skill-priority-cont">
-              <div>
-                <p class="header">2nd job</p>
-              </div>
-              <div>
-                <div><a href="https://www.divine-pride.net/database/skill/63/peco-peco-ride" target="_blank" class="skill">1 <img src="https://static.divine-pride.net/images/skill/63.png" alt="Riding"></a> <span class="name-toggle">Riding</span></div>
-                <div><a href="https://www.divine-pride.net/database/skill/64/cavalier-mastery" target="_blank" class="skill">1 <img src="https://static.divine-pride.net/images/skill/64.png" alt="Cavalier Mastery"></a> <span class="name-toggle">Cavalier Mastery</span></div>
-                <div><a href="https://www.divine-pride.net/database/skill/60/two-hand-quicken" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/60.png" alt="Two-Hand Quicken"></a> <span class="name-toggle">Two-Hand Quicken</span></div>
-                <div><a href="https://www.divine-pride.net/database/skill/355/aura-blade" target="_blank" class="skill">5 <img src="https://static.divine-pride.net/images/skill/355.png" alt="Aura Blade"></a> <span class="name-toggle">Aura Blade</span></div>
-                <div><a href="https://www.divine-pride.net/database/skill/356/parry" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/356.png" alt="Parrying"></a> <span class="name-toggle">Parrying</span></div>
-                <div><a href="https://www.divine-pride.net/database/skill/357/spear-dynamo" target="_blank" class="skill">5 <img src="https://static.divine-pride.net/images/skill/357.png" alt="Concentration"></a> <span class="name-toggle">Concentration</span></div>
-                <div><a href="https://www.divine-pride.net/database/skill/397/clashing-spiral" target="_blank" class="skill">5 <img src="https://static.divine-pride.net/images/skill/397.png" alt="Spiral Pierce"></a> <span class="name-toggle">Spiral Pierce</span></div>
-              </div>
-            </div>
-            <!-- 3rd job -->
-            <div class="skill-priority-cont">
-              <div>
-                <p class="header">3rd job</p>
-              </div>
-              <div>
-                <div><a href="https://www.divine-pride.net/database/skill/2007/dragon-training" target="_blank" class="skill">5 <img src="https://static.divine-pride.net/images/skill/2007.png" alt="Dragon Training"></a> <span class="name-toggle">Dragon Training</span></div>
-                <div><a href="https://www.divine-pride.net/database/skill/2010/rune-mastery" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/2010.png" alt="Rune Mastery"></a> <span class="name-toggle">Rune Mastery</span></div>
-                <div><a href="https://www.divine-pride.net/database/skill/2001/enchant-blade" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/2001.png" alt="Enchant Blade"></a> <span class="name-toggle">Enchant Blade</span></div>
-                <div><a href="https://www.divine-pride.net/database/skill/2005/wind-cutter" target="_blank" class="skill">5 <img src="https://static.divine-pride.net/images/skill/2005.png" alt="Wind Cutter"></a> <span class="name-toggle">Wind Cutter</span></div>
-                <div><a href="https://www.divine-pride.net/database/skill/2002/sonic-wave" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/2002.png" alt="Sonic Wave"></a> <span class="name-toggle">Sonic Wave</span></div>
-              </div>
-            </div>
-          </div>
-          <button class="toggle skills ms-auto" type="button" aria-label="Toggle names on and off" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Toggle details"><i class="fa-solid fa-eye"></i></button>
-        </div>
-    </section>
-  
-    <!-- Consumables -->
-    <section id="Consumables" class="mb-4">
-      <!-- Tab Buttons -->
-      <div class="d-flex flex-wrap" id="Consumables-tab" role="tablist">
-        <h2 class="fs-5 me-auto">Consumables</h2>
-        <div class="tab-buttons">
-          <button class="active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general-display" type="button" role="tab" aria-controls="general-display" aria-selected="true">General</button>
-          <button id="endeavor-tab" data-bs-toggle="tab" data-bs-target="#endeavor-display" type="button" role="tab" aria-controls="endeavor-display" aria-selected="false">Endeavor</button>
-          <button id="others-tab" data-bs-toggle="tab" data-bs-target="#others-display" type="button" role="tab" aria-controls="others-display" aria-selected="false">Others</button>
-          <button id="runes-tab" data-bs-toggle="tab" data-bs-target="#runes-display" type="button" role="tab" aria-controls="runes-display" aria-selected="false">Runes</button>
-        </div>
+        <p><b class="header">Equipment</b> shows the best gear by default. In some cases there's alternatives to select from.</p>
+        <p><b class="header">Status</b> calculations include bonuses from job levels, gear, runes and foods (<span class="low-focus">Imperfect Almighty</span>).</p>
+        <p class="m-0"><b class="header">Battle Stats</b> doesn't include RNG enchants, Pets (<span class="low-focus">Eggs</span>), Base Weapon Attack (<span class="number">280</span>), Refine Attack (<span class="number">+15; 105</span>) or Shadow Gear Refine Attack (<span class="number">+9; 9</span>).</p>
       </div>
-      <!-- Tabs content -->
-      <div class="tab-content px-3">
-  
-        <!-- Header p -->
-        <div class="d-flex justify-content-center pt-4">
-        </div>
-        <!-- General display -->
-        <div id="general-display" class="tab-pane fade show active" role="tabpanel" aria-labelledby="general-tab" tabindex="0">
-          <div class="consumables-container">
-            <div>
-              <div class="consumables-description">
-                <p><span class="tag">Recommended</span><span class="tag">Survival</span><span class="tag">Utility</span></p>
-                <p>This consumables should be at the top of your refill category as they serve you greatly.</p>
-              </div>
-              <!-- 1 -->
-              <div class="consumables-wrapper">
-                <button class="toggle consumables ms-auto" type="button" aria-label="Toggle information in and out" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
-                <div class="consumable-toggle" style="display: none;">
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/34159.png" alt="Concentrated Golden Syrup Potion"> <span class="tag">Craft</span><span class="tag">Market</span> Genetic crafting.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/34158.png" alt="Concentrated Blue Syrup Potion"> <span class="tag">Craft</span><span class="tag">Market</span> Genetic crafting.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/12414.png" alt="Guarana Candy"> <span class="tag">Quest</span> <a href="https://irowiki.org/wiki/Guarana_Quest" target="_blank" class="important">Guarana Quest</a></div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/610.png" alt="Yggdrasil Leaf"> <span class="tag">NPC</span> Any Tool Dealer.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/607.png" alt="Yggdrasil Berry"> <span class="tag">Farm</span> <a href="https://www.novaragnarok.com/wiki/Bioresearch_Laboratory" target="_blank" class="important">EDDA - Gauntlet Mode</a></div>
-                </div>
-  
-                <div class="consumable-text">
-                  <div><span class="low-focus">500</span> <img src="https://www.novaragnarok.com/data/items/icons2/34159.png" alt="Concentrated Golden Syrup Potion"> Concentrated Golden Syrup Potion</div>
-                  <div><span class="low-focus">100</span> <img src="https://www.novaragnarok.com/data/items/icons2/34158.png" alt="Concentrated Blue Syrup Potion"> Concentrated Blue Syrup Potion</div>
-                  <div><span class="low-focus">100</span> <img src="https://www.novaragnarok.com/data/items/icons2/12414.png" alt="Guarana Candy"> Guarana Candy</div>
-                  <div><span class="low-focus">10 </span> <img src="https://www.novaragnarok.com/data/items/icons2/610.png" alt="Yggdrasil Leaf"> Yggdrasil Leaf</div>
-                  <div><span class="low-focus">10 </span> <img src="https://www.novaragnarok.com/data/items/icons2/607.png" alt="Yggdrasil Berry"> Yggdrasil Berry</div>
-                </div>
-              </div>
-  
-            </div>
-          </div>
-        </div>
-        <!-- Endeavor display -->
-        <div id="endeavor-display" class="tab-pane fade" role="tabpanel" aria-labelledby="endeavor-tab" tabindex="0">
-          <div class="consumables-container">
-            <div>
-              <div class="consumables-description">
-                <p><span class="tag">Recommended</span><span class="tag">Offense</span><span class="tag">Defense</span><span class="tag">Utility</span></p>
-                <p>This are your general instance/farming consumables. Only use them when you're in dire need of them.</p>
-              </div>
-              <!-- 2 -->
-              <div class="consumables-wrapper">
-                <button class="toggle consumables ms-auto" type="button" aria-label="Toggle information in and out" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
-                <div class="consumable-toggle" style="display: none;">
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/34785.png" alt="Great Shining Gin Potion"> <span class="tag">NPC</span> Main Office - 2nd floor.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/34580.png" alt="Great Maniacal Potion"> <span class="tag">NPC</span> Main Office - 2nd floor.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/34585.png" alt="Great Sacred Draught"> <span class="tag">NPC</span> Main Office - 2nd floor.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/34911.png" alt="Imperfect Almighty"> <span class="tag">NPC</span> Main Office - 2nd floor.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/34584.png" alt="Great Elixir of Energy"> <span class="tag">NPC</span> Main Office - 2nd floor.</div>
-                </div>
-                <div class="consumable-text">
-                  <div><span class="low-focus">20</span> <img src="https://www.novaragnarok.com/data/items/icons2/34785.png" alt="Great Shining Gin Potion"> Great Shining Gin Potion</div>
-                  <div><span class="low-focus">20</span> <img src="https://www.novaragnarok.com/data/items/icons2/34580.png" alt="Great Maniacal Potion"> Great Maniacal Potion</div>
-                  <div><span class="low-focus">20</span> <img src="https://www.novaragnarok.com/data/items/icons2/34585.png" alt="Great Sacred Draught"> Great Sacred Draught</div>
-                  <div><span class="low-focus">20</span> <img src="https://www.novaragnarok.com/data/items/icons2/34911.png" alt="Imperfect Almighty"> Imperfect Almighty</div>
-                  <div><span class="low-focus">10</span> <img src="https://www.novaragnarok.com/data/items/icons2/34584.png" alt="Great Elixir of Energy"> Great Elixir of Energy</div>
-                </div>
-              </div>
-  
-            </div>
-          </div>
-        </div>
-        <!-- Others display -->
-        <div id="others-display" class="tab-pane fade" role="tabpanel" aria-labelledby="others-tab" tabindex="0">
-          <div class="consumables-container">
-            <div>
-              <div class="consumables-description">
-                <p><span class="tag">Optional</span><span class="tag">Survival</span><span class="tag">Offense</span><span class="tag">Utility</span></p>
-                <p>Not core consumables, but very helpful to have around. Often used to exploit your damage potential or farming efficiency.</p>
-              </div>
-              <!-- 3 -->
-              <div class="consumables-wrapper">
-                <button class="toggle consumables ms-auto" type="button" aria-label="Toggle information in and out" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
-                <div class="consumable-toggle" style="display: none;">
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/657.png" alt="Berserk Potion"> <span class="tag">NPC</span> Any Tool Dealer.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/12437.png" alt="Enrich Celermine Juice"> <span class="tag">Craft</span><span class="tag">Market</span> Genetic crafting.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/34155.png" alt="Red Herb Activator"> <span class="tag">Craft</span><span class="tag">Market</span> Genetic crafting.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/34154.png" alt="Golden X"> <span class="tag">Craft</span><span class="tag">Market</span> Genetic crafting.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/12115.png" alt="Water Elemental Converter"> <span class="tag">NPC</span> Ju, Main Office - 1st floor.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/12114.png" alt="Fire Elemental Converter"> <span class="tag">NPC</span> Ju, Main Office - 1st floor.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/12116.png" alt="Earth Elemental Converter"> <span class="tag">NPC</span> Ju, Main Office - 1st floor.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/12117.png" alt="Wind Elemental Converter"> <span class="tag">NPC</span> Ju, Main Office - 1st floor.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/12280.png" alt="Holy Elemental Converter"> <span class="tag">NPC</span> Ju, Main Office - 1st floor.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/12020.png" alt="Cursed Water"> <span class="tag">Farm</span> Dungeon - Gefenia.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/34300.png" alt="Rejuvenation Potion"> <span class="tag">NPC</span> Potion Dealer, Main Office - 2nd floor.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/34301.png" alt="Great Rejuvenation Tonic"> <span class="tag">NPC</span> Potion Dealer, Main Office - 2nd floor.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/34299.png" alt="Great Tonic of Energy"> <span class="tag">NPC</span> Potion Dealer, Main Office - 2nd floor.</div>
-                </div>
-                <div class="consumable-text">
-                  <div><span class="low-focus">10</span> <img src="https://www.novaragnarok.com/data/items/icons2/657.png" alt="Berserk Potion"> Berserk Potion</div>
-                  <div><span class="low-focus">10</span> <img src="https://www.novaragnarok.com/data/items/icons2/12437.png" alt="Enrich Celermine Juice"> Enrich Celermine Juice</div>
-                  <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/34155.png" alt="Red Herb Activator"> Red Herb Activator</div>
-                  <div><span class="low-focus">5</span> <img src="https://www.novaragnarok.com/data/items/icons2/34154.png" alt="Golden X"> Golden X</div>
-                  <div><span class="low-focus">10</span> <img src="https://www.novaragnarok.com/data/items/icons2/12115.png" alt="Water Elemental Converter"> Water Elemental Converter</div>
-                  <div><span class="low-focus">50</span> <img src="https://www.novaragnarok.com/data/items/icons2/12114.png" alt="Fire Elemental Converter"> Fire Elemental Converter</div>
-                  <div><span class="low-focus">10</span> <img src="https://www.novaragnarok.com/data/items/icons2/12116.png" alt="Earth Elemental Converter"> Earth Elemental Converter</div>
-                  <div><span class="low-focus">10</span> <img src="https://www.novaragnarok.com/data/items/icons2/12117.png" alt="Wind Elemental Converter"> Wind Elemental Converter</div>
-                  <div><span class="low-focus">10</span> <img src="https://www.novaragnarok.com/data/items/icons2/12280.png" alt="Holy Elemental Converter"> Holy Elemental Converter</div>
-                  <div><span class="low-focus">15</span> <img src="https://www.novaragnarok.com/data/items/icons2/12020.png" alt="Cursed Water"> Cursed Water</div>
-                  <div><span class="low-focus">5</span> <img src="https://www.novaragnarok.com/data/items/icons2/34300.png" alt="Rejuvenation Potion"> Rejuvenation Potion</div>
-                  <div><span class="low-focus">5</span> <img src="https://www.novaragnarok.com/data/items/icons2/34301.png" alt="Great Rejuvenation Tonic"> Great Rejuvenation Tonic</div>
-                  <div><span class="low-focus">5</span> <img src="https://www.novaragnarok.com/data/items/icons2/34299.png" alt="Great Tonic of Energy"> Great Tonic of Energy</div>
-                </div>
-              </div>
-  
-            </div>
-          </div>
-        </div>
-        <!-- Runes display -->
-        <div id="runes-display" class="tab-pane fade" role="tabpanel" aria-labelledby="runes-tab" tabindex="0">
-          <div class="consumables-container">
-            <div>
-              <div class="consumables-description">
-                <p><span class="tag">Recommended</span><span class="tag">Survival</span><span class="tag">Offense</span><span class="tag">Defense</span><span class="tag">Utility</span></p>
-                <p>Essentially what makes you a Rune Knight. This is my personal <i>must to have list</i>, but feel free to ignore the <span class="low-focus">Utility</span> ones.</p>
-              </div>
-              <!-- 4 -->
-              <div class="consumables-wrapper">
-                <button class="toggle consumables ms-auto" type="button" aria-label="Toggle information in and out" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
-                <div class="consumable-toggle" style="display: none;">
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/22540.png" alt="Lux Anima Rune"> <span class="tag">Craft</span> Rune Knight crafting.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/12731.png" alt="Turisus Runestone"> <span class="tag">Craft</span> Rune Knight crafting.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/12729.png" alt="Asir Runestone"> <span class="tag">Craft</span> Rune Knight crafting.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/12733.png" alt="Hagalas Runestone"> <span class="tag">Craft</span> Rune Knight crafting.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/12727.png" alt="Verkana Runestone"> <span class="tag">Craft</span> Rune Knight crafting.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/12728.png" alt="Isia Runestone"> <span class="tag">Craft</span> Rune Knight crafting.</div>
-                  <div><img src="https://www.novaragnarok.com/data/items/icons2/12730.png" alt="Urj Runestone"> <span class="tag">Craft</span> Rune Knight crafting.</div>
-                </div>
-                <div class="consumable-text">
-                  <div>
-                    <p>Offensive</p>
-                  </div>
-                  <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/22540.png" alt="Lux Anima Rune"> Lux Anima Rune</div>
-                  <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/12731.png" alt="Turisus Runestone"> Turisus Runestone</div>
-                  <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/12729.png" alt="Asir Runestone"> Asir Runestone</div>
-                  <div>
-                    <p>Defensive</p>
-                  </div>
-                  <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/12733.png" alt="Hagalas Runestone"> Hagalas Runestone</div>
-                  <div>
-                    <p>Survival</p>
-                  </div>
-                  <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/12727.png" alt="Verkana Runestone"> Verkana Runestone</div>
-                  <div>
-                    <p>Utility</p>
-                  </div>
-                  <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/12728.png" alt="Isia Runestone"> Isia Runestone</div>
-                  <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/12730.png" alt="Urj Runestone"> Urj Runestone</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Footer p -->
-        <div class="d-flex justify-content-center">
-          <div class="fake-div mt-1 pb-4">
-            <p class="ms-auto text-end" style="font-size: .75rem;"><span class="tip">How to craft?</span> Refer to the <a href="https://www.novaragnarok.com/wiki/Creation_Database" target="_blank" class="important link-contrast">Creation Database</a>.</p>
-          </div>
-        </div>
+    </div>
+  </section>
+
+  <section id="Equipment" class="mb-4">
+    <!-- Tabs Buttons -->
+    <div class="d-flex flex-wrap" id="Equip-tab" role="tablist">
+      <h2 class="fs-5 me-auto">Equipment</h2>
+      <div class="tab-buttons">
+        <button class="active" id="gear-tab" data-bs-toggle="tab" data-bs-target="#gear-display" type="button" role="tab" aria-controls="gear-display" aria-selected="true">Gear</button>
+        <button id="shadow-tab" data-bs-toggle="tab" data-bs-target="#shadow-display" type="button" role="tab" aria-controls="shadow-display" aria-selected="false">Shadow</button>
+        <button id="cards-tab" data-bs-toggle="tab" data-bs-target="#cards-display" type="button" role="tab" aria-controls="cards-display" aria-selected="false">Cards</button>
+        <button id="enchants-tab" data-bs-toggle="tab" data-bs-target="#enchants-display" type="button" role="tab" aria-controls="enchants-display" aria-selected="false">Enchants</button>
+        <button id="pets-tab" data-bs-toggle="tab" data-bs-target="#pets-display" type="button" role="tab" aria-controls="pets-display" aria-selected="false">Pets</button>
       </div>
-    </section>
-  
-    <section id="Farming" class="mb-4">
-      <h2 class="fs-5">Farming</h2>
-      <div class="p-3">
-        <div id="Autoloot">
-          <h3 class="header fs-5">Autoloot</h3>
-          <p class="mb-1">The following list is from my personal use. If you don't see an specific list (<span class="low-focus">like in example Odin 4</span>), chances are I simply use the general autoloot.</p>
-          <!-- General -->
-          <div class="d-flex align-items-center flex-wrap mb-2 autoloot-selector">
-            <p class="header m-0">General
-              <span id="General-Autoloot" class="code contrast">@autoloot 0.9</span>
-              <button class="toggle copy" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
-            </p>
-            <button type="button" aria-label="Toggle autoloot code on and off" class="toggle autoloot ms-auto" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Toggle details"><i class="fa-solid fa-eye"></i></button>
+    </div>
+
+    <!-- Tabs content -->
+    <div class="tab-content">
+
+      <!-- Gear -->
+      <div id="gear-display" class="tab-pane fade show active" role="tabpanel" aria-labelledby="gear-tab" tabindex="0">
+
+        <div class="gear-container m-0 p-0 py-4">
+          <div class="gear-col pt-1">
+            <div class="d-flex flex-column gear-slot gap-1 align-items-end justify-content-center">
+              <div class="d-flex justify-content-end gap-1"><span class="low-focus">+8</span><span>Black Ribbon</span><img src="https://www.novaragnarok.com/data/items/icons2/5899.png" alt="Black Ribbon"></div>
+              <div class="d-flex justify-content-end gap-1"><span>Blood Sucker</span><img src="https://www.novaragnarok.com/data/items/icons2/18754.png" alt="Blood Sucker"></div>
+              <div class="d-flex justify-content-end gap-1"><span class="low-focus">+15</span><span>Hypocrisy Edge</span><img src="https://www.novaragnarok.com/data/items/icons2/600008.png" alt="Hypocrisy Edge"></div>
+              <div class="d-flex justify-content-end gap-1"><span class="low-focus">+12</span><span>Temporal Str Manteau</span><img src="https://www.novaragnarok.com/data/items/icons2/20963.png" alt="Temporal Str Manteau"></div>
+              <div class="d-flex justify-content-end gap-1"><span>Brilliant Light Ruby Ring</span><img src="https://www.novaragnarok.com/data/items/icons2/490056.png" alt="Brilliant Light Ruby Ring"></div>
+            </div>
           </div>
-          <div class="autoloot-list position-relative">
+          <div class="m-0 p-0">
+            <img src="https://i.gyazo.com/80c613b61018867fc96b478deb997543.png" class="img-equip" alt="Ragnarok Online character">
+          </div>
+          <div class="gear-col-2 pt-1">
+            <div class="d-flex flex-column gear-slot gap-1 align-items-start justify-content-center">
+              <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/400001.png" alt="Victory Wing Ears"><span>Victory Wing Ears</span></div>
+              <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/450127.png" alt="Automatic Armor A-type"><span>Automatic Armor A-type</span><span class="low-focus">+11</span></div>
+              <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/600008.png" alt="Hypocrisy Edge"><span>Hypocrisy Edge</span><span class="low-focus">+15</span></div>
+              <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/470066.png" alt="Illusion Sprint Shoes"><span>Illusion Sprint Shoes</span><span class="low-focus">+11</span></div>
+              <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/490057.png" alt="Brilliant Light Ruby Necklace"><span>Brilliant Light Ruby Necklace</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Shadow -->
+      <div id="shadow-display" class="tab-pane fade" role="tabpanel" aria-labelledby="shadow-tab" tabindex="0">
+
+        <div class="gear-container m-0 p-0 py-4 ">
+          <div class="gear-col pt-1">
+            <div class="d-flex flex-column gear-slot gap-1 align-items-end justify-content-center">
+              <div class="d-flex justify-content-end gap-1"><span>Melee Amber [U]</span><img src="https://www.novaragnarok.com/data/items/icons2/1000377.png"></div>
+              <div class="d-flex justify-content-end gap-1"><span>Melee Amber [L]</span><img src="https://www.novaragnarok.com/data/items/icons2/1000377.png"></div>
+              <div class="d-flex justify-content-end gap-1"><span class="low-focus">+9</span><span>Perfect Size Shadow Gauntlet</span><img src="https://www.novaragnarok.com/data/items/icons2/24425.png"></div>
+              <div class="d-flex justify-content-end gap-1"><span>HP Absorb Onyx [G]</span><img src="https://www.novaragnarok.com/data/items/icons2/25209.png"></div>
+              <div class="d-flex justify-content-end gap-1"><span class="low-focus">+10</span><span>Almighty Shadow Focus</span><img src="https://www.novaragnarok.com/data/items/icons2/24339.png"></div>
+            </div>
+          </div>
+          <div class="m-0 p-0">
+            <img src="https://i.gyazo.com/80c613b61018867fc96b478deb997543.png" class="img-equip" alt="Ragnarok Online character">
+          </div>
+          <div class="gear-col-2 pt-1">
+            <div class="d-flex flex-column gear-slot gap-1 align-items-start justify-content-center">
+              <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/1000377.png"><span>Melee Amber [M]</span></div>
+              <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/24245.png"><span>Reload Shadow Armor</span><span class="low-focus">+9</span></div>
+              <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/24244.png"><span>Reload Shadow Shield</span><span class="low-focus">+9</span></div>
+              <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/24243.png"><span>Reload Shadow Boots</span><span class="low-focus">+9</span></div>
+              <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/24340.png"><span>Almighty Shadow Brooch</span><span class="low-focus">+10</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Cards -->
+      <div id="cards-display" class="tab-pane fade" role="tabpanel" aria-labelledby="cards-tab" tabindex="0">
+
+        <div class="gear-container m-0 p-0 py-4 ">
+          <div class="gear-col pt-1">
+            <div class="d-flex flex-column gear-slot gap-1 align-items-end justify-content-center">
+              <div class="d-flex justify-content-end gap-1"><span>Purple Ferus</span><img src="https://www.novaragnarok.com/data/items/icons2/4009.png"></div>
+              <div class="d-flex justify-content-end gap-1"><span><i class="pe-2">Empty</i></span></div>
+              <div class="d-flex justify-content-end gap-1"><span>Contaminated Wanderer</span><img src="https://www.novaragnarok.com/data/items/icons2/4009.png"></div>
+              <div class="d-flex justify-content-end gap-1"><span>Happiness Giver</span><img src="https://www.novaragnarok.com/data/items/icons2/4009.png"></div>
+              <div class="d-flex justify-content-end gap-1"><span>Revolver Buffalo Bandit</span><img src="https://www.novaragnarok.com/data/items/icons2/4009.png"></div>
+            </div>
+          </div>
+          <div class="m-0 p-0">
+            <img src="https://i.gyazo.com/80c613b61018867fc96b478deb997543.png" class="img-equip" alt="Ragnarok Online character">
+          </div>
+          <div class="gear-col-2 pt-1">
+            <div class="d-flex flex-column gear-slot gap-1 align-items-start justify-content-center">
+              <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/4009.png">
+                <select class="form-select">
+                  <option selected>Purple Ferus</option>
+                  <option>Furious Hero</option>
+                </select>
+              </div>
+              <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/4009.png"><span>Mistress of Shelter</span></div>
+              <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/4009.png">
+                <select class="form-select">
+                  <option selected>Rekenber Guard</option>
+                  <option>Contaminated Wanderer</option>
+                  <option>Greater Special Alnoldi</option>
+                </select>
+              </div>
+              <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/4009.png">
+                <select class="form-select">
+                  <option selected>Outrageous Cookie</option>
+                  <option>Ifodes</option>
+                </select>
+              </div>
+              <div class="d-flex justify-content-start gap-1"><img src="https://www.novaragnarok.com/data/items/icons2/4009.png">
+                <select class="form-select">
+                  <option selected>Gigantes</option>
+                  <option>Shotgun Buffalo Bandit</option>
+                  <option>Chaotic Acolyte</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Enchants -->
+      <div id="enchants-display" class="tab-pane fade position-relative" role="tabpanel" aria-labelledby="enchants-tab" tabindex="0">
+
+        <div class="gear-container m-0 p-0 py-4">
+          <div class="gear-col pt-1">
+            <div class="d-flex flex-column gear-slot gap-1 align-items-end justify-content-center">
+              <div class="d-flex justify-content-end gap-1">
+                <span>
+                  <i class="pe-2">Empty</i>
+                </span>
+              </div>
+              <div class="d-flex justify-content-end gap-1">
+                <span>
+                  <i class="pe-2">Empty</i>
+                </span>
+              </div>
+              <div class="d-flex justify-content-end gap-1">
+                <select class="form-select right">
+                  <option selected>Atk 3~5%, Melee 14~20%</option>
+                  <option>Atk 3~5%, Undead 14~20%</option>
+                  <option>Undead 14~20%, Undead 14~20%</option>
+                  <option>Neutral 14~20%, Melee 10~20%</option>
+                  <option>Neutral 14~20%, Formless 14~20%</option>
+                  <option>Ghost 14~20%, Demon 14~20%</option>
+                  <option>Ghost 14~20%, Formless 14~20%</option>
+                </select>
+              </div>
+              <div class="d-flex justify-content-end gap-1">
+                <select class="form-select right">
+                  <option selected>Atk 5%</option>
+                  <option>Atk 6%</option>
+                </select>
+              </div>
+              <div class="d-flex justify-content-end gap-1">
+                <select class="form-select right">
+                  <option selected>Anger Lv 5, Divine Evil Lv 5</option>
+                  <option>Anger Lv 5, Divine Evil Lv 4</option>
+                  <option>Anger Lv 5, Divine Evil Lv 3</option>
+                  <option>Anger Lv 4, Divine Evil Lv 3</option>
+                  <option>Anger Lv 3, Divine Evil Lv 3</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="m-0 p-0">
+            <img src="https://i.gyazo.com/80c613b61018867fc96b478deb997543.png" class="img-equip" alt="Ragnarok Online character">
+          </div>
+          <div class="gear-col-2 pt-1">
+            <div class="d-flex flex-column gear-slot gap-1 align-items-start justify-content-center">
+              <div class="d-flex justify-content-start gap-1">
+                <select class="form-select">
+                  <option selected>10 Atk, 3% Atk</option>
+                  <option>3% After Cast Delay, 3% Atk</option>
+                  <option>[x2] 3% After Cast Delay</option>
+                </select>
+              </div>
+              <div class="d-flex justify-content-start gap-1"><span>[x2] Power, Attacker Force</span></div>
+              <div class="d-flex justify-content-start gap-1">
+                <select class="form-select">
+                  <option selected>Normal 6~10%</option>
+                  <option>Boss 6~10%</option>
+                </select>
+              </div>
+              <div class="d-flex justify-content-start gap-1"><span>[x2] Powerful Nive Lv 2</span></div>
+              <div class="d-flex justify-content-start gap-1">
+                <select class="form-select">
+                  <option selected>Anger Lv 5, Divine Evil Lv 5</option>
+                  <option>Anger Lv 5, Divine Evil Lv 4</option>
+                  <option>Anger Lv 5, Divine Evil Lv 3</option>
+                  <option>Anger Lv 4, Divine Evil Lv 3</option>
+                  <option>Anger Lv 3, Divine Evil Lv 3</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pets-->
+      <div id="pets-display" class="tab-pane fade position-relative" role="tabpanel" aria-labelledby="pets-tab" tabindex="0">
+
+        <div class="gear-container m-0 p-0 py-4">
+          <div class="pet-row p-3">
+            <div class="pet-col">
+              <img src="https://www.novaragnarok.com/w/images/6/6a/OrcHeroPetWindow.jpg" alt="Orc Hero" width="96" height="125">
+              <a href="https://www.novaragnarok.com/?module=vending&action=view&id=9121" target="_blank" class="important">Orc Hero</a>
+              <p><img src="https://novaragnarok.com/data/items/icons2/9121.png" alt="Orc Hero"> Damage</p>
+            </div>
+            <div class="pet-col">
+              <img src="https://www.novaragnarok.com/w/images/9/95/PhreeoniPetWindow.jpg" alt="Phreeoni" width="96" height="125">
+              <a href="https://www.novaragnarok.com/?module=vending&action=view&id=9111" target="_blank" class="important">Phreooni</a>
+              <p><img src="https://novaragnarok.com/data/items/icons2/9111.png" alt="Phreooni Egg"> Utility</p>
+            </div>
+            <div class="pet-col">
+              <img src="https://www.novaragnarok.com/w/images/3/3a/IncubusPetWindow.jpg" alt="Incubus" width="96" height="125">
+              <a href="https://www.novaragnarok.com/?module=vending&action=view&id=9052" target="_blank" class="important">Incubus</a>
+              <p><img src="https://novaragnarok.com/data/items/icons2/9052.png" alt="Imcubus"> Farming</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Damage calculations -->
+      <div class="d-flex w-100 justify-content-center my-3">
+        <!-- Parent giving 100% width -->
+        <div id="Calculations" class="p-3">
+          <div class="d-flex">
+            <h2 class="fs-5 me-auto">
+              Damage calculations
+            </h2>
+            <div class="align-self-end pe-1 pb-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Upcoming: Swapping gear alters the damage values below">
+              <i class="fa-regular fa-lightbulb"></i>
+            </div>
+          </div>
+          <div class="calc-container border-rounded shadow-container row p-0 m-0 p-3">
+            <div class="header w-100 d-flex align-items-baseline m-0 p-0">
+              <p class="me-auto p-0 fw-bold">Average damage against</p>
+              <div class="fw-bold" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Disclaimer: This is flat damage, not damage per second."><i class="fa-solid fa-triangle-exclamation fa-sm text-white"></i></div>
+            </div>
+            <!-- Dummy -->
+            <div class="col-12 col-md-6 m-0 p-0 p-2">
+              <p class="header">Dummy</p>
+              <div class="d-flex flex-wrap gap-1">
+                <p class="me-auto">Small</p>
+                <p class="number">1,833,548</p>
+              </div>
+              <div class="d-flex flex-wrap gap-1">
+                <p class="me-auto">Medium</p>
+                <p class="number">2,114,918</p>
+              </div>
+              <div class="d-flex flex-wrap gap-1">
+                <p class="me-auto">Large</p>
+                <p class="number">2,437,674</p>
+              </div>
+              <hr>
+            </div>
+
             <!-- Einbech 3 -->
-            <div class="autoloot-selector shadow-container">
-              <div>
-                <span>Einbech 3</span>
-                <span class="tag">Farm</span>
-                <button class="toggle copy ms-auto" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
+            <div class="col-12 col-md-6 m-0 p-0 p-2">
+              <p class="header">Einbech 3 <img src="https://www.novaragnarok.com/data/items/icons2/29989.png" width="22" height="22" class="d-inline" alt="Fire Elemental Converter"></p>
+              <div class="d-flex flex-wrap gap-1">
+                <p class="me-auto">Porcellio <span class="low-focus">(Earth 4)</span></p>
+                <p class="number">3,447,567</p>
               </div>
-              <div class="autoloot-text">
-                <img src="https://www.novaragnarok.com/data/items/icons2/25809.png" alt="Redium">
-                <img src="https://www.novaragnarok.com/data/items/icons2/25810.png" alt="Rindium">
-                <img src="https://www.novaragnarok.com/data/items/icons2/25811.png" alt="Odium">
-                <img src="https://www.novaragnarok.com/data/items/icons2/25812.png" alt="Purdium">
-                <img src="https://www.novaragnarok.com/data/items/icons2/25813.png" alt="Whidium">
-                <img src="https://www.novaragnarok.com/data/items/icons2/25814.png" alt="Dynite">
-                <img src="https://www.novaragnarok.com/data/items/icons2/9517.png" alt="Unidentified Ore">
+              <div class="d-flex flex-wrap gap-1">
+                <p class="me-auto">Abyssman <span class="low-focus">(Neutral 4)</span></p>
+                <p class="number">2,437,674</p>
               </div>
-              <p class="autoloot-text"><span id="Einbech3-Autoloot" class="code contrast">@alootid +25809|+25810|+25811|+25812|+25813|+25814|+9517</span></p>
+              <div class="d-flex flex-wrap gap-1">
+                <p class="me-auto">Mineral <span class="low-focus">(Neutral 4)</span></p>
+                <p class="number">2,437,674</p>
+              </div>
+              <hr>
             </div>
+
+            <!-- Thanathos F12 -->
+            <div class="col-12 col-md-6 m-0 p-0 p-2">
+              <p class="header">Thanatos F12 <img src="https://www.novaragnarok.com/data/items/icons2/32107.png" width="22" height="22" alt="Holy Elemental Converter"></p>
+              <div class="d-flex flex-wrap gap-1">
+                <p class="me-auto">Anger <span class="low-focus">(Fire 4)</span></p>
+                <p class="number">2,685,556</p>
+              </div>
+              <div class="d-flex flex-wrap gap-1">
+                <p class="me-auto">Horror <span class="low-focus">(Poison 4)</span></p>
+                <p class="number">3,210,271</p>
+              </div>
+              <div class="d-flex flex-wrap gap-1">
+                <p class="me-auto">Resentment <span class="low-focus">(Ghost 4)</span></p>
+                <p class="number">2,842,091</p>
+              </div>
+              <div class="d-flex flex-wrap gap-1">
+                <p class="me-auto">Regret <span class="low-focus">(Ghost 4)</span></p>
+                <p class="number">3,320,425</p>
+              </div>
+              <hr class="d-block d-md-none">
+            </div>
+
             <!-- Juperos -->
-            <div class="autoloot-selector shadow-container">
-              <div>
-                <span>Juperos</span>
-                <span class="tag">Farm</span>
-                <button class="toggle copy ms-auto" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
+            <div class="col-12 col-md-6 m-0 p-0 p-2">
+              <p class="header">Juperos</p>
+              <div class="d-flex flex-wrap gap-1">
+                <p class="me-auto">Apocalypse <span class="low-focus">(Holy 2)</span></p>
+                <p class="number">2,437,674</p>
               </div>
-              <div class="autoloot-text">
-                <img src="https://www.novaragnarok.com/data/items/icons2/34716.png" alt="Old Gear">
-                <img src="https://www.novaragnarok.com/data/items/icons2/34717.png" alt="Ancient Core">
-                <img src="https://www.novaragnarok.com/data/items/icons2/34712.png" alt="Juperium Energy">
+              <div class="d-flex flex-wrap gap-1">
+                <p class="me-auto">Archdam <span class="low-focus">(Ghost 2)</span></p>
+                <p class="number">1,234,284</p>
               </div>
-              <p class="autoloot-text"><span id="Juperos-Autoloot" class="code contrast">@alootid +34716|+34717|+34712</span></p>
+              <div class="d-flex flex-wrap gap-1">
+                <p class="me-auto">Robot <span class="low-focus">(Dark 2)</span></p>
+                <p class="number">2,437,674</p>
+              </div>
+              <div class="d-flex flex-wrap gap-1">
+                <p class="me-auto">Excavator <span class="low-focus">(Poison 2)</span></p>
+                <p class="number">1,833,548</p>
+              </div>
             </div>
-            <!-- Luanda + Twins -->
-            <div class="autoloot-selector shadow-container">
-              <div>
-                <span>Illusion Luanda + Twins</span>
-                <span class="tag">Quest/Farm</span>
-                <button class="toggle copy ms-auto" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
-              </div>
-              <div class="autoloot-text">
-                <img src="https://www.novaragnarok.com/data/items/icons2/25633.png" alt="Token of Wootan">
-                <img src="https://www.novaragnarok.com/data/items/icons2/25638.png" alt="Token of Megalith">
-                <img src="https://www.novaragnarok.com/data/items/icons2/35055.png" alt="Twilight Illusion Stone">
-                <img src="https://www.novaragnarok.com/data/items/icons2/100003.png" alt="Dusk Dissonance Stone">
-                <img src="https://www.novaragnarok.com/data/items/icons2/100004.png" alt="Dawn Dissonance Stone">
-              </div>
-              <p class="autoloot-text"><span id="Luanda-Twins-Autoloot" class="code contrast">@alootid +25633|+25638|+35055|+100003|+100004</span></p>
-            </div>
-            <!-- Elunium & Oridecon -->
-            <div class="autoloot-selector shadow-container">
-              <div>
-                <span>Elunium & Oridecon</span>
-                <span class="tag">Farm</span>
-                <button class="toggle copy ms-auto" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
-              </div>
-              <div class="autoloot-text">
-                <img src="https://www.novaragnarok.com/data/items/icons2/985.png" alt="Elunium">
-                <img src="https://www.novaragnarok.com/data/items/icons2/984.png" alt="Oridecon">
-              </div>
-              <p class="autoloot-text"><span id="Elunium-Oridecon-Autoloot" class="code contrast">@alootid +985|+984</span></p>
-            </div>
-            <!-- Old Glast Heim -->
-            <div class="autoloot-selector shadow-container">
-              <div>
-                <span>Old Glast Heim</span>
-                <span class="tag">Daily</span>
-                <span class="tip-question" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Use @autoloot 100"><i class="fa-solid fa-question"></i></span>
-                <button class="toggle copy ms-auto" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
-              </div>
-  
-              <div class="autoloot-text">
-                <img src="https://www.novaragnarok.com/data/items/icons2/985.png" alt="Elunium">
-                <img src="https://www.novaragnarok.com/data/items/icons2/757.png" alt="Rough Elunium">
-                <img src="https://www.novaragnarok.com/data/items/icons2/756.png" alt="Rough Oridecon">
-                <img src="https://www.novaragnarok.com/data/items/icons2/747.png" alt="Crystal Mirror">
-                <img src="https://www.novaragnarok.com/data/items/icons2/997.png" alt="Great Nature">
-                <img src="https://www.novaragnarok.com/data/items/icons2/938.png" alt="Sticky Mucus">
-                <img src="https://www.novaragnarok.com/data/items/icons2/727.png" alt="Opal">
-              </div>
-              <p class="autoloot-text"><span id="Old-Glast-Autoloot" class="code contrast">@alootid -985|-757|-756|-747|-997|+938|+727</span></p>
-            </div>
-            <!-- Horror Toy Factory -->
-            <div class="autoloot-selector shadow-container">
-              <div>
-                <span>Horror Toy Factory </span>
-                <span class="tag">Daily</span>
-                <button class="toggle copy ms-auto" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
-              </div>
-              <div class="autoloot-text">
-                <img src="https://www.novaragnarok.com/data/items/icons2/969.png" alt="Gold">
-                <img src="https://www.novaragnarok.com/data/items/icons2/7230.png" alt="Platinum Bullion">
-                <img src="https://www.novaragnarok.com/data/items/icons2/7642.png" alt="Bloody Coin">
-              </div>
-              <p class="autoloot-text"><span id="Horror-Toy-Autoloot" class="code contrast">@alootid +969|+7230|+7642</span></p>
-            </div>
-            <!-- All Illusion -->
-            <div class="shadow-container w-100">
-              <div>
-                <span>All Illusion Dungeons</span>
-                <span class="tag">Quest/Farm</span>
-                <button class="toggle copy ms-auto" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
-              </div>
-              <div class="autoloot-text">
-                <img src="https://www.novaragnarok.com/data/items/icons2/25266.png" alt="Dried Yggdrasil Leaf">
-                <img src="https://www.novaragnarok.com/data/items/icons2/25267.png" alt="Suspicious Pentacle">
-                <img src="https://www.novaragnarok.com/data/items/icons2/25265.png" alt="Shining Spore">
-                <img src="https://www.novaragnarok.com/data/items/icons2/25264.png" alt="Cluster of Nightmares">
-                <img src="https://www.novaragnarok.com/data/items/icons2/7564.png" alt="Rotten Meat">
-                <img src="https://www.novaragnarok.com/data/items/icons2/25633.png" alt="Token of Wootan">
-                <img src="https://www.novaragnarok.com/data/items/icons2/25638.png" alt="Token of Megalith">
-                <img src="https://www.novaragnarok.com/data/items/icons2/25899.png" alt="Abyssal Essence">
-                <img src="https://www.novaragnarok.com/data/items/icons2/35055.png" alt="Twilight Illusion Stone">
-                <img src="https://www.novaragnarok.com/data/items/icons2/100003.png" alt="Dusk Dissonance Stone">
-                <img src="https://www.novaragnarok.com/data/items/icons2/100004.png" alt="Dawn Dissonance Stone">
-              </div>
-              <p class="autoloot-text"><span id="All-Illusion-Autoloot" class="code contrast">@alootid +25266|+25267|+25265|+25264|+7564|+25633|+25638|+25899|+35055|+100003|+100004</span></p>
-            </div>
+
           </div>
-        </div>
-        <h3 class="header fs-5">Gear</h3>
-        <p>Farming is all about optimizing your efficiency, speed and damage. While some items here are required for a better experience, they're not a must.</p>
-        <div id="Farming-Equipment" class="farming-container-grid">
-          <div class="farming-container shadow-container">
-            <p class="header">General</p>
-            <ul>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/25209.png" alt="HP Absorb Onyx [G]"> HP Absorb Onyx [G]</li>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/25209.png" alt="SP Absorb Onyx [G]"> SP Absorb Onyx [G]</li>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/4115.png" alt="Card icon"> Hunter Fly</li>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/490024.png" alt="Automatic Booster R"> Automatic Booster R</li>
-            </ul>
-          </div>
-          <div class="farming-container shadow-container">
-            <p class="header">Thanatos</p>
-            <ul>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/490056.png" alt="Brilliant Light Ruby Ring"> Brilliant Light Ruby Ring</li>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/490057.png" alt="Brilliant Light Ruby Necklace"> Brilliant Light Ruby Necklace</li>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/29991.png" alt="Earth Elemental Converter"> Earth Elemental Converter <span class="tag">Thanatos F11</span></li>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/32107.png" alt="Holy Elemental Converter"> Holy Elemental Converter <span class="tag">Thanatos F12</span></li>
-            </ul>
-          </div>
-          <div class="farming-container shadow-container">
-            <p class="header">Abyss Lake 4</p>
-            <ul>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/490044.png" alt="Sinful Ruby Ring"> Sinful Ruby Ring</li>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/490045.png" alt="Sinful Ruby Necklace"> Sinful Ruby Necklace</li>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/4115.png" alt="Card icon"> Bone Ferus + Bone Acidus <span class="tag">Combo</span></li>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/32107.png" alt="Holy Elemental Converter"> Holy Elemental Converter</li>
-            </ul>
-          </div>
-          <div class="farming-container shadow-container">
-            <p class="header">Others</p>
-            <ul>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/4115.png" alt="Card icon"> Playing Ferre <span class="tag">Einbech 3</span></li>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/490056.png" alt="Brilliant Light Ruby Ring"> Brilliant Light Ruby Ring <span class="tag">Odin 4</span></li>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/490057.png" alt="Brilliant Light Ruby Necklace"> Brilliant Light Ruby Necklace <span class="tag">Odin 4</span></li>
-              <li><img src="https://www.novaragnarok.com/data/items/icons2/12020.png" alt="Cursed Water"> Cursed Water <span class="tag">Odin 4</span></li>
-            </ul>
-          </div>
+          <p class="ms-auto text-end" style="font-size: .75rem;"><span class="tip">How to calculate?</span> Refer to the <a href="https://zzyx.de/ro/s/p2dkgsgvqerl" target="_blank" class="important">Muh Calculator</a></p>
         </div>
       </div>
-    </section>
-  
-    <div id="New-Player">
-      <h2 class="fs-5">New Player</h2>
-      <div class="p-3">
-        <h3 class="fs-5 header">Introduction</h3>
-        <p>First and foremost, this section is made for more in depth explanations on what you have seen above, to answer common questions, teach the player and much more. So, <b>if you like reading, this is your place.</b></p>
 
-        <div class="select">
-          <div>
-            <h4 class="fs-6 header m-0">Select your starting point</h4>
-            <div>
-              <span class="tag">Novice</span><a href="#Novice-Section">I don't know anything</a>
-            </div>
-            <p class="starting-point-text">Sites, guides, this and that</p>
-            <div>
-              <span class="tag">Started</span><a href="#Started-Section">I know a bit about the game</a>
-            </div>
-            <div>
-              <span class="tag">Apprentice</span><a href="#Apprentice-Section">I have played other classes, not this</a>
-            </div>
-            <div>
-              <span class="tag">Intermediate</span><a href="#Intermediate-Section">I know the class, show me the early progression</a>
-            </div>
-            <div>
-              <span class="tag">Advanced</span><a href="#Advanced-Section">I know the class, show me midgame & late progression</a>
+    </div> <!-- Tabs content -->
+  </section>
+
+  <section id="Stats" class="mb-4">
+    <h2 class="fs-5">Stats</h2>
+    <div id="Stats-Container">
+      <!-- Status -->
+      <div id="Status" class="p-3">
+        <div>
+          <h3 class="fs-5 header">Status</h3>
+          <p>
+            They provide extra damage, debuff protection, carry capacity and more.
+          </p>
+          <p>
+
+          </p>
+        </div>
+        <div class="p-3 shadow-container mt-auto">
+
+          <div class="split-status">
+            <p><i class="fa-solid fa-list"></i> Base</p>
+            <div class="stats-window-grid">
+              <div>
+                <p><b class="header">Str</b> <span>120</span></p>
+                <p><b class="header">Agi</b> <span>100</span></p>
+                <p><b class="header">Vit</b> <span>80</span></p>
+              </div>
+              <div>
+                <p><b class="header">Int</b> <span>90</span></p>
+                <p><b class="header">Dex</b> <span>120</span></p>
+                <p><b class="header">Luk</b> <span>75</span></p>
+              </div>
             </div>
           </div>
-          <button type="button" aria-label="Toggle autoloot code on and off" class="toggle starting-point ms-auto" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Toggle details"><i class="fa-solid fa-eye"></i></button>
-        </div>
-
-        <p><i class="fa-solid fa-table"></i> Content table</p>
-        <ol>
-          <li>Potato</li>
-        </ol>
-
-        <div id="Novice-Section">
-          <h3 class="fs-5 header">Novice section</h3>
-          <p>Oh look, a new recruit. I'm going to be your instructor today. My name is <b>Myndi</b>, and will do my best to squeeze the best out of you 😤 Nice to meet you!</p>
-          <p>To begin with, you need to be wary of the most useful links we have in here.</p>
-          <ul>
-            <li><a href="https://www.novaragnarok.com/?module=main">NovaRO Main Site <i class="fa-solid fa-link fa-xs"></i></a> - Useful to check news, your character, the market & spending your well earned real life money.</li>
-            <li><a href="https://www.novaragnarok.com/wiki/Main_Page">NovaRO Wikipedia <i class="fa-solid fa-link fa-xs"></i></a> - The all-in-one site for the majority of your questions, thanks to all the contributors.</li>
-            <li><a href="https://www.novaragnarok.com/forum/">NovaRO Forum <i class="fa-solid fa-link fa-xs"></i></a> - Perfect to report a bug, write a suggestion or complain, besides that, ignore it.</li>
-            <li><a href="https://discord.com/invite/eqHzVK9">NovaRO Discord <i class="fa-solid fa-link fa-xs"></i></a> - If you're here, you probably already know about it.</li>
-            <li><a href="https://irowiki.org/wiki/Quests">IronRO Wiki Quest List <i class="fa-solid fa-link fa-xs"></i></a> - This is only useful if you're all about nostalgia and want to do old forgotten quests.</li>
-            <li><a href="https://www.divine-pride.net/">Divine Pride <i class="fa-solid fa-link fa-xs"></i></a> - Amazing database. You can check almost anything and most importnatly, future content.</li>
-            <li><a href="https://_miel.gitlab.io/ncs/#/">Utility Site <i class="fa-solid fa-link fa-xs"></i></a> - A bit outdated, but still present useful tools for you to use.</li>
-            <li><a href="https://zzyx.de/ro/atk">Muh Calculator <i class="fa-solid fa-link fa-xs"></i></a> - Significant calculator both for ATK and MATK. Let's you plan ahead.</li>
-            <li><a href="https://ratemyserver.net/">RateMyServer <i class="fa-solid fa-link fa-xs"></i></a> - Honestly, with all the above, useless, but might as well throw it out there.</li>
-          </ul>
-        </div>
-
-        <b>To add:</b> Acronyms list.
-        <br>
-        Structure:
-        <ul>
-          <li>Introduction:</li>
-          <ul>
-            <li>Welcome message</li>
-            <li>Basic/useful commands</li>
-            <li>Wiki/useful pages (costume stones, instances)</li>
-            <li>How to look for information</li>
-            <li>How to make the right question</li>
-            <li>Buying vs enchanting/refining</li>
-          </ul>
-          <li>Leveling</li>
-          <li>Basic-early game:</li>
-          <ul>
-            <li>Item Progression</li>
-            <li>Farming</li>
-            <li>Instances</li>
-          </ul>
-          <li>Mid game:</li>
-          <ul>
-            <li>Item Progression</li>
-            <li>Farming</li>
-            <li>Instances</li>
-          </ul>
-          <li>Late game decisions (jump to the beginning)</li>
-        </ul>
-        <p class="tip m-0">Extra points?</p>
-        <p class="m-0"><i class="fa-solid fa-plus fa-xs"></i> <span class="header">Agi</span> for extra damage due to <img src="https://www.novaragnarok.com/data/items/icons2/5899.png" alt="Black Ribbon"> <a href="https://www.novaragnarok.com/?module=vending&action=view&id=5899" target="_blank" class="important">Black Ribbon</a>.</p>
-        <p class="m-0"><i class="fa-solid fa-plus fa-xs"></i> <span class="header">Vit</span> to survive longer & potion effectiveness.</p>
-        <p class="m-0"><i class="fa-solid fa-plus fa-xs"></i> <span class="header">Int</span> if you lack or run out of SP.</p>
-        <p><i class="fa-solid fa-plus fa-xs"></i> <span class="header">Luk</span> to increase your hit rate and damage a little bit.</p>
-
-                <!-- THIS REQUIRES MASSIVE REWORK -->
-                <div class="skills-usage">
-                  <div>
-                    <h3 class="fs-5 header">Buffs</h3>
-                    <div>
-                      <div>
-                        <p class="w-100 m-0">This is use order.</p>
-                        <div class="d-flex align-items-center gap-1 flex-wrap"><img src="https://static.divine-pride.net/images/skill/7.png" alt="Magnum Break"><i class="fa-solid fa-caret-right"></i><img src="https://static.divine-pride.net/images/skill/357.png" alt="Concentration"><i class="fa-solid fa-caret-right"></i><img src="https://static.divine-pride.net/images/skill/355.png" alt="Aura Blade"><i class="fa-solid fa-caret-right"></i><img src="https://static.divine-pride.net/images/skill/356.png" alt="Parrying"><i class="fa-solid fa-caret-right"></i><img src="https://static.divine-pride.net/images/skill/60.png" alt="Two-Hand Quicken"><i class="fa-solid fa-caret-right"></i><img src="https://static.divine-pride.net/images/skill/2001.png" alt="Enchant Blade"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 class="fs-5 header">Refresh time</h3>
-                    <div>
-                      <p class="fw-bold"><span class="number">10</span> seconds</p>
-                      <img src="https://static.divine-pride.net/images/skill/7.png" alt="Magnum Break" class="ms-3 mb-2">
-                      <p class="fw-bold"><span class="number">1</span> minute</p>
-                      <div class="d-flex align-items-center gap-1 ms-3 mb-2"><img src="https://static.divine-pride.net/images/skill/357.png" alt="Concentration"><img src="https://static.divine-pride.net/images/skill/355.png" alt="Aura Blade"><img src="https://static.divine-pride.net/images/skill/356.png" alt="Parrying"></div>
-                      <p class="fw-bold"><span class="number">5</span> minutes</p>
-                      <div class="d-flex align-items-center gap-1 ms-3 mb-2"><img src="https://static.divine-pride.net/images/skill/60.png" alt="Two-Hand Quicken"><img src="https://static.divine-pride.net/images/skill/2001.png" alt="Enchant Blade"></div>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 class="fs-5 header">Offensive skills</h3>
-                    <div>idk what to do with this 3 sections, maybe i will remove it, but for now, just a WIP</div>
-                  </div>
-                </div>
-                <!-- THIS REQUIRES MASSIVE REWORK -->
+          <div class="split-status">
+            <p><i class="fa-solid fa-list"></i> All Buffs</p>
+            <div class="stats-window-grid">
+              <div>
+                <p><b class="header">Str</b> <span>203</span></p>
+                <p><b class="header">Agi</b> <span>139</span></p>
+                <p><b class="header">Vit</b> <span>108</span></p>
               </div>
+              <div>
+                <p><b class="header">Int</b> <span>134</span></p>
+                <p><b class="header">Dex</b> <span>157</span></p>
+                <p><b class="header">Luk</b> <span>103</span></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- Battle Stats -->
+      <div id="Battle-Stats" class="p-3">
+        <div>
+          <h3 class="fs-5 header">Battle Stats</h3>
+          <p class="w-100">
+            The better the balance between them, higher the efficiency. There's no such thing as one greater than the other. As their % work as a product of the values.
+          </p>
+        </div>
+        <div class="battle-stats-window mt-auto shadow-container">
+          <div class="p-3">
+            <div class="battle-stats-grid">
+              <div>
+                <p><i class="fa-solid fa-list"></i> Attack</p>
+                <div>
+                  <p><span class="me-auto">Atk</span> <span>593</span></p>
+                  <p><span class="me-auto">Normal</span> <span>74%</span></p>
+                  <p><span class="me-auto">Boss</span> <span>74%</span></p>
+                </div>
+              </div>
+              <div>
+                <p><i class="fa-solid fa-list"></i> Size</p>
+                <div>
+                  <p><span class="me-auto">Small</span> <span>42%</span></p>
+                  <p><span class="me-auto">Medium</span> <span>72%</span></p>
+                  <p><span class="me-auto">Large</span> <span>72%</span></p>
+                </div>
+              </div>
+              <div>
+                <p><i class="fa-solid fa-list"></i> Race</p>
+                <div>
+                  <p><span class="me-auto">All</span> <span>14%</span></p>
+                  <p><span class="me-auto">Demon</span> <span>34%</span></p>
+                  <p><span class="me-auto">Angel</span> <span>34%</span></p>
+                </div>
+              </div>
+              <div>
+                <p><i class="fa-solid fa-list"></i> Others</p>
+                <div>
+                  <p><span class="me-auto">Melee</span> <span>125%</span></p>
+                  <p><span class="me-auto">WC</span> <span>85%</span></p>
+                  <p><span class="me-auto">ACD</span> <span>34%</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </main>
+  </section>
+
+  <section id="Skills" class="mb-4">
+    <h2 class="fs-5">Skills</h2>
+
+    <!-- Collapse all section -->
+    <div class="p-3">
+      <h3 class="fs-5 header">Distribution priority</h3>
+      <p>This are the required skills points to perform the build accordingly. Any extra points can be allocated freely at your will.</p>
+
+      <div class="skill-priority shadow-container">
+        <div>
+          <!-- 1st Job -->
+          <div class="skill-priority-cont">
+            <div>
+              <p class="header">1st job</p>
+            </div>
+            <div>
+              <div><a href="https://www.divine-pride.net/database/skill/2/sword-mastery" target="_blank" class="skill">1 <img src="https://static.divine-pride.net/images/skill/2.png" alt="Sword Mastery"></a> <span class="name-toggle">Sword Mastery</span></div>
+              <div><a href="https://www.divine-pride.net/database/skill/3/two-handed-sword-mastery" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/3.png" alt="Two-Handed Sword Mastery"></a> <span class="name-toggle">Two-Handed Sword Mastery</span></div>
+              <div><a href="https://www.divine-pride.net/database/skill/4/increase-hp-recovery" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/4.png" alt="Increase HP Recovery"></a> <span class="name-toggle">Increase HP Recovery</span></div>
+              <div><a href="https://www.divine-pride.net/database/skill/7/magnum-break" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/7.png" alt="Magnum Break"></a> <span class="name-toggle">Magnum Break</span></div>
+            </div>
+          </div>
+          <!-- 2nd job -->
+          <div class="skill-priority-cont">
+            <div>
+              <p class="header">2nd job</p>
+            </div>
+            <div>
+              <div><a href="https://www.divine-pride.net/database/skill/63/peco-peco-ride" target="_blank" class="skill">1 <img src="https://static.divine-pride.net/images/skill/63.png" alt="Riding"></a> <span class="name-toggle">Riding</span></div>
+              <div><a href="https://www.divine-pride.net/database/skill/64/cavalier-mastery" target="_blank" class="skill">1 <img src="https://static.divine-pride.net/images/skill/64.png" alt="Cavalier Mastery"></a> <span class="name-toggle">Cavalier Mastery</span></div>
+              <div><a href="https://www.divine-pride.net/database/skill/60/two-hand-quicken" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/60.png" alt="Two-Hand Quicken"></a> <span class="name-toggle">Two-Hand Quicken</span></div>
+              <div><a href="https://www.divine-pride.net/database/skill/355/aura-blade" target="_blank" class="skill">5 <img src="https://static.divine-pride.net/images/skill/355.png" alt="Aura Blade"></a> <span class="name-toggle">Aura Blade</span></div>
+              <div><a href="https://www.divine-pride.net/database/skill/356/parry" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/356.png" alt="Parrying"></a> <span class="name-toggle">Parrying</span></div>
+              <div><a href="https://www.divine-pride.net/database/skill/357/spear-dynamo" target="_blank" class="skill">5 <img src="https://static.divine-pride.net/images/skill/357.png" alt="Concentration"></a> <span class="name-toggle">Concentration</span></div>
+              <div><a href="https://www.divine-pride.net/database/skill/397/clashing-spiral" target="_blank" class="skill">5 <img src="https://static.divine-pride.net/images/skill/397.png" alt="Spiral Pierce"></a> <span class="name-toggle">Spiral Pierce</span></div>
+            </div>
+          </div>
+          <!-- 3rd job -->
+          <div class="skill-priority-cont">
+            <div>
+              <p class="header">3rd job</p>
+            </div>
+            <div>
+              <div><a href="https://www.divine-pride.net/database/skill/2007/dragon-training" target="_blank" class="skill">5 <img src="https://static.divine-pride.net/images/skill/2007.png" alt="Dragon Training"></a> <span class="name-toggle">Dragon Training</span></div>
+              <div><a href="https://www.divine-pride.net/database/skill/2010/rune-mastery" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/2010.png" alt="Rune Mastery"></a> <span class="name-toggle">Rune Mastery</span></div>
+              <div><a href="https://www.divine-pride.net/database/skill/2001/enchant-blade" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/2001.png" alt="Enchant Blade"></a> <span class="name-toggle">Enchant Blade</span></div>
+              <div><a href="https://www.divine-pride.net/database/skill/2005/wind-cutter" target="_blank" class="skill">5 <img src="https://static.divine-pride.net/images/skill/2005.png" alt="Wind Cutter"></a> <span class="name-toggle">Wind Cutter</span></div>
+              <div><a href="https://www.divine-pride.net/database/skill/2002/sonic-wave" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/2002.png" alt="Sonic Wave"></a> <span class="name-toggle">Sonic Wave</span></div>
+            </div>
+          </div>
+        </div>
+        <button class="toggle skills ms-auto" type="button" aria-label="Toggle names on and off" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Toggle details"><i class="fa-solid fa-eye"></i></button>
+      </div>
+  </section>
+
+  <!-- Consumables -->
+  <section id="Consumables" class="mb-4">
+    <!-- Tab Buttons -->
+    <div class="d-flex flex-wrap" id="Consumables-tab" role="tablist">
+      <h2 class="fs-5 me-auto">Consumables</h2>
+      <div class="tab-buttons">
+        <button class="active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general-display" type="button" role="tab" aria-controls="general-display" aria-selected="true">General</button>
+        <button id="endeavor-tab" data-bs-toggle="tab" data-bs-target="#endeavor-display" type="button" role="tab" aria-controls="endeavor-display" aria-selected="false">Endeavor</button>
+        <button id="others-tab" data-bs-toggle="tab" data-bs-target="#others-display" type="button" role="tab" aria-controls="others-display" aria-selected="false">Others</button>
+        <button id="runes-tab" data-bs-toggle="tab" data-bs-target="#runes-display" type="button" role="tab" aria-controls="runes-display" aria-selected="false">Runes</button>
+      </div>
+    </div>
+    <!-- Tabs content -->
+    <div class="tab-content px-3">
+
+      <!-- Header p -->
+      <div class="d-flex justify-content-center pt-4">
+      </div>
+      <!-- General display -->
+      <div id="general-display" class="tab-pane fade show active" role="tabpanel" aria-labelledby="general-tab" tabindex="0">
+        <div class="consumables-container">
+          <div>
+            <div class="consumables-description">
+              <p><span class="tag">Recommended</span><span class="tag">Survival</span><span class="tag">Utility</span></p>
+              <p>This consumables should be at the top of your refill category as they serve you greatly.</p>
+            </div>
+            <!-- 1 -->
+            <div class="consumables-wrapper">
+              <button class="toggle consumables ms-auto" type="button" aria-label="Toggle information in and out" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
+              <div class="consumable-toggle" style="display: none;">
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/34159.png" alt="Concentrated Golden Syrup Potion"> <span class="tag">Craft</span><span class="tag">Market</span> Genetic crafting.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/34158.png" alt="Concentrated Blue Syrup Potion"> <span class="tag">Craft</span><span class="tag">Market</span> Genetic crafting.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/12414.png" alt="Guarana Candy"> <span class="tag">Quest</span> <a href="https://irowiki.org/wiki/Guarana_Quest" target="_blank" class="important">Guarana Quest</a></div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/610.png" alt="Yggdrasil Leaf"> <span class="tag">NPC</span> Any Tool Dealer.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/607.png" alt="Yggdrasil Berry"> <span class="tag">Farm</span> <a href="https://www.novaragnarok.com/wiki/Bioresearch_Laboratory" target="_blank" class="important">EDDA - Gauntlet Mode</a></div>
+              </div>
+
+              <div class="consumable-text">
+                <div><span class="low-focus">500</span> <img src="https://www.novaragnarok.com/data/items/icons2/34159.png" alt="Concentrated Golden Syrup Potion"> Concentrated Golden Syrup Potion</div>
+                <div><span class="low-focus">100</span> <img src="https://www.novaragnarok.com/data/items/icons2/34158.png" alt="Concentrated Blue Syrup Potion"> Concentrated Blue Syrup Potion</div>
+                <div><span class="low-focus">100</span> <img src="https://www.novaragnarok.com/data/items/icons2/12414.png" alt="Guarana Candy"> Guarana Candy</div>
+                <div><span class="low-focus">10 </span> <img src="https://www.novaragnarok.com/data/items/icons2/610.png" alt="Yggdrasil Leaf"> Yggdrasil Leaf</div>
+                <div><span class="low-focus">10 </span> <img src="https://www.novaragnarok.com/data/items/icons2/607.png" alt="Yggdrasil Berry"> Yggdrasil Berry</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Endeavor display -->
+      <div id="endeavor-display" class="tab-pane fade" role="tabpanel" aria-labelledby="endeavor-tab" tabindex="0">
+        <div class="consumables-container">
+          <div>
+            <div class="consumables-description">
+              <p><span class="tag">Recommended</span><span class="tag">Offense</span><span class="tag">Defense</span><span class="tag">Utility</span></p>
+              <p>This are your general instance/farming consumables. Only use them when you're in dire need of them.</p>
+            </div>
+            <!-- 2 -->
+            <div class="consumables-wrapper">
+              <button class="toggle consumables ms-auto" type="button" aria-label="Toggle information in and out" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
+              <div class="consumable-toggle" style="display: none;">
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/34785.png" alt="Great Shining Gin Potion"> <span class="tag">NPC</span> Main Office - 2nd floor.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/34580.png" alt="Great Maniacal Potion"> <span class="tag">NPC</span> Main Office - 2nd floor.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/34585.png" alt="Great Sacred Draught"> <span class="tag">NPC</span> Main Office - 2nd floor.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/34911.png" alt="Imperfect Almighty"> <span class="tag">NPC</span> Main Office - 2nd floor.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/34584.png" alt="Great Elixir of Energy"> <span class="tag">NPC</span> Main Office - 2nd floor.</div>
+              </div>
+              <div class="consumable-text">
+                <div><span class="low-focus">20</span> <img src="https://www.novaragnarok.com/data/items/icons2/34785.png" alt="Great Shining Gin Potion"> Great Shining Gin Potion</div>
+                <div><span class="low-focus">20</span> <img src="https://www.novaragnarok.com/data/items/icons2/34580.png" alt="Great Maniacal Potion"> Great Maniacal Potion</div>
+                <div><span class="low-focus">20</span> <img src="https://www.novaragnarok.com/data/items/icons2/34585.png" alt="Great Sacred Draught"> Great Sacred Draught</div>
+                <div><span class="low-focus">20</span> <img src="https://www.novaragnarok.com/data/items/icons2/34911.png" alt="Imperfect Almighty"> Imperfect Almighty</div>
+                <div><span class="low-focus">10</span> <img src="https://www.novaragnarok.com/data/items/icons2/34584.png" alt="Great Elixir of Energy"> Great Elixir of Energy</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Others display -->
+      <div id="others-display" class="tab-pane fade" role="tabpanel" aria-labelledby="others-tab" tabindex="0">
+        <div class="consumables-container">
+          <div>
+            <div class="consumables-description">
+              <p><span class="tag">Optional</span><span class="tag">Survival</span><span class="tag">Offense</span><span class="tag">Utility</span></p>
+              <p>Not core consumables, but very helpful to have around. Often used to exploit your damage potential or farming efficiency.</p>
+            </div>
+            <!-- 3 -->
+            <div class="consumables-wrapper">
+              <button class="toggle consumables ms-auto" type="button" aria-label="Toggle information in and out" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
+              <div class="consumable-toggle" style="display: none;">
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/657.png" alt="Berserk Potion"> <span class="tag">NPC</span> Any Tool Dealer.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/12437.png" alt="Enrich Celermine Juice"> <span class="tag">Craft</span><span class="tag">Market</span> Genetic crafting.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/34155.png" alt="Red Herb Activator"> <span class="tag">Craft</span><span class="tag">Market</span> Genetic crafting.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/34154.png" alt="Golden X"> <span class="tag">Craft</span><span class="tag">Market</span> Genetic crafting.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/12115.png" alt="Water Elemental Converter"> <span class="tag">NPC</span> Ju, Main Office - 1st floor.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/12114.png" alt="Fire Elemental Converter"> <span class="tag">NPC</span> Ju, Main Office - 1st floor.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/12116.png" alt="Earth Elemental Converter"> <span class="tag">NPC</span> Ju, Main Office - 1st floor.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/12117.png" alt="Wind Elemental Converter"> <span class="tag">NPC</span> Ju, Main Office - 1st floor.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/12280.png" alt="Holy Elemental Converter"> <span class="tag">NPC</span> Ju, Main Office - 1st floor.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/12020.png" alt="Cursed Water"> <span class="tag">Farm</span> Dungeon - Gefenia.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/34300.png" alt="Rejuvenation Potion"> <span class="tag">NPC</span> Potion Dealer, Main Office - 2nd floor.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/34301.png" alt="Great Rejuvenation Tonic"> <span class="tag">NPC</span> Potion Dealer, Main Office - 2nd floor.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/34299.png" alt="Great Tonic of Energy"> <span class="tag">NPC</span> Potion Dealer, Main Office - 2nd floor.</div>
+              </div>
+              <div class="consumable-text">
+                <div><span class="low-focus">10</span> <img src="https://www.novaragnarok.com/data/items/icons2/657.png" alt="Berserk Potion"> Berserk Potion</div>
+                <div><span class="low-focus">10</span> <img src="https://www.novaragnarok.com/data/items/icons2/12437.png" alt="Enrich Celermine Juice"> Enrich Celermine Juice</div>
+                <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/34155.png" alt="Red Herb Activator"> Red Herb Activator</div>
+                <div><span class="low-focus">5</span> <img src="https://www.novaragnarok.com/data/items/icons2/34154.png" alt="Golden X"> Golden X</div>
+                <div><span class="low-focus">10</span> <img src="https://www.novaragnarok.com/data/items/icons2/12115.png" alt="Water Elemental Converter"> Water Elemental Converter</div>
+                <div><span class="low-focus">50</span> <img src="https://www.novaragnarok.com/data/items/icons2/12114.png" alt="Fire Elemental Converter"> Fire Elemental Converter</div>
+                <div><span class="low-focus">10</span> <img src="https://www.novaragnarok.com/data/items/icons2/12116.png" alt="Earth Elemental Converter"> Earth Elemental Converter</div>
+                <div><span class="low-focus">10</span> <img src="https://www.novaragnarok.com/data/items/icons2/12117.png" alt="Wind Elemental Converter"> Wind Elemental Converter</div>
+                <div><span class="low-focus">10</span> <img src="https://www.novaragnarok.com/data/items/icons2/12280.png" alt="Holy Elemental Converter"> Holy Elemental Converter</div>
+                <div><span class="low-focus">15</span> <img src="https://www.novaragnarok.com/data/items/icons2/12020.png" alt="Cursed Water"> Cursed Water</div>
+                <div><span class="low-focus">5</span> <img src="https://www.novaragnarok.com/data/items/icons2/34300.png" alt="Rejuvenation Potion"> Rejuvenation Potion</div>
+                <div><span class="low-focus">5</span> <img src="https://www.novaragnarok.com/data/items/icons2/34301.png" alt="Great Rejuvenation Tonic"> Great Rejuvenation Tonic</div>
+                <div><span class="low-focus">5</span> <img src="https://www.novaragnarok.com/data/items/icons2/34299.png" alt="Great Tonic of Energy"> Great Tonic of Energy</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Runes display -->
+      <div id="runes-display" class="tab-pane fade" role="tabpanel" aria-labelledby="runes-tab" tabindex="0">
+        <div class="consumables-container">
+          <div>
+            <div class="consumables-description">
+              <p><span class="tag">Recommended</span><span class="tag">Survival</span><span class="tag">Offense</span><span class="tag">Defense</span><span class="tag">Utility</span></p>
+              <p>Essentially what makes you a Rune Knight. This is my personal <i>must to have list</i>, but feel free to ignore the <span class="low-focus">Utility</span> ones.</p>
+            </div>
+            <!-- 4 -->
+            <div class="consumables-wrapper">
+              <button class="toggle consumables ms-auto" type="button" aria-label="Toggle information in and out" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
+              <div class="consumable-toggle" style="display: none;">
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/22540.png" alt="Lux Anima Rune"> <span class="tag">Craft</span> Rune Knight crafting.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/12731.png" alt="Turisus Runestone"> <span class="tag">Craft</span> Rune Knight crafting.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/12729.png" alt="Asir Runestone"> <span class="tag">Craft</span> Rune Knight crafting.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/12733.png" alt="Hagalas Runestone"> <span class="tag">Craft</span> Rune Knight crafting.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/12727.png" alt="Verkana Runestone"> <span class="tag">Craft</span> Rune Knight crafting.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/12728.png" alt="Isia Runestone"> <span class="tag">Craft</span> Rune Knight crafting.</div>
+                <div><img src="https://www.novaragnarok.com/data/items/icons2/12730.png" alt="Urj Runestone"> <span class="tag">Craft</span> Rune Knight crafting.</div>
+              </div>
+              <div class="consumable-text">
+                <div>
+                  <p>Offensive</p>
+                </div>
+                <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/22540.png" alt="Lux Anima Rune"> Lux Anima Rune</div>
+                <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/12731.png" alt="Turisus Runestone"> Turisus Runestone</div>
+                <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/12729.png" alt="Asir Runestone"> Asir Runestone</div>
+                <div>
+                  <p>Defensive</p>
+                </div>
+                <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/12733.png" alt="Hagalas Runestone"> Hagalas Runestone</div>
+                <div>
+                  <p>Survival</p>
+                </div>
+                <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/12727.png" alt="Verkana Runestone"> Verkana Runestone</div>
+                <div>
+                  <p>Utility</p>
+                </div>
+                <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/12728.png" alt="Isia Runestone"> Isia Runestone</div>
+                <div><span class="low-focus">30</span> <img src="https://www.novaragnarok.com/data/items/icons2/12730.png" alt="Urj Runestone"> Urj Runestone</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer p -->
+      <div class="d-flex justify-content-center">
+        <div class="fake-div mt-1 pb-4">
+          <p class="ms-auto text-end" style="font-size: .75rem;"><span class="tip">How to craft?</span> Refer to the <a href="https://www.novaragnarok.com/wiki/Creation_Database" target="_blank" class="important link-contrast">Creation Database</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Farming" class="mb-4">
+    <h2 class="fs-5">Farming</h2>
+    <div class="p-3">
+      <div id="Autoloot">
+        <h3 class="header fs-5">Autoloot</h3>
+        <p class="mb-1">The following list is from my personal use. If you don't see an specific list (<span class="low-focus">like in example Odin 4</span>), chances are I simply use the general autoloot.</p>
+        <!-- General -->
+        <div class="d-flex align-items-center flex-wrap mb-2 autoloot-selector">
+          <p class="header m-0">General
+            <span id="General-Autoloot" class="code contrast">@autoloot 0.9</span>
+            <button class="toggle copy" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
+          </p>
+          <button type="button" aria-label="Toggle autoloot code on and off" class="toggle autoloot ms-auto" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Toggle details"><i class="fa-solid fa-eye"></i></button>
+        </div>
+        <div class="autoloot-list position-relative">
+          <!-- Einbech 3 -->
+          <div class="autoloot-selector shadow-container">
+            <div>
+              <span>Einbech 3</span>
+              <span class="tag">Farm</span>
+              <button class="toggle copy ms-auto" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
+            </div>
+            <div class="autoloot-text">
+              <img src="https://www.novaragnarok.com/data/items/icons2/25809.png" alt="Redium">
+              <img src="https://www.novaragnarok.com/data/items/icons2/25810.png" alt="Rindium">
+              <img src="https://www.novaragnarok.com/data/items/icons2/25811.png" alt="Odium">
+              <img src="https://www.novaragnarok.com/data/items/icons2/25812.png" alt="Purdium">
+              <img src="https://www.novaragnarok.com/data/items/icons2/25813.png" alt="Whidium">
+              <img src="https://www.novaragnarok.com/data/items/icons2/25814.png" alt="Dynite">
+              <img src="https://www.novaragnarok.com/data/items/icons2/9517.png" alt="Unidentified Ore">
+            </div>
+            <p class="autoloot-text"><span id="Einbech3-Autoloot" class="code contrast">@alootid +25809|+25810|+25811|+25812|+25813|+25814|+9517</span></p>
+          </div>
+          <!-- Juperos -->
+          <div class="autoloot-selector shadow-container">
+            <div>
+              <span>Juperos</span>
+              <span class="tag">Farm</span>
+              <button class="toggle copy ms-auto" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
+            </div>
+            <div class="autoloot-text">
+              <img src="https://www.novaragnarok.com/data/items/icons2/34716.png" alt="Old Gear">
+              <img src="https://www.novaragnarok.com/data/items/icons2/34717.png" alt="Ancient Core">
+              <img src="https://www.novaragnarok.com/data/items/icons2/34712.png" alt="Juperium Energy">
+            </div>
+            <p class="autoloot-text"><span id="Juperos-Autoloot" class="code contrast">@alootid +34716|+34717|+34712</span></p>
+          </div>
+          <!-- Luanda + Twins -->
+          <div class="autoloot-selector shadow-container">
+            <div>
+              <span>Illusion Luanda + Twins</span>
+              <span class="tag">Quest/Farm</span>
+              <button class="toggle copy ms-auto" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
+            </div>
+            <div class="autoloot-text">
+              <img src="https://www.novaragnarok.com/data/items/icons2/25633.png" alt="Token of Wootan">
+              <img src="https://www.novaragnarok.com/data/items/icons2/25638.png" alt="Token of Megalith">
+              <img src="https://www.novaragnarok.com/data/items/icons2/35055.png" alt="Twilight Illusion Stone">
+              <img src="https://www.novaragnarok.com/data/items/icons2/100003.png" alt="Dusk Dissonance Stone">
+              <img src="https://www.novaragnarok.com/data/items/icons2/100004.png" alt="Dawn Dissonance Stone">
+            </div>
+            <p class="autoloot-text"><span id="Luanda-Twins-Autoloot" class="code contrast">@alootid +25633|+25638|+35055|+100003|+100004</span></p>
+          </div>
+          <!-- Elunium & Oridecon -->
+          <div class="autoloot-selector shadow-container">
+            <div>
+              <span>Elunium & Oridecon</span>
+              <span class="tag">Farm</span>
+              <button class="toggle copy ms-auto" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
+            </div>
+            <div class="autoloot-text">
+              <img src="https://www.novaragnarok.com/data/items/icons2/985.png" alt="Elunium">
+              <img src="https://www.novaragnarok.com/data/items/icons2/984.png" alt="Oridecon">
+            </div>
+            <p class="autoloot-text"><span id="Elunium-Oridecon-Autoloot" class="code contrast">@alootid +985|+984</span></p>
+          </div>
+          <!-- Old Glast Heim -->
+          <div class="autoloot-selector shadow-container">
+            <div>
+              <span>Old Glast Heim</span>
+              <span class="tag">Daily</span>
+              <span class="tip-question" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Use @autoloot 100"><i class="fa-solid fa-question"></i></span>
+              <button class="toggle copy ms-auto" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
+            </div>
+
+            <div class="autoloot-text">
+              <img src="https://www.novaragnarok.com/data/items/icons2/985.png" alt="Elunium">
+              <img src="https://www.novaragnarok.com/data/items/icons2/757.png" alt="Rough Elunium">
+              <img src="https://www.novaragnarok.com/data/items/icons2/756.png" alt="Rough Oridecon">
+              <img src="https://www.novaragnarok.com/data/items/icons2/747.png" alt="Crystal Mirror">
+              <img src="https://www.novaragnarok.com/data/items/icons2/997.png" alt="Great Nature">
+              <img src="https://www.novaragnarok.com/data/items/icons2/938.png" alt="Sticky Mucus">
+              <img src="https://www.novaragnarok.com/data/items/icons2/727.png" alt="Opal">
+            </div>
+            <p class="autoloot-text"><span id="Old-Glast-Autoloot" class="code contrast">@alootid -985|-757|-756|-747|-997|+938|+727</span></p>
+          </div>
+          <!-- Horror Toy Factory -->
+          <div class="autoloot-selector shadow-container">
+            <div>
+              <span>Horror Toy Factory </span>
+              <span class="tag">Daily</span>
+              <button class="toggle copy ms-auto" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
+            </div>
+            <div class="autoloot-text">
+              <img src="https://www.novaragnarok.com/data/items/icons2/969.png" alt="Gold">
+              <img src="https://www.novaragnarok.com/data/items/icons2/7230.png" alt="Platinum Bullion">
+              <img src="https://www.novaragnarok.com/data/items/icons2/7642.png" alt="Bloody Coin">
+            </div>
+            <p class="autoloot-text"><span id="Horror-Toy-Autoloot" class="code contrast">@alootid +969|+7230|+7642</span></p>
+          </div>
+          <!-- All Illusion -->
+          <div class="shadow-container w-100">
+            <div>
+              <span>All Illusion Dungeons</span>
+              <span class="tag">Quest/Farm</span>
+              <button class="toggle copy ms-auto" aria-label="Copy to clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard"><i class="fa-solid fa-copy"></i></button>
+            </div>
+            <div class="autoloot-text">
+              <img src="https://www.novaragnarok.com/data/items/icons2/25266.png" alt="Dried Yggdrasil Leaf">
+              <img src="https://www.novaragnarok.com/data/items/icons2/25267.png" alt="Suspicious Pentacle">
+              <img src="https://www.novaragnarok.com/data/items/icons2/25265.png" alt="Shining Spore">
+              <img src="https://www.novaragnarok.com/data/items/icons2/25264.png" alt="Cluster of Nightmares">
+              <img src="https://www.novaragnarok.com/data/items/icons2/7564.png" alt="Rotten Meat">
+              <img src="https://www.novaragnarok.com/data/items/icons2/25633.png" alt="Token of Wootan">
+              <img src="https://www.novaragnarok.com/data/items/icons2/25638.png" alt="Token of Megalith">
+              <img src="https://www.novaragnarok.com/data/items/icons2/25899.png" alt="Abyssal Essence">
+              <img src="https://www.novaragnarok.com/data/items/icons2/35055.png" alt="Twilight Illusion Stone">
+              <img src="https://www.novaragnarok.com/data/items/icons2/100003.png" alt="Dusk Dissonance Stone">
+              <img src="https://www.novaragnarok.com/data/items/icons2/100004.png" alt="Dawn Dissonance Stone">
+            </div>
+            <p class="autoloot-text"><span id="All-Illusion-Autoloot" class="code contrast">@alootid +25266|+25267|+25265|+25264|+7564|+25633|+25638|+25899|+35055|+100003|+100004</span></p>
+          </div>
+        </div>
+      </div>
+      <h3 class="header fs-5">Gear</h3>
+      <p>Farming is all about optimizing your efficiency, speed and damage. While some items here are required for a better experience, they're not a must.</p>
+      <div id="Farming-Equipment" class="farming-container-grid">
+        <div class="farming-container shadow-container">
+          <p class="header">General</p>
+          <ul>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/25209.png" alt="HP Absorb Onyx [G]"> HP Absorb Onyx [G]</li>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/25209.png" alt="SP Absorb Onyx [G]"> SP Absorb Onyx [G]</li>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/4115.png" alt="Card icon"> Hunter Fly</li>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/490024.png" alt="Automatic Booster R"> Automatic Booster R</li>
+          </ul>
+        </div>
+        <div class="farming-container shadow-container">
+          <p class="header">Thanatos</p>
+          <ul>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/490056.png" alt="Brilliant Light Ruby Ring"> Brilliant Light Ruby Ring</li>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/490057.png" alt="Brilliant Light Ruby Necklace"> Brilliant Light Ruby Necklace</li>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/29991.png" alt="Earth Elemental Converter"> Earth Elemental Converter <span class="tag">Thanatos F11</span></li>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/32107.png" alt="Holy Elemental Converter"> Holy Elemental Converter <span class="tag">Thanatos F12</span></li>
+          </ul>
+        </div>
+        <div class="farming-container shadow-container">
+          <p class="header">Abyss Lake 4</p>
+          <ul>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/490044.png" alt="Sinful Ruby Ring"> Sinful Ruby Ring</li>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/490045.png" alt="Sinful Ruby Necklace"> Sinful Ruby Necklace</li>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/4115.png" alt="Card icon"> Bone Ferus + Bone Acidus <span class="tag">Combo</span></li>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/32107.png" alt="Holy Elemental Converter"> Holy Elemental Converter</li>
+          </ul>
+        </div>
+        <div class="farming-container shadow-container">
+          <p class="header">Others</p>
+          <ul>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/4115.png" alt="Card icon"> Playing Ferre <span class="tag">Einbech 3</span></li>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/490056.png" alt="Brilliant Light Ruby Ring"> Brilliant Light Ruby Ring <span class="tag">Odin 4</span></li>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/490057.png" alt="Brilliant Light Ruby Necklace"> Brilliant Light Ruby Necklace <span class="tag">Odin 4</span></li>
+            <li><img src="https://www.novaragnarok.com/data/items/icons2/12020.png" alt="Cursed Water"> Cursed Water <span class="tag">Odin 4</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="New-Player">
+    <h2 class="fs-5">New Player</h2>
+    <div class="p-3">
+      <h3 class="fs-5 header">Introduction</h3>
+      <p>First and foremost, this section is made for more in depth explanations on what you have seen above, to answer common questions, teach the player and much more. So, <b>if you like reading, this is your place.</b></p>
+
+      <div class="select">
+        <div>
+          <h4 class="fs-6 header m-0">Select your starting point</h4>
+          <div>
+            <span class="tag">Novice</span><a href="#Novice-Section">I don't know anything</a>
+          </div>
+          <p class="starting-point-text">Sites, guides, this and that</p>
+          <div>
+            <span class="tag">Started</span><a href="#Started-Section">I know a bit about the game</a>
+          </div>
+          <div>
+            <span class="tag">Apprentice</span><a href="#Apprentice-Section">I have played other classes, not this</a>
+          </div>
+          <div>
+            <span class="tag">Intermediate</span><a href="#Intermediate-Section">I know the class, show me the early progression</a>
+          </div>
+          <div>
+            <span class="tag">Advanced</span><a href="#Advanced-Section">I know the class, show me midgame & late progression</a>
+          </div>
+        </div>
+        <button type="button" aria-label="Toggle autoloot code on and off" class="toggle starting-point ms-auto" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Toggle details"><i class="fa-solid fa-eye"></i></button>
+      </div>
+
+      <p><i class="fa-solid fa-table"></i> Content table</p>
+      <ol>
+        <li>Potato</li>
+      </ol>
+
+      <div id="Novice-Section">
+        <h3 class="fs-5 header">Novice section</h3>
+        <p>Oh look, a new recruit. I'm going to be your instructor today. My name is <b>Myndi</b>, and will do my best to squeeze the best out of you 😤 Nice to meet you!</p>
+        <p>To begin with, you need to be wary of the most useful links we have in here.</p>
+        <ul>
+          <li><a href="https://www.novaragnarok.com/?module=main">NovaRO Main Site <i class="fa-solid fa-link fa-xs"></i></a> - Useful to check news, your character, the market & spending your well earned real life money.</li>
+          <li><a href="https://www.novaragnarok.com/wiki/Main_Page">NovaRO Wikipedia <i class="fa-solid fa-link fa-xs"></i></a> - The all-in-one site for the majority of your questions, thanks to all the contributors.</li>
+          <li><a href="https://www.novaragnarok.com/forum/">NovaRO Forum <i class="fa-solid fa-link fa-xs"></i></a> - Perfect to report a bug, write a suggestion or complain, besides that, ignore it.</li>
+          <li><a href="https://discord.com/invite/eqHzVK9">NovaRO Discord <i class="fa-solid fa-link fa-xs"></i></a> - If you're here, you probably already know about it.</li>
+          <li><a href="https://irowiki.org/wiki/Quests">IronRO Wiki Quest List <i class="fa-solid fa-link fa-xs"></i></a> - This is only useful if you're all about nostalgia and want to do old forgotten quests.</li>
+          <li><a href="https://www.divine-pride.net/">Divine Pride <i class="fa-solid fa-link fa-xs"></i></a> - Amazing database. You can check almost anything and most importnatly, future content.</li>
+          <li><a href="https://_miel.gitlab.io/ncs/#/">Utility Site <i class="fa-solid fa-link fa-xs"></i></a> - A bit outdated, but still present useful tools for you to use.</li>
+          <li><a href="https://zzyx.de/ro/atk">Muh Calculator <i class="fa-solid fa-link fa-xs"></i></a> - Significant calculator both for ATK and MATK. Let's you plan ahead.</li>
+          <li><a href="https://ratemyserver.net/">RateMyServer <i class="fa-solid fa-link fa-xs"></i></a> - Honestly, with all the above, useless, but might as well throw it out there.</li>
+        </ul>
+      </div>
+
+      <b>To add:</b> Acronyms list.
+      <br>
+      Structure:
+      <ul>
+        <li>Introduction:</li>
+        <ul>
+          <li>Welcome message</li>
+          <li>Basic/useful commands</li>
+          <li>Wiki/useful pages (costume stones, instances)</li>
+          <li>How to look for information</li>
+          <li>How to make the right question</li>
+          <li>Buying vs enchanting/refining</li>
+        </ul>
+        <li>Leveling</li>
+        <li>Basic-early game:</li>
+        <ul>
+          <li>Item Progression</li>
+          <li>Farming</li>
+          <li>Instances</li>
+        </ul>
+        <li>Mid game:</li>
+        <ul>
+          <li>Item Progression</li>
+          <li>Farming</li>
+          <li>Instances</li>
+        </ul>
+        <li>Late game decisions (jump to the beginning)</li>
+      </ul>
+      <p class="tip m-0">Extra points?</p>
+      <p class="m-0"><i class="fa-solid fa-plus fa-xs"></i> <span class="header">Agi</span> for extra damage due to <img src="https://www.novaragnarok.com/data/items/icons2/5899.png" alt="Black Ribbon"> <a href="https://www.novaragnarok.com/?module=vending&action=view&id=5899" target="_blank" class="important">Black Ribbon</a>.</p>
+      <p class="m-0"><i class="fa-solid fa-plus fa-xs"></i> <span class="header">Vit</span> to survive longer & potion effectiveness.</p>
+      <p class="m-0"><i class="fa-solid fa-plus fa-xs"></i> <span class="header">Int</span> if you lack or run out of SP.</p>
+      <p><i class="fa-solid fa-plus fa-xs"></i> <span class="header">Luk</span> to increase your hit rate and damage a little bit.</p>
+
+              <!-- THIS REQUIRES MASSIVE REWORK -->
+              <div class="skills-usage">
+                <div>
+                  <h3 class="fs-5 header">Buffs</h3>
+                  <div>
+                    <div>
+                      <p class="w-100 m-0">This is use order.</p>
+                      <div class="d-flex align-items-center gap-1 flex-wrap"><img src="https://static.divine-pride.net/images/skill/7.png" alt="Magnum Break"><i class="fa-solid fa-caret-right"></i><img src="https://static.divine-pride.net/images/skill/357.png" alt="Concentration"><i class="fa-solid fa-caret-right"></i><img src="https://static.divine-pride.net/images/skill/355.png" alt="Aura Blade"><i class="fa-solid fa-caret-right"></i><img src="https://static.divine-pride.net/images/skill/356.png" alt="Parrying"><i class="fa-solid fa-caret-right"></i><img src="https://static.divine-pride.net/images/skill/60.png" alt="Two-Hand Quicken"><i class="fa-solid fa-caret-right"></i><img src="https://static.divine-pride.net/images/skill/2001.png" alt="Enchant Blade"></div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="fs-5 header">Refresh time</h3>
+                  <div>
+                    <p class="fw-bold"><span class="number">10</span> seconds</p>
+                    <img src="https://static.divine-pride.net/images/skill/7.png" alt="Magnum Break" class="ms-3 mb-2">
+                    <p class="fw-bold"><span class="number">1</span> minute</p>
+                    <div class="d-flex align-items-center gap-1 ms-3 mb-2"><img src="https://static.divine-pride.net/images/skill/357.png" alt="Concentration"><img src="https://static.divine-pride.net/images/skill/355.png" alt="Aura Blade"><img src="https://static.divine-pride.net/images/skill/356.png" alt="Parrying"></div>
+                    <p class="fw-bold"><span class="number">5</span> minutes</p>
+                    <div class="d-flex align-items-center gap-1 ms-3 mb-2"><img src="https://static.divine-pride.net/images/skill/60.png" alt="Two-Hand Quicken"><img src="https://static.divine-pride.net/images/skill/2001.png" alt="Enchant Blade"></div>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="fs-5 header">Offensive skills</h3>
+                  <div>idk what to do with this 3 sections, maybe i will remove it, but for now, just a WIP</div>
+                </div>
+              </div>
+              <!-- THIS REQUIRES MASSIVE REWORK -->
+            </div>
+    </div>
+  </div>
+</main>

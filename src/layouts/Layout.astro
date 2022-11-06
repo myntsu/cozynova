@@ -141,8 +141,8 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
   --radio-color: #5D5F71;
 }
 
-.theme-changer #red {
-  --radio-color: #f27d74;
+.theme-changer #light {
+  --radio-color: #f9f6f5;
 }
 
 .theme-changer #green {
@@ -209,34 +209,34 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	--low-focus: 297, 15%, 60%;
 }
 
-.red {
-	--main-dark: 344, 58%, 12%;
-	--main-light: 344, 58%, 50%;
+.light {
+	--main-dark: 0, 0%, 10%;
+	--main-light: 0, 0%, 100%;
 
-	--main-light-1: 344, 58%, 20%;
-	--main-light-2: 344, 58%, 27%;
-	--main-light-3: 344, 58%, 34%;
+	--main-light-1: 0, 0%, 89%;
+	--main-light-2: 0, 0%, 94%;
+	--main-light-3: 0, 0%, 97%;
 
-	--text: 0, 0%, 95%;
-	--header: 59, 98%, 84%;
-	--important: 221, 60%, 70%;
-	--number: 220, 65%, 75%;
-	--low-focus: 4, 60%, 75%;
+	--text: 0, 0%, 35%;
+	--header: 0, 100%, 35%;
+	--important: 270, 28%, 44%;
+	--number: 230, 100%, 70%;
+	--low-focus: 0, 0%, 60%;
 }
 
-:root:has(#red:checked) {
-	--main-dark: 344, 58%, 12%;
-	--main-light: 344, 58%, 50%;
+:root:has(#light:checked) {
+	--main-dark: 0, 0%, 10%;
+	--main-light: 0, 0%, 100%;
 
-	--main-light-1: 344, 58%, 20%;
-	--main-light-2: 344, 58%, 27%;
-	--main-light-3: 344, 58%, 34%;
+	--main-light-1: 0, 0%, 89%;
+	--main-light-2: 0, 0%, 94%;
+	--main-light-3: 0, 0%, 97%;
 
-	--text: 0, 0%, 95%;
-	--header: 59, 98%, 84%;
-	--important: 221, 60%, 70%;
-	--number: 220, 65%, 75%;
-	--low-focus: 4, 60%, 75%;
+	--text: 0, 0%, 35%;
+	--header: 0, 100%, 35%;
+	--important: 270, 28%, 44%;
+	--number: 230, 100%, 70%;
+	--low-focus: 0, 0%, 60%;
 }
 
 .green {
@@ -248,25 +248,29 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	--main-light-3: 139, 17%, 29%;
 
 	--text: 0, 0%, 95%;
-	--header: 219, 80%, 70%;
+	--header: 219, 30%, 75%;
 	--important: 40, 70%, 70%;
 	--number: 4, 88%, 70%;
 	--low-focus: 170, 80%, 85%;
 }
 
 :root:has(#green:checked) {
-	--main-dark: 139, 17%, 14%;
-	--main-light: 139, 17%, 40%;
+	--main-dark: 139, 17%, 10%;
+	--main-light: 139, 17%, 34%;
 
-	--main-light-1: 139, 17%, 20%;
-	--main-light-2: 139, 17%, 25%;
-	--main-light-3: 139, 17%, 29%;
+	--main-light-1: 139, 17%, 15%;
+	--main-light-2: 139, 17%, 21%;
+	--main-light-3: 139, 17%, 26%;
 
 	--text: 0, 0%, 95%;
-	--header: 219, 80%, 70%;
+	--header: 15, 23%, 28%;
 	--important: 40, 70%, 70%;
 	--number: 4, 88%, 70%;
-	--low-focus: 170, 80%, 85%;
+	--low-focus: 139, 10%, 50%;
+}
+
+input:is(:disabled) {
+	cursor: not-allowed;
 }
 
 	*,
@@ -362,8 +366,12 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	overflow: hidden;
 	}
 
+	.dropdown-menu a {
+	color: hsl(var(--header));
+	}
+
 	.dropdown-menu a:hover {
-	color: white;
+	color: hsl(var(--header));
 	background-color: hsl(var(--main-light-3));
 	}
 
@@ -544,8 +552,8 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	}
 
 	.skill:hover {
-	color: hsl(var(--black));
-	background-color: hsl(var(--white));
+	color: hsl(var(--white));
+	background-color: hsl(var(--important));
 	}
 
 	.skill:active {
