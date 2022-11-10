@@ -1,9 +1,7 @@
 body {
-  background-image: 
-    linear-gradient(
-      0deg, 
-      hsl(var(--main-dark)) 81%, transparent
-      ),
+  background-image:
+    linear-gradient(0deg,
+      hsl(var(--main-dark)) 81%, transparent),
     url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
 
   display: flex;
@@ -28,7 +26,7 @@ body::after {
 }
 
 h2 {
-  color: hsl(var(--text)); 
+  color: hsl(var(--text));
 }
 
 .utility-toolbar {
@@ -40,21 +38,55 @@ h2 {
   margin: 5em 0 auto;
 }
 
-.theme-changer {
-  margin-inline-start: auto;
+.deploy-content-table {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+
+  padding: 0 1em;
+
+  color: gray;
+  background-color: hsl(var(--main-dark), 50%);
+  border: none;
+  border-radius: .25em .25em 0 0;
+
+  font-size: .75rem;
+  text-transform: uppercase;
+
+  transition: 100ms linear;
 }
 
-.theme-changer > fieldset {
+.deploy-content-table:hover {
+  background-color: hsl(var(--main-dark));
+}
+
+.deploy-content-table:active {
+  translate: 0 2px;
+}
+
+.pick-a-theme {
   display: flex;
-  gap: 2rem;
-  
-  width: fit-content;
-  margin-inline: auto;
-  padding: .5em 2em;
+  align-items: center;
+
+  margin-inline-start: auto;
+  padding: .25em .25em .25em .75em;
   
   background-color: hsl(var(--main-dark));
+  border-radius: .5em 0 0 0;
+  font-size: 1rem;
+}
+
+.theme-changer>fieldset {
+  display: flex;
+  gap: 2rem;
+
+  width: fit-content;
+  margin-inline: auto;
+  padding: .5em 1.5em;
+
+  background-color: hsl(var(--main-dark));
   border: 0;
-  border-radius: .5em .5em 0 0;
+  border-radius: 0 .5em 0 0;
 }
 
 .theme-changer input[type="radio"] {
@@ -65,6 +97,8 @@ h2 {
   outline: 2px solid var(--radio-color, currentColor);
   outline-offset: 2px;
   border-radius: 50%;
+
+  cursor: pointer;
 }
 
 .theme-changer input[type="radio"]:checked {
@@ -81,11 +115,9 @@ h2 {
   position: relative;
   isolation: isolate;
 
-  background-image: 
-    linear-gradient(
-      90deg, 
-      hsl(var(--main-dark)) -10%, transparent
-    ),
+  background-image:
+    linear-gradient(90deg,
+      hsl(var(--main-dark)) -10%, transparent),
     url('../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp');
   background-position: 50% 35%;
   background-size: cover;
@@ -121,10 +153,10 @@ h2 {
 }
 
 .headers-wrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-    font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  font-weight: 700;
 }
 
 .headers-wrapper h1 {
@@ -151,7 +183,7 @@ h2 {
   display: flex;
   justify-content: center;
   text-align: center;
-  
+
   width: 100%;
   max-width: 1000px;
 
@@ -164,42 +196,15 @@ h2 {
 .content-table .link {
   width: 10em;
   padding: .5em;
-}
-
-.deploy-content-table {
-  display: flex;
-  align-items: center;
-  gap: .5em;
-
-  padding: 0 1em;
-  
-  color: gray;
-  background-color: hsl(var(--main-dark), 50%);
-  border: none;
-  border-radius: .25em .25em 0 0;
-
-  font-size: .75rem;
-  text-transform: uppercase;
-
-  transition: 100ms linear;
-}
-
-.deploy-content-table:hover {
-  background-color: hsl(var(--main-dark));
-}
-
-.deploy-content-table:active {
-  translate: 0 2px;
+  color: hsl(var(--nav-link));
 }
 
 @media only screen and (max-width: 990px) {
 
   body {
-    background-image: 
-      linear-gradient(
-        0deg, 
-        hsl(var(--main-dark)) 85%, transparent
-        ),
+    background-image:
+      linear-gradient(0deg,
+        hsl(var(--main-dark)) 85%, transparent),
       url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
   }
 
@@ -212,11 +217,9 @@ h2 {
 
 @media only screen and (max-width: 570px) {
   body {
-    background-image: 
-      linear-gradient(
-        0deg, 
-        hsl(var(--main-dark)) 90%, transparent
-        ),
+    background-image:
+      linear-gradient(0deg,
+        hsl(var(--main-dark)) 90%, transparent),
       url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
   }
 
@@ -225,8 +228,8 @@ h2 {
   }
 
   .deploy-content-table {
-    margin-inline-start: auto;
-    font-size: 1rem;
+    margin-inline-end: auto;
+    font-size: .9rem;
   }
 
   .theme-changer {
@@ -234,10 +237,10 @@ h2 {
 
   }
 
-  .theme-changer > fieldset {
+  .theme-changer>fieldset {
     justify-content: center;
     width: 100%;
-    border-radius: .5em 0 0 0;
+    border-radius: 0;
   }
 }
 
@@ -246,6 +249,11 @@ h2 {
     width: 100% !important;
     outline: .1ex solid hsl(var(--white), 5%);
     outline-offset: -.2ex;
+  }
+
+  .pick-a-theme {
+    font-size: .8rem;
+    padding: .25em .5em .25em .5em !important;
   }
 }
 
@@ -259,7 +267,6 @@ h2 {
 }
 
 #Content-Table {
-
   width: 100%;
   max-width: 1000px;
   background-color: hsl(var(--main-dark));
@@ -282,7 +289,7 @@ h2 {
 .content-table-list a:hover {
   color: hsl(var(--nav-link), 50%);
   text-decoration: underline;
-}   
+}
 
 /* Main */
 .main-container {
@@ -299,14 +306,12 @@ h2 {
 @media only screen and (max-width: 1200px) {
   body {
     padding: 0 1.5rem;
-    background-image: 
-    linear-gradient(
-      0deg, 
-      hsl(var(--main-dark)) 85%, transparent
-      ),
-    url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
+    background-image:
+      linear-gradient(0deg,
+        hsl(var(--main-dark)) 85%, transparent),
+      url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
   }
-  
+
 }
 
 @media only screen and (max-width: 880px) {
@@ -325,7 +330,7 @@ h2 {
 
 @media only screen and (max-width: 570px) {
   body {
-    padding: 0 0.75rem;
+    padding: 0;
   }
 }
 
@@ -344,7 +349,7 @@ h2 {
   color: hsl(var(--header));
 }
 
-#Author > div {
+#Author>div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -371,7 +376,7 @@ h2 {
   gap: 0.25em;
 }
 
-#Data-Observations > div {
+#Data-Observations>div {
   color: hsl(var(--text));
 }
 
@@ -391,6 +396,7 @@ h2 {
 }
 
 @media only screen and (max-width: 990px) {
+
   #Data,
   #Observations {
     flex: auto;
@@ -403,8 +409,8 @@ h2 {
   }
 }
 
-#Data > div,
-#Observations > div {
+#Data>div,
+#Observations>div {
   flex: 1;
   background-color: hsl(var(--main-light-2));
   border-radius: 0.5em;
@@ -464,6 +470,11 @@ h2 {
     outline: 0.1ex solid hsl(var(--white), 5%);
     outline-offset: -0.1ex;
   }
+
+  .pick-a-theme {
+    border-radius: .5em .5em 0 0;
+    padding: .25em .75em .25em .75em;
+  }
 }
 
 .gear-container {
@@ -493,7 +504,7 @@ h2 {
   height: 22px;
 }
 
-.gear-slot > div {
+.gear-slot>div {
   width: 90%;
 }
 
@@ -528,8 +539,8 @@ h2 {
   background-color: white;
 }
 
-.gear-col > div > div,
-.gear-col-2 > div > div {
+.gear-col>div>div,
+.gear-col-2>div>div {
   border-bottom: 1px solid hsl(var(--text));
 }
 
@@ -570,7 +581,7 @@ h2 {
 }
 
 .pet-col p {
-  color: hsl(var(--low-focus));
+  color: hsl(var(--important));
   font-size: 0.85rem;
   font-weight: 700;
 }
@@ -584,10 +595,6 @@ h2 {
   max-width: 800px;
 }
 
-#Calculations h2 {
-  color: hsl(var());
-}
-
 #Calculations p {
   margin: 0;
   padding: 0;
@@ -595,10 +602,6 @@ h2 {
 
 #Calculations .number {
   letter-spacing: 0.1ex;
-}
-
-#Calculations span {
-  font-size: 0.75rem;
 }
 
 @media only screen and (max-width: 400px) {
@@ -610,6 +613,7 @@ h2 {
 .calc-container {
   background-color: hsl(var(--main-light-3));
 }
+
 /* End */
 
 /* Status, Battle Stats, Pets */
@@ -619,15 +623,10 @@ h2 {
   color: hsl(var(--text));
 }
 
-#Stats > div {
+#Stats>div {
   display: flex;
   justify-content: space-between;
   gap: 0.5em;
-}
-
-#Status,
-#Battle-Stats {
-  min-width: 450px;
 }
 
 #Status {
@@ -635,18 +634,20 @@ h2 {
   flex-direction: column;
   background-color: hsl(var(--main-light-2));
   border-radius: 0.5em;
+
+  width: 45%;
 }
 
-#Status > div {
+#Status>div {
   flex: 1 0 0;
 }
 
-#Status > div:nth-child(1) {
+#Status>div:nth-child(1) {
   display: flex;
   flex-direction: column;
 }
 
-#Status > div:nth-child(2) {
+#Status>div:nth-child(2) {
   display: flex;
   justify-content: space-between;
 
@@ -658,7 +659,7 @@ h2 {
   width: calc(50% - 10px);
 }
 
-.split-status > p {
+.split-status>p {
   margin: 0;
   font-weight: 700;
 }
@@ -718,6 +719,8 @@ h2 {
   flex-direction: column;
   background-color: hsl(var(--main-light-2));
   border-radius: 0.5em;
+
+  width: 55%;
 }
 
 .battle-stats-window {
@@ -737,13 +740,14 @@ h2 {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 1em;
+  justify-items: legacy;
 }
 
-.battle-stats-grid > div {
-  max-width: 200px;
+.battle-stats-grid>div {
+  max-width: 100%;
 }
 
-.battle-stats-grid > div > div {
+.battle-stats-grid>div>div {
   padding: .5em;
   background-color: hsl(var(--main-light));
   border-radius: 0.5em;
@@ -769,7 +773,7 @@ h2 {
 }
 
 @media only screen and (max-width: 1200px) {
-  #Stats > div {
+  #Stats>div {
     flex-wrap: wrap;
   }
 
@@ -823,17 +827,18 @@ h2 {
     grid-template-rows: repeat(2, 1fr);
   }
 
-  .battle-stats-grid > div {
+  .battle-stats-grid>div {
     width: 100%;
     max-width: 100%;
   }
 
-  .battle-stats-grid > div > div {
+  .battle-stats-grid>div>div {
     padding: .25em 1em;
   }
 }
 
 @media only screen and (max-width: 570px) {
+
   #Status,
   #Battle-Stats {
     min-width: 100%;
@@ -861,7 +866,7 @@ h2 {
 }
 
 /* Skills */
-#Skills > div {
+#Skills>div {
   border-radius: 0.5em;
   color: hsl(var(--text));
   background-color: hsl(var(--main-light-2));
@@ -909,6 +914,7 @@ h2 {
   scale: 0.95;
   visibility: visible;
 }
+
 /* End toggle */
 
 .skill-priority {
@@ -920,7 +926,7 @@ h2 {
   border-radius: 0.5em;
 }
 
-.skill-priority > div {
+.skill-priority>div {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -932,15 +938,15 @@ h2 {
   display: flex;
 }
 
-.skill-priority-cont > div:nth-child(1) {
+.skill-priority-cont>div:nth-child(1) {
   flex: 0 0 100px;
 }
 
-.skill-priority-cont > div:nth-child(1) p {
+.skill-priority-cont>div:nth-child(1) p {
   margin: 0;
 }
 
-.skill-priority-cont > div:nth-child(2) {
+.skill-priority-cont>div:nth-child(2) {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -948,7 +954,7 @@ h2 {
   gap: 0.4em;
 }
 
-.skill-priority-cont > div:nth-child(2) > div {
+.skill-priority-cont>div:nth-child(2)>div {
   display: flex;
   align-items: center;
   gap: 0.25em;
@@ -963,7 +969,7 @@ h2 {
     flex-wrap: wrap;
   }
 
-  .skill-priority-cont > div:nth-child(1) {
+  .skill-priority-cont>div:nth-child(1) {
     flex: 0 0 100%;
     display: flex;
     align-items: center;
@@ -981,12 +987,12 @@ h2 {
   gap: 1em;
 }
 
-.skills-usage > div {
+.skills-usage>div {
   display: flex;
   flex-direction: column;
 }
 
-.skills-usage > div > div {
+.skills-usage>div>div {
   flex: 1 0 0;
   display: flex;
   justify-content: flex-start;
@@ -1000,13 +1006,13 @@ h2 {
   border-radius: 0.5em;
 }
 
-.skills-usage > div:nth-child(2) > div {
+.skills-usage>div:nth-child(2)>div {
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
 }
 
-.skills-usage > div:nth-child(2) > div p {
+.skills-usage>div:nth-child(2)>div p {
   margin: 0;
 }
 
@@ -1034,7 +1040,7 @@ h2 {
   justify-content: center;
 }
 
-.consumables-container > div {
+.consumables-container>div {
   display: flex;
   justify-content: center;
 
@@ -1052,7 +1058,7 @@ h2 {
   margin: 0;
 }
 
-.consumables-container > div > * {
+.consumables-container>div>* {
   flex: 1 0 0;
 }
 
@@ -1118,7 +1124,7 @@ h2 {
 }
 
 @media only screen and (max-width: 880px) {
-  .consumables-container > div {
+  .consumables-container>div {
     display: block;
   }
 
@@ -1138,6 +1144,7 @@ h2 {
 }
 
 @media only screen and (max-width: 570px) {
+
   .gear-container,
   .consumables-container {
     border-radius: 0 0;
@@ -1159,7 +1166,7 @@ h2 {
   height: 24px;
 }
 
-#Farming > div {
+#Farming>div {
   color: hsl(var(--text));
   background-color: hsl(var(--main-light-2));
   border-radius: 0.5em;
@@ -1202,7 +1209,7 @@ h2 {
   margin: 0;
 }
 
-.autoloot-list > div {
+.autoloot-list>div {
   display: flex;
   flex-direction: column;
 
@@ -1216,17 +1223,17 @@ h2 {
   overflow-x: auto;
 }
 
-.autoloot-list > div div:nth-child(1) {
+.autoloot-list>div div:nth-child(1) {
   display: flex;
   align-items: center;
   gap: 0.25em;
 }
 
-.autoloot-list > div div:nth-child(1) span:nth-child(1) {
+.autoloot-list>div div:nth-child(1) span:nth-child(1) {
   font-weight: 700;
 }
 
-.autoloot-list > div div:nth-child(2) {
+.autoloot-list>div div:nth-child(2) {
   margin-block-start: 0.5em;
   margin-block-end: 0.25em;
 }
@@ -1246,7 +1253,7 @@ h2 {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .autoloot-list > div {
+  .autoloot-list>div {
     width: 100%;
   }
 
@@ -1262,7 +1269,7 @@ input.code {
 }
 
 /* Guide */
-#New-Player > div {
+#New-Player>div {
   color: hsl(var(--text));
   background-color: hsl(var(--main-light-2));
   border-radius: 0.5em;
@@ -1277,13 +1284,13 @@ input.code {
   border-radius: .5em;
 }
 
-#New-Player .select > div {
+#New-Player .select>div {
   display: flex;
   flex-direction: column;
   gap: .25em;
 }
 
-#New-Player .select > div > div {
+#New-Player .select>div>div {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
@@ -1291,13 +1298,13 @@ input.code {
 }
 
 #New-Player a {
-  color: hsl(var(--important));
+  color: hsl(var(--link));
   text-decoration: none;
   position: relative;
 }
 
 #New-Player a:hover {
-  color: hsl(var(--important), 50%);
+  color: hsl(var(--link), 50%);
 }
 
 #New-Player .select a:is(:hover, :focus-within)::before {
