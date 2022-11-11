@@ -893,6 +893,7 @@ h2 {
 
   #Status .stats-wrapper {
     flex-wrap: wrap;
+    gap: 1em;
   }
 
   .split-status {
