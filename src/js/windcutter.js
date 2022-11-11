@@ -58,9 +58,10 @@ $(".autoloot").click(function() {
 
 //Starting point
 $(".starting-point").click(function() {
-  $(".starting-point-text").toggle()
+  $(".starting-point-text").slideToggle('slow')
 })
 
+// Copy to clipboard
 let lootList = document.querySelector('#Autoloot')
 
 function copyClipBoard(value) {
@@ -81,6 +82,21 @@ lootList.addEventListener('click', (e) => {
   copyClipBoard(text)
 })
 
+// Collapsible content or accordion
+document.querySelectorAll('.button-collapse').forEach(button => {
+  button.addEventListener("click", () => {
+    const collapseBox = button.nextElementSibling;
+
+    collapseBox.classList.toggle('collapsed-box-active');
+
+    if (collapseBox.classList.contains('collapsed-box-active')) {
+      collapseBox.style.maxHeight = collapseBox.scrollHeight + 'px';
+    }
+    else {
+      collapseBox.style.maxHeight = 0;
+    }
+  });
+});
 
 
 

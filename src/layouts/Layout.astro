@@ -116,24 +116,23 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	--code-contrast: 0, 0%, 10%;
 	--code-text: 0, 0%, 90%;
 	
-	--main-dark: 221, 60%, 19%; /* dark-blue */
-	--main-light: 221, 55%, 45%; /* light-blue */
+	--main-dark: 221, 60%, 19%;
+	--main-light: 221, 55%, 45%;
 
 	--main-light-1: 221, 60%, 27%;
 	--main-light-2: 221, 60%, 34%;
 	--main-light-3: 221, 60%, 40%;
 
-	--text: 0, 0%, 91%; /* snow */
-	--link: 231, 89%, 71%; /* green */
-	--header: 49, 85%, 65%; /* golden */
-	--important: 343, 100%, 66%; /* red */
-	--number: 185, 100%, 80%; /* light-blue */
-	--low-focus: 244, 55%, 70%; /* lavender */
+	--text: 0, 0%, 91%;
+	--link: 36, 90%, 60%;
+	--header: 49, 85%, 65%;
+	--important: 343, 100%, 66%;
+	--number: 185, 100%, 80%;
+	--low-focus: 244, 55%, 70%;
 
-	--curiosity: 36, 90%, 60%; /* orange */
-	--number-contrast: 211, 53%, 40%; /* dark light-blue */
+	--curiosity: 111, 100%, 77%;
+	--number-contrast: 0, 0%, 35%;
 	--link-contrast: 0, 0%, 0%;
-
 	}
 
 	.theme-changer #dark-blue {
@@ -168,7 +167,7 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	--low-focus: 244, 55%, 70%;
 
 	--curiosity: 111, 100%, 77%;
-	--number-contrast: 150, 20%, 15%;
+	--number-contrast: 0, 0%, 35%;
 	--link-contrast: 0, 0%, 0%;
 }
 
@@ -188,48 +187,48 @@ const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
 	--low-focus: 244, 55%, 70%;
 
 	--curiosity: 111, 100%, 77%;
-	--number-contrast: 150, 20%, 15%;
+	--number-contrast: 0, 0%, 35%;
 	--link-contrast: 0, 0%, 0%;
 }
 
 .dark {
-	--main-dark: 0, 0%, 15%;
-	--main-light: 0, 0%, 35%;
+    --main-dark: 0, 0%, 14%;
+    --main-light: 0, 0%, 32%;
 
-	--main-light-1: 0, 0%, 20%;
-	--main-light-2: 0, 0%, 24%;
-	--main-light-3: 0, 0%, 29%;
+    --main-light-1: 0, 0%, 19%;
+    --main-light-2: 0, 0%, 23%;
+    --main-light-3: 0, 0%, 26%;
 
-	--text: 0, 0%, 95%;
-	--link: 120, 68%, 62%;
-	--header: 0, 98%, 70%;
-	--important: 211, 53%, 60%;
-	--number: 52, 100%, 65%;
-	--low-focus: 0, 10%, 60%;
+    --text: 0, 0%, 92%;
+    --link: 250, 100%, 84%;
+    --header: 200, 65%, 70%;
+    --important: 211, 70%, 55%;
+    --number: 52, 100%, 70%;
+    --low-focus: 10, 15%, 50%;
+    --curiosity: 100, 85%, 70%;
 
-	--curiosity: 36, 90%, 60%;
-	--number-contrast: 211, 53%, 60%;
-	--link-contrast: 0, 0%, 0%;
+    --number-contrast: 25, 70%, 45%;
+    --link-contrast: 250, 100%, 40%;
 }
 
 :root:has(#dark:checked) {
-	--main-dark: 0, 0%, 15%;
-	--main-light: 0, 0%, 35%;
+    --main-dark: 0, 0%, 14%;
+    --main-light: 0, 0%, 32%;
 
-	--main-light-1: 0, 0%, 20%;
-	--main-light-2: 0, 0%, 24%;
-	--main-light-3: 0, 0%, 29%;
+    --main-light-1: 0, 0%, 19%;
+    --main-light-2: 0, 0%, 23%;
+    --main-light-3: 0, 0%, 26%;
+	
+    --text: 0, 0%, 92%;
+    --link: 250, 100%, 84%;
+    --header: 200, 65%, 70%;
+    --important: 211, 70%, 55%;
+    --number: 52, 100%, 70%;
+    --low-focus: 10, 15%, 50%;
+    --curiosity: 100, 85%, 70%;
 
-	--text: 0, 0%, 95%;
-	--link: 120, 68%, 62%;
-	--header: 0, 98%, 70%;
-	--important: 211, 53%, 60%;
-	--number: 52, 100%, 65%;
-	--low-focus: 0, 10%, 60%;
-
-	--curiosity: 36, 90%, 60%;
-	--number-contrast: 211, 53%, 60%;
-	--link-contrast: 0, 0%, 0%;
+    --number-contrast: 25, 70%, 45%;
+    --link-contrast: 250, 100%, 40%;
 }
 
 .light {
@@ -412,16 +411,16 @@ input:is(:disabled) {
 	}
 
 	.dropdown-menu a {
-	color: hsl(var(--header));
+	color: hsl(var(--text));
 	}
 
 	.dropdown-menu a:hover {
-	color: hsl(var(--header));
-	background-color: hsl(var(--main-light-3));
+	color: hsl(var(--text));
+	background-color: hsl(var(--main-light));
 	}
 
-	.dropdown-item {
-		color: white;
+	.dropdown-item b {
+		color: hsl(var(--header));
 	}
 
 	/* Footer */
@@ -515,7 +514,7 @@ input:is(:disabled) {
 	}
 
 	.link-contrast {
-	color: hsl(var(--link)) !important;
+	color: hsl(var(--link-contrast));
 	}
 
 	.link:hover {
@@ -535,7 +534,6 @@ input:is(:disabled) {
 	background-color: hsl(var(--curiosity));
 	border-radius: 0.25em;
 	font-size: 0.75rem;
-
 	user-select: none;
 	}
 
@@ -647,6 +645,23 @@ input:is(:disabled) {
 
 	.text-swap {
 	display: none;
+	}
+
+	.hover {
+		display: inline-block;
+		position: relative;
+	}
+
+	.hover::after {
+		position: absolute;
+		content: '';
+		inset: 0;
+		background-color: hsl(var(--code));
+		border-radius: .25em;
+	}
+
+	.hover:hover::after {
+		background-color: transparent;
 	}
 </style>
 

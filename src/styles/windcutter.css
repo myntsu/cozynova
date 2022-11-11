@@ -638,47 +638,51 @@ h2 {
   width: 45%;
 }
 
-#Status>div {
+#Statu s> div {
   flex: 1 0 0;
 }
 
-#Status>div:nth-child(1) {
+#Status > div:nth-child(1) {
   display: flex;
   flex-direction: column;
 }
 
-#Status>div:nth-child(2) {
+#Status .stats-wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 1em;
 
   background-color: hsl(var(--main-light-3));
   border-radius: 0.5em;
 }
 
 .split-status {
-  width: calc(50% - 10px);
+  width: 100%;
 }
 
 .split-status>p {
   margin: 0;
   font-weight: 700;
+  color: hsl(var(--header));
 }
 
 .stats-window-grid {
   display: grid;
   grid-column: auto;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
   gap: 0;
-
-  max-width: 250px;
+  
+  max-width: 100%;
 
   background-color: hsl(var(--main-light));
   border-radius: 0.5em;
+  box-shadow: 1px 1px 2px hsl(var(--main-dark), 20%);
 
   place-content: center;
   align-items: center;
-  padding: 1em;
+  padding: .5em;
 }
 
 .stats-window-grid div {
@@ -686,13 +690,22 @@ h2 {
   flex-direction: column;
 }
 
+.stats-window-grid div:nth-child(1) {
+  border-inline-end: 1px solid hsl(var(--white));
+  padding-inline-end: 0.75em;
+}
+
+.stats-window-grid div:nth-child(2) {
+  padding-inline-start: 0.75em;
+}
+
 .stats-window-grid p {
   display: flex;
   margin: 0;
 }
 
-.stats-window-grid p span:nth-child(1) {
-  color: hsl(var(--low-focus));
+.stats-window-grid p span:nth-of-type(1) {
+  color: hsl(var(--number));
 }
 
 .stats-window-grid p span:nth-child(2) {
@@ -759,13 +772,14 @@ h2 {
   font-weight: 700;
 }
 
-.battle-stats-grid p:nth-child(1) {
+.battle-stats-grid > div > p:nth-of-type(1) {
   align-items: center;
   gap: .25em;
+  color: hsl(var(--header));
 }
 
-.battle-stats-grid span:nth-child(1) {
-  color: hsl(var(--header));
+.battle-stats-grid span:nth-of-type(2) {
+  color: hsl(var(--number));
 }
 
 .battle-stats-grid span {
@@ -782,20 +796,43 @@ h2 {
     width: 100%;
   }
 
+  #Status .stats-wrapper {
+    flex-wrap: nowrap;
+    gap: 0em;
+  }
+
   .stats-window-grid {
     max-width: 100%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
     gap: 0;
+    box-shadow: none;
+  }
+
+  .split-status {
+    width: calc(50% - 10px);
+  }
+
+  .stats-window-grid {
+    padding: 0;
+    background-color: transparent;
+    gap: 1em;
+  }
+
+  .stats-window-grid div {
+    padding: .5em;
+    background-color: hsl(var(--main-light));
+    border-radius: .5em;
+    box-shadow: 1px 1px 2px hsl(var(--main-dark), 20%);
   }
 
   .stats-window-grid div:nth-child(1) {
-    border-inline-end: 1px solid hsl(var(--white));
-    padding-inline-end: 0.75em;
+    border-inline-end: none;
+    padding-inline-end: 0.5em;
   }
 
   .stats-window-grid div:nth-child(2) {
-    padding-inline-start: 0.75em;
+    padding-inline-start: 0.5em;
   }
 
   .battle-stats-grid {
@@ -808,9 +845,19 @@ h2 {
 @media only screen and (max-width: 766px) {
   .stats-window-grid {
     max-width: 100%;
+    padding: .5em;
+    background-color: hsl(var(--main-light));
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
     gap: 0;
+    box-shadow: 1px 1px 2px hsl(var(--main-dark), 20%);
+  }
+
+  .stats-window-grid div {
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .stats-window-grid div:nth-child(1) {
@@ -844,19 +891,20 @@ h2 {
     min-width: 100%;
   }
 
-  .stats-window-grid {
-    max-width: 250px;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+  #Status .stats-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .split-status {
+    width: 100%;
   }
 
   .stats-window-grid div:nth-child(1) {
-    border-inline-end: none;
-    padding-inline-end: 0;
+    padding-inline-end: .5em;
   }
 
   .stats-window-grid div:nth-child(2) {
-    padding-inline-start: 0;
+    padding-inline-start: .75em;
   }
 
   .battle-stats-grid {
@@ -873,7 +921,7 @@ h2 {
 }
 
 /* Light toggle */
-.toggle:is(.dark, .data, .skills, .consumables, .autoloot, .copy) {
+.toggle:is(.dark, .data, .skills, .consumables, .autoloot, .copy, .starting-point) {
   align-self: flex-start;
 
   display: flex;
@@ -891,11 +939,11 @@ h2 {
   box-shadow: 2px 2px 0 0 hsl(var(--black), 70%);
 }
 
-.toggle:hover:is(.data, .skills, .consumables, .autoloot, .copy) {
+.toggle:hover:is(.data, .skills, .consumables, .autoloot, .copy, .starting-point) {
   background-color: hsl(var(--important), 80%);
 }
 
-.toggle:active:is(.data, .skills, .consumables, .autoloot, .copy) {
+.toggle:active:is(.data, .skills, .consumables, .autoloot, .copy, .starting-point) {
   translate: 2px 2px;
   box-shadow: none;
 }
@@ -921,8 +969,6 @@ h2 {
   display: flex;
 
   padding: 1em;
-
-  background-color: hsl(var(--main-light-3));
   border-radius: 0.5em;
 }
 
@@ -939,7 +985,7 @@ h2 {
 }
 
 .skill-priority-cont>div:nth-child(1) {
-  flex: 0 0 100px;
+  flex: 0 0 75px;
 }
 
 .skill-priority-cont>div:nth-child(1) p {
@@ -1269,7 +1315,7 @@ input.code {
 }
 
 /* Guide */
-#New-Player>div {
+#New-Player > div {
   color: hsl(var(--text));
   background-color: hsl(var(--main-light-2));
   border-radius: 0.5em;
@@ -1284,17 +1330,23 @@ input.code {
   border-radius: .5em;
 }
 
-#New-Player .select>div {
+#New-Player .select .select-wrapper {
   display: flex;
-  flex-direction: column;
-  gap: .25em;
-}
-
-#New-Player .select>div>div {
-  display: flex;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
   gap: .5em;
+}
+
+#New-Player .select .selection {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5em;
+  width: 100%;
+  padding: .5em;
+
+  background-color: hsl(var(--main-light));
+  border-radius: .25em;
 }
 
 #New-Player a {
@@ -1307,13 +1359,6 @@ input.code {
   color: hsl(var(--link), 50%);
 }
 
-#New-Player .select a:is(:hover, :focus-within)::before {
-  content: 'Test';
-  position: absolute;
-  top: 1rem;
-  left: 0;
-}
-
 
 #New-Player .select a:is(:hover, :focus-within)::after {
   padding-inline-start: .5em;
@@ -1321,14 +1366,14 @@ input.code {
   font-weight: 900;
   content: '\f3be';
   font-size: .8rem;
-  color: hsl(var(--white));
+  color: hsl(var(--text));
 }
 
 .starting-point-text {
   display: none;
-  margin: 0;
+  width: 100%;
 }
 
-#Novice-Section ul {
-  /* padding-inline-start: 1em; */
+.starting-point-text ul {
+  display: flex;
 }

@@ -22,6 +22,9 @@ body {
 	font-family: "DM Sans", sans-serif;
 	font-weight: 400;
     overflow: auto;
+
+    color: white;
+    background-color: #1b1b1b;
 	}
 
     .first-column {
@@ -241,6 +244,47 @@ body {
         background-color: hsl(var(--main-light-3));
     }
 
+    .containers-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .25em;
+
+        width: 300px;
+
+        color: hsl(var(--text));
+    }
+
+    .containers-2 > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 50px;
+        border-radius: .5em;
+    }
+
+    .containers-2 > div:nth-child(1) {
+        background-color: hsl(var(--main-dark));
+    }
+
+    .containers-2 > div:nth-child(2) {
+        background-color: hsl(var(--main-light-1));
+    }
+
+    .containers-2 > div:nth-child(3) {
+        background-color: hsl(var(--main-light-2));
+    }
+
+    .containers-2 > div:nth-child(4) {
+        background-color: hsl(var(--main-light-3));
+    }
+
+    .containers-2 > div:nth-child(5) {
+        background-color: hsl(var(--main-light));
+    }
+
     .full-layout {
         display: flex;
         flex-direction: column;
@@ -361,8 +405,17 @@ button:active {
 }
 
 .style-tab {
-    height: min-content;
-    padding: 1em;
+    display: flex;
+    align-items: flex-start;
+    height: 100vmax;
+    position: relative;
+}
+
+.style-tab > div {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 2em;
     color: #fff;
     background-color: #13264e;
     border-radius: .5em;
@@ -375,6 +428,9 @@ button:active {
 
 .style-tab style {
     white-space: pre;
+    border: 1px solid white;
+    border-radius: .25em;
+    padding: .5em;
 }
 
     :root {
@@ -450,6 +506,57 @@ button:active {
             </div>
         </div>
     </div>
+
+    <div>
+        Try them in different backgrounds
+        <div class="containers-2">
+            <div>
+                <p class="text">Hello</p> 
+                <p class="link">Rich</p>
+                <p class="header">Text</p>
+                <p class="important">Inside</p>
+                <p class="number">This</p>
+                <p class="low-focus">Container</p>
+                <p class="tip">Did?</p>
+            </div>
+            <div>
+                <p class="text">Hello</p> 
+                <p class="link">Rich</p>
+                <p class="header">Text</p>
+                <p class="important">Inside</p>
+                <p class="number">This</p>
+                <p class="low-focus">Container</p>
+                <p class="tip">Did?</p>
+            </div>
+            <div>
+                <p class="text">Hello</p> 
+                <p class="link">Rich</p>
+                <p class="header">Text</p>
+                <p class="important">Inside</p>
+                <p class="number">This</p>
+                <p class="low-focus">Container</p>
+                <p class="tip">Did?</p>
+            </div>
+            <div>
+                <p class="text">Hello</p> 
+                <p class="link">Rich</p>
+                <p class="header">Text</p>
+                <p class="important">Inside</p>
+                <p class="number">This</p>
+                <p class="low-focus">Container</p>
+                <p class="tip">Did?</p>
+            </div>
+            <div>
+                <p class="text">Hello</p> 
+                <p class="link">Rich</p>
+                <p class="header">Text</p>
+                <p class="important">Inside</p>
+                <p class="number">This</p>
+                <p class="low-focus">Container</p>
+                <p class="tip">Did?</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="second-column">
@@ -513,28 +620,26 @@ button:active {
 </div>
 
 <div class="style-tab">
-    <p>You can edit this tab</p>
-    <style contenteditable="" style="display: block;">
-    :root {
-        --main-dark: 221, 60%, 19%; 
-        --main-light: 221, 55%, 45%;
-    
-    	--main-light-1: 221, 60%, 27%;
-    	--main-light-2: 221, 60%, 34%;
-    	--main-light-3: 221, 60%, 40%;
-    
-    	--text: 0, 0%, 91%;
-    	--link: 36, 90%, 60%;
-    	--header: 49, 85%, 65%;
-    	--important: 343, 100%, 66%;
-    	--number: 185, 100%, 80%;
-    	--low-focus: 244, 55%, 70%;
-    
-    	--curiosity: 111, 100%, 77%;
-    	--number-contrast: 150, 70%, 40%;
-    	--link-contrast: 0, 70%, 40%;
+    <div>
+        <p>You can edit this tab</p>
+        <style contenteditable="" style="display: block;">:root {
+    --main-dark: 221, 60%, 19%;
+    --main-light: 221, 55%, 45%;
+    --main-light-1: 221, 60%, 27%;
+    --main-light-2: 221, 60%, 34%;
+    --main-light-3: 221, 60%, 40%;
+    --text: 0, 0%, 91%;
+    --link: 36, 90%, 60%;
+    --header: 49, 85%, 65%;
+    --important: 343, 100%, 66%;
+    --number: 185, 100%, 80%;
+    --low-focus: 244, 55%, 70%;
+    --curiosity: 111, 100%, 77%;
+    --number-contrast: 150, 70%, 40%;
+    --link-contrast: 0, 70%, 40%;
     }
-    </style>
+        </style>
+    </div>
 </div>
 
 </body>

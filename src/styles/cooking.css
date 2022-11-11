@@ -97,7 +97,7 @@ body {
   margin: 0;
   margin-inline-end: .25em;
 
-  color: hsl(var(--curiosity));
+  color: hsl(var(--white));
 
   font-size: 2rem;
   font-weight: 700;
