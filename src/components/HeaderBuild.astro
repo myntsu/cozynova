@@ -1,0 +1,337 @@
+<div class="utility-toolbar">
+    <button class="deploy-content-table" type="button"aria-expanded="false" aria-controls="Content-Table">
+      <i class="fa-solid fa-table"></i> Full Content table
+    </button>
+
+    <span class="pick-a-theme">Choose a theme</span>
+
+    <form class="theme-changer" action="">
+        <fieldset>
+            <legend class="visually-hidden">Pick a color scheme</legend>
+            <label class="visually-hidden" for="dark-blue">Blue Dark</label>
+            <input id="dark-blue" type="radio" name="theme">
+
+            <label class="visually-hidden" for="green">Green</label>
+            <input id="green" type="radio" name="theme">
+            
+            <label class="visually-hidden" for="dark">Dark</label>
+            <input id="dark" type="radio" name="theme">
+
+            <label class="visually-hidden" for="light">Light</label>
+            <input id="light" type="radio" name="theme">
+        </fieldset>
+    </form>
+</div>
+
+<header class="build" role="banner">
+  <div class="headers-wrapper">
+    <p>Nova Ragnarok</p>
+    <h1 class="header">Wind Cutter</h1>
+    <h2><b>PVE</b> <span>• Rune Knight</span></h2>
+  </div>
+  <span class="updated-date-title">Last updated:</span>
+  <span class="updated-date">11/November/2022</span>
+</header>
+
+<nav class="shortcut-nav" aria-label="Content table shortcuts" role="navigation">
+  <div class="content-table">
+    <a class="link" aria-current="page" href="#Equipment">Equipment</a>
+    <a class="link" href="#Stats">Stats</a>
+    <a class="link" href="#Consumables">Consumables</a>
+    <a class="link" href="#New-Player">New Player</a>
+  </div>
+</nav>
+  
+<div class="collapse" id="Content-Table" aria-label="Full content table list" role="navigation">
+  <div class="content-table-list">
+    <a href="#Introduction">Introduction</a>
+    <a href="#Data">Data</a>
+    <a href="#Observations">Observations</a>
+    <a href="#Equipment">Equipment</a>
+    <a href="#Calculations">Calculations</a>
+    <a href="#Status">Status</a>
+    <a href="#Battle-Stats">Battle Stats</a>
+    <a href="#Skills">Skills</a>
+    <a href="#Consumables">Consumables</a>
+    <a href="#Autoloot">Autoloot</a>
+    <a href="#Farming-Equipment">Farming Equipment</a>
+    <a href="#New-Player">New Player</a>
+  </div>
+</div>
+
+<style>
+/* Utility toolbar */
+.utility-toolbar {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 1000px;
+  margin: 5em 0 auto;
+}
+
+.deploy-content-table {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+
+  padding: 0 1em;
+
+  color: gray;
+  background-color: hsl(var(--main-dark), 50%);
+  border: none;
+  border-radius: .25em .25em 0 0;
+
+  font-size: .75rem;
+  text-transform: uppercase;
+
+  transition: background-color 200ms linear;
+}
+
+.deploy-content-table:hover {
+  background-color: hsl(var(--main-dark));
+}
+
+.deploy-content-table:active {
+  translate: 0 2px;
+}
+
+.pick-a-theme {
+  display: flex;
+  align-items: center;
+
+  margin-inline-start: auto;
+  padding: .25em .25em .25em .75em;
+  
+  background-color: hsl(var(--main-dark));
+  border-radius: .5em 0 0 0;
+  font-size: 1rem;
+}
+
+.theme-changer>fieldset {
+  display: flex;
+  gap: 2rem;
+
+  width: fit-content;
+  margin-inline: auto;
+  padding: .5em 1.5em;
+
+  background-color: hsl(var(--main-dark));
+  border: 0;
+  border-radius: 0 .5em 0 0;
+}
+
+.theme-changer input[type="radio"] {
+  appearance: none;
+  width: 1em;
+  height: 1em;
+
+  outline: 2px solid var(--radio-color, currentColor);
+  outline-offset: 2px;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.theme-changer input[type="radio"]:checked {
+  background-color: var(--radio-color);
+}
+
+/* Header */
+.build {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0em;
+
+  background-color: hsl(var(--main-light-1));
+  position: relative;
+  isolation: isolate;
+
+  background-image:
+    linear-gradient(90deg,
+      hsl(var(--main-dark)) -10%, transparent),
+    url('../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp');
+  background-position: 50% 35%;
+  background-size: cover;
+}
+
+.build::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-color: hsl(var(--main-dark));
+  opacity: 0.65;
+}
+
+.updated-date-title {
+  position: absolute;
+  font-size: .75rem;
+  right: 5px;
+  bottom: 20px;
+  color: hsl(var(--white), 70%);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.updated-date {
+  position: absolute;
+  font-size: .75rem;
+  right: 5px;
+  bottom: 5px;
+  color: hsl(var(--white), 70%);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.headers-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  font-weight: 700;
+}
+
+.headers-wrapper h1 {
+  font-size: 1.5rem;
+  margin-block-start: .25em;
+  margin-block-end: .25em;
+}
+
+.headers-wrapper h2,
+.headers-wrapper p {
+  color: hsl(var(--white));
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Quick-nav */
+.shortcut-nav {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.content-table {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  width: 100%;
+  max-width: 1000px;
+
+  background-color: hsl(var(--main-dark));
+  flex-wrap: wrap;
+  word-break: keep-all;
+  font-size: 1.1rem;
+}
+
+.content-table .link {
+  width: 10em;
+  padding: .5em;
+  color: hsl(var(--nav-link));
+}
+
+@media only screen and (max-width: 990px) {
+
+  body {
+    background-image:
+      linear-gradient(0deg,
+        hsl(var(--main-dark)) 85%, transparent),
+      url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
+  }
+
+  .content-table .link {
+    width: 50% !important;
+    outline: .1ex solid hsl(var(--white), 5%);
+    outline-offset: -.2ex;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  body {
+    background-image:
+      linear-gradient(0deg,
+        hsl(var(--main-dark)) 90%, transparent),
+      url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
+  }
+
+  .utility-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .deploy-content-table {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .pick-a-theme {
+    justify-content: center;
+    width: 100%;
+    padding: .25em .5em .25em .5em !important;
+    border-radius: 0 !important;
+    border-top: 1px solid hsl(var(--main-light-2), 80%);
+  }
+
+  .theme-changer {
+    width: 100%;
+
+  }
+
+  .theme-changer>fieldset {
+    justify-content: space-around;
+    width: 100%;
+    border-radius: 0;
+    padding-bottom: 1em;
+  }
+
+  .theme-changer input[type="radio"] {
+    width: 2em;
+    height: 2em;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .content-table .link {
+    width: 100% !important;
+    outline: .1ex solid hsl(var(--white), 5%);
+    outline-offset: -.2ex;
+  }
+}
+
+.content-table a {
+  text-decoration: none;
+  color: hsl(var(--nav-link));
+}
+
+.content-table a:hover {
+  background-color: hsl(var(--important));
+}
+
+/* Long content table */
+#Content-Table {
+  width: 100%;
+  max-width: 1000px;
+  background-color: hsl(var(--main-dark));
+}
+
+.content-table-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
+  text-align: center;
+}
+
+.content-table-list a {
+  padding: .5em;
+  color: hsl(var(--nav-link));
+  outline: .1ex solid hsl(var(--white), 5%);
+  outline-offset: -.2ex;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.content-table-list a:is(:hover, :focus, :focus-within) {
+  color: inherit;
+  background-color: hsl(var(--important));
+}
+</style>

@@ -34,11 +34,17 @@ function backToTop() {
   document.documentElement.scrollTop = 0;
 }
 
+// Content tables
+$(".deploy-content-table").click(function() {
+  $("#Content-Table").toggle('slow');
+  $(".shortcut-nav").toggle('slow');
+});
+
 // Data (ACD)
 $(".data").click(function() {
   $(".text-default").toggle();
   $(".text-swap").toggle();
-})
+});
 
 // Skills
 $(".skills").click(function() {
@@ -53,7 +59,7 @@ $(".consumables").click(function(){
 
 // Autoloot
 $(".autoloot").click(function() {
-  $(".autoloot-text").toggle();
+  $(".autoloot-text").slideToggle('slow');
 })
 
 //Starting point
