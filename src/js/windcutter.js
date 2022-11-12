@@ -93,16 +93,7 @@ document.querySelectorAll('.button-collapse').forEach(button => {
   button.addEventListener("click", () => {
     const collapseBox = button.nextElementSibling;
 
-    collapseBox.classList.toggle('collapsed-box-active');
-
-    if (collapseBox.classList.contains('collapsed-box-active')) {
-      collapseBox.style.maxHeight = collapseBox.scrollHeight + 'px';
-    }
-    else {
-      collapseBox.style.maxHeight = 0;
-    }
+    button.classList.toggle('active-btn');
+    collapseBox.classList.toggle('active');
   });
 });
-
-
-

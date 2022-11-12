@@ -96,9 +96,19 @@ h2 {
 }
 
 .list-container {
+  width: 49%;
   background-color: hsl(var(--main-light-3));
   border-radius: 0.5em;
-  width: 49%;
+  overflow: hidden;
+}
+
+.list-container p {
+  background-color: hsl(var(--main-dark));
+  text-align: center;
+}
+
+.list-container ul {
+  padding-block-start: .25em;
 }
 
 @media only screen and (max-width: 990px) {
@@ -398,12 +408,16 @@ h2 {
 
 .split-status {
   width: 100%;
+  overflow: hidden;
 }
 
-.split-status>p {
+.split-status > p {
   margin: 0;
   font-weight: 700;
   color: hsl(var(--header));
+  background-color: hsl(var(--main-dark));
+  border-radius: .5em .5em 0 0;
+  text-align: center;
 }
 
 .stats-window-grid {
@@ -416,7 +430,7 @@ h2 {
   max-width: 100%;
 
   background-color: hsl(var(--main-light));
-  border-radius: 0.5em;
+  border-radius: 0 0 .5em .5em;
   box-shadow: 1px 1px 2px hsl(var(--main-dark), 20%);
 
   place-content: center;
@@ -497,12 +511,14 @@ h2 {
 
 .battle-stats-grid>div {
   max-width: 100%;
+  border-radius: .5em .5em 0 0;
+  overflow: hidden;
 }
 
 .battle-stats-grid>div>div {
   padding: .5em;
   background-color: hsl(var(--main-light));
-  border-radius: 0.5em;
+  border-radius: 0 0 .5em .5em;
 }
 
 .battle-stats-grid p {
@@ -512,9 +528,11 @@ h2 {
 }
 
 .battle-stats-grid > div > p:nth-of-type(1) {
+  justify-content: center;
   align-items: center;
   gap: .25em;
   color: hsl(var(--header));
+  background-color: hsl(var(--main-dark));
 }
 
 .battle-stats-grid span:nth-of-type(2) {
@@ -722,6 +740,7 @@ h2 {
 
 .skill-priority-cont {
   display: flex;
+  gap: .5em;
 }
 
 .skill-priority-cont>div:nth-child(1) {
@@ -729,7 +748,12 @@ h2 {
 }
 
 .skill-priority-cont>div:nth-child(1) p {
+  width: 100%;
   margin: 0;
+  padding: .4em;
+  background-color: hsl(var(--main-dark));
+  border-radius: .5em;
+  text-align: center;
 }
 
 .skill-priority-cont>div:nth-child(2) {
@@ -761,6 +785,10 @@ h2 {
     align-items: center;
     gap: 0.5em;
     margin-block-end: 0.5em;
+  }
+
+  .skill-priority-cont>div:nth-child(1) p {
+    width: 5em;
   }
 }
 
@@ -966,19 +994,21 @@ h2 {
 }
 
 .farming-container {
-  padding: .5em 1em 1em;
-  background-color: hsl(var(--main-light-3));
+  background-color: hsl(var(--main-light));
   border-radius: 0.5em;
+  overflow: hidden;
 }
 
 .farming-container p {
   margin: 0;
+  background-color: hsl(var(--main-dark));
+  text-align: center;
 }
 
 .farming-container ul {
   list-style: none;
   margin: 0;
-  padding-inline-start: .5em;
+  padding: .5em 1em;
 }
 
 .autoloot-list {
@@ -1004,6 +1034,7 @@ h2 {
   margin: 0;
   padding: 0.75em;
   background-color: hsl(var(--main-light-3));
+  border-left: 3px solid hsl(var(--main-dark));
   border-radius: 0.5em;
 
   overflow-x: auto;
@@ -1061,59 +1092,139 @@ input.code {
   border-radius: 0.5em;
 }
 
-#New-Player .select {
-  display: flex;
-
-  padding: 1em;
-  margin-block-end: 1em;
-  background-color: hsl(var(--main-light-3));
-  border-radius: .5em;
-}
-
-#New-Player .select .select-wrapper {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: .5em;
-}
-
-#New-Player .select .selection {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: .5em;
-  width: 100%;
-  padding: .5em;
-
-  background-color: hsl(var(--main-light));
-  border-radius: .25em;
-}
-
 #New-Player a {
   color: hsl(var(--link));
   text-decoration: none;
-  position: relative;
 }
 
 #New-Player a:hover {
   color: hsl(var(--link), 50%);
 }
 
-
-#New-Player .select a:is(:hover, :focus-within)::after {
-  padding-inline-start: .5em;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: '\f3be';
-  font-size: .8rem;
-  color: hsl(var(--text));
+#New-Player .select {
+  padding: 1em;
+  margin-block-end: 1em;
+  background-color: hsl(var(--main-light-3));
+  border-radius: .5em;
 }
 
-.starting-point-text {
-  display: none;
+.select > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1em;
   width: 100%;
 }
 
-.starting-point-text ul {
+.select .selection {
   display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  overflow: hidden;
+}
+
+.selection > a {
+  width: 100%;
+  text-align: center;
+  color: hsl(var(--white)) !important;
+  background-color: hsl(var(--important), 50%);
+  border-radius: .25em .25em 0 0;
+}
+
+.selection > a:is(:hover, :focus, :focus-within) {
+  background-color: hsl(var(--important));
+}
+
+
+/* Button collapse */
+.button-collapse {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: .25em .5em;
+  background-color: hsl(var(--main-dark));
+  border: 0;
+  border-radius: 0 0 .25em .25em;
+
+  position: relative;
+}
+
+.button-collapse.active-btn {
+  border: 0;
+  border-radius: 0;
+}
+
+.button-collapse span:nth-of-type(2) {
+  position: absolute;
+  top: 55%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.button-collapse:is(:hover, :focus-within) {
+  background-color: hsl(var(--white));
+}
+
+.button-collapse:is(:hover, :focus-within) .tag {
+  color: hsl(var(--white));
+  background-color: hsl(var(--main-dark));
+}
+
+.button-collapse:is(:hover, :focus-within) .fa-star {
+  color: hsl(var(--main-dark));
+}
+
+.button-collapse:is(:hover, :focus-within) .fa-sort-down {
+  color: hsl(var(--main-dark));
+}
+
+.button-collapse:is(:hover, :focus, :focus-within) ~ .collapsed-box {
+  background-color: hsl(var(--main-dark));
+}
+
+.button-collapse .tag {
+  color: hsl(var(--main-dark));
+  background-color: hsl(var(--white));
+  font-weight: 700;
+}
+
+.button-collapse .fa-star {
+  color: hsl(var(--header));
+}
+
+.button-collapse .fa-sort-down {
+  color: hsl(var(--white));
+  font-size: 1.1rem;
+  position: relative;
+  top: -3px;
+}
+
+/* Collapse box */
+.collapsed-box {
+  flex: 1;
+  visibility: collapse;
+  position: absolute;
+  opacity: 0;
+
+  transition: 
+    opacity 1s linear;
+}
+
+.collapsed-box p {
+  margin: 0;
+}
+
+.collapsed-box.active {
+  visibility: visible;
+  position: static;
+  opacity: 1;
+
+  padding: 1em;
+
+  background-color: hsl(var(--main-light));
+  border-radius: 0 0 .25em .25em;
 }
