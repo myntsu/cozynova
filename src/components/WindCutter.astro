@@ -1,51 +1,90 @@
 <main id="Main" class="main-container" role="main">
+
+  <div class="mb-3">
+    <h2>Current progress of this guide</h2>
+    <div class="progress mb-2">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Example with label" style="width: 70%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">70%</div>
+    </div>
+    <span style="color: hsl(var(--text));">Missing:
+      <ol>
+        <li>Review of styles and color</li>
+        <li>Correction of possible typos</li>
+        <li>New player's guide</li>
+      </ol>
+    </span>
+  </div>
+
   <div id="Introduction" class="mb-4">
     <h2 class="fs-5">Introduction</h2>
     <div id="Author">
       <div class="info-socials">
-        <div class="information">
           <h3 class="fs-5"> Author</h3>
-          <p>Hey there! I'm better known as Myndi 😊</p>
-          <p>I have designed this guide in two portions, the first one showcases an <span class="tag">Endgame build</span> <span class="low-focus">(exactly what you're looking at right now)</span>, with the best gear, tips & tricks to fully optimize <b>Wind Cutter</b>, and the second one corresponds to the <span class="tag">New player guide</span> where I explain in fully detail how to go from 0 to endgame.</p>
-          <p>My experience is vastly within this build, around 2+ years playing it in-and-out. Done a lot of content with it, even content people wouldn't expect <b>Wind Cutter</b> to be <span class="low-focus">(like LOGH back in the days)</span>.</p>
-          <p>With nothing else to add, I hope this build makes your game time more enjoyable as it did to me! ✨</p>
-          <p class="low-focus">Note: Although everything here is tailored to work in sync, please take everything with a grain of salt.</p>
-        </div>
-        <div class="social-media">
-          <img src="../assets/img/illustration/smytsu.webp" alt="Myndi profile picture">
-          <div>
-            <div class="discord">
-              <span><i class="fa-brands fa-discord"></i></span>
-              <a href="https://discord.com/users/124421052569878528/" target="_blank" class="link">Myndi#5041</a>
-            </div>
-            <div class="github">
-              <span><i class="fa-brands fa-github-alt fa-lg"></i></span>
-              <a href="https://github.com/Myntsu" target="_blank" class="link">Myntsu</a>
+          <div class="social-media">
+            <img src="../assets/img/illustration/smytsu.webp" alt="Myndi profile picture">
+            <div class="shadow-container">
+              <div class="discord">
+                <span><i class="fa-brands fa-discord"></i></span>
+                <a href="https://discord.com/users/124421052569878528/" target="_blank" class="link">Myndi#5041</a>
+              </div>
+              <div class="github">
+                <span><i class="fa-brands fa-github-alt fa-lg"></i></span>
+                <a href="https://github.com/Myntsu" target="_blank" class="link">Myntsu</a>
+              </div>
             </div>
           </div>
-        </div>
+          <div class="social-media-mob">
+            <img src="../assets/img/illustration/smytsu.webp" alt="Myndi profile picture">
+            <div class="social-media-tags">
+              <p>Hey there! I'm better known as Myndi 😊</p>
+              <div class="discord">
+                <span><i class="fa-brands fa-discord"></i></span>
+                <a href="https://discord.com/users/124421052569878528/" target="_blank" class="link">Myndi#5041</a>
+              </div>
+              <div class="github">
+                <span><i class="fa-brands fa-github-alt fa-lg"></i></span>
+                <a href="https://github.com/Myntsu" target="_blank" class="link">Myntsu</a>
+              </div>
+            </div>
+          </div>
+          <p class="gone-fullsize">Hey there! I'm better known as Myndi 😊</p>
+          <p>I have designed this guide in two portions:
+            <ul>
+              <li><span class="tag">Endgame build</span> <span class="low-focus">(exactly what you're looking at right now)</span> - Showcases the best gear, tips & tricks and much more to fully optimize <b>Wind Cutter</b>.</li>
+              <li><span class="tag">New player guide</span> - Explains from beginning to end, with full detail, how to start until you get to endgame. Kindly check the link if you havent 😉 <a href="#New-Player" class="link">New Player Guide</a></li>
+            </ul>
+          </p>
+          <p class="mb-3">My experience is vastly within this build, around 2+ years playing it in-and-out. Done a lot of content with it, even content people wouldn't expect <b>Wind Cutter</b> to be <span class="low-focus">(like LOGH back in the days)</span>.</p>
+          <p>With nothing else to add, I hope this build makes your game more enjoyable as it did to me! ✨</p>
+          <p class="low-focus">Note: Although everything here is tailored to work in sync, please take everything with a grain of salt.</p>
       </div>
 
       <h3 class="fs-5">About this build</h3>
-      <p>My personal vision of this build is for <span class="tag">Dungeon Farming</span> mainly, such as Einbech 3, Juperos, Thanatos, Odin 4 & many more, so in this guide I focus building around that logic. Before jumping in, take a look at the pros and cons of it.</p>
+      <p class="mb-3">My personal vision of this build is for <span class="tag">Dungeon Farming</span> mainly, such as Einbech 3, Juperos, Thanatos, Odin 4 & many more, so in this guide I focus building around that logic. Before jumping in, take a look at the pros and cons of it.</p>
       <div class="pro-con-wrapper">
-        <div class="pro-con-container shadow-container">
-          <div><span class="tag">Pros</span><i class="fa-solid fa-check"></i></div>
-          <ul>
-            <li>Somewhat versatile</li>
-            <li>Cheap mid & lategame</li>
-            <li><span class="number">100%</span> DEF PEN</li>
-          </ul>
+        <!-- Pros -->
+        <div>
+          <div><span class="header">Pros</span></div>
+          <div class="pro-con-container shadow-container">
+            <ul>
+              <li>Newbie friendly</li>
+              <li>Fast access to weeklies</li>
+              <li>Cheap build</li>
+              <li>100% DEF PEN</li>
+            </ul>
+          </div>
         </div>
-        <div class="pro-con-container shadow-container">
-          <div><span class="tag">Cons</span><i class="fa-solid fa-xmark"></i></div>
-          <ul>
-            <li>Agi-up mobs</li>
-            <li>Short range</li>
-            <li>Minmax expensive</li>
-            <li>Not the highest damage</li>
-          </ul>
+        <!-- Cons -->
+        <div>
+          <div><span class="header">Cons</span></div>
+          <div class="pro-con-container shadow-container">
+            <ul>
+              <li>Agi-up mobs</li>
+              <li>Short range</li>
+              <li>Average damage</li>
+            </ul>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -53,7 +92,7 @@
   <section id="Data-Observations" class="mb-4">
     <div id="Data" class="mb-3 mb-lg-0">
       <h2 class="fs-5">Data</h2>
-      <div class="d-flex p-3">
+      <div class="d-flex p-3 shadow-container">
         <div class="d-flex gap-1 flex-column">
           <p class="m-0 text-default"><b class="header">ACD required</b> <i class="fa-solid fa-angles-right fa-sm"></i> <span class="number">34%</span> </p>
           <p class="m-0 text-default"><b class="header">ASPD required</b> <i class="fa-solid fa-angles-right fa-sm"></i> <span class="number">185</span></p>
@@ -68,7 +107,7 @@
 
     <div id="Observations" class="m-0 p-0">
       <h2 class="fs-5">Observations</h2>
-      <div class="p-3">
+      <div class="p-3 shadow-container">
         <p><b class="header">Equipment</b> shows the best gear by default. In some cases there's alternatives to select from.</p>
         <p><b class="header">Status</b> calculations include bonuses from job levels, gear, runes and foods <span class="low-focus">(Imperfect Almighty)</span>.</p>
         <p class="m-0"><b class="header">Battle Stats</b> doesn't include RNG enchants, Pets <span class="low-focus">(Eggs)</span>, Base Weapon Attack (<span class="number">280</span>), Refine Attack (<span class="number">+15; 105</span>) or Shadow Gear Refine Attack (<span class="number">+9; 9</span>).</p>
@@ -90,7 +129,7 @@
     </div>
 
     <!-- Tabs content -->
-    <div class="tab-content">
+    <div class="tab-content shadow-container">
 
       <!-- Gear -->
       <div id="gear-display" class="tab-pane fade show active" role="tabpanel" aria-labelledby="gear-tab" tabindex="0">
@@ -417,49 +456,55 @@
 
   <section id="Stats" class="mb-4">
     <h2 class="fs-5">Stats</h2>
-    <div id="Stats-Container">
+    <div id="Stats-Container" class="shadow-container">
       <!-- Status -->
       <div id="Status" class="p-3">
         <div>
-          <h3 class="fs-5 header">Status</h3>
-          <p>
-            Presumably the core of each build. Status are enablers, for extra critical, debuff prevention, faster HP & SP regen and much more. Although they can be minmaxed, it's not a requirement.
-          </p>
+          <h3 class="fs-5 header">
+            Status
+            <button type="button" class="toggle status" aria-label="Swap to all buffs information" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
+          </h3>
+          <div class="status-wrapper">
+            <div>
+              <p class="mb-1">The core of most builds. Although they can be minmaxed, it's not a requirement.</p>
+              <p class="header m-0">Points distribution</p>
+              <ul>
+                <li><span class="header">Str</span> <span class="tag">Important</span> to maximize your damage and carry capacity.</li>
+                <li><span class="header">Agi</span> for extra damage thanks to <img src="https://www.novaragnarok.com/data/items/icons2/5899.png" alt="Black Ribbon"> <a href="https://www.novaragnarok.com/?module=vending&action=view&id=5899" target="_blank" class="link">Black Ribbon</a> and ASPD.</li>
+                <li><span class="header">Vit</span> to survive longer & potion effectiveness.</li>
+                <li><span class="header">Int</span> if you lack or run out of SP.</li>
+                <li><span class="header">Dex</span> <span class="tag">Important</span> to increase your hit rate.</li>
+                <li><span class="header">Luk</span> to increase your hit rate and damage slightly.</li>
+              </ul>
+            </div>
+            <div class="status-toggle" aria-hidden="false">
+              <div class="status-grid shadow-container">
+                <div class="header">Base</div>
+                <div><b>Str</b> <span>120</span></div>
+                <div><b>Agi</b> <span>100</span></div>
+                <div><b>Vit</b> <span>80</span></div>
+                <div><b>Int</b> <span>90</span></div>
+                <div><b>Dex</b> <span>120</span></div>
+                <div><b>Luk</b> <span>75</span></div>
+              </div>
+            </div>
+            <div class="status-toggle" style="display: none;" aria-hidden="true">
+              <div class="status-grid shadow-container">
+                <div class="header">Complete</div>
+                <div><b>Str</b> <span>203</span></div>
+                <div><b>Agi</b> <span>139</span></div>
+                <div><b>Vit</b> <span>108</span></div>
+                <div><b>Int</b> <span>134</span></div>
+                <div><b>Dex</b> <span>157</span></div>
+                <div><b>Luk</b> <span>103</span></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="stats-wrapper mt-auto">
-          <div class="split-status">
-            <div><span class="tag">Base</span> <i class="fa-solid fa-plus-minus"></i></div>
-            <div class="stats-window-grid">
-              <div>
-                <p><b>Str</b> <span>120</span></p>
-                <p><b>Agi</b> <span>100</span></p>
-                <p><b>Vit</b> <span>80</span></p>
-              </div>
-              <div>
-                <p><b>Int</b> <span>90</span></p>
-                <p><b>Dex</b> <span>120</span></p>
-                <p><b>Luk</b> <span>75</span></p>
-              </div>
-            </div>
-          </div>
-          <div class="split-status">
-            <div><span class="tag">+ buffs</span> <i class="fa-solid fa-plus"></i></div>
-            <div class="stats-window-grid">
-              <div>
-                <p><b>Str</b> <span>203</span></p>
-                <p><b>Agi</b> <span>139</span></p>
-                <p><b>Vit</b> <span>108</span></p>
-              </div>
-              <div>
-                <p><b>Int</b> <span>134</span></p>
-                <p><b>Dex</b> <span>157</span></p>
-                <p><b>Luk</b> <span>103</span></p>
-              </div>
-            </div>
-          </div>
 
-        </div>
+
       </div>
+
       <!-- Battle Stats -->
       <div id="Battle-Stats" class="p-3">
         <div>
@@ -516,17 +561,20 @@
     <!-- Collapse all section -->
     <div class="p-3">
       <h3 class="fs-5 header">Distribution priority</h3>
-      <p class="m-0">This are the required skills points to perform the build accordingly. Any extra points can be allocated freely at your will.</p>
-      <p class="low-focus">Click/tap on the skills to learn more about them.</p>
-
-      <div class="skill-priority">
+      <div class="skills-intro-wrapper">
         <div>
+          <p class="m-0">This are the required skills points to perform the build accordingly. Any extra points can be allocated freely at your will.</p>
+          <p class="low-focus mb-3">Click/tap on the skills to learn more about them.</p>
+        </div>
+        <button class="toggle skills ms-auto" type="button" aria-label="Toggle names on and off" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Toggle details"><i class="fa-solid fa-eye"></i></button>
+      </div>
+      <div class="skill-priority">
           <!-- 1st Job -->
           <div class="skill-priority-cont">
             <div>
-              <p>1st job</p>
+              <p>Swordman<span class="tag">1st class</span><span class="tag ms-auto">31 points</span></p>
             </div>
-            <div>
+            <div class="shadow-container">
               <div><a href="https://www.divine-pride.net/database/skill/2/sword-mastery" target="_blank" class="skill">1 <img src="https://static.divine-pride.net/images/skill/2.png" alt="Sword Mastery"></a> <span class="name-toggle">Sword Mastery</span></div>
               <div><a href="https://www.divine-pride.net/database/skill/3/two-handed-sword-mastery" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/3.png" alt="Two-Handed Sword Mastery"></a> <span class="name-toggle">Two-Handed Sword Mastery</span></div>
               <div><a href="https://www.divine-pride.net/database/skill/4/increase-hp-recovery" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/4.png" alt="Increase HP Recovery"></a> <span class="name-toggle">Increase HP Recovery</span></div>
@@ -536,9 +584,9 @@
           <!-- 2nd job -->
           <div class="skill-priority-cont">
             <div>
-              <p>2nd job</p>
+              <p>Lord Knight <span class="tag">2nd class</span><span class="tag ms-auto">37 points</span></p>
             </div>
-            <div>
+            <div class="shadow-container">
               <div><a href="https://www.divine-pride.net/database/skill/63/peco-peco-ride" target="_blank" class="skill">1 <img src="https://static.divine-pride.net/images/skill/63.png" alt="Riding"></a> <span class="name-toggle">Riding</span></div>
               <div><a href="https://www.divine-pride.net/database/skill/64/cavalier-mastery" target="_blank" class="skill">1 <img src="https://static.divine-pride.net/images/skill/64.png" alt="Cavalier Mastery"></a> <span class="name-toggle">Cavalier Mastery</span></div>
               <div><a href="https://www.divine-pride.net/database/skill/60/two-hand-quicken" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/60.png" alt="Two-Hand Quicken"></a> <span class="name-toggle">Two-Hand Quicken</span></div>
@@ -551,9 +599,9 @@
           <!-- 3rd job -->
           <div class="skill-priority-cont">
             <div>
-              <p>3rd job</p>
+              <p>Rune Knight <span class="tag">3rd class</span><span class="tag ms-auto">40 points</span></p>
             </div>
-            <div>
+            <div class="shadow-container">
               <div><a href="https://www.divine-pride.net/database/skill/2007/dragon-training" target="_blank" class="skill">5 <img src="https://static.divine-pride.net/images/skill/2007.png" alt="Dragon Training"></a> <span class="name-toggle">Dragon Training</span></div>
               <div><a href="https://www.divine-pride.net/database/skill/2010/rune-mastery" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/2010.png" alt="Rune Mastery"></a> <span class="name-toggle">Rune Mastery</span></div>
               <div><a href="https://www.divine-pride.net/database/skill/2001/enchant-blade" target="_blank" class="skill">10 <img src="https://static.divine-pride.net/images/skill/2001.png" alt="Enchant Blade"></a> <span class="name-toggle">Enchant Blade</span></div>
@@ -562,8 +610,6 @@
             </div>
           </div>
         </div>
-        <button class="toggle skills ms-auto" type="button" aria-label="Toggle names on and off" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Toggle details"><i class="fa-solid fa-eye"></i></button>
-      </div>
     </div>
   </section>
 
@@ -580,7 +626,7 @@
       </div>
     </div>
     <!-- Tabs content -->
-    <div class="tab-content px-3">
+    <div class="tab-content px-3 shadow-container">
 
       <!-- Header p -->
       <div class="d-flex justify-content-center pt-4">
@@ -748,7 +794,7 @@
 
   <section id="Farming" class="mb-4">
     <h2 class="fs-5">Farming</h2>
-    <div class="p-3">
+    <div class="p-3 shadow-container">
       <div id="Autoloot">
         <h3 class="header fs-5">Autoloot</h3>
         <p class="mb-1">The following list is from my personal use. If you don't see an specific list <span class="low-focus">(like in example Odin 4)</span>, chances are I simply use the general autoloot.</p>
@@ -882,42 +928,59 @@
       <h3 class="header fs-5">Gear</h3>
       <p>Farming is all about optimizing your efficiency, speed and damage. While some items here are required for a better experience, they're not a must.</p>
       <div id="Farming-Equipment" class="farming-container-grid">
-        <div class="farming-container shadow-container">
+
+        <!-- General -->
+        <div>
           <p class="header">General</p>
-          <ul>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/25209.png" alt="HP Absorb Onyx [G]"> HP Absorb Onyx [G]</li>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/25209.png" alt="SP Absorb Onyx [G]"> SP Absorb Onyx [G]</li>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/4115.png" alt="Card icon"> Hunter Fly</li>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/490024.png" alt="Automatic Booster R"> Automatic Booster R</li>
-          </ul>
+          <div class="farming-container shadow-container">
+            <ul>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/25209.png" alt="HP Absorb Onyx [G]"> HP Absorb Onyx [G]</li>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/25209.png" alt="SP Absorb Onyx [G]"> SP Absorb Onyx [G]</li>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/4115.png" alt="Card icon"> Hunter Fly</li>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/490024.png" alt="Automatic Booster R"> Automatic Booster R</li>
+            </ul>
+          </div>
         </div>
-        <div class="farming-container shadow-container">
+
+        <!-- Thanatos -->
+        <div>
           <p class="header">Thanatos</p>
-          <ul>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/490056.png" alt="Brilliant Light Ruby Ring"> Brilliant Light Ruby Ring</li>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/490057.png" alt="Brilliant Light Ruby Necklace"> Brilliant Light Ruby Necklace</li>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/29991.png" alt="Earth Elemental Converter"> Earth Elemental Converter <span class="tag">Thanatos F11</span></li>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/32107.png" alt="Holy Elemental Converter"> Holy Elemental Converter <span class="tag">Thanatos F12</span></li>
-          </ul>
+          <div class="farming-container shadow-container">
+            <ul>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/490056.png" alt="Brilliant Light Ruby Ring"> Brilliant Light Ruby Ring</li>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/490057.png" alt="Brilliant Light Ruby Necklace"> Brilliant Light Ruby Necklace</li>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/29991.png" alt="Earth Elemental Converter"> Earth Elemental Converter <span class="tag">Thanatos F11</span></li>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/32107.png" alt="Holy Elemental Converter"> Holy Elemental Converter <span class="tag">Thanatos F12</span></li>
+            </ul>
+          </div>
         </div>
-        <div class="farming-container shadow-container">
+
+        <!-- Abyss 4 -->
+        <div>
           <p class="header">Abyss Lake 4</p>
-          <ul>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/490044.png" alt="Sinful Ruby Ring"> Sinful Ruby Ring</li>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/490045.png" alt="Sinful Ruby Necklace"> Sinful Ruby Necklace</li>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/4115.png" alt="Card icon"> Bone Ferus + Bone Acidus <span class="tag">Combo</span></li>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/32107.png" alt="Holy Elemental Converter"> Holy Elemental Converter</li>
-          </ul>
+          <div class="farming-container shadow-container">
+            <ul>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/490044.png" alt="Sinful Ruby Ring"> Sinful Ruby Ring</li>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/490045.png" alt="Sinful Ruby Necklace"> Sinful Ruby Necklace</li>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/4115.png" alt="Card icon"> Bone Ferus + Bone Acidus <span class="tag">Combo</span></li>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/32107.png" alt="Holy Elemental Converter"> Holy Elemental Converter</li>
+            </ul>
+          </div>
         </div>
-        <div class="farming-container shadow-container">
+
+        <!-- Others -->
+        <div>
           <p class="header">Others</p>
-          <ul>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/4115.png" alt="Card icon"> Playing Ferre <span class="tag">Einbech 3</span></li>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/490056.png" alt="Brilliant Light Ruby Ring"> Brilliant Light Ruby Ring <span class="tag">Odin 4</span></li>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/490057.png" alt="Brilliant Light Ruby Necklace"> Brilliant Light Ruby Necklace <span class="tag">Odin 4</span></li>
-            <li><img src="https://www.novaragnarok.com/data/items/icons2/12020.png" alt="Cursed Water"> Cursed Water <span class="tag">Odin 4</span></li>
-          </ul>
+          <div class="farming-container shadow-container">
+            <ul>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/4115.png" alt="Card icon"> Playing Ferre <span class="tag">Einbech 3</span></li>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/490056.png" alt="Brilliant Light Ruby Ring"> Brilliant Light Ruby Ring <span class="tag">Odin 4</span></li>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/490057.png" alt="Brilliant Light Ruby Necklace"> Brilliant Light Ruby Necklace <span class="tag">Odin 4</span></li>
+              <li><img src="https://www.novaragnarok.com/data/items/icons2/12020.png" alt="Cursed Water"> Cursed Water <span class="tag">Odin 4</span></li>
+            </ul>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -1051,11 +1114,6 @@
         </li>
         <li>Late game decisions (jump to the beginning)</li>
       </ul>
-      <p class="tip m-0">Extra points?</p>
-      <p class="m-0"><i class="fa-solid fa-plus fa-xs"></i> <span class="header">Agi</span> for extra damage due to <img src="https://www.novaragnarok.com/data/items/icons2/5899.png" alt="Black Ribbon"> <a href="https://www.novaragnarok.com/?module=vending&action=view&id=5899" target="_blank" class="important">Black Ribbon</a>.</p>
-      <p class="m-0"><i class="fa-solid fa-plus fa-xs"></i> <span class="header">Vit</span> to survive longer & potion effectiveness.</p>
-      <p class="m-0"><i class="fa-solid fa-plus fa-xs"></i> <span class="header">Int</span> if you lack or run out of SP.</p>
-      <p><i class="fa-solid fa-plus fa-xs"></i> <span class="header">Luk</span> to increase your hit rate and damage a little bit.</p>
 
               <!-- THIS REQUIRES MASSIVE REWORK -->
               <div class="skills-usage">

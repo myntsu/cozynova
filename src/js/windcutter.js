@@ -46,6 +46,11 @@ $(".data").click(function() {
   $(".text-swap").toggle();
 });
 
+//Status
+$(".status").click(function() {
+  $(".status-toggle").toggle();
+});
+
 // Skills
 $(".skills").click(function() {
   $(".name-toggle").toggle();

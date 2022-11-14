@@ -9,690 +9,829 @@ export interface Props {
   faviconLight?: string;
 }
 
-const { title = 'Cozy Nova' } = Astro.props as Props;
-const { ogTitle = 'Cozy Nova' } = Astro.props as Props;
-const { ogDescription = 'Cozy Nova content page. No additional fetched information.' } = Astro.props as Props;
+const { title = "Cozy Nova" } = Astro.props as Props;
+const { ogTitle = "Cozy Nova" } = Astro.props as Props;
+const {
+  ogDescription = "Cozy Nova content page. No additional fetched information.",
+} = Astro.props as Props;
 const { ogUrl } = Astro.props as Props;
 const { canonical } = Astro.props as Props;
-const { favicon = '/favicon/sword.svg' } = Astro.props as Props;
-const { faviconLight = '/favicon/sword_black.svg' } = Astro.props as Props;
+const { favicon = "/favicon/sword.svg" } = Astro.props as Props;
+const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={favicon}
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={faviconLight}
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <meta
+      name="description"
+      content="Main site for various Ragnarok Online tools."
+    />
+    <title>{title}</title>
+    <meta
+      property="og:type"
+      content="website"
+    />
+    <meta
+      property="og:title"
+      content={ogTitle}
+    />
+    <meta
+      property="og:description"
+      content={ogDescription}
+    />
+    <meta
+      property="og:url"
+      content={ogUrl}
+    />
+    <meta
+      property="og:image"
+      content="https://www.novaragnarok.com/themes/new/img/logo.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Logo"
+    />
+    <meta
+      property="og:image:width"
+      content="320"
+    />
+    <meta
+      property="og:image:height"
+      content="180"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/svg+xml" href={favicon} media="(prefers-color-scheme: dark)" />
-  <link rel="icon" type="image/svg+xml" href={faviconLight} media="(prefers-color-scheme: light)" />
-  <meta name="generator" content={Astro.generator} />
-  <meta name="description" content="Main site for various Ragnarok Online tools." />
-  <title>{title}</title>
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content={ogTitle} />
-  <meta property="og:description" content={ogDescription} />
-  <meta property="og:url" content={ogUrl} />
-  <meta property="og:image" content="https://www.novaragnarok.com/themes/new/img/logo.png" />
-  <meta property="og:image:alt" content="Logo" />
-  <meta property="og:image:width" content="320" />
-  <meta property="og:image:height" content="180" />
+    <link
+      rel="canonical"
+      href={canonical}
+    />
 
-  <link rel="canonical" href={canonical} />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <!-- DM Sans -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- DM Sans -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <script
+      defer
+      src="https://kit.fontawesome.com/76c49369ed.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-  <!-- Font Awesome -->
-  <script defer src="https://kit.fontawesome.com/76c49369ed.js" crossorigin="anonymous"></script>
-</head>
+  <body>
+    <a
+      class="skip-link"
+      href="#Main">
+      Skip to main content
+    </a>
 
-<body>
-<a class="skip-link" href="#Main">Skip to main content</a>
+    <nav class="navbar navbar-expand-lg navbar-dark px-3 px-lg-5 py-1 py-lg-0">
+      <div class="container-fluid">
+        <a
+          href="/"
+          id="Cozy-Nova"
+          class="header">
+          <img
+            src="/assets/img/logo/memberLoginLogo.webp"
+            alt="Logo"
+            width="24"
+            height="24"
+          /> Cozy Nova
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="navbarSupportedContent">
+          <ul
+            class="navbar-nav me-auto mb-2 mb-lg-0 site-navbar-list gap-0 gap-lg-2">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="/">
+                Home
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Class Guides
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/windcutter">
+                    <b>Rune Knight:</b> Wind Cutter
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link disabled"
+                href="#">
+                Cards
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="/cooking">
+                Halloween
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-<nav class="navbar navbar-expand-lg navbar-dark px-3 px-lg-5 py-1 py-lg-0">
-	<div class="container-fluid">
-		<a href="/" id="Cozy-Nova" class="header">
-		<img src="/assets/img/logo/memberLoginLogo.webp" alt="Logo" width="24" height="24" /> Cozy Nova
-		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav me-auto mb-2 mb-lg-0 site-navbar-list gap-0 gap-lg-2">
-			<li class="nav-item">
-			<a class="nav-link" aria-current="page" href="/">Home</a>
-			</li>
-			<li class="nav-item dropdown">
-			<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-				Class Guides
-			</a>
-			<ul class="dropdown-menu">
-				<li>
-				<a class="dropdown-item" href="/windcutter"><b>Rune Knight:</b> Wind Cutter</a>
-				</li>
-			</ul>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link disabled" href="#">Cards</a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" href="/cooking">Halloween</a>
-			</li>
-		</ul>
-		</div>
-	</div>
-</nav>
+    <!-- Slot -->
+    <slot />
 
-	<!-- Slot -->
-	<slot></slot>
+    <footer>
+      <p>Created by <i class="fa-brands fa-discord"></i> Myndi#5041</p>
+      <span class="d-none d-md-inline">|</span>
+      <a href="https://www.buymeacoffee.com/myndi">
+        <i class="fa-solid fa-mug-saucer"></i>
+        <span>Buy me a coffee</span>
+      </a>
+    </footer>
 
-<footer>
-	<p>Created by <i class="fa-brands fa-discord"></i> Myndi#5041</p>
-	<span class="d-none d-md-inline">|</span>
-	<a href="https://www.buymeacoffee.com/myndi"><i class="fa-solid fa-mug-saucer"></i> <span>Buy me a coffee</span>
-	</a>
-</footer>
+    <!-- Back to top button -->
+    <button
+      type="button"
+      id="btn-back-to-top"
+      aria-label="Button that returns to the top of the page visually">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
-<!-- Back to top button -->
-<button type="button" id="btn-back-to-top" aria-label="Button that returns to the top of the page visually">
-	<i class="fas fa-arrow-up"></i>
-</button>
+    <style is:global>
+      :root {
+        --nav-link: 0, 0%, 100%; /* white */
 
-<style is:global>
-	:root {
-	--nav-link: 0, 0%, 100%; /* white */
-	
-	--white: 0, 0%, 100%;
-	--black: 0, 0%, 20%;
-	
-	--code: 0, 0%, 20%;
-	--code-contrast: 0, 0%, 10%;
-	--code-text: 0, 0%, 90%;
-	
-	--main-dark: 221, 60%, 19%;
-	--main-light: 221, 55%, 45%;
+        --white: 0, 0%, 100%;
+        --black: 0, 0%, 20%;
 
-	--main-light-1: 221, 60%, 27%;
-	--main-light-2: 221, 60%, 34%;
-	--main-light-3: 221, 60%, 40%;
+        --code: 0, 0%, 20%;
+        --code-contrast: 0, 0%, 10%;
+        --code-text: 0, 0%, 90%;
 
-	--text: 0, 0%, 91%;
-	--link: 36, 90%, 60%;
-	--header: 49, 85%, 65%;
-	--important: 343, 100%, 66%;
-	--number: 185, 100%, 80%;
-	--low-focus: 244, 55%, 70%;
+        --main-dark: 221, 60%, 19%;
+        --main-light: 221, 55%, 45%;
 
-	--curiosity: 111, 100%, 77%;
-	--number-contrast: 0, 0%, 35%;
-	--link-contrast: 0, 0%, 0%;
-	}
+        --main-light-1: 221, 60%, 27%;
+        --main-light-2: 221, 60%, 34%;
+        --main-light-3: 221, 60%, 40%;
 
-	.theme-changer #dark-blue {
-  --radio-color: #2f529d;
+        --text: 0, 0%, 91%;
+        --link: 36, 90%, 80%;
+        --header: 49, 85%, 65%;
+        --important: 343, 100%, 66%;
+        --number: 36, 90%, 60%;
+        --low-focus: 244, 55%, 70%;
+        --curiosity: 111, 100%, 77%;
+
+        --number-contrast: 221, 60%, 27%;
+        --link-contrast: 185, 100%, 70%;
+      }
+
+      .theme-changer #dark-blue {
+        --radio-color: #2f529d;
+      }
+
+      .theme-changer #dark {
+        --radio-color: #5d5f71;
+      }
+
+      .theme-changer #light {
+        --radio-color: #f9f6f5;
+      }
+
+      .theme-changer #green {
+        --radio-color: #126c30;
+      }
+
+      .dark-blue {
+        --main-dark: 221, 60%, 19%;
+        --main-light: 221, 55%, 45%;
+
+        --main-light-1: 221, 60%, 27%;
+        --main-light-2: 221, 60%, 34%;
+        --main-light-3: 221, 60%, 40%;
+
+        --text: 0, 0%, 91%;
+        --link: 36, 100%, 72%;
+        --header: 49, 85%, 65%;
+        --important: 343, 100%, 66%;
+        --number: 36, 90%, 60%;
+        --low-focus: 244, 55%, 70%;
+        --curiosity: 111, 100%, 77%;
+
+        --number-contrast: 221, 60%, 27%;
+        --link-contrast: 185, 100%, 70%;
+      }
+
+      :root:has(#dark-blue:checked) {
+        --main-dark: 221, 60%, 19%;
+        --main-light: 221, 55%, 45%;
+
+        --main-light-1: 221, 60%, 27%;
+        --main-light-2: 221, 60%, 34%;
+        --main-light-3: 221, 60%, 40%;
+
+        --text: 0, 0%, 91%;
+        --link: 36, 100%, 72%;
+        --header: 49, 85%, 65%;
+        --important: 343, 100%, 66%;
+        --number: 36, 90%, 60%;
+        --low-focus: 244, 55%, 70%;
+        --curiosity: 111, 100%, 77%;
+
+        --number-contrast: 221, 60%, 27%;
+        --link-contrast: 185, 100%, 70%;
+      }
+
+      .dark {
+        --main-dark: 0, 0%, 14%;
+        --main-light: 0, 0%, 32%;
+
+        --main-light-1: 0, 0%, 19%;
+        --main-light-2: 0, 0%, 23%;
+        --main-light-3: 0, 0%, 26%;
+
+        --text: 0, 0%, 92%;
+        --link: 250, 100%, 84%;
+        --header: 200, 65%, 70%;
+        --important: 211, 70%, 55%;
+        --number: 52, 100%, 70%;
+        --low-focus: 10, 15%, 50%;
+        --curiosity: 100, 85%, 70%;
+
+        --number-contrast: 25, 70%, 45%;
+        --link-contrast: 250, 100%, 40%;
+      }
+
+      :root:has(#dark:checked) {
+        --main-dark: 0, 0%, 14%;
+        --main-light: 0, 0%, 32%;
+
+        --main-light-1: 0, 0%, 19%;
+        --main-light-2: 0, 0%, 23%;
+        --main-light-3: 0, 0%, 26%;
+
+        --text: 0, 0%, 92%;
+        --link: 250, 100%, 84%;
+        --header: 200, 65%, 70%;
+        --important: 211, 70%, 55%;
+        --number: 52, 100%, 70%;
+        --low-focus: 10, 15%, 50%;
+        --curiosity: 100, 85%, 70%;
+
+        --number-contrast: 25, 70%, 45%;
+        --link-contrast: 250, 100%, 40%;
+      }
+
+      .light {
+        --main-dark: 0, 0%, 10%;
+        --main-light: 0, 0%, 100%;
+
+        --main-light-1: 0, 0%, 89%;
+        --main-light-2: 0, 0%, 94%;
+        --main-light-3: 0, 0%, 97%;
+
+        --text: 0, 0%, 35%;
+        --link: 216, 100%, 56%;
+        --header: 2, 67%, 47%;
+        --important: 270, 28%, 44%;
+        --number: 216, 100%, 56%;
+        --low-focus: 0, 0%, 60%;
+        --curiosity: 230, 100%, 70%;
+
+        --curiosity: 36, 90%, 60%;
+        --number-contrast: 216, 100%, 56%;
+        --link-contrast: 0, 0%, 0%;
+      }
+
+      :root:has(#light:checked) {
+        --main-dark: 0, 0%, 10%;
+        --main-light: 0, 0%, 100%;
+
+        --main-light-1: 0, 0%, 89%;
+        --main-light-2: 0, 0%, 94%;
+        --main-light-3: 0, 0%, 97%;
+
+        --text: 0, 0%, 35%;
+        --link: 216, 100%, 56%;
+        --header: 2, 67%, 47%;
+        --important: 270, 28%, 44%;
+        --number: 216, 100%, 56%;
+        --low-focus: 0, 0%, 60%;
+        --curiosity: 230, 100%, 70%;
+
+        --curiosity: 36, 90%, 60%;
+        --number-contrast: 216, 100%, 56%;
+        --link-contrast: 0, 0%, 0%;
+      }
+
+      .green {
+        --main-dark: 140, 77%, 8%;
+        --main-light: 140, 77%, 32%;
+
+        --main-light-1: 140, 77%, 15%;
+        --main-light-2: 140, 77%, 20%;
+        --main-light-3: 140, 77%, 25%;
+
+        --text: 0, 0%, 91%;
+        --link: 36, 90%, 60%;
+        --header: 49, 85%, 65%;
+        --important: 343, 100%, 66%;
+        --number: 185, 100%, 80%;
+        --low-focus: 244, 55%, 70%;
+        --curiosity: 111, 100%, 77%;
+
+        --number-contrast: 150, 70%, 40%;
+        --link-contrast: 0, 70%, 40%;
+      }
+
+      :root:has(#green:checked) {
+        --main-dark: 140, 77%, 8%;
+        --main-light: 140, 77%, 32%;
+
+        --main-light-1: 140, 77%, 15%;
+        --main-light-2: 140, 77%, 20%;
+        --main-light-3: 140, 77%, 25%;
+
+        --text: 0, 0%, 95%;
+        --link: 36, 90%, 60%;
+        --header: 49, 85%, 65%;
+        --important: 343, 100%, 66%;
+        --number: 185, 100%, 80%;
+        --low-focus: 244, 55%, 70%;
+        --curiosity: 111, 100%, 77%;
+
+        --number-contrast: 150, 70%, 40%;
+        --link-contrast: 0, 70%, 40%;
+      }
+
+      input:is(:disabled) {
+        cursor: not-allowed !important;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        overflow-x: hidden;
+      }
+
+      body {
+        color: hsl(var(--white));
+        background-color: hsl(var(--main-dark));
+        font-size: 1rem;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+      }
+
+      .skip-link {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        padding: 0.5rem;
+
+        color: black;
+        background-color: white;
+        text-align: center;
+
+        z-index: 10;
+
+        translate: 0 -100%;
+        transition: translate 150ms ease-in-out;
+      }
+
+      .skip-link:is(:focus, :focus-within) {
+        translate: 0 0;
+      }
+
+      /* Navbar */
+      .navbar {
+        width: 100vw;
+        max-height: max-content;
+        background-color: hsl(var(--main-dark));
+
+        border-bottom: 1px solid hsl(var(--main-light-2), 80%);
+      }
+
+      .container-fluid {
+        width: 100%;
+        max-width: 1000px;
+
+        margin: auto;
+      }
+
+      #Cozy-Nova {
+        display: flex;
+        align-items: center;
+        gap: 0.25em;
+
+        margin: 0;
+        margin-inline-end: 0.5em;
+
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      #Cozy-Nova:hover {
+        color: hsl(var(--header), 50%);
+      }
+
+      .site-navbar-list a {
+        color: hsl(var(--nav-link));
+        text-decoration: none;
+      }
+
+      .site-navbar-list a:hover {
+        color: hsl(var(--nav-link), 50%);
+      }
+
+      .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        background-color: hsl(var(--main-dark)) !important;
+      }
+
+      .dropdown-menu {
+        border: none;
+        background-color: hsl(var(--main-light-2));
+        overflow: hidden;
+      }
+
+      .dropdown-menu a {
+        color: hsl(var(--text));
+      }
+
+      .dropdown-menu a:hover {
+        color: hsl(var(--text));
+        background-color: hsl(var(--main-light));
+      }
+
+      .dropdown-item b {
+        color: hsl(var(--header));
+      }
+
+      /* Footer */
+      footer {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1em;
+
+        width: 100vw;
+        margin-top: auto;
+        padding: 2em 0;
+
+        color: hsl(var(--white));
+        background-color: hsl(var(--main-dark));
+
+        border-top: 1px solid hsl(var(--main-light-2), 80%);
+      }
+      footer p {
+        margin: 0;
+        padding: 0;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: hsl(var(--important));
+      }
+
+      footer a:hover {
+        color: hsl(var(--important), 60%);
+      }
+
+      footer > a > span:hover {
+        text-decoration: underline;
+      }
+
+      @media only screen and (max-width: 570px) {
+        footer > * {
+          text-align: center;
+          width: 100%;
+          gap: 0;
+        }
+
+        footer p {
+          padding-top: 0.75em;
+        }
+
+        footer a {
+          padding-bottom: 0.75em;
+        }
+      }
+
+      /* Utility classes */
+      .shadow-container {
+        /* box-shadow: 1px 1px 2px hsl(var(--main-dark), 20%); */
+        box-shadow: 0 1px 2px hsl(var(--main-dark), 30%),
+          0 1px 3px hsl(var(--main-dark), 30%);
+      }
+
+      .border-rounded {
+        border-radius: 0.5em;
+      }
+
+      .header {
+        color: hsl(var(--header));
+        font-weight: 700;
+      }
+
+      .number {
+        color: hsl(var(--number));
+      }
+
+      .number-contrast {
+        color: hsl(var(--number-contrast));
+      }
+
+      .low-focus {
+        color: hsl(var(--low-focus));
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .important {
+        text-decoration: none;
+        color: hsl(var(--important));
+      }
+
+      .link {
+        text-decoration: none;
+        color: hsl(var(--link));
+      }
+
+      .link::after {
+        content: '\f0c1';
+        margin-inline-start: .25em;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: .75rem;
+      }
+
+      .link-contrast {
+        color: hsl(var(--link-contrast));
+      }
+
+      .link:hover {
+        color: hsl(var(--link), 50%);
+      }
+
+      .tip {
+        font-weight: bold;
+        color: hsl(var(--curiosity));
+      }
+
+      .tip-question {
+        display: inline-block;
+        margin: 0 0.1em;
+        padding: 0.1em 0.55em;
+        color: hsl(var(--link-light));
+        background-color: hsl(var(--curiosity));
+        border-radius: 0.25em;
+        font-size: 0.75rem;
+        user-select: none;
+      }
+
+      .tag {
+        display: inline-block;
+        margin: 0 0.1em;
+        padding: 0.1em 0.4em;
+        color: hsl(var(--white));
+        background-color: hsl(var(--main-dark));
+        border-radius: 0.25em;
+        font-size: 0.75rem;
+
+        user-select: none;
+      }
+
+      .tag-reverse {
+        display: inline-block;
+        margin: 0 0.1em;
+        padding: 0.1em 0.4em;
+        color: hsl(var(--main-dark));
+        background-color: hsl(var(--white));
+        border-radius: 0.25em;
+        font-size: 0.75rem;
+
+        user-select: none;
+      }
+
+      .code {
+        display: inline-flex;
+        align-items: center;
+
+        margin: 0 0.15em;
+        padding: 0.35em 0.75em;
+        color: hsl(var(--code-text));
+        background-color: hsl(var(--code));
+        border-radius: 0.25em;
+
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
+
+      .code.contrast {
+        background-color: hsl(var(--code-contrast));
+      }
+
+      .new,
+      .updated,
+      .wip {
+        padding: 0.2em 0.4em;
+        color: hsl(var(--text));
+        border-radius: 0.5em;
+        font-size: 0.5rem;
+        text-transform: uppercase;
+      }
+
+      .new {
+        background-color: hsl(var(--important));
+      }
+
+      .updated {
+        background-color: hsl(var(--curiosity));
+      }
+
+      .wip {
+        background-color: hsl(var(--low-focus));
+      }
+
+      .skill {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: repeat(1, 1fr);
+        place-content: center;
+        gap: 0.5em;
+        padding: 0.35em 0.65em;
+        color: hsl(var(--white));
+        background-color: hsl(var(--main-dark));
+        border-radius: 0.5em;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .skill:hover {
+        color: hsl(var(--white));
+        background-color: hsl(var(--important));
+      }
+
+      .skill:active {
+        opacity: 0.5;
+      }
+
+      .skill img {
+        width: 24px;
+        height: 24px;
+      }
+
+      #btn-back-to-top {
+        display: none;
+
+        bottom: 20px;
+        right: 20px;
+
+        width: 40px;
+        height: 40px;
+
+        color: hsl(var(--white));
+        background-color: hsl(var(--important));
+
+        border: none;
+        border-radius: 50%;
+
+        position: fixed;
+      }
+
+      #btn-back-to-top:hover {
+        background-color: hsl(var(--important), 70%);
+      }
+
+      #btn-back-to-top:active {
+        scale: 1.1;
+      }
+
+      .text-default {
+        display: block;
+      }
+
+      .text-swap {
+        display: none;
+      }
+
+      .hover {
+        display: inline-block;
+        position: relative;
+      }
+
+      .hover::after {
+        position: absolute;
+        content: "";
+        inset: 0;
+        background-color: hsl(var(--code));
+        border-radius: 0.25em;
+      }
+
+      .hover:hover::after {
+        background-color: transparent;
+      }
+
+	  .progress-bar {
+  background-color: hsl(var(--important));
 }
-
-.theme-changer #dark {
-  --radio-color: #5D5F71;
-}
-
-.theme-changer #light {
-  --radio-color: #f9f6f5;
-}
-
-.theme-changer #green {
-  --radio-color: #126c30;
-}
-
-.dark-blue {
-	--main-dark: 221, 60%, 19%;
-	--main-light: 221, 55%, 45%;
-
-	--main-light-1: 221, 60%, 27%;
-	--main-light-2: 221, 60%, 34%;
-	--main-light-3: 221, 60%, 40%;
-
-	--text: 0, 0%, 91%;
-	--link: 185, 70%, 80%;
-	--header: 49, 85%, 65%;
-	--important: 343, 100%, 66%;
-	--number: 36, 90%, 60%;
-	--low-focus: 244, 55%, 70%;
-	--curiosity: 111, 100%, 77%;
-	
-	--number-contrast: 221, 60%, 27%;
-	--link-contrast: 0, 0%, 0%;
-}
-
-:root:has(#dark-blue:checked) {
-	--main-dark: 221, 60%, 19%;
-	--main-light: 221, 55%, 45%;
-
-	--main-light-1: 221, 60%, 27%;
-	--main-light-2: 221, 60%, 34%;
-	--main-light-3: 221, 60%, 40%;
-
-	--text: 0, 0%, 91%;
-	--link: 185, 70%, 80%;
-	--header: 49, 85%, 65%;
-	--important: 343, 100%, 66%;
-	--number: 36, 90%, 60%;
-	--low-focus: 244, 55%, 70%;
-	--curiosity: 111, 100%, 77%;
-	
-	--number-contrast: 221, 60%, 27%;
-	--link-contrast: 0, 0%, 0%;
-}
-
-.dark {
-    --main-dark: 0, 0%, 14%;
-    --main-light: 0, 0%, 32%;
-
-    --main-light-1: 0, 0%, 19%;
-    --main-light-2: 0, 0%, 23%;
-    --main-light-3: 0, 0%, 26%;
-
-    --text: 0, 0%, 92%;
-    --link: 250, 100%, 84%;
-    --header: 200, 65%, 70%;
-    --important: 211, 70%, 55%;
-    --number: 52, 100%, 70%;
-    --low-focus: 10, 15%, 50%;
-    --curiosity: 100, 85%, 70%;
-
-    --number-contrast: 25, 70%, 45%;
-    --link-contrast: 250, 100%, 40%;
-}
-
-:root:has(#dark:checked) {
-    --main-dark: 0, 0%, 14%;
-    --main-light: 0, 0%, 32%;
-
-    --main-light-1: 0, 0%, 19%;
-    --main-light-2: 0, 0%, 23%;
-    --main-light-3: 0, 0%, 26%;
-	
-    --text: 0, 0%, 92%;
-    --link: 250, 100%, 84%;
-    --header: 200, 65%, 70%;
-    --important: 211, 70%, 55%;
-    --number: 52, 100%, 70%;
-    --low-focus: 10, 15%, 50%;
-    --curiosity: 100, 85%, 70%;
-
-    --number-contrast: 25, 70%, 45%;
-    --link-contrast: 250, 100%, 40%;
-}
-
-.light {
-	--main-dark: 0, 0%, 10%;
-	--main-light: 0, 0%, 100%;
-
-	--main-light-1: 0, 0%, 89%;
-	--main-light-2: 0, 0%, 94%;
-	--main-light-3: 0, 0%, 97%;
-
-	--text: 0, 0%, 35%;
-	--link: 216, 100%, 56%;
-	--header: 2, 67%, 47%;
-	--important: 270, 28%, 44%;
-	--number: 216, 100%, 56%;
-	--low-focus: 0, 0%, 60%;
-	--curiosity: 230, 100%, 70%;
-
-	--curiosity: 36, 90%, 60%;
-	--number-contrast: 216, 100%, 56%;
-	--link-contrast: 0, 0%, 0%;
-}
-
-:root:has(#light:checked) {
-	--main-dark: 0, 0%, 10%;
-	--main-light: 0, 0%, 100%;
-
-	--main-light-1: 0, 0%, 89%;
-	--main-light-2: 0, 0%, 94%;
-	--main-light-3: 0, 0%, 97%;
-
-	--text: 0, 0%, 35%;
-	--link: 216, 100%, 56%;
-	--header: 2, 67%, 47%;
-	--important: 270, 28%, 44%;
-	--number: 216, 100%, 56%;
-	--low-focus: 0, 0%, 60%;
-	--curiosity: 230, 100%, 70%;
-
-	--curiosity: 36, 90%, 60%;
-	--number-contrast: 216, 100%, 56%;
-	--link-contrast: 0, 0%, 0%;
-}
-
-.green {
-    --main-dark: 140, 77%, 8%;
-    --main-light: 140, 77%, 32%;
-
-    --main-light-1: 140, 77%, 15%;
-    --main-light-2: 140, 77%, 20%;
-    --main-light-3: 140, 77%, 25%;
-
-    --text: 0, 0%, 91%;
-    --link: 36, 90%, 60%;
-    --header: 49, 85%, 65%;
-    --important: 343, 100%, 66%;
-    --number: 185, 100%, 80%;
-    --low-focus: 244, 55%, 70%;
-    --curiosity: 111, 100%, 77%;
-
-    --number-contrast: 150, 70%, 40%;
-    --link-contrast: 0, 70%, 40%;
-}
-
-:root:has(#green:checked) {
-    --main-dark: 140, 77%, 8%;
-    --main-light: 140, 77%, 32%;
-
-    --main-light-1: 140, 77%, 15%;
-    --main-light-2: 140, 77%, 20%;
-    --main-light-3: 140, 77%, 25%;
-
-    --text: 0, 0%, 95%;
-    --link: 36, 90%, 60%;
-    --header: 49, 85%, 65%;
-    --important: 343, 100%, 66%;
-    --number: 185, 100%, 80%;
-    --low-focus: 244, 55%, 70%;
-    --curiosity: 111, 100%, 77%;
-
-    --number-contrast: 150, 70%, 40%;
-    --link-contrast: 0, 70%, 40%;
-}
-
-input:is(:disabled) {
-	cursor: not-allowed !important;
-}
-
-	*,
-	*::before,
-	*::after {
-	box-sizing: border-box;
-	}
-
-	html {
-	overflow-x: hidden;
-	}
-
-	body {
-	color: hsl(var(--white));
-	background-color: hsl(var(--main-dark));
-	font-size: 1rem;
-	font-family: "DM Sans", sans-serif;
-	font-weight: 400;
-	}
-
-	.skip-link {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-
-		padding: .5rem;
-
-		color: black;
-		background-color: white;
-		text-align: center;
-
-		z-index: 10;
-
-		translate: 0 -100%;
-		transition: translate 150ms ease-in-out;
-	}
-
-	.skip-link:is(:focus, :focus-within) {
-		translate: 0 0;
-	}
-
-	/* Navbar */
-	.navbar {
-	width: 100vw;
-	max-height: max-content;
-	background-color: hsl(var(--main-dark));
-
-	border-bottom: 1px solid hsl(var(--main-light-2), 80%);
-	}
-
-	.container-fluid {
-	width: 100%;
-	max-width: 1000px;
-
-	margin: auto;
-	}
-
-	#Cozy-Nova {
-	display: flex;
-	align-items: center;
-	gap: 0.25em;
-
-	margin: 0;
-	margin-inline-end: 0.5em;
-
-	text-decoration: none;
-	text-transform: uppercase;
-	}
-
-	#Cozy-Nova:hover {
-	color: hsl(var(--header), 50%);
-	}
-
-	.site-navbar-list a {
-	color: hsl(var(--nav-link));
-	text-decoration: none;
-	}
-
-	.site-navbar-list a:hover {
-	color: hsl(var(--nav-link), 50%);
-	}
-
-	.dropdown-toggle {
-	display: flex;
-	align-items: center;
-	background-color: hsl(var(--main-dark)) !important;
-	}
-
-	.dropdown-menu {
-	border: none;
-	background-color: hsl(var(--main-light-2));
-	overflow: hidden;
-	}
-
-	.dropdown-menu a {
-	color: hsl(var(--text));
-	}
-
-	.dropdown-menu a:hover {
-	color: hsl(var(--text));
-	background-color: hsl(var(--main-light));
-	}
-
-	.dropdown-item b {
-		color: hsl(var(--header));
-	}
-
-	/* Footer */
-	footer {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: 1em;
-
-	width: 100vw;
-	margin-top: auto;
-	padding: 2em 0;
-
-	color: hsl(var(--white));
-	background-color: hsl(var(--main-dark));
-
-	border-top: 1px solid hsl(var(--main-light-2), 80%);
-	}
-	footer p {
-	margin: 0;
-	padding: 0;
-	}
-
-	footer a {
-	text-decoration: none;
-	color: hsl(var(--important));
-	}
-
-	footer a:hover {
-	color: hsl(var(--important), 60%);
-	}
-
-	footer > a > span:hover {
-	text-decoration: underline;
-	}
-
-	@media only screen and (max-width: 570px) {
-	footer > * {
-		text-align: center;
-		width: 100%;
-		gap: 0;
-	}
-
-	footer p {
-		padding-top: 0.75em;
-	}
-
-	footer a {
-		padding-bottom: 0.75em;
-	}
-	}
-
-	/* Utility classes */
-	.shadow-container {
-	box-shadow: 1px 1px 2px hsl(var(--main-dark), 20%);
-	/* box-shadow: 0 1px 2px rgb(0 0 0 / 24%), 0 1px 3px rgb(0 0 0 / 12%); */
-	}
-
-	.border-rounded {
-	border-radius: 0.5em;
-	}
-
-	.header {
-	color: hsl(var(--header));
-	font-weight: 700;
-	}
-
-	.number {
-	font-weight: 700;
-	color: hsl(var(--number));
-	}
-
-	.number-contrast {
-	font-weight: 700;
-	color: hsl(var(--number-contrast));
-	}
-
-	.low-focus {
-	color: hsl(var(--low-focus));
-	font-size: .75rem;
-	font-weight: 700;
-	}
-
-	.important {
-	text-decoration: none;
-	color: hsl(var(--important));
-	}
-
-	.link {
-	text-decoration: none;
-	color: hsl(var(--link));
-	}
-
-	.link-contrast {
-	color: hsl(var(--link-contrast));
-	}
-
-	.link:hover {
-	color: hsl(var(--link), 50%);
-	}
-
-	.tip {
-	font-weight: bold;
-	color: hsl(var(--curiosity));
-	}
-
-	.tip-question {
-	display: inline-block;
-	margin: 0 0.1em;
-	padding: 0.1em 0.55em;
-	color: hsl(var(--link-light));
-	background-color: hsl(var(--curiosity));
-	border-radius: 0.25em;
-	font-size: 0.75rem;
-	user-select: none;
-	}
-
-	.tag {
-	display: inline-block;
-	margin: 0 0.1em;
-	padding: 0.1em 0.4em;
-	color: hsl(var(--white));
-	background-color: hsl(var(--main-dark));
-	border-radius: 0.25em;
-	font-size: 0.75rem;
-
-	user-select: none;
-	}
-
-	.tag-reverse {
-	display: inline-block;
-	margin: 0 0.1em;
-	padding: 0.1em 0.4em;
-	color: hsl(var(--main-dark));
-	background-color: hsl(var(--white));
-	border-radius: 0.25em;
-	font-size: 0.75rem;
-
-	user-select: none;
-	}
-
-	.code {
-	display: inline-flex;
-	align-items: center;
-
-	margin: 0 0.15em;
-	padding: 0.35em 0.75em;
-	color: hsl(var(--code-text));
-	background-color: hsl(var(--code));
-	border-radius: 0.25em;
-
-	font-size: 0.9rem;
-	font-weight: 400;
-	}
-
-	.code.contrast {
-	background-color: hsl(var(--code-contrast));
-	}
-
-	.new,
-	.updated,
-	.wip {
-	padding: 0.2em 0.4em;
-	color: hsl(var(--text));
-	border-radius: 0.5em;
-	font-size: 0.5rem;
-	text-transform: uppercase;
-	}
-
-	.new {
-	background-color: hsl(var(--important));
-	}
-
-	.updated {
-	background-color: hsl(var(--curiosity));
-	}
-
-	.wip {
-	background-color: hsl(var(--low-focus));
-	}
-
-	.skill {
-	display: grid;
-	grid-auto-flow: column;
-	grid-template-columns: repeat(1, 1fr);
-	place-content: center;
-	gap: 0.5em;
-	padding: 0.35em 0.65em;
-	color: hsl(var(--text));
-	background-color: hsl(var(--main-light));
-	border-radius: 0.5em;
-	font-weight: 700;
-	cursor: pointer;
-	text-decoration: none;
-	}
-
-	.skill:hover {
-	color: hsl(var(--white));
-	background-color: hsl(var(--important));
-	}
-
-	.skill:active {
-	opacity: 0.5;
-	}
-
-	.skill img {
-		width: 24px;
-		height: 24px;
-	}
-
-	#btn-back-to-top {
-	display: none;
-
-	bottom: 20px;
-	right: 20px;
-
-	width: 40px;
-	height: 40px;
-
-	color: hsl(var(--white));
-	background-color: hsl(var(--important));
-
-	border: none;
-	border-radius: 50%;
-
-	position: fixed;
-	}
-
-	#btn-back-to-top:hover {
-	background-color: hsl(var(--important), 70%);
-	}
-
-	#btn-back-to-top:active {
-	scale: 1.1;
-	}
-
-	.text-default {
-	display: block;
-	}
-
-	.text-swap {
-	display: none;
-	}
-
-	.hover {
-		display: inline-block;
-		position: relative;
-	}
-
-	.hover::after {
-		position: absolute;
-		content: '';
-		inset: 0;
-		background-color: hsl(var(--code));
-		border-radius: .25em;
-	}
-
-	.hover:hover::after {
-		background-color: transparent;
-	}
-</style>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
-
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-
-  <!-- JS -->
-  <script>
-	import '/src/js/global.js';
-  </script>
-</body>
+    </style>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JS -->
+    <script>
+      import "/src/js/global.js";
+    </script>
+  </body>
 </html>
+
