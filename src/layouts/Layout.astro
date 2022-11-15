@@ -731,7 +731,7 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         gap: 0.5em;
         padding: 0.35em 0.65em;
         color: hsl(var(--white));
-        background-color: hsl(var(--main-dark));
+        background-color: hsl(var(--main-dark), 80%);
         border-radius: 0.5em;
         font-weight: 700;
         cursor: pointer;
@@ -830,6 +830,16 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
     <!-- JS -->
     <script>
       import "/src/js/global.js";
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHZT2VX9C8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-JHZT2VX9C8');
     </script>
   </body>
 </html>

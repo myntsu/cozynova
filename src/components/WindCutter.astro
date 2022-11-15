@@ -50,7 +50,7 @@
           <p>I have designed this guide in two portions:
             <ul>
               <li><span class="tag">Endgame build</span> <span class="low-focus">(exactly what you're looking at right now)</span> - Showcases the best gear, tips & tricks and much more to fully optimize <b>Wind Cutter</b>.</li>
-              <li><span class="tag">New player guide</span> - Explains from beginning to end, with full detail, how to start until you get to endgame. Kindly check the link if you havent 😉 <a href="#New-Player" class="link">New Player Guide</a></li>
+              <li><span class="tag">New player guide</span> - Explains from beginning to end, with full detail, how to start until you get to endgame. Kindly check the link if you haven't 😉 <a href="#New-Player" class="link">New Player Guide</a></li>
             </ul>
           </p>
           <p class="mb-3">My experience is vastly within this build, around 2+ years playing it in-and-out. Done a lot of content with it, even content people wouldn't expect <b>Wind Cutter</b> to be <span class="low-focus">(like LOGH back in the days)</span>.</p>
@@ -465,8 +465,30 @@
             <button type="button" class="toggle status" aria-label="Swap to all buffs information" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
           </h3>
           <div class="status-wrapper">
+            <p class="mb-1 w-100">The core of most builds. Although they can be minmaxed, it's not a requirement.</p>
+            <div class="status-toggle" aria-hidden="false">
+              <div class="header">Base</div>
+                <div class="status-grid shadow-container">
+                  <div><b>Str</b> <span>120</span></div>
+                  <div><b>Agi</b> <span>100</span></div>
+                  <div><b>Vit</b> <span>80</span></div>
+                  <div><b>Int</b> <span>90</span></div>
+                  <div><b>Dex</b> <span>120</span></div>
+                  <div><b>Luk</b> <span>75</span></div>
+                </div>
+            </div>
+            <div class="status-toggle" style="display: none;" aria-hidden="true">
+              <div class="header">Using all buffs</div>
+              <div class="status-grid shadow-container">
+                <div><b>Str</b> <span>203</span></div>
+                <div><b>Agi</b> <span>139</span></div>
+                <div><b>Vit</b> <span>108</span></div>
+                <div><b>Int</b> <span>134</span></div>
+                <div><b>Dex</b> <span>157</span></div>
+                <div><b>Luk</b> <span>103</span></div>
+              </div>
+            </div>
             <div>
-              <p class="mb-1">The core of most builds. Although they can be minmaxed, it's not a requirement.</p>
               <ul>
                 <li><span class="header">Str</span> <span class="tag">Important</span> to maximize your damage and carry capacity.</li>
                 <li><span class="header">Agi</span> for extra damage thanks to <img src="https://www.novaragnarok.com/data/items/icons2/5899.png" alt="Black Ribbon"> <a href="https://www.novaragnarok.com/?module=vending&action=view&id=5899" target="_blank" class="link">Black Ribbon</a> and ASPD.</li>
@@ -475,40 +497,6 @@
                 <li><span class="header">Dex</span> <span class="tag">Important</span> to increase your hit rate.</li>
                 <li><span class="header">Luk</span> to increase your hit rate and damage slightly.</li>
               </ul>
-            </div>
-            <div class="status-toggle" aria-hidden="false">
-              <div class="header">Base</div>
-                <form class="status-grid shadow-container">
-                  <input id="str" type="radio" name="status" checked>
-                  <label for="str"><b>Str</b> <span>120</span></label>
-                  <input id="agi" type="radio" name="status">
-                  <label for="agi"><b>Agi</b> <span>100</span></label>
-                  <input id="vit" type="radio" name="status">
-                  <label for="vit"><b>Vit</b> <span>80</span></label>
-                  <input id="int" type="radio" name="status">
-                  <label for="int"><b>Int</b> <span>90</span></label>
-                  <input id="dex" type="radio" name="status">
-                  <label for="dex"><b>Dex</b> <span>120</span></label>
-                  <input id="luk" type="radio" name="status">
-                  <label for="luk"><b>Luk</b> <span>75</span></label>
-                </form>
-            </div>
-            <div class="status-toggle" style="display: none;" aria-hidden="true">
-              <div class="header">Using all buffs</div>
-              <form class="status-grid shadow-container">
-                <input id="str-h" type="radio" name="status" checked>
-                <label for="str-h"><b>Str</b> <span>203</span></label>
-                <input id="agi-h" type="radio" name="status">
-                <label for="agi-h"><b>Agi</b> <span>139</span></label>
-                <input id="vit-h" type="radio" name="status">
-                <label for="vit-h"><b>Vit</b> <span>108</span></label>
-                <input id="int-h" type="radio" name="status">
-                <label for="int-h"><b>Int</b> <span>134</span></label>
-                <input id="dex-h" type="radio" name="status">
-                <label for="dex-h"><b>Dex</b> <span>157</span></label>
-                <input id="luk-h" type="radio" name="status">
-                <label for="luk-h"><b>Luk</b> <span>103</span></label>
-              </form>
             </div>
           </div>
         </div>
