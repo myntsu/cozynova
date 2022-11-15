@@ -171,6 +171,7 @@ h3 {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: .5em;
   background-color: hsl(var(--main-light-3));
   border-radius: 0.5em;
 }
@@ -512,6 +513,7 @@ h3 {
 
 .status-wrapper > *:nth-child(1) {
   flex: 4 0 0;
+  margin-inline-end: .5em;
 }
 
 .status-wrapper > *:nth-child(+n+2) {
@@ -527,29 +529,36 @@ h3 {
   border-radius: .5em;
 }
 
-.status-grid > div {
+.status-grid input {
+  display: none;
+}
+
+.status-grid > label {
   display: flex;
   width: 100%;
+}
+
+.status-grid > input:checked + label {
+  color: hsl(var(--white));
+  background-color: hsl(var(--main-dark));
+  border-radius: .25em;
+}
+.status-grid > label:hover {
+  color: hsl(var(--white));
+  background-color: hsl(var(--main-dark));
+  border-radius: .25em;
 }
 
 .status-grid b {
   flex: 1 0 2ch;
   padding-inline-start: .5em;
-  background-color: hsl(var(--main-dark));
-  outline: 1px solid hsl(var(--text), 10%);
 }
 
 .status-grid span {
   flex: 5 0 0;
   padding-inline-end: .5em;
   color: hsl(var(--number));
-  outline: 1px solid hsl(var(--text), 10%);
   text-align: end;
-}
-
-.status-grid > div:nth-of-type(1) {
-  place-content: center;
-  margin-block-end: .5em;
 }
 
 #Battle-Stats {
@@ -617,10 +626,8 @@ h3 {
   }
 
   .status-grid {
-    /* width: 100%; */
-    grid-template-columns:
-      100% repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .status-grid > div {

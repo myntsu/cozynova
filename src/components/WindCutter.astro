@@ -332,17 +332,17 @@
           <div class="pet-row p-3">
             <div class="pet-col">
               <img src="https://www.novaragnarok.com/w/images/6/6a/OrcHeroPetWindow.jpg" alt="Orc Hero" width="96" height="125">
-              <a href="https://www.novaragnarok.com/?module=vending&action=view&id=9121" target="_blank" class="link">Orc Hero <i class="fa-solid fa-link fa-xs"></i></a>
+              <a href="https://www.novaragnarok.com/?module=vending&action=view&id=9121" target="_blank" class="link link-contrast">Orc Hero</a>
               <p><img src="https://novaragnarok.com/data/items/icons2/9121.png" alt="Orc Hero"> Damage</p>
             </div>
             <div class="pet-col">
               <img src="https://www.novaragnarok.com/w/images/9/95/PhreeoniPetWindow.jpg" alt="Phreeoni" width="96" height="125">
-              <a href="https://www.novaragnarok.com/?module=vending&action=view&id=9111" target="_blank" class="link">Phreooni <i class="fa-solid fa-link fa-xs"></i></a>
+              <a href="https://www.novaragnarok.com/?module=vending&action=view&id=9111" target="_blank" class="link link-contrast">Phreooni</a>
               <p><img src="https://novaragnarok.com/data/items/icons2/9111.png" alt="Phreooni Egg"> Utility</p>
             </div>
             <div class="pet-col">
               <img src="https://www.novaragnarok.com/w/images/3/3a/IncubusPetWindow.jpg" alt="Incubus" width="96" height="125">
-              <a href="https://www.novaragnarok.com/?module=vending&action=view&id=9052" target="_blank" class="link">Incubus <i class="fa-solid fa-link fa-xs"></i></a>
+              <a href="https://www.novaragnarok.com/?module=vending&action=view&id=9052" target="_blank" class="link link-contrast">Incubus</a>
               <p><img src="https://novaragnarok.com/data/items/icons2/9052.png" alt="Imcubus"> Farming</p>
             </div>
           </div>
@@ -447,7 +447,7 @@
             </div>
 
           </div>
-          <p class="ms-auto text-end" style="font-size: .75rem;"><a href="https://zzyx.de/ro/s/p2dkgsgvqerl" target="_blank" class="link">ATK Calculator <i class="fa-solid fa-link fa-xs"></i></a></p>
+          <p class="ms-auto text-end" style="font-size: .75rem;"><a href="https://zzyx.de/ro/s/p2dkgsgvqerl" target="_blank" class="link">ATK Calculator</a></p>
         </div>
       </div>
 
@@ -467,7 +467,6 @@
           <div class="status-wrapper">
             <div>
               <p class="mb-1">The core of most builds. Although they can be minmaxed, it's not a requirement.</p>
-              <p class="header m-0">Points distribution</p>
               <ul>
                 <li><span class="header">Str</span> <span class="tag">Important</span> to maximize your damage and carry capacity.</li>
                 <li><span class="header">Agi</span> for extra damage thanks to <img src="https://www.novaragnarok.com/data/items/icons2/5899.png" alt="Black Ribbon"> <a href="https://www.novaragnarok.com/?module=vending&action=view&id=5899" target="_blank" class="link">Black Ribbon</a> and ASPD.</li>
@@ -478,26 +477,38 @@
               </ul>
             </div>
             <div class="status-toggle" aria-hidden="false">
-              <div class="status-grid shadow-container">
-                <div class="header">Base</div>
-                <div><b>Str</b> <span>120</span></div>
-                <div><b>Agi</b> <span>100</span></div>
-                <div><b>Vit</b> <span>80</span></div>
-                <div><b>Int</b> <span>90</span></div>
-                <div><b>Dex</b> <span>120</span></div>
-                <div><b>Luk</b> <span>75</span></div>
-              </div>
+              <div class="header">Base</div>
+                <form class="status-grid shadow-container">
+                  <input id="str" type="radio" name="status" checked>
+                  <label for="str"><b>Str</b> <span>120</span></label>
+                  <input id="agi" type="radio" name="status">
+                  <label for="agi"><b>Agi</b> <span>100</span></label>
+                  <input id="vit" type="radio" name="status">
+                  <label for="vit"><b>Vit</b> <span>80</span></label>
+                  <input id="int" type="radio" name="status">
+                  <label for="int"><b>Int</b> <span>90</span></label>
+                  <input id="dex" type="radio" name="status">
+                  <label for="dex"><b>Dex</b> <span>120</span></label>
+                  <input id="luk" type="radio" name="status">
+                  <label for="luk"><b>Luk</b> <span>75</span></label>
+                </form>
             </div>
             <div class="status-toggle" style="display: none;" aria-hidden="true">
-              <div class="status-grid shadow-container">
-                <div class="header">Complete</div>
-                <div><b>Str</b> <span>203</span></div>
-                <div><b>Agi</b> <span>139</span></div>
-                <div><b>Vit</b> <span>108</span></div>
-                <div><b>Int</b> <span>134</span></div>
-                <div><b>Dex</b> <span>157</span></div>
-                <div><b>Luk</b> <span>103</span></div>
-              </div>
+              <div class="header">Using all buffs</div>
+              <form class="status-grid shadow-container">
+                <input id="str-h" type="radio" name="status" checked>
+                <label for="str-h"><b>Str</b> <span>203</span></label>
+                <input id="agi-h" type="radio" name="status">
+                <label for="agi-h"><b>Agi</b> <span>139</span></label>
+                <input id="vit-h" type="radio" name="status">
+                <label for="vit-h"><b>Vit</b> <span>108</span></label>
+                <input id="int-h" type="radio" name="status">
+                <label for="int-h"><b>Int</b> <span>134</span></label>
+                <input id="dex-h" type="radio" name="status">
+                <label for="dex-h"><b>Dex</b> <span>157</span></label>
+                <input id="luk-h" type="radio" name="status">
+                <label for="luk-h"><b>Luk</b> <span>103</span></label>
+              </form>
             </div>
           </div>
         </div>
@@ -786,7 +797,7 @@
       <!-- Footer p -->
       <div class="d-flex justify-content-center">
         <div class="fake-div mt-1 pb-4">
-          <p class="ms-auto text-end" style="font-size: .75rem;"><a href="https://www.novaragnarok.com/wiki/Creation_Database" target="_blank" class="link">Creation Database <i class="fa-solid fa-link fa-xs"></i></a></p>
+          <p class="ms-auto text-end" style="font-size: .75rem;"><a href="https://www.novaragnarok.com/wiki/Creation_Database" target="_blank" class="link">Creation Database</a></p>
         </div>
       </div>
     </div>
@@ -1063,7 +1074,7 @@
             <i class="fa-solid fa-sort-up"></i>
             </button>
             <div class="collapsed-box">
-              <p>You already know everything you need to know. Check the gear ahead of you, king/queen.</p>
+              <p>You already know everything there's out there to know about the basics. Check the beginning on where I layout the endgame build.</p>
             </div>
           </div>
         </div>
@@ -1091,27 +1102,20 @@
       <br>
       Structure:
       <ul>
-        <li>Introduction:</li>
-        <li>
           <li>Basic/useful commands</li>
           <li>Wiki/useful pages (costume stones, instances)</li>
           <li>How to look for information</li>
           <li>How to make the right question</li>
           <li>Buying vs enchanting/refining</li>
-        </li>
-        <li>Leveling</li>
-        <li>Basic-early game:</li>
-        <li>
+        <li class="header">Leveling</li>
+        <li class="header">Basic-early game:</li>
           <li>Item Progression</li>
           <li>Farming</li>
           <li>Instances</li>
-        </li>
-        <li>Mid game:</li>
-        <li>
+        <li class="header">Mid game:</li>
           <li>Item Progression</li>
           <li>Farming</li>
           <li>Instances</li>
-        </li>
         <li>Late game decisions (jump to the beginning)</li>
       </ul>
 

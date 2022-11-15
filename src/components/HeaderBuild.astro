@@ -35,10 +35,10 @@
 
 <nav class="shortcut-nav" aria-label="Content table shortcuts" role="navigation">
   <div class="content-table">
-    <a class="link" aria-current="page" href="#Equipment">Equipment</a>
-    <a class="link" href="#Stats">Stats</a>
-    <a class="link" href="#Consumables">Consumables</a>
-    <a class="link" href="#New-Player">New Player</a>
+    <a class="content-link" aria-current="page" href="#Equipment">Equipment</a>
+    <a class="content-link" href="#Stats">Stats</a>
+    <a class="content-link" href="#Consumables">Consumables</a>
+    <a class="content-link" href="#New-Player">New Player</a>
   </div>
 </nav>
   
@@ -225,7 +225,7 @@
   font-size: 1.1rem;
 }
 
-.content-table .link {
+.content-table .content-link {
   width: 10em;
   padding: .5em;
   color: hsl(var(--nav-link));
@@ -240,7 +240,7 @@
       url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
   }
 
-  .content-table .link {
+  .content-table .content-link {
     width: 50% !important;
     outline: .1ex solid hsl(var(--white), 5%);
     outline-offset: -.2ex;
@@ -292,7 +292,7 @@
 }
 
 @media only screen and (max-width: 400px) {
-  .content-table .link {
+  .content-table .content-link {
     width: 100% !important;
     outline: .1ex solid hsl(var(--white), 5%);
     outline-offset: -.2ex;
