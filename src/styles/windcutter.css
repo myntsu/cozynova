@@ -1092,12 +1092,20 @@ input.code {
   width: 100%;
   text-align: center;
   color: hsl(var(--white)) !important;
-  background-color: hsl(var(--important), 50%);
+  background-color: hsl(var(--important));
   border-radius: 0.25em 0.25em 0 0;
 }
 
 .selection > a:is(:hover, :focus, :focus-within) {
   background-color: hsl(var(--important));
+}
+
+.selection > a::after {
+  content: '\f245';
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: .9rem;
+  padding-inline-start: .5em;
 }
 
 /* Button collapse */
