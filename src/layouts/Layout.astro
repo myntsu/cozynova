@@ -11,7 +11,8 @@ export interface Props {
 }
 
 const { title = "Cozy Nova" } = Astro.props as Props;
-const { description = "Main site for various Ragnarok Online tools."} = Astro.props as Props;
+const { description = "Main site for various Ragnarok Online tools." } =
+  Astro.props as Props;
 const { ogTitle = "Cozy Nova" } = Astro.props as Props;
 const {
   ogDescription = "Cozy Nova content page. No additional fetched information.",
@@ -119,12 +120,31 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
       src="https://kit.fontawesome.com/76c49369ed.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5403992479456682"
+     crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <div aria-label="Cookie usage consent" class="cookie-container">
-      <p>This website uses cookies for analytics purposes. By clicking <span class="header">"ACCEPT"</span> you acknowledge our <a href="/cookies" class="link">Cookies Policy</a> and to understand your information will never be sold to any entity or third party.</p>
-      <button type="button" class="cookie-button">Accept</button>
+    <div
+      aria-label="Cookie usage consent"
+      class="cookie-container">
+      <p>
+        This website uses cookies for analytics purposes. By clicking <span
+          class="header">"ACCEPT"</span
+        > you acknowledge our <a
+          href="/cookies"
+          class="link"
+          >Cookies Policy</a
+        > and you understand your information will never be sold to any entity or
+        third party.
+      </p>
+      <button
+        type="button"
+        class="cookie-button"
+        >Accept</button
+      >
     </div>
 
     <a
@@ -213,7 +233,9 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
     <footer>
       <p>Created by <i class="fa-brands fa-discord"></i> Myndi#5041</p>
       <span class="d-none d-md-inline">|</span>
-      <a href="https://www.buymeacoffee.com/myndi" class="link">
+      <a
+        href="https://www.buymeacoffee.com/myndi"
+        class="link">
         <i class="fa-solid fa-mug-saucer"></i>
         <span>Buy me a coffee</span>
       </a>
@@ -621,15 +643,19 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
       .link {
         text-decoration: none;
         color: hsl(var(--link));
-        word-break: break-all;
+        word-break: keep-all;
+      }
+
+      .link-small {
+        font-size: .75rem;
       }
 
       .link::after {
-        content: '\f0c1';
-        margin-inline-start: .25em;
+        content: "\f0c1";
+        margin-inline-start: 0.25em;
         font-family: "Font Awesome 6 Free";
         font-weight: 900;
-        font-size: .75rem;
+        font-size: 0.75rem;
       }
 
       .link-contrast {
@@ -799,61 +825,79 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         background-color: transparent;
       }
 
-	  .progress-bar {
-  background-color: hsl(var(--important));
-}
+      .progress-bar {
+        background-color: hsl(var(--important));
+      }
 
-.cookie-container {
-  position: fixed;
-  bottom: -100%;
-  left: 50%;
-  translate: -50%;
+      .cookie-container {
+        position: fixed;
+        bottom: -100%;
+        left: 50%;
+        translate: -50%;
 
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
 
-  width: 100%;
-  max-width: 1000px;
-  padding: 1em;
+        width: 100%;
+        max-width: 1000px;
+        padding: 1em;
 
-  color: hsl(var(--white));
-  background-color: hsl(var(--main-dark));
-  border: 1px solid hsl(var(--text), 10%);
-  border-radius: .25em;
-  box-shadow: 0px 2px 10px hsl(var(--white), 10%);
+        color: hsl(var(--white));
+        background-color: hsl(var(--main-dark));
+        border: 1px solid hsl(var(--text), 10%);
+        border-radius: 0.25em;
+        box-shadow: 0px 2px 10px hsl(var(--white), 10%);
 
-  z-index: -9999;
-  visibility: hidden;
-  opacity: 0;
+        z-index: -9999;
+        visibility: hidden;
+        opacity: 0;
 
-  transition: bottom 1000ms ease-out;
-}
+        text-align: justify;
 
-.active-cookie {
-  bottom: 2.5%;
-  z-index: 9999;
-  visibility: visible;
-  opacity: 1;
-}
+        transition: bottom 1000ms ease-out;
+      }
 
-.cookie-container p {
-  margin: 0;
-}
+      .active-cookie {
+        bottom: 2.5%;
+        z-index: 9999;
+        visibility: visible;
+        opacity: 1;
+      }
 
-.cookie-button {
-  padding: .25em 2.5em;
-  color: hsl(var(--black));
-  background-color: hsl(var(--white));
-  font-weight: 700;
-  text-transform: uppercase;
-  border: 0;
-  border-radius: .25em;
-}
+      .cookie-container p {
+        margin: 0;
+      }
 
-.cookie-button:is(:hover, :focus, :focus-within) {
-  background-color: hsl(var(--white), 70%);
-}
+      .cookie-button {
+        padding: 0.25em 2.5em;
+        color: hsl(var(--black));
+        background-color: hsl(var(--white));
+        font-weight: 700;
+        text-transform: uppercase;
+        border: 0;
+        border-radius: 0.25em;
+      }
+
+      .cookie-button:is(:hover, :focus, :focus-within) {
+        background-color: hsl(var(--white), 70%);
+      }
+
+      @media only screen and (max-width: 570px) {
+        .cookie-container {
+          flex-direction: column;
+          flex-wrap: wrap;
+          border-radius: 0;
+        }
+
+        .cookie-container > * {
+          width: 100%;
+        }
+
+        .active-cookie {
+          bottom: 0;
+        }
+      }
     </style>
 
     <!-- Bootstrap JS -->
@@ -881,13 +925,16 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
     </script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHZT2VX9C8"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHZT2VX9C8"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-JHZT2VX9C8');
+      gtag("config", "G-JHZT2VX9C8");
     </script>
   </body>
 </html>

@@ -110,13 +110,15 @@ h3 {
 .social-media > div {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 200px;
 
   padding: 0.5em 0.25em;
 
   color: hsl(var(--white));
   background-color: hsl(var(--main-dark));
   border-radius: 0.5em;
+
+  overflow: auto;
 }
 
 .social-media > div span {
@@ -220,6 +222,8 @@ h3 {
     color: hsl(var(--white));
     background-color: hsl(var(--main-dark));
     border-radius: 0.5em;
+
+    overflow: auto;
   }
 
   #Author .social-media-tags > div {
@@ -493,12 +497,15 @@ h3 {
 #Stats-Container {
   display: flex;
   flex-wrap: wrap;
-  background-color: hsl(var(--main-light-2));
+  justify-content: space-between;
+  gap: .25em;
   border-radius: 0.5em;
 }
 
 #Stats-Container > div {
-  width: calc(50% - 10px);
+  width: calc(50% - .25em);
+  background-color: hsl(var(--main-light-2));
+  border-radius: .5em;
 }
 
 /* Status */
@@ -507,15 +514,12 @@ h3 {
   flex-direction: column;
 }
 
-#Status > div > h3 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .status-wrapper {
   display: flex;
   flex-wrap: wrap;
+  padding: 1em;
+  background-color: hsl(var(--main-light-3));
+  border-radius: .5em;
 }
 
 .status-wrapper > * {
@@ -527,7 +531,7 @@ h3 {
   grid-template-columns: repeat(3, 1fr);
   margin-block-end: .5em;
   padding: .5em;
-  background-color: hsl(var(--main-light-3));
+  background-color: hsl(var(--main-light));
   border-radius: .5em;
 }
 
@@ -557,6 +561,10 @@ h3 {
   color: hsl(var(--number));
 }
 
+.status-wrapper ul {
+  margin: 0;
+}
+
 /* Battle stats */
 #Battle-Stats {
   display: flex;
@@ -567,6 +575,9 @@ h3 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1em;
+  padding: 1em;
+  background-color: hsl(var(--main-light-3));
+  border-radius: .5em;
 }
 
 .battle-stats-grid h4 {
@@ -575,7 +586,7 @@ h3 {
 
 .battle-stats-grid > div > div {
   padding: .5em 1em;
-  background-color: hsl(var(--main-light-3));
+  background-color: hsl(var(--main-light));
   border-radius: .5em;
 }
 
@@ -648,7 +659,7 @@ h3 {
 }
 
 /* Light toggle */
-.toggle:is(.dark, .data, .status, .skills, .consumables, .autoloot, .copy, .starting-point) {
+.toggle:is(.dark, .data, .skills, .consumables, .autoloot, .copy, .starting-point) {
   align-self: flex-start;
 
   display: flex;
@@ -667,11 +678,11 @@ h3 {
   box-shadow: 2px 2px 0 0 hsl(var(--black), 70%);
 }
 
-.toggle:hover:is(.data, .status, .skills, .consumables, .autoloot, .copy, .starting-point) {
+.toggle:hover:is(.data, .skills, .consumables, .autoloot, .copy, .starting-point) {
   background-color: hsl(var(--important), 80%);
 }
 
-.toggle:active:is(.data, .status, .skills, .consumables, .autoloot, .copy, .starting-point) {
+.toggle:active:is(.data, .skills, .consumables, .autoloot, .copy, .starting-point) {
   translate: 2px 2px;
   box-shadow: none;
 }

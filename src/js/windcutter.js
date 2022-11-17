@@ -10,11 +10,6 @@ $(".data").click(function() {
   $(".text-swap").toggle();
 });
 
-//Status
-$(".status").click(function() {
-  $(".status-toggle").toggle();
-});
-
 // Skills
 $(".skills").click(function() {
   $(".name-toggle").toggle();
@@ -57,11 +52,13 @@ lootList.addEventListener('click', (e) => {
   copyClipBoard(text)
 })
 
+
+
 // Collapsible content or accordion
 document.querySelectorAll('.button-collapse').forEach(button => {
   button.addEventListener("click", () => {
     const collapseBox = button.nextElementSibling;
-
+    
     button.classList.toggle('active-btn');
     collapseBox.classList.toggle('active');
   });

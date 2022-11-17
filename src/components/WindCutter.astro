@@ -3,12 +3,11 @@
   <div class="mb-3">
     <h2>Current progress of this guide</h2>
     <div class="progress mb-2">
-      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Example with label" style="width: 70%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">70%</div>
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Example with label" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">80%</div>
     </div>
     <span style="color: hsl(var(--text));">Missing:
       <ol>
-        <li>Review of styles and color</li>
-        <li>Correction of possible typos</li>
+        <li>Correction of possible typos (probably never ending problem)</li>
         <li>New player's guide</li>
       </ol>
     </span>
@@ -456,18 +455,19 @@
 
   <section id="Stats" class="mb-4">
     <h2 class="fs-5">Stats</h2>
-    <div id="Stats-Container" class="shadow-container">
+    <div id="Stats-Container">
       <!-- Status -->
-      <div id="Status" class="p-3">
+      <div id="Status" class="p-3 shadow-container">
         <div>
           <h3 class="fs-5 header">
             Status
-            <button type="button" class="toggle status" aria-label="Swap to all buffs information" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
           </h3>
-          <div class="status-wrapper">
-            <p class="w-100">The core of most builds. Although they can be minmaxed, it's not a requirement.</p>
+          <p class="w-100">The core of most builds. Although they can be minmaxed, it's not a requirement.</p>
+          <div class="status-wrapper shadow-container">
+            <h4 class="header fs-6">
+              Recommended
+            </h4>
             <div class="status-toggle" aria-hidden="false">
-              <div class="header">Base</div>
                 <div class="status-grid shadow-container">
                   <div><b>Str</b> <span>120</span></div>
                   <div><b>Agi</b> <span>100</span></div>
@@ -478,7 +478,6 @@
                 </div>
             </div>
             <div class="status-toggle" style="display: none;" aria-hidden="true">
-              <div class="header">Using all buffs</div>
               <div class="status-grid shadow-container">
                 <div><b>Str</b> <span>203</span></div>
                 <div><b>Agi</b> <span>139</span></div>
@@ -505,14 +504,14 @@
       </div>
 
       <!-- Battle Stats -->
-      <div id="Battle-Stats" class="p-3">
+      <div id="Battle-Stats" class="p-3 shadow-container">
         <div>
           <h3 class="fs-5 header">Battle Stats</h3>
           <p>
-            The better the balance between them, the higher the efficiency. There's no such thing as one greater than the other. As their % work as a product of the values.
+            The better the balance between them, the higher the efficiency.
           </p>
         </div>
-        <div class="battle-stats-grid">
+        <div class="battle-stats-grid shadow-container">
           <div>
             <h4 class="header">Attack</h4>
             <div class="shadow-container">
@@ -546,6 +545,7 @@
             </div>
           </div>
         </div>
+        <a href="https://www.novaragnarok.com/wiki/Damage_Formula" target="_blank" class="link link-small ms-auto">Damage Formula</a>
 
       </div>
 
