@@ -174,7 +174,7 @@ small {
     align-items: center;
 
     color: hsl(var(--text));
-    background-color: hsl(var(--main-light-1));
+    background-color: hsl(var(--main-light-2));
     border-radius: 0.5em;
 
     cursor: pointer;
@@ -240,7 +240,7 @@ label > img {
 .ingredients-container > div {
     margin-block-end: 1em;
     padding: 1em;
-    background-color: hsl(var(--main-light-1));
+    background-color: hsl(var(--main-light-2));
     border-radius: .5em;
 }
 
@@ -303,7 +303,7 @@ label > img {
 
     border-radius: .5em;
     color: hsl(var(--text));
-    background-color: hsl(var(--main-light-1));
+    background-color: hsl(var(--main-light-2));
 }
 
 .ingredient-list ul:nth-child(1) {

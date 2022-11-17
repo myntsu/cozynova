@@ -3,3 +3,4 @@ Allow: /index
 Allow: /windcutter
 Disallow: /cooking
 Disallow: /preloader
+Disallow: /cookies
