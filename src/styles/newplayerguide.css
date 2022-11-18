@@ -1,0 +1,163 @@
+/* Guide */
+#New-Player > div {
+    color: hsl(var(--text));
+    background-color: hsl(var(--main-light-2));
+    border-radius: 0.5em;
+  }
+  
+  #New-Player a {
+    color: hsl(var(--link));
+    text-decoration: none;
+  }
+  
+  #New-Player a:hover {
+    color: hsl(var(--link), 50%);
+  }
+  
+  #New-Player .select {
+    padding: 1em;
+    margin-block-end: 1em;
+    background-color: hsl(var(--main-light-3));
+    border-radius: 0.5em;
+  }
+  
+  .select > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+    width: 100%;
+  }
+  
+  .select .selection {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+  
+    color: hsl(var(--text));
+    overflow: hidden;
+  }
+  
+  .selection > a {
+    width: 100%;
+    text-align: center;
+    color: hsl(var(--white)) !important;
+    background-color: hsl(var(--important));
+    border-radius: 0.25em 0.25em 0 0;
+  }
+  
+  .selection > a:is(:hover, :focus, :focus-within) {
+    background-color: hsl(var(--important));
+  }
+  
+  /* Button collapse */
+  .button-collapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    width: 100%;
+    padding: 0.25em 0.5em;
+    color: hsl(var(--white));
+    background-color: hsl(var(--main-dark));
+    border: 0;
+    border-radius: .25em;
+  
+    position: relative;
+    z-index: 3;
+  }
+  
+  .button-collapse .fa-star {
+    color: hsl(var(--header));
+  }
+  
+  .button-collapse .fa-sort-down {
+    color: hsl(var(--white));
+    font-size: 1.1rem;
+    position: relative;
+    top: -3px;
+  }
+  
+  .button-collapse .fa-sort-up {
+    display: none;
+    color: hsl(var(--white));
+    font-size: 1.1rem;
+    position: relative;
+    top: 5px;
+  }
+  
+  .button-collapse:is(:hover, :focus-within) {
+    color: hsl(var(--main-dark));
+    background-color: hsl(var(--white));
+  }
+  
+  .button-collapse:is(:hover, :focus-within) .fa-sort-up,
+  .button-collapse:is(:hover, :focus-within) .fa-sort-down,
+  .button-collapse:is(:hover, :focus-within) .fa-star {
+    color: hsl(var(--main-dark));
+  }
+  
+  .button-collapse:is(:hover, :focus, :focus-within) ~ .collapsed-box {
+    background-color: hsl(var(--main-dark));
+  }
+  
+  .button-collapse.active-btn {
+    color: hsl(var(--main-dark));
+    background-color: hsl(var(--white));
+    border: 0;
+    border-radius: .25em .25em 0 0;
+  }
+  
+  .button-collapse.active-btn .fa-star {
+    color: hsl(var(--main-dark));
+  }
+  
+  .button-collapse.active-btn .fa-sort-down {
+    color: hsl(var(--main-dark));
+    display: none;
+  }
+  
+  .button-collapse.active-btn .fa-sort-up {
+    color: hsl(var(--main-dark));
+    display: inline;
+  }
+  
+  /* Collapse box */
+  .collapsed-box {
+    flex: 1;
+    visibility: collapse;
+    position: absolute;
+    opacity: 0;
+    z-index: -9999;
+    translate: 0% -100%;
+  
+    overflow: hidden;
+    transition: 
+    translate .8s ease-out;
+  }
+  
+  .collapsed-box p {
+    margin: 0;
+    opacity: 0;
+    translate: 0% -100%;
+    transition: opacity 2s ease-out;
+  }
+  
+  .collapsed-box.active {
+    visibility: visible;
+    position: static;
+    opacity: 1;
+    z-index: 2;
+    translate: 0% 0%;
+  
+    padding: 1em;
+    color: hsl(var(--white));
+    background-color: hsl(var(--main-dark));
+    border-radius: 0 0 0.25em 0.25em;
+  }
+  
+  .collapsed-box.active p {
+    opacity: 1;
+    translate: 0% 0%;
+  }
