@@ -127,6 +127,7 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
   </head>
 
   <body>
+    <!-- Cookie consent -->
     <div
       aria-label="Cookie usage consent"
       class="cookie-container">
@@ -147,12 +148,14 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
       >
     </div>
 
+    <!-- Skip link -->
     <a
       class="skip-link"
       href="#Main">
       Skip to main content
     </a>
 
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark px-3 px-lg-5 py-1 py-lg-0">
       <div class="container-fluid">
         <a
@@ -715,8 +718,11 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         background-color: hsl(var(--code));
         border-radius: 0.25em;
 
-        font-size: 0.9rem;
+        font-size: 0.875rem;
         font-weight: 400;
+
+        word-wrap: break-word;
+        word-break: keep-all;
       }
 
       .code.contrast {
@@ -788,6 +794,7 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
 
         border: none;
         border-radius: 50%;
+        z-index: 9999;
 
         position: fixed;
       }
@@ -840,7 +847,7 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         gap: 1rem;
 
         width: 100%;
-        max-width: 1000px;
+        max-width: 1200px;
         padding: 1em;
 
         color: hsl(var(--white));

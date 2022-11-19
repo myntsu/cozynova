@@ -59,10 +59,12 @@ document.querySelectorAll(".button-collapse").forEach((button) => {
   button.addEventListener("click", () => {
     const collapseBox = button.nextElementSibling;
 
-    document.querySelectorAll('.active').forEach(el => 
-      el.classList.remove('active'));
-    document.querySelectorAll('.active-btn').forEach(el => 
-      el.classList.remove('active-btn'));
+    document
+      .querySelectorAll(".active")
+      .forEach((el) => el.classList.remove("active"));
+    document
+      .querySelectorAll(".active-btn")
+      .forEach((el) => el.classList.remove("active-btn"));
 
     button.classList.toggle("active-btn");
     collapseBox.classList.toggle("active");

@@ -5,27 +5,36 @@
     border-radius: 0.5em;
   }
   
-  #New-Player a {
-    color: hsl(var(--link));
-    text-decoration: none;
-  }
-  
-  #New-Player a:hover {
-    color: hsl(var(--link), 50%);
-  }
-  
   #New-Player .select {
-    padding: 1em;
+    padding: .5em 1em;
     margin-block-end: 1em;
     background-color: hsl(var(--main-light-3));
     border-radius: 0.5em;
   }
   
-  .select > div {
+  .select-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
     gap: 1em;
     width: 100%;
+  }
+
+  .select-grid > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .select-links {
+    border-radius: .25em;
+    text-align: center;
+    position: relative;
+  }
+
+  .select-links span {
+    position: absolute;
+    bottom: 0;
+    left: .25rem;
   }
   
   .select .selection {
@@ -38,19 +47,7 @@
     color: hsl(var(--text));
     overflow: hidden;
   }
-  
-  .selection > a {
-    width: 100%;
-    text-align: center;
-    color: hsl(var(--white)) !important;
-    background-color: hsl(var(--important));
-    border-radius: 0.25em 0.25em 0 0;
-  }
-  
-  .selection > a:is(:hover, :focus, :focus-within) {
-    background-color: hsl(var(--important));
-  }
-  
+
   /* Button collapse */
   .button-collapse {
     display: flex;
@@ -125,7 +122,6 @@
   
   /* Collapse box */
   .collapsed-box {
-    flex: 1;
     visibility: collapse;
     position: absolute;
     opacity: 0;
@@ -136,14 +132,7 @@
     transition: 
     translate .8s ease-out;
   }
-  
-  .collapsed-box p {
-    margin: 0;
-    opacity: 0;
-    translate: 0% -100%;
-    transition: opacity 2s ease-out;
-  }
-  
+
   .collapsed-box.active {
     visibility: visible;
     position: static;
@@ -151,13 +140,46 @@
     z-index: 2;
     translate: 0% 0%;
   
+    width: 100%;
+    height: 20ch;
     padding: 1em;
     color: hsl(var(--white));
     background-color: hsl(var(--main-dark));
     border-radius: 0 0 0.25em 0.25em;
+
+    overflow-y: scroll;
+  }
+
+  .collapsed-box.active::-webkit-scrollbar {
+    width: .35em;
+    border-radius: 0 0 .25em 0;
+  }
+
+  /* Track */
+  .collapsed-box.active::-webkit-scrollbar-track {
+    background-color: hsl(var(--white), 10%);
+    border-radius: 0 0 .25em 0;
   }
   
-  .collapsed-box.active p {
-    opacity: 1;
-    translate: 0% 0%;
+  /* Handle */
+  .collapsed-box.active::-webkit-scrollbar-thumb {
+    background: hsl(var(--white)); 
+    border-radius: 0 0 .25em 0;
+  }
+
+  /* Handle on hover */
+  .collapsed-box.active::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--white), 60%); 
+  }
+
+  .placeholder-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: .5em;
+  }
+
+  .item {
+    width: 24px;
+    height: 24px;
   }
