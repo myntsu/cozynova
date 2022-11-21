@@ -34,13 +34,13 @@ $(".starting-point").click(function () {
 // Tutorial
 $(".tutorial").click(function () {
   $(".tutorial-rewards").toggle();
-  $("#Tutorial > div:nth-of-type(2)").toggle();
+  $(".tutorial-swappable").toggle();
 });
 
 // Eden Academy
 $(".eden-academy").click(function () {
   $(".eden-academy-rewards").toggle();
-  $("#Eden-Academy > div:nth-of-type(2)").toggle();
+  $(".eden-academy-swappable").toggle();
 });
 
 // Copy to clipboard

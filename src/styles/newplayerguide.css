@@ -15,6 +15,8 @@
 .item {
   width: 24px;
   height: 24px;
+  margin-inline-start: .25em;
+  margin-inline-end: .25em;
 }
 
 .intro-new-player {
@@ -74,7 +76,7 @@
   flex-direction: column;
   padding: 1em;
 
-  background-color: hsl(var(--main-light-2));
+  background-color: hsl(var(--main-light-1));
   border-radius: 0.5em;
   position: relative;
 
@@ -86,13 +88,23 @@
 .content::before {
   content: "";
   position: absolute;
-  background-color: hsl(var(--main-light-3));
+  background-color: hsl(var(--main-light-1));
   width: 10px;
   height: 10px;
   rotate: 45deg;
-  box-shadow: 0 1px 2px hsl(var(--main-dark), 30%),
-    0 1px 3px hsl(var(--main-dark), 30%);
+  /* box-shadow: 0 1px 2px hsl(var(--main-dark), 30%), */
+    /* 0 1px 3px hsl(var(--main-dark), 30%); */
   z-index: 1;
+}
+
+.content ul {
+  margin: 0;
+  padding-block-start: 1em;
+  padding-block-end: 1em;
+  background-color: hsl(var(--main-light-2));
+  border-radius: .5em;
+    box-shadow: 0 1px 2px hsl(var(--main-dark), 30%),
+    0 1px 3px hsl(var(--main-dark), 30%);
 }
 
 .icon {
@@ -206,28 +218,22 @@
 #Tutorial ul,
 #Eden-Academy ul {
   display: grid;
-  gap: 1em;
+  gap: .5em;
   list-style: none;
   margin: 0;
   padding: 0;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-rows: repeat(auto-fit);
 }
 
 #Tutorial li,
 #Eden-Academy li {
   display: flex;
-
-  padding: 0.5em;
+  padding: .5em;
   background-color: hsl(var(--main-light));
   border-radius: 0.25em;
   box-shadow: 0 1px 2px hsl(var(--main-dark), 30%),
     0 1px 3px hsl(var(--main-dark), 30%);
-}
-
-#Tutorial li:last-child,
-#Eden-Academy li:last-child {
-  width: 100%;
+  overflow: hidden;
 }
 
 #Tutorial li::before,
@@ -251,6 +257,11 @@
 .tutorial-rewards,
 .eden-academy-rewards {
   display: none;
+}
+
+#Tutorial .tutorial-rewards ul,
+#Eden-Academy .eden-academy-rewards ul {
+  grid-template-columns: repeat(1, 1fr);
 }
 
 @media only screen and (max-width: 880px) {
