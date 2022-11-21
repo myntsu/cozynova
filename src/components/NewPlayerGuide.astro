@@ -4,251 +4,210 @@ import '../styles/newplayerguide.css';
 
 <div id="New-Player">
   <h2 class="fs-5">New Player</h2>
-  <div class="p-3">
-    <h3 class="fs-5 header">Introduction</h3>
-    <p>First and foremost, this section is made both for new players and for more in depth explanations on what you have seen above, to answer common questions, teach you and much more. So, <b>if you like reading, this is your place.</b></p>
+  <div class="p-3 shadow-container intro-new-player mb-4">
+    <div>
+      <h3 class="fs-5 header">Introduction</h3>
+      <p>First and foremost, this section is made both for new players and for more in depth explanations on what you have seen above, to answer common questions, teach you and much more. <span class="focus">If you like learning, this is your place.</span></p>
+    </div>
+    <section class="selection">
+      <!-- Starting -->
+      <article class="article">
+        <a href="#Starting-Section" class="icon"> <i class="fa-solid fa-1"></i></a>
+        <div class="content"> 
+          <h4 class="fs-5 header">Starting</h4>
+          <p>Starting point if you have no experience with the game at all.</p>
+          <h5 class="fs-6 header">Content table:</h5>
+          <ul>
+            <li><a href="#Tutorial" class="link">Tutorial</a></li>
+            <li><a href="#Eden-Academy" class="link">Eden Academy</a></li>
+            <li><a href="#Leveling" class="link">Leveling</a></li>
+            <li><a href="#Farming" class="link">Farming</a></li>
+            <li><a href="#Useful-Links" class="link">Useful links</a></li>
+            <li><a href="#Useful-Commands" class="link">Useful commands</a></li>
+            <li><a href="#Useful-NPCs" class="link">Useful NPCs</a></li>
+            <li><a href="#Learning-Wiki" class="link">Learning the Wiki</a></li>
+            <li><a href="#Learning-DP" class="link">Learning Divine Pride</a></li>
+          </ul>
+        </div>
+      </article>
+      <!-- Fundamentals -->
+      <article class="article">
+        <a href="" class="icon"> <i class="fa-solid fa-2"></i></a>
+        <div class="content stripped"> 
+          <h4 class="fs-5 header">Fundamentals</h4>
+          <p>Ideal place if you already know something but you're looking to learn some of the basics, like how to get by, what to look out for, what are your goals, etc.</p>
+          <h5 class="fs-6 header">Content table:</h5>
+          <ul>
+            <li><a href="#Teleport" class="link">Teleport</a></li>
+            <li><a href="#Nagivation" class="link">Nagivation</a></li>
+            <li><a href="#Dailies" class="link">Dailies</a></li>
+            <li><a href="#Weeklies" class="link">Weeklies</a></li>
+            <li><a href="#Dungeons" class="link">Dungeons</a></li>
+            <li><a href="#Instances" class="link">Instances</a></li>
+            <li><a href="#Guilds" class="link">Guilds</a></li>
+          </ul>
+        </div>
+      </article>
+      <!-- Advanced -->
+      <article class="article">
+        <a href="" class="icon"> <i class="fa-solid fa-3"></i></a>
+        <div class="content"> 
+          <h4 class="fs-5 header">Advanced</h4>
+          <p>In depth explanation about more technical details about the game, to polish your knowledge.</p>
+          <h5 class="fs-6 header">Content table:</h5>
+          <ul>
+            <li><a href="#Damage-Formula" class="link">Crafting</a></li>
+            <li><a href="#Damage-Formula" class="link">Damage Formula</a></li>
+            <li><a href="#Calculator" class="link">Calculator</a></li>
+            <li><a href="#Multi-account" class="link">Multi-account</a></li>
+          </ul>
+        </div>
+      </article>
+      <!-- Earlygame -->
+      <article class="article">
+        <a href="" class="icon"> <i class="fa-solid fa-4"></i></a>
+        <div class="content"> 
+          <h4 class="fs-5 header">Earlygame</h4>
+          <p>This ranges from level 0 to 100. From <span class="focus">Swordman</span> to <span class="focus">Lord Knight</span>.</p>
+          <h5 class="fs-6 header">Content table:</h5>
+          <ul>
+            <li><a href="#Earlygame-Stats" class="link">Stats</a></li>
+            <li><a href="#Earlygame-Leveling" class="link">Leveling</a></li>
+            <li><a href="#Earlygame-Gear" class="link">Gear</a></li>
+            <li><a href="#Earlygame-Content" class="link">Instances</a></li>
+            <li><a href="#Earlygame-Content" class="link">Farming</a></li>
+          </ul>
+        </div>
+      </article>
+      <!-- Midgame -->
+      <article class="article">
+        <a href="" class="icon"> <i class="fa-solid fa-5"></i></a>
+        <div class="content"> 
+          <h4 class="fs-5 header">Midgame</h4>
+          <p>This starts at level 100 to 175. Amidst your <span class="focus">Rune Knight</span> journey.</p>
+          <h5 class="fs-6 header">Content table:</h5>
+          <ul>
+            <li><a href="#Midgame-Stats" class="link">Stats</a></li>
+            <li><a href="#Midgame-Leveling" class="link">Leveling</a></li>
+            <li><a href="#Midgame-Gear" class="link">Gear</a></li>
+            <li><a href="#Midgame-Content" class="link">Instances</a></li>
+            <li><a href="#Midgame-Content" class="link">Farming</a></li>
+          </ul>
+        </div>
+      </article>
+      <!-- Lategame -->
+      <article class="article">
+        <a href="" class="icon"> <i class="fa-solid fa-6"></i></a>
+        <div class="content"> 
+          <h4 class="fs-5 header">Lategame</h4>
+          <p>This starts at level 175. A brief description before reaching minmax.</p>
+          <h5 class="fs-6 header">Content table:</h5>
+          <ul>
+            <li><a href="#Lategame-Stats" class="link">Stats</a></li>
+            <li><a href="#Lategame-Leveling" class="link">Leveling</a></li>
+            <li><a href="#Lategame-Gear" class="link">Gear</a></li>
+            <li><a href="#Lategame-Content" class="link">Instances</a></li>
+            <li><a href="#Lategame-Content" class="link">Farming</a></li>
+          </ul>
+        </div>
+      </article>
+    </section>
+  </div>
 
-    <h4 class="fs-6 header">Select your starting point</h4>
-    <div class="select shadow-container">
-      <div class="select-grid">
-        <!-- Starting -->
-        <div>
-          <div class="select-links">
-            <span>1.</span>
-            <a href="#Newcomer-Section" class="link">Newcomer</a>
-          </div>
-          <div class="selection">
-            <button type="button" class="button-collapse" aria-label="Toggle extra information on and off">
-              <i class="fa-solid fa-list"></i>
-              <span><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></span>
-              <i class="fa-solid fa-sort-down"></i>
-              <i class="fa-solid fa-sort-up"></i>
-            </button>
-            <div class="collapsed-box">
-              <p>Perfect for you if you have no experience with the game at all.</p>
-              <h5 class="fs-6">Content table:</h5>
+    <section id="Starting-Section">
+      <h2 class="fs-5">Starting</h2>
+      <div class="shadow-container">
+        <!-- Tutorial -->
+        <div id="Tutorial">
+            <!-- <img src="https://www.novaragnarok.com/w/images/d/d9/Mom.png" alt="NovaRO Mom NPC" class="float"> -->
+            <div>
+              <h3 class="header fs-5">Tutorial <a href="https://www.novaragnarok.com/wiki/Mom" target="_blank" class="link" aria-label="Link to the Wikipedia article"></a></h3>
+              <span class="tag">Don't skip</span>
+              <button class="toggle tutorial ms-auto" type="button" aria-label="Toggle information in and out" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
+            </div>
+            <div>
+              <p>The tutorial is your introduction to <span class="focus">NovaRO</span>. It starts with <span class="focus">Mom</span> entering your room and it unfolds a small series of events where she teaches you the basics of the game.</p>
+              <h4 class="fs-6 header">Useful for</h4>
               <ul>
-                <li><a href="#Tutorial" class="link">Tutorial</a></li>
-                <li><a href="#Eden-Academy" class="link">Eden Academy</a></li>
-                <li><a href="#Leveling" class="link">Leveling</a></li>
-                <li><a href="#Farming" class="link">Farming</a></li>
-                <li><a href="#Useful-Links" class="link">Useful links</a></li>
-                <li><a href="#Useful-Commands" class="link">Useful commands</a></li>
-                <li><a href="#Useful-NPCs" class="link">Useful NPCs</a></li>
-                <li><a href="#Learning-Wiki" class="link">Learning the Wiki</a></li>
+                <li>Introducing you to the game</li>
+                <li>Introducing you to Eden Group</li>
+                <li>Trying the different classes</li>
+                <li>Getting used to the UI</li>
               </ul>
             </div>
-          </div>
+            <div class="tutorial-rewards">
+              <h4 class="fs-6 header">Rewards</h4>
+              <ul>
+                <li>Stuff will be here.</li>
+              </ul>
+            </div>
+            <!--
+              <li class="ps-3"><b>b.</b> <span class="header">Follow Mom</span> - She will kindly ask you to join Eden Academy. You could do by going <code class="code contrast">@go eden</code> walk upwards and talk with <span class="focus">Secretary Lime Evenor</span>. You will be given a <img src="https://www.novaragnarok.com/data/items/icons2/6219.png" alt="Ragnarok Online item" class="item"> <span class="focus">Eden Group Mark</span> and a <img src="https://www.novaragnarok.com/data/items/icons2/34806.png" alt="Ragnarok Online item"> <span class="focus">Eden Equipment Chest</span> if successfully joined.</li>-->
         </div>
-        <!-- Basics -->
-        <div>
-          <div class="select-links">
-            <span>2.</span>
-            <a href="#Basic-Section" class="link">Basics</a>
+        <hr class="vr">
+        <div id="Eden-Academy">
+          <div>
+            <h3 class="header fs-5">Eden Academy <a href="https://www.novaragnarok.com/wiki/Eden_Academy" target="_blank" class="link" aria-label="Link to the Wikipedia article"></a></h3>
+            <span class="tag">Don't skip</span>
+            <button class="toggle eden-academy ms-auto" type="button" aria-label="Toggle information in and out" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
           </div>
-          <div class="selection">
-            <button type="button" class="button-collapse" aria-label="Toggle extra information on and off">
-              <i class="fa-solid fa-list"></i>
-              <span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></span>
-              <i class="fa-solid fa-sort-down"></i>
-              <i class="fa-solid fa-sort-up"></i>
-            </button>
-            <div class="collapsed-box">
-              <p>If you're looking to learn some of the basics, like how to get by, what to look out for, what are your goals, etc.</p>
-              <h5 class="fs-6">Content table:</h5>
-              <ul>
-                <li><a href="#Teleport" class="link">Teleport</a></li>
-                <li><a href="#Nagivation" class="link">Nagivation</a></li>
-                <li><a href="#Dungeons" class="link">Dungeons</a></li>
-                <li><a href="#Instances" class="link">Instances</a></li>
-                <li><a href="#Guilds" class="link">Guilds</a></li>
-                <li><a href="#Dailies" class="link">Dailies</a></li>
-                <li><a href="#Weeklies" class="link">Weeklies</a></li>
-                <li><a href="#Eden-Academy" class="link">Eden Academy</a></li>
-                <li><a href="#Eden-Academy" class="link">Eden Academy</a></li>
-              </ul>
-            </div>
+          <div>
+            <p>Eden Academy effectively counts as the next step of the tutorial. We will dive into this later, as this goes all the way up to level <span class="number">150</span>.</p>
+            <h4 class="fs-6 header">Useful for</h4>
+            <ul>
+              <li>Stuff will be here.</li>
+            </ul>
           </div>
-        </div>
-        <!-- Advanced -->
-        <div>
-          <div class="select-links">
-            <span>3.</span>
-            <a href="#Advanced-Section" class="link">Advanced</a>
-          </div>
-          <div class="selection">
-            <button type="button" class="button-collapse" aria-label="Toggle extra information on and off">
-              <i class="fa-solid fa-list"></i>
-              <span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></span>
-              <i class="fa-solid fa-sort-down"></i>
-              <i class="fa-solid fa-sort-up"></i>
-            </button>
-            <div class="collapsed-box">
-              <p>Getting into the more advanced stuff. In depth explanation about more technical details about the game.</p>
-              <h5 class="fs-6">Content table:</h5>
-              <ul>
-                <li><a href="#Instances" class="link">Instances</a></li>
-                <li><a href="#Damage-Formula" class="link">Damage Formula</a></li>
-                <li><a href="#Calculator" class="link">Calculator</a></li>
-                <li><a href="#Multi-account" class="link">Multi-account</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- Early game -->
-        <div>
-          <div class="select-links">
-            <span>4.</span>
-            <a href="#Earlygame-Section" class="link">Earlygame</a>
-          </div>
-          <div class="selection">
-            <button type="button" class="button-collapse" aria-label="Toggle extra information on and off">
-              <i class="fa-solid fa-list"></i>
-              <span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></span>
-              <i class="fa-solid fa-sort-down"></i>
-              <i class="fa-solid fa-sort-up"></i>
-            </button>
-            <div class="collapsed-box">
-              <p>This ranges from level 0 to 100. From Swordman to Lord Knight.</p>
-              <h5 class="fs-6">Content table:</h5>
-              <ul>
-                <li><a href="#Earlygame-Stats" class="link">Stats</a></li>
-                <li><a href="#Earlygame-Leveling" class="link">Leveling</a></li>
-                <li><a href="#Earlygame-Gear" class="link">Gear</a></li>
-                <li><a href="#Earlygame-Content" class="link">Instances</a></li>
-                <li><a href="#Earlygame-Content" class="link">Farming</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- Mid game -->
-        <div>
-          <div class="select-links">
-            <span>5.</span>
-            <a href="#Midgame-Section" class="link">Midgame</a>
-          </div>
-          <div class="selection">
-            <button type="button" class="button-collapse" aria-label="Toggle extra information on and off">
-              <i class="fa-solid fa-list"></i>
-              <span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
-              <i class="fa-solid fa-sort-down"></i>
-              <i class="fa-solid fa-sort-up"></i>
-            </button>
-            <div class="collapsed-box">
-              <p>This starts at level 100 to 175. Amidst your Rune Knight journey.</p>
-              <h5 class="fs-6">Content table:</h5>
-              <ul>
-                <li><a href="#Midgame-Stats" class="link">Stats</a></li>
-                <li><a href="#Midgame-Leveling" class="link">Leveling</a></li>
-                <li><a href="#Midgame-Gear" class="link">Gear</a></li>
-                <li><a href="#Midgame-Content" class="link">Instances</a></li>
-                <li><a href="#Midgame-Content" class="link">Farming</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- End game -->
-        <div>
-          <div class="select-links">
-            <span>6.</span>
-            <a href="#Main" class="link">Endgame</a>
-          </div>
-          <div class="selection">
-            <button type="button" class="button-collapse" aria-label="Toggle extra information on and off">
-              <i class="fa-solid fa-list"></i>
-              <span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
-              <i class="fa-solid fa-sort-down"></i>
-              <i class="fa-solid fa-sort-up"></i>
-            </button>
-            <div class="collapsed-box">
-              <p>This starts at level 175. A brief description before reaching minmax.</p>
-              <h5 class="fs-6">Content table:</h5>
-              <ul>
-                <li><a href="#Endgame-Stats" class="link">Stats</a></li>
-                <li><a href="#Endgame-Leveling" class="link">Leveling</a></li>
-                <li><a href="#Endgame-Gear" class="link">Gear</a></li>
-                <li><a href="#Endgame-Content" class="link">Instances</a></li>
-                <li><a href="#Endgame-Content" class="link">Farming</a></li>
-              </ul>
-            </div>
+          <div class="eden-academy-rewards">
+            <h4 class="fs-6 header">Rewards</h4>
+            <ul>
+              <li>Stuff will be here.</li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-
-    <h4 class="fs-6">I would maybe place a cringe picture here</h4>
-    <img src="https://via.placeholder.com/1920x1080/3c3c3c" alt="Placeholder image" class="placeholder-image">
-
-    <section id="Newcomer-Section">
-      <h3 class="fs-5 header">Newcomer section</h3>
-      <p>Oh look, a new recruit, <b>WELCOME!</b> I'm going to be your instructor today. My name is <span class="tip">Myndi</span>, and will do my best to squeeze the best out of you 😤 Nice to meet you!</p>
-      <p>First things first, one of the most important things as a new player is to read. Perhaps not all the people like reading, even this paragraph will be skipped by a lot of them 😞 but that can't stop us from learning, and teaching them. <b>Let's jump right into the first thing you need to know!</b></p>
-
-      <h4 id="Tutorial" class="header fs-6">Tutorial</h4>
-      <p><span class="tag">DO NOT SKIP</span> Every great story starts with a tutorial. It might be tedious, but it's your mom, and she popping some mommy milkers 🧐 jokes aside, it's quite important, because this leads you to your next route.</p>
-
-      <p>After finishing your tasks with mom, you're left with few options:</p>
-      <ul class="list-unstyled">
-        <li class="ps-3"><b>a.</b> <span class="header">Continue on your own</span> - Essentially live up the original Ragnarok experience. You can adjust your experience <span class="low-focus">(you can only lower it down, not increase)</span> at <code class="code contrast">@go office</code> walking to the left and talking to <span class="tip">Eden Officer Eve</span>. There's nothing much I can add here, besides making sure you look at the map to see what places you could level up at.</li>
-        <li class="ps-3"><b>b.</b> <span class="header">Follow Mom</span> - She will kindly ask you to join Eden Academy. You could do by going <code class="code contrast">@go eden</code> walk upwards and talk with <span class="tip">Secretary Lime Evenor</span>. You will be given a <img src="https://www.novaragnarok.com/data/items/icons2/6219.png" alt="Ragnarok Online item" class="item"> <span class="tip">Eden Group Mark</span> and a <img src="https://www.novaragnarok.com/data/items/icons2/34806.png" alt="Ragnarok Online item"> <span class="tip">Eden Equipment Chest</span> if successfully joined.</li>
-      </ul>
-      <p>With that in hand, we can jump into the next one.</p>
-
-      <h4 id="Eden-Academy" class="header fs-6">Eden Academy</h4>
-      <p><a href="https://www.novaragnarok.com/wiki/Eden_Academy" target="_blank" class="link">Eden Academy</a> is a follow up to the tutorial - if you want to read more about it, kindly do so.</p>
-      <p>What is important here, is what they teach you, and the gear we acquire. From level <span class="number">0</span> to <span class="number">100</span> we will be using the set they provide us after we register to the Academy.</p>
     
-      
-      <h4 id="Useful-Links" class="header fs-6">Useful links</h4>
-      <p>To begin with, you need to be wary of the most useful links <span class="low-focus">(to my own consideration)</span> we have here. You will see them in throughout the guide as well.</p>
-      <ul>
-        <li><a href="https://www.novaragnarok.com/?module=main" target="_blank" class="link">NovaRO Main Site</a> - Useful to check news, your character, the market & spending your well earned real life money.</li>
-        <li><a href="https://www.novaragnarok.com/wiki/Main_Page" target="_blank" class="link">NovaRO Wikipedia</a> - The all-in-one site for the majority of your questions, thanks to all the contributors.
-          <ul>
-            <li><a href="https://www.novaragnarok.com/wiki/Troubleshooting" target="_blank" class="link">Troubleshooting</a> - Make sure you check this in case you have any technical issue.</li>
-            <li><a href="https://www.novaragnarok.com/wiki/Instances" target="_blank" class="link">Instances</a> - Useful when doing research about loot or mobs.</li>
-            <li><a href="https://www.novaragnarok.com/wiki/Costume_Enchants" target="_blank" class="link">Costume Stones</a> - All the available costume stones in the server.</li>
-            <li><a href="https://www.novaragnarok.com/wiki/Shadow_Gear" target="_blank" class="link">Shadow Gear</a> - All the available shadow gear in the server.</li>
-            <li><a href="https://www.novaragnarok.com/wiki/Leinarth%27s_Rune_Knight_Class_Guide" target="_blank" class="link">Leinarth's RK Guide</a> - The all-in-one guide for RK <strike>and my competition.</strike> <span class="hover">IT'S JUST A JOKE</span></li>
-            <li><a href="https://www.novaragnarok.com/wiki/Refinement_System" target="_blank" class="link">Refinement System</a> - Frankly the best place to understand how refinement works.</li>
-            <li><a href="https://www.novaragnarok.com/wiki/Creation_Database" target="_blank" class="link">Creation Database</a> - We all make potions or runes, and this place has it all.</li>
-            <li><a href="https://www.novaragnarok.com/wiki/Pet_System" target="_blank" class="link">Pet System</a> - Always a good thing to have all the available pets.</li>
-            <li><a href="https://www.novaragnarok.com/wiki/Palette_Colors" target="_blank" class="link">Outfit Colors</a> - Fashion is part of the game, so might as well have it recommended.</li>
-          </ul>
-        </li>
-        <li><a href="https://www.novaragnarok.com/forum/" target="_blank" class="link">NovaRO Forum</a> - Perfect to report a bug, write a suggestion or complain, besides that, ignore it.</li>
-        <li><a href="https://discord.com/invite/eqHzVK9" target="_blank" class="link">NovaRO Discord</a> - Specially useful if you join a class specific channel.</li>
-        <li><a href="https://irowiki.org/wiki/Quests" target="_blank" class="link">IronRO Wiki Quest List</a> - This is only useful if you're all about nostalgia and want to do old forgotten quests.</li>
-        <li><a href="https://www.divine-pride.net/" target="_blank" class="link">Divine Pride</a> - Amazing database. You can check almost anything and most importnatly, future content.</li>
-        <li><a href="https://_miel.gitlab.io/ncs/#/" target="_blank" class="link">Various Tools</a> - A bit outdated, but still present useful tools for you to use.</li>
-        <li><a href="https://zzyx.de/ro/atk" target="_blank" class="link">Muh Calculator</a> - Significant calculator both for ATK and MATK. Let's you plan ahead.</li>
-        <li><a href="https://ratemyserver.net/" target="_blank" class="link">RateMyServer</a> - Honestly, with all the above, useless, but might as well throw it out there.</li>
-      </ul>
+      <div class="d-none">
+        <h4 id="Useful-Links" class="header fs-6">Useful links</h4>
+        <p>To begin with, you need to be wary of the most useful links <span class="low-focus">(to my own consideration)</span> we have here. You will see them in throughout the guide as well.</p>
+        <ul>
+          <li><a href="https://www.novaragnarok.com/?module=main" target="_blank" class="link">NovaRO Main Site</a> - Useful to check news, your character, the market & spending your well earned real life money.</li>
+          <li><a href="https://www.novaragnarok.com/wiki/Main_Page" target="_blank" class="link">NovaRO Wikipedia</a> - The all-in-one site for the majority of your questions, thanks to all the contributors.
+            <ul>
+              <li><a href="https://www.novaragnarok.com/wiki/Troubleshooting" target="_blank" class="link">Troubleshooting</a> - Make sure you check this in case you have any technical issue.</li>
+              <li><a href="https://www.novaragnarok.com/wiki/Instances" target="_blank" class="link">Instances</a> - Useful when doing research about loot or mobs.</li>
+              <li><a href="https://www.novaragnarok.com/wiki/Costume_Enchants" target="_blank" class="link">Costume Stones</a> - All the available costume stones in the server.</li>
+              <li><a href="https://www.novaragnarok.com/wiki/Shadow_Gear" target="_blank" class="link">Shadow Gear</a> - All the available shadow gear in the server.</li>
+              <li><a href="https://www.novaragnarok.com/wiki/Leinarth%27s_Rune_Knight_Class_Guide" target="_blank" class="link">Leinarth's RK Guide</a> - The all-in-one guide for RK <strike>and my competition.</strike> <span class="hover">IT'S JUST A JOKE</span></li>
+              <li><a href="https://www.novaragnarok.com/wiki/Refinement_System" target="_blank" class="link">Refinement System</a> - Frankly the best place to understand how refinement works.</li>
+              <li><a href="https://www.novaragnarok.com/wiki/Creation_Database" target="_blank" class="link">Creation Database</a> - We all make potions or runes, and this place has it all.</li>
+              <li><a href="https://www.novaragnarok.com/wiki/Pet_System" target="_blank" class="link">Pet System</a> - Always a good thing to have all the available pets.</li>
+              <li><a href="https://www.novaragnarok.com/wiki/Palette_Colors" target="_blank" class="link">Outfit Colors</a> - Fashion is part of the game, so might as well have it recommended.</li>
+            </ul>
+          </li>
+          <li><a href="https://www.novaragnarok.com/forum/" target="_blank" class="link">NovaRO Forum</a> - Perfect to report a bug, write a suggestion or complain, besides that, ignore it.</li>
+          <li><a href="https://discord.com/invite/eqHzVK9" target="_blank" class="link">NovaRO Discord</a> - Specially useful if you join a class specific channel.</li>
+          <li><a href="https://irowiki.org/wiki/Quests" target="_blank" class="link">IronRO Wiki Quest List</a> - This is only useful if you're all about nostalgia and want to do old forgotten quests.</li>
+          <li><a href="https://www.divine-pride.net/" target="_blank" class="link">Divine Pride</a> - Amazing database. You can check almost anything and most importnatly, future content.</li>
+          <li><a href="https://_miel.gitlab.io/ncs/#/" target="_blank" class="link">Various Tools</a> - A bit outdated, but still present useful tools for you to use.</li>
+          <li><a href="https://zzyx.de/ro/atk" target="_blank" class="link">Muh Calculator</a> - Significant calculator both for ATK and MATK. Let's you plan ahead.</li>
+          <li><a href="https://ratemyserver.net/" target="_blank" class="link">RateMyServer</a> - Honestly, with all the above, useless, but might as well throw it out there.</li>
+        </ul>
+      </div>
     </section>
 
-    <b>To add:</b> Acronyms list.
-    <br>
-    Structure:
-    <ul>
-        <li>Basic/useful commands</li>
-        <li>Wiki/useful pages (costume stones, instances)</li>
-        <li>How to look for information</li>
-        <li>How to make the right question</li>
-        <li>Buying vs enchanting/refining</li>
-      <li class="header">Leveling</li>
-      <li class="header">Basic-early game:</li>
-        <li>Item Progression</li>
-        <li>Farming</li>
-        <li>Instances</li>
-      <li class="header">Mid game:</li>
-        <li>Item Progression</li>
-        <li>Farming</li>
-        <li>Instances</li>
-      <li>Late game decisions (jump to the beginning)</li>
-    </ul>
+    <div class="d-none">
+      <b>To add:</b> Acronyms list.
+      Structure:
+      <ul>
+          <li>How to look for information</li>
+          <li>How to make the right question</li>
+          <li>Buying vs enchanting/refining</li>
+      </ul>
+    </div>
 
             <!-- THIS REQUIRES MASSIVE REWORK -->
-            <div class="skills-usage">
+            <div class="skills-usage d-none">
               <div>
                 <h3 class="fs-5 header">Buffs</h3>
                 <div>

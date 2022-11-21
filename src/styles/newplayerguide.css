@@ -1,185 +1,269 @@
 /* Guide */
 #New-Player > div {
-    color: hsl(var(--text));
-    background-color: hsl(var(--main-light-2));
-    border-radius: 0.5em;
-  }
-  
-  #New-Player .select {
-    padding: .5em 1em;
-    margin-block-end: 1em;
-    background-color: hsl(var(--main-light-3));
-    border-radius: 0.5em;
-  }
-  
-  .select-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  color: hsl(var(--text));
+  background-color: hsl(var(--main-dark));
+  border-radius: 0.5em;
+}
 
-    gap: 1em;
+#New-Player > section > div {
+  padding: 1em;
+  color: hsl(var(--text));
+  background-color: hsl(var(--main-light-2));
+  border-radius: 0.5em;
+}
+
+.item {
+  width: 24px;
+  height: 24px;
+}
+
+.intro-new-player {
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+
+  background-image: linear-gradient(0deg, hsl(var(--main-dark)) 5%, transparent),
+    url("../assets/img/bg/tinywow_wallpaperflare.com_wallpaper_8458767.webp");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.intro-new-player::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: hsl(var(--main-dark));
+  opacity: 0.75;
+}
+
+.intro-new-player > div {
+  color: hsl(var(--white));
+  position: relative;
+}
+
+.selection {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  position: relative;
+}
+
+.selection::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 5px;
+  height: 120%;
+  background-color: hsl(var(--main-light-1));
+  z-index: 2;
+}
+
+.selection .article {
+  display: block;
+  margin: 0;
+  width: 100%;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+
+  background-color: hsl(var(--main-light-2));
+  border-radius: 0.5em;
+  position: relative;
+
+  box-shadow: 0 1px 2px hsl(var(--main-dark), 30%),
+    0 1px 3px hsl(var(--main-dark), 30%);
+  z-index: 2;
+}
+
+.content::before {
+  content: "";
+  position: absolute;
+  background-color: hsl(var(--main-light-3));
+  width: 10px;
+  height: 10px;
+  rotate: 45deg;
+  box-shadow: 0 1px 2px hsl(var(--main-dark), 30%),
+    0 1px 3px hsl(var(--main-dark), 30%);
+  z-index: 1;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 13.5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(var(--white));
+  background-color: hsl(var(--important));
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  z-index: 3;
+  text-decoration: none;
+}
+
+.icon:is(:hover, :focus, :focus-within) {
+  color: inherit;
+  filter: contrast(200%);
+}
+
+.icon:is(:active) {
+  scale: 0.95;
+}
+
+.selection > :not(:first-child) {
+  margin-block-start: clamp(-50px, 1vh + 1rem, -150px);
+}
+
+.selection > :nth-of-type(odd) .content::before {
+  top: 10px;
+  right: -5px;
+}
+
+.selection > :nth-of-type(odd) .content {
+  margin-inline-end: auto;
+  width: calc(50% - 2rem);
+}
+
+.selection > :nth-of-type(even) .content::before {
+  top: 10px;
+  left: -5px;
+}
+
+.selection > :nth-of-type(even) .content {
+  margin-inline-start: auto;
+  width: calc(50% - 2.5rem);
+}
+
+@media only screen and (max-width: 880px) {
+  .selection {
+    gap: 1.5rem;
+    padding-inline-start: 3rem;
+  }
+
+  .selection::after {
+    left: 0.5rem;
+  }
+
+  .icon {
+    left: -54px;
+  }
+
+  .selection > :nth-of-type(odd) .content::before {
+    top: 10px;
+    left: -5px;
+  }
+
+  .selection > :not(:first-child) {
+    margin-block-start: 0;
+  }
+
+  .selection > :nth-of-type(odd) .content {
     width: 100%;
+    margin-inline-start: 0;
   }
 
-  .select-grid > div {
-    display: flex;
-    flex-direction: column;
+  .selection > :nth-of-type(even) .content {
+    width: 100%;
+    margin-inline-start: 0;
   }
+}
 
-  .select-links {
-    border-radius: .25em;
-    text-align: center;
-    position: relative;
-  }
+.new-player-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 0 0 0.5em 0.5em;
+}
 
-  .select-links span {
-    position: absolute;
-    bottom: 0;
-    left: .25rem;
-  }
-  
-  .select .selection {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
+/* Tutorial */
+#Starting-Section > div {
+  display: flex;
+  gap: 1em;
+}
+
+#Tutorial,
+#Eden-Academy {
+  width: 50%;
+}
+
+#Tutorial > div:nth-of-type(1),
+#Eden-Academy > div:nth-of-type(1) {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+#Tutorial ul,
+#Eden-Academy ul {
+  display: grid;
+  gap: 1em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto-fit);
+}
+
+#Tutorial li,
+#Eden-Academy li {
+  display: flex;
+
+  padding: 0.5em;
+  background-color: hsl(var(--main-light));
+  border-radius: 0.25em;
+  box-shadow: 0 1px 2px hsl(var(--main-dark), 30%),
+    0 1px 3px hsl(var(--main-dark), 30%);
+}
+
+#Tutorial li:last-child,
+#Eden-Academy li:last-child {
+  width: 100%;
+}
+
+#Tutorial li::before,
+#Eden-Academy li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  padding-inline-end: 0.5em;
+  color: hsl(var(--header));
+}
+
+#Tutorial .float {
+  float: right;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: none;
+  object-position: 50% 10%;
+}
+
+.tutorial-rewards,
+.eden-academy-rewards {
+  display: none;
+}
+
+@media only screen and (max-width: 880px) {
+  #Starting-Section > div {
     flex-wrap: wrap;
-  
-    color: hsl(var(--text));
-    overflow: hidden;
   }
 
-  /* Button collapse */
-  .button-collapse {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-    width: 100%;
-    padding: 0.25em 0.5em;
-    color: hsl(var(--white));
-    background-color: hsl(var(--main-dark));
-    border: 0;
-    border-radius: .25em;
-  
-    position: relative;
-    z-index: 3;
-  }
-  
-  .button-collapse .fa-star {
-    color: hsl(var(--header));
-  }
-  
-  .button-collapse .fa-sort-down {
-    color: hsl(var(--white));
-    font-size: 1.1rem;
-    position: relative;
-    top: -3px;
-  }
-  
-  .button-collapse .fa-sort-up {
-    display: none;
-    color: hsl(var(--white));
-    font-size: 1.1rem;
-    position: relative;
-    top: 5px;
-  }
-  
-  .button-collapse:is(:hover, :focus-within) {
-    color: hsl(var(--main-dark));
-    background-color: hsl(var(--white));
-  }
-  
-  .button-collapse:is(:hover, :focus-within) .fa-sort-up,
-  .button-collapse:is(:hover, :focus-within) .fa-sort-down,
-  .button-collapse:is(:hover, :focus-within) .fa-star {
-    color: hsl(var(--main-dark));
-  }
-  
-  .button-collapse:is(:hover, :focus, :focus-within) ~ .collapsed-box {
-    background-color: hsl(var(--main-dark));
-  }
-  
-  .button-collapse.active-btn {
-    color: hsl(var(--main-dark));
-    background-color: hsl(var(--white));
-    border: 0;
-    border-radius: .25em .25em 0 0;
-  }
-  
-  .button-collapse.active-btn .fa-star {
-    color: hsl(var(--main-dark));
-  }
-  
-  .button-collapse.active-btn .fa-sort-down {
-    color: hsl(var(--main-dark));
+  #Starting-Section hr {
     display: none;
   }
-  
-  .button-collapse.active-btn .fa-sort-up {
-    color: hsl(var(--main-dark));
-    display: inline;
-  }
-  
-  /* Collapse box */
-  .collapsed-box {
-    visibility: collapse;
-    position: absolute;
-    opacity: 0;
-    z-index: -9999;
-    translate: 0% -100%;
-  
-    overflow: hidden;
-    transition: 
-    translate .8s ease-out;
-  }
 
-  .collapsed-box.active {
-    visibility: visible;
-    position: static;
-    opacity: 1;
-    z-index: 2;
-    translate: 0% 0%;
-  
+  #Tutorial,
+  #Eden-Academy {
     width: 100%;
-    height: 20ch;
-    padding: 1em;
-    color: hsl(var(--white));
-    background-color: hsl(var(--main-dark));
-    border-radius: 0 0 0.25em 0.25em;
-
-    overflow-y: scroll;
   }
-
-  .collapsed-box.active::-webkit-scrollbar {
-    width: .35em;
-    border-radius: 0 0 .25em 0;
-  }
-
-  /* Track */
-  .collapsed-box.active::-webkit-scrollbar-track {
-    background-color: hsl(var(--white), 10%);
-    border-radius: 0 0 .25em 0;
-  }
-  
-  /* Handle */
-  .collapsed-box.active::-webkit-scrollbar-thumb {
-    background: hsl(var(--white)); 
-    border-radius: 0 0 .25em 0;
-  }
-
-  /* Handle on hover */
-  .collapsed-box.active::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--white), 60%); 
-  }
-
-  .placeholder-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-    border-radius: .5em;
-  }
-
-  .item {
-    width: 24px;
-    height: 24px;
-  }
+}

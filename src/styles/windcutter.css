@@ -1,7 +1,7 @@
 body {
   background-image: linear-gradient(
       0deg,
-      hsl(var(--main-dark)) 81%,
+      hsl(var(--main-dark)) 87%,
       transparent
     ),
     url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
@@ -52,7 +52,7 @@ h3 {
     padding: 0 1.5rem;
     background-image: linear-gradient(
         0deg,
-        hsl(var(--main-dark)) 85%,
+        hsl(var(--main-dark)) 90%,
         transparent
       ),
       url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
@@ -659,7 +659,7 @@ h3 {
 }
 
 /* Light toggle */
-.toggle:is(.dark, .data, .skills, .consumables, .autoloot, .copy, .starting-point) {
+.toggle:is(.dark, .data, .skills, .consumables, .autoloot, .copy, .starting-point, .tutorial, .eden-academy) {
   align-self: flex-start;
 
   display: flex;
@@ -678,13 +678,14 @@ h3 {
   box-shadow: 2px 2px 0 0 hsl(var(--black), 70%);
 }
 
-.toggle:hover:is(.data, .skills, .consumables, .autoloot, .copy, .starting-point) {
+.toggle:hover:is(.data, .skills, .consumables, .autoloot, .copy, .starting-point, .tutorial, .eden-academy) {
   background-color: hsl(var(--important), 80%);
 }
 
-.toggle:active:is(.data, .skills, .consumables, .autoloot, .copy, .starting-point) {
+.toggle:active:is(.data, .skills, .consumables, .autoloot, .copy, .starting-point, .tutorial, .eden-academy) {
   translate: 2px 2px;
   box-shadow: none;
+  background-color: hsl(var(--important));
 }
 
 .toggle.consumables {
@@ -828,6 +829,10 @@ h3 {
 .consumables-container {
   display: flex;
   justify-content: center;
+}
+
+.consumables-container .tag {
+  margin-inline-end: .15em;
 }
 
 .consumables-container > div {

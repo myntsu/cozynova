@@ -31,6 +31,18 @@ $(".starting-point").click(function () {
   $(".starting-point-text").slideToggle("slow");
 });
 
+// Tutorial
+$(".tutorial").click(function () {
+  $(".tutorial-rewards").toggle();
+  $("#Tutorial > div:nth-of-type(2)").toggle();
+});
+
+// Eden Academy
+$(".eden-academy").click(function () {
+  $(".eden-academy-rewards").toggle();
+  $("#Eden-Academy > div:nth-of-type(2)").toggle();
+});
+
 // Copy to clipboard
 let lootList = document.querySelector("#Autoloot");
 
@@ -55,18 +67,18 @@ lootList.addEventListener("click", (e) => {
 });
 
 // Collapsible content or accordion
-document.querySelectorAll(".button-collapse").forEach((button) => {
-  button.addEventListener("click", () => {
-    const collapseBox = button.nextElementSibling;
+// document.querySelectorAll(".button-collapse").forEach((button) => {
+//   button.addEventListener("click", () => {
+//     const collapseBox = button.nextElementSibling;
 
-    document
-      .querySelectorAll(".active")
-      .forEach((el) => el.classList.remove("active"));
-    document
-      .querySelectorAll(".active-btn")
-      .forEach((el) => el.classList.remove("active-btn"));
+//     document
+//       .querySelectorAll(".active-cont")
+//       .forEach((el) => el.classList.remove("active-cont"));
+//     document
+//       .querySelectorAll(".active-btn")
+//       .forEach((el) => el.classList.remove("active-btn"));
 
-    button.classList.toggle("active-btn");
-    collapseBox.classList.toggle("active");
-  });
-});
+//     button.classList.toggle("active-btn");
+//     collapseBox.classList.toggle("active-cont");
+//   });
+// });
