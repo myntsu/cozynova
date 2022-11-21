@@ -24,7 +24,126 @@
         font-family: "DM Sans", sans-serif;
         font-weight: 400;
       }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        max-width: 1200px;
+        width: 100%;
+        margin: auto;
+        padding: 1em 0;
+      }
+
+      main h2:nth-of-type(1) {
+        margin-top: .25em;
+      }
+
+      h2 {
+        margin-bottom: 0;
+      }
+
+      .requires {
+        display: inline-block;
+        padding: .1em .35em;
+        color: white;
+        background-color: rgb(249, 65, 65);
+        border-radius: .25em;
+        font-size: .8rem;
+      }
+
+      .bug {
+        display: inline-block;
+        padding: .1em .35em;
+        color: rgb(255, 255, 255);
+        background-color: rgb(83, 112, 255);
+        border-radius: .25em;
+        font-size: .8rem;
+      }
+
+      .priority {
+        display: inline-block;
+        padding: .1em .35em;
+        color: rgb(255, 255, 255);
+        background-color: rgb(159, 86, 255);
+        border-radius: .25em;
+        font-size: .8rem;
+      }
+
+      .explanation {
+        display: inline-block;
+        padding: .1em .35em;
+        color: rgb(255, 255, 255);
+        background-color: rgb(124, 124, 124);
+        border-radius: .25em;
+        font-size: .8rem;
+      }
+
+      .date {
+        display: inline;
+        padding: .2em .4em;
+        color: rgb(186, 186, 186);
+        background-color: rgb(56, 57, 56);
+        font-size: .8rem;
+        width: fit-content;
+      }
 </style>
+
+<body>
+  
+  <main>
+    <span class="date">Feedback: November 17th, 18th & 19th</span>
+
+    <h2>General:</h2>
+    <ul>
+      <li>
+        The server settings auto-changes after every match to the closest/lowest ping by default, instead of staying on the previously selected.
+      </li>
+      <li>
+        The server settings are hard to click/takes some time to show the pop-up.
+      </li>
+      <li>
+        If somebody leaves the game in between transitions, or the loading screen, it takes some time for the server to respond, and goes some delayed transitions.
+      </li>
+      <li>
+        <span class="requires">Requires testing</span> Sometimes if somebody leaves, the game freezes and does nothing.
+      </li>
+      <li>
+        <span class="priority">Priority</span> Adding a timer to matches. People are abusing the fact of fast paced champions to stall as much as they want, or can, depending on the situation, extending matches sometimes to even 10 or 15 minutes.
+      </li>
+    </ul>
+    <h2>Controls:</h2>
+    <ul>
+      <li>
+        Possibility of changing the sensitivy of the mouse, and perhaps, related settings.
+      </li>
+    </ul>
+
+    <h2>Skills:</h2>
+    <ul>
+      <li>
+        The description for the skills and the UI could receive some improvements. Like better explanation on what they do, or all the iterations. Sometimes it's a little bit hard to navigate through them.
+      </li>
+      <li>
+        <span class="explanation">Clarification</span> Explaining how the parry, block and horns work appropiately (there seems to be a lot of confusion around this).
+      </li>
+      <li>
+        <span class="priority">Priority</span> Whenever somebody gets parried, has an invulnerability frame on where they can't stagger. This promotes the behavior of getting parried to gain advantage, when the person getting parried should be at dis
+      </li>
+      <li>
+        <span class="priority">Priority</span> Rhyno infinite combo on "girl" and "guy" characters. LMB > RMB > RMB > Horns > Tail > 1 > 2 > repeat. If your ping is consistent, it can't be lifted at all.
+      </li>
+    </ul>
+  
+    <h2>Champions</h2>
+    <ul>
+      <li>
+        Girl characters: pretty hard to punish if they spam in range as Rhyno. Could permanently stall and attack on range.
+      </li>
+      <li>
+        Rhyno characters: have a huge disadvantage against full defensive "girls" & "guys" characters (understanding all 3 & 3 from all factions), as Rhyno is pretty slow when moving or "reacting" (in a way).
+      </li>
+    </ul>
+  </main>
 
 </body>
 </html>
