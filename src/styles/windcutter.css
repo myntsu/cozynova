@@ -173,7 +173,7 @@ h3 {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: .5em;
+  padding: 0.5em;
   background-color: hsl(var(--main-light-3));
   border-radius: 0.5em;
 }
@@ -498,14 +498,14 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: .25em;
+  gap: 0.25em;
   border-radius: 0.5em;
 }
 
 #Stats-Container > div {
-  width: calc(50% - .25em);
+  width: calc(50% - 0.25em);
   background-color: hsl(var(--main-light-2));
-  border-radius: .5em;
+  border-radius: 0.5em;
 }
 
 /* Status */
@@ -519,7 +519,7 @@ h3 {
   flex-wrap: wrap;
   padding: 1em;
   background-color: hsl(var(--main-light-3));
-  border-radius: .5em;
+  border-radius: 0.5em;
 }
 
 .status-wrapper > * {
@@ -529,10 +529,10 @@ h3 {
 .status-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-block-end: .5em;
-  padding: .5em;
+  margin-block-end: 0.5em;
+  padding: 0.5em;
   background-color: hsl(var(--main-light));
-  border-radius: .5em;
+  border-radius: 0.5em;
 }
 
 .status-grid > div {
@@ -540,10 +540,10 @@ h3 {
   justify-content: space-between;
   gap: 1em;
   width: 100%;
-  padding: .15em .75em;
+  padding: 0.15em 0.75em;
 }
 
-.status-grid > div:nth-of-type(-n+3) {
+.status-grid > div:nth-of-type(-n + 3) {
   border-bottom: 1px solid hsl(var(--text), 30%);
 }
 
@@ -577,7 +577,7 @@ h3 {
   gap: 1em;
   padding: 1em;
   background-color: hsl(var(--main-light-3));
-  border-radius: .5em;
+  border-radius: 0.5em;
 }
 
 .battle-stats-grid h4 {
@@ -585,9 +585,9 @@ h3 {
 }
 
 .battle-stats-grid > div > div {
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   background-color: hsl(var(--main-light));
-  border-radius: .5em;
+  border-radius: 0.5em;
 }
 
 .battle-stats-grid p {
@@ -620,7 +620,7 @@ h3 {
 
   .status-grid > div {
     width: 100%;
-    padding: 0 .5em;
+    padding: 0 0.5em;
   }
 
   .battle-stats-grid {
@@ -736,15 +736,19 @@ h3 {
 
 .skill-priority-cont > div:nth-child(1) p {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 0.25em;
 
   width: 100%;
   margin: 0.5em 0 0.25em;
   color: hsl(var(--header));
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   text-align: start;
+}
+
+.skill-priority-cont > div:nth-child(1) p img {
+  display: inline-block;
 }
 
 .skill-priority-cont > div:nth-child(2) {
@@ -832,7 +836,7 @@ h3 {
 }
 
 .consumables-container .tag {
-  margin-inline-end: .15em;
+  margin-inline-end: 0.15em;
 }
 
 .consumables-container > div {

@@ -122,8 +122,11 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
     ></script>
 
     <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5403992479456682"
-     crossorigin="anonymous"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5403992479456682"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -650,7 +653,7 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
       }
 
       .link-small {
-        font-size: .75rem;
+        font-size: 0.75rem;
       }
 
       .link::after {
@@ -675,14 +678,22 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
       }
 
       .focus-tag {
-        display: inline-block;
-        margin: 0 0.1em;
-        padding: 0.1em 0.55em;
-        color: hsl(var(--link-light));
-        background-color: hsl(var(--focus));
+        display: inline-flex;
+        align-items: center;
+
+        margin-inline-start: .5em;
+        padding: 0 .5em;
+        background-color: hsl(var(--important));
         border-radius: 0.25em;
-        font-size: 0.75rem;
+        font-size: .9rem;
         user-select: none;
+      }
+
+      .focus-tag::after {
+        content: '\3f';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        color: hsl(var(--white));
       }
 
       .tag {
@@ -904,6 +915,52 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         .active-cookie {
           bottom: 0;
         }
+      }
+
+      .custom-tooltip {
+        position: relative;
+      }
+
+      .custom-tooltip::before,
+      .custom-tooltip::after {
+        --scale: 0;
+        --arrow-size: 5px;
+        --tooltip-color: #121212;
+
+        position: absolute;
+        top: -0.25rem;
+        left: 50%;
+        transform: translateX(-50%) translateY(var(--translate-y, 0))
+          scale(var(--scale));
+        transition: 150ms transform;
+        transform-origin: bottom center;
+      }
+
+      .custom-tooltip::before {
+        --translate-y: calc(-100% - var(--arrow-size));
+
+        content: attr(data-custom-tooltip);
+        width: max-content;
+        padding: 0.25em 0.75em;
+        color: #fff;
+        background-color: var(--tooltip-color);
+        border-radius: 0.25em;
+        font-size: 0.875rem;
+        text-align: center;
+      }
+
+      .custom-tooltip:is(:hover, :focus)::before,
+      .custom-tooltip:is(:hover, :focus)::after {
+        --scale: 1;
+      }
+
+      .custom-tooltip::after {
+        --translate-y: calc(-1 * var(--arrow-size));
+
+        content: "";
+        border: var(--arrow-size) solid transparent;
+        border-top-color: var(--tooltip-color);
+        transform-origin: top center;
       }
     </style>
 
