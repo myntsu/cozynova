@@ -240,9 +240,8 @@ h3 {
   }
 
   #Author .social-media-mob img {
-    float: left;
     width: 125px;
-    height: auto;
+    height: 125px;
     margin-inline-end: 1em;
     border-radius: 50%;
   }
@@ -389,7 +388,7 @@ h3 {
 .img-equip {
   text-align: center;
   width: 200px;
-  height: auto;
+  height: 200px;
   object-fit: none;
   object-position: 53% 50%;
 }
@@ -756,6 +755,8 @@ h3 {
 
 .skill-priority-cont > div:nth-child(1) p img {
   display: inline-block;
+  width: 33px;
+  height: 33px;
 }
 
 .skill-priority-cont > div:nth-child(2) {
