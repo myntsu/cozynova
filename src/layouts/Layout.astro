@@ -271,9 +271,9 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         --important: 343, 100%, 66%;
         --number: 36, 90%, 60%;
         --focus: 195, 50%, 80%;
-        --low-focus: 0, 0%, 65%;
+        --low-focus: 221, 37%, 57%;
 
-        --number-contrast: 221, 60%, 27%;
+        --number-contrast: 221, 80%, 37%;
         --link-contrast: 36, 100%, 50%;
       }
 
@@ -307,9 +307,9 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         --important: 343, 100%, 66%;
         --number: 36, 90%, 60%;
         --focus: 195, 50%, 80%;
-        --low-focus: 0, 0%, 65%;
+        --low-focus: 221, 37%, 57%;
 
-        --number-contrast: 221, 60%, 27%;
+        --number-contrast: 221, 80%, 37%;
         --link-contrast: 36, 100%, 50%;
       }
 
@@ -326,10 +326,10 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         --header: 49, 85%, 65%;
         --important: 343, 100%, 66%;
         --number: 36, 90%, 60%;
-        --focus: 195, 50%, 80%;
-        --low-focus: 0, 0%, 65%;
+        --focus: 195, 80%, 85%;
+        --low-focus: 221, 37%, 57%;
 
-        --number-contrast: 221, 60%, 27%;
+        --number-contrast: 221, 80%, 37%;
         --link-contrast: 36, 100%, 50%;
       }
 
@@ -342,8 +342,8 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         --main-light-3: 0, 0%, 26%;
 
         --text: 0, 0%, 92%;
-        --link: 250, 100%, 84%;
-        --header: 200, 65%, 70%;
+        --link: 200, 65%, 70%;
+        --header: 250, 100%, 84%;
         --important: 211, 70%, 55%;
         --number: 52, 100%, 70%;
         --focus: 40, 30%, 70%;
@@ -362,8 +362,8 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         --main-light-3: 0, 0%, 26%;
 
         --text: 0, 0%, 92%;
-        --link: 250, 100%, 84%;
-        --header: 200, 65%, 70%;
+        --link: 200, 65%, 70%;
+        --header: 250, 100%, 84%;
         --important: 211, 70%, 55%;
         --number: 52, 100%, 70%;
         --focus: 40, 30%, 70%;
@@ -423,13 +423,13 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         --main-light-2: 140, 77%, 20%;
         --main-light-3: 140, 77%, 25%;
 
-        --text: 0, 0%, 91%;
-        --link: 36, 90%, 60%;
-        --header: 49, 85%, 65%;
-        --important: 343, 100%, 66%;
+        --text: 0, 0%, 95%;
+        --link: 40, 55%, 75%;
+        --header: 150, 90%, 80%;
+        --important: 150, 70%, 55%;
         --number: 185, 100%, 80%;
-        --low-focus: 140, 30%, 60%;
         --focus: 111, 100%, 77%;
+        --low-focus: 140, 30%, 60%;
 
         --number-contrast: 150, 70%, 40%;
         --link-contrast: 0, 70%, 40%;
@@ -444,12 +444,12 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         --main-light-3: 140, 77%, 25%;
 
         --text: 0, 0%, 95%;
-        --link: 36, 90%, 60%;
-        --header: 49, 85%, 65%;
-        --important: 343, 100%, 66%;
+        --link: 40, 55%, 75%;
+        --header: 150, 90%, 80%;
+        --important: 150, 70%, 55%;
         --number: 185, 100%, 80%;
-        --low-focus: 140, 30%, 60%;
         --focus: 111, 100%, 77%;
+        --low-focus: 140, 30%, 60%;
 
         --number-contrast: 150, 70%, 40%;
         --link-contrast: 0, 70%, 40%;
@@ -475,6 +475,7 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         font-size: 1rem;
         font-family: "DM Sans", sans-serif;
         font-weight: 400;
+        overflow-x: hidden;
       }
 
       .skip-link {
@@ -664,6 +665,17 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         font-size: 0.75rem;
       }
 
+      .link.within::after {
+        content: '\f103';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+      }
+
+      .link.within:is(:hover, :focus, :focus-within) {
+        scale: 2;
+        /* transition: .3s linear; */
+      }
+
       .link-contrast {
         color: hsl(var(--link-contrast));
       }
@@ -678,11 +690,11 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
       }
 
       .focus-tag {
-        display: inline-flex;
+        display: inline;
         align-items: center;
 
         margin-inline-start: .5em;
-        padding: 0 .5em;
+        padding: .15em .5em;
         background-color: hsl(var(--important));
         border-radius: 0.25em;
         font-size: .9rem;
@@ -694,6 +706,8 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         font-family: "Font Awesome 6 Free";
         font-weight: 900;
         color: hsl(var(--white));
+        font-size: .75rem;
+        margin-inline-start: .25em;
       }
 
       .tag {
@@ -941,6 +955,7 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
 
         content: attr(data-custom-tooltip);
         width: max-content;
+        max-width: 200px;
         padding: 0.25em 0.75em;
         color: #fff;
         background-color: var(--tooltip-color);
@@ -961,6 +976,12 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         border: var(--arrow-size) solid transparent;
         border-top-color: var(--tooltip-color);
         transform-origin: top center;
+      }
+
+      @media only screen and (max-width: 570px) {
+        .custom-tooltip::before {
+          max-width: 100px;
+        }
       }
     </style>
 

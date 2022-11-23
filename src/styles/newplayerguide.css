@@ -83,7 +83,7 @@
 
   box-shadow: 0 1px 2px hsl(var(--main-dark), 30%),
     0 1px 3px hsl(var(--main-dark), 30%);
-  z-index: 2;
+  z-index: 10;
 }
 
 .content::before {
@@ -93,19 +93,36 @@
   width: 10px;
   height: 10px;
   rotate: 45deg;
-  /* box-shadow: 0 1px 2px hsl(var(--main-dark), 30%), */
-    /* 0 1px 3px hsl(var(--main-dark), 30%); */
-  z-index: 1;
 }
 
-.content ul {
+.content .content-table {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+
   margin: 0;
-  padding-block-start: 1em;
-  padding-block-end: 1em;
-  background-color: hsl(var(--main-light-2));
-  border-radius: .5em;
-    box-shadow: 0 1px 2px hsl(var(--main-dark), 30%),
-    0 1px 3px hsl(var(--main-dark), 30%);
+  padding: 0;
+  background-color: hsl(var(--main-dark));
+}
+
+.content .content-link {
+  width: 50%;
+  padding: .5em;
+  color: hsl(var(--nav-link));
+  outline: .1ex solid hsl(var(--white), 5%);
+  outline-offset: -.2ex;
+  font-size: 1.1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.content-table .content-link:is(:hover, :focus, :focus-within) {
+  background-color: hsl(var(--important));
+}
+
+.content .content-link:nth-of-type(odd):last-child {
+  width: 100%;
 }
 
 .icon {
@@ -126,7 +143,8 @@
 
 .icon:is(:hover, :focus, :focus-within) {
   color: inherit;
-  filter: contrast(200%);
+  scale: 1.1;
+  opacity: .9;
 }
 
 .icon:is(:active) {
@@ -191,6 +209,12 @@
   }
 }
 
+@media only screen and (max-width: 570px) {
+  .content .content-link {
+    width: 100%;
+  }
+}
+
 .new-player-image {
   width: 100%;
   height: auto;
@@ -199,7 +223,7 @@
 }
 
 /* Tutorial */
-#Starting-Section > div {
+#Basics-Section > div {
   display: flex;
   gap: 1em;
 }
@@ -234,7 +258,6 @@
   border-radius: 0.25em;
   box-shadow: 0 1px 2px hsl(var(--main-dark), 30%),
     0 1px 3px hsl(var(--main-dark), 30%);
-  overflow: hidden;
 }
 
 #Tutorial li::before,
@@ -244,6 +267,11 @@
   font-weight: 900;
   padding-inline-end: 0.5em;
   color: hsl(var(--header));
+}
+
+#Tutorial .tutorial-rewards li::before,
+#Eden-Academy .eden-academy-rewards li::before {
+  content: '\f06b';
 }
 
 #Tutorial .float {
@@ -266,11 +294,11 @@
 }
 
 @media only screen and (max-width: 880px) {
-  #Starting-Section > div {
+  #Basics-Section > div {
     flex-wrap: wrap;
   }
 
-  #Starting-Section hr {
+  #Basics-Section hr {
     display: none;
   }
 

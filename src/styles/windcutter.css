@@ -122,24 +122,22 @@ h3 {
 }
 
 .social-media > div span {
-  flex: 1 0 0;
+  flex: 1 0 10px;
   text-align: center;
 }
 
 .social-media .discord {
   display: flex;
   justify-content: flex-start;
-  gap: 0.5em;
 }
 
 .social-media .github {
   display: flex;
   justify-content: flex-start;
-  gap: 0.5em;
 }
 
 .social-media a {
-  flex: 2 0 0;
+  flex: 3 0 0;
   text-align: start;
 }
 
@@ -172,7 +170,7 @@ h3 {
 .pro-con-container {
   flex: 1;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   padding: 0.5em;
   background-color: hsl(var(--main-light-3));
   border-radius: 0.5em;
@@ -209,6 +207,7 @@ h3 {
 
   #Author .social-media-mob {
     display: flex;
+    align-items: flex-start;
     margin-block-end: 0.5em;
   }
 
@@ -226,10 +225,18 @@ h3 {
     overflow: auto;
   }
 
+  #Author .social-media-tags p {
+    margin-block-end: auto;
+  }
+
   #Author .social-media-tags > div {
     display: flex;
     justify-content: flex-start;
     gap: 0.5em;
+  }
+
+  #Author .social-media-tags .github {
+    margin-block-end: auto;
   }
 
   #Author .social-media-mob img {
@@ -659,7 +666,7 @@ h3 {
 }
 
 /* Light toggle */
-.toggle:is(.dark, .data, .skills, .consumables, .autoloot, .copy, .starting-point, .tutorial, .eden-academy) {
+.toggle:is(.dark, .pros, .cons, .data, .skills, .consumables, .autoloot, .copy, .starting-point, .tutorial, .eden-academy) {
   align-self: flex-start;
 
   display: flex;
@@ -678,11 +685,11 @@ h3 {
   box-shadow: 2px 2px 0 0 hsl(var(--black), 70%);
 }
 
-.toggle:hover:is(.data, .skills, .consumables, .autoloot, .copy, .starting-point, .tutorial, .eden-academy) {
+.toggle:hover:is(.data, .pros, .cons, .skills, .consumables, .autoloot, .copy, .starting-point, .tutorial, .eden-academy) {
   background-color: hsl(var(--important), 80%);
 }
 
-.toggle:active:is(.data, .skills, .consumables, .autoloot, .copy, .starting-point, .tutorial, .eden-academy) {
+.toggle:active:is(.data, .pros, .cons, .skills, .consumables, .autoloot, .copy, .starting-point, .tutorial, .eden-academy) {
   translate: 2px 2px;
   box-shadow: none;
   background-color: hsl(var(--important));
@@ -985,7 +992,6 @@ h3 {
 .farming-container {
   background-color: hsl(var(--main-light-3));
   border-radius: 0.5em;
-  overflow: hidden;
 }
 
 .farming-container ul {
@@ -1065,4 +1071,16 @@ input.code {
   border: none;
   box-shadow: 0 0 0;
   margin-bottom: 0.5em;
+}
+
+.item-desc {
+  display: inline-block;
+  text-decoration: dotted;
+  text-decoration-line: underline;
+}
+
+.item-desc img {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
 }
