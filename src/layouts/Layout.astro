@@ -659,21 +659,16 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
 
       .link::after {
         content: "\f0c1";
-        margin-inline-start: 0.25em;
         font-family: "Font Awesome 6 Free";
         font-weight: 900;
-        font-size: 0.75rem;
+        margin-inline-start: .25em;
+        font-size: .75rem;
       }
 
       .link.within::after {
         content: '\f103';
         font-family: "Font Awesome 6 Free";
         font-weight: 900;
-      }
-
-      .link.within:is(:hover, :focus, :focus-within) {
-        scale: 2;
-        /* transition: .3s linear; */
       }
 
       .link-contrast {
@@ -693,7 +688,6 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         display: inline;
         align-items: center;
 
-        margin-inline-start: .5em;
         padding: .15em .5em;
         background-color: hsl(var(--important));
         border-radius: 0.25em;
@@ -980,7 +974,7 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
 
       @media only screen and (max-width: 570px) {
         .custom-tooltip::before {
-          max-width: 100px;
+          max-width: 150px;
         }
       }
     </style>
@@ -1007,19 +1001,6 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
     <!-- JS -->
     <script>
       import "/src/js/global.js";
-    </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHZT2VX9C8"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-JHZT2VX9C8");
     </script>
   </body>
 </html>

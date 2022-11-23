@@ -241,7 +241,7 @@ h3 {
 
   #Author .social-media-mob img {
     width: 125px;
-    height: 125px;
+    height: auto;
     margin-inline-end: 1em;
     border-radius: 50%;
   }
@@ -722,6 +722,9 @@ h3 {
   gap: 1em;
 
   width: 100%;
+  padding: 0 1em .5em;
+  background-color: hsl(var(--main-light-3));
+  border-radius: .5em;
 }
 
 .skill-priority-cont {
@@ -767,7 +770,7 @@ h3 {
   gap: 0.4em;
   width: 100%;
   padding: 0.5em;
-  background-color: hsl(var(--main-light-3));
+  background-color: hsl(var(--main-light));
   border-radius: 0.5em;
 }
 
@@ -1078,6 +1081,10 @@ input.code {
   display: inline-block;
   text-decoration: dotted;
   text-decoration-line: underline;
+}
+
+.item-desc:is(.text) {
+  text-decoration: none;
 }
 
 .item-desc img {

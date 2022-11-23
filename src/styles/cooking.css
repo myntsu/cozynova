@@ -25,7 +25,7 @@ html {
 }
 
 .market {
-    padding: .25em 355em;
+    padding: .25em .35em;
     color: hsl(var(--white)) !important;
     background-color: hsl(var(--header));
     border-radius: .25em;
