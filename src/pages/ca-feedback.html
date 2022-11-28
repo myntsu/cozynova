@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+        <!-- Bootstrap CSS -->
+        <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+        crossorigin="anonymous"
+      />
+
     <!-- DM Sans -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
 </head>
@@ -78,6 +86,15 @@
         font-size: .8rem;
       }
 
+      .fixed {
+        display: inline-block;
+        padding: .1em .35em;
+        color: rgb(255, 255, 255);
+        background-color: rgb(2, 195, 92);
+        border-radius: .25em;
+        font-size: .8rem;
+      }
+
       .date {
         display: inline;
         padding: .2em .4em;
@@ -86,64 +103,176 @@
         font-size: .8rem;
         width: fit-content;
       }
+
+      .note {
+        color: rgb(239, 103, 103);
+      }
+
+      #Dates-Tab {
+
+      }
+
+      .tab-buttons {
+        display: flex;
+      }
+
+      .tab-buttons button {
+        padding: .25rem .5rem;
+        color: rgb(232, 232, 232);
+        background-color: rgb(18, 18, 18);
+        border: none;
+      }
+
+      .tab-buttons button:is(.active) {
+        color: rgb(20, 20, 20);
+        background-color: rgb(232, 232, 232);
+      }
 </style>
 
 <body>
   
   <main>
-    <span class="date">Feedback: November 17th, 18th & 19th</span>
 
-    <h2>General:</h2>
-    <ul>
-      <li>
-        The server settings auto-changes after every match to the closest/lowest ping by default, instead of staying on the previously selected.
-      </li>
-      <li>
-        The server settings are hard to click/takes some time to show the pop-up.
-      </li>
-      <li>
-        If somebody leaves the game in between transitions, or the loading screen, it takes some time for the server to respond, and goes some delayed transitions.
-      </li>
-      <li>
-        <span class="requires">Requires testing</span> Sometimes if somebody leaves, the game freezes and does nothing.
-      </li>
-      <li>
-        <span class="priority">Priority</span> Adding a timer to matches. People are abusing the fact of fast paced champions to stall as much as they want, or can, depending on the situation, extending matches sometimes to even 10 or 15 minutes.
-      </li>
-    </ul>
-    <h2>Controls:</h2>
-    <ul>
-      <li>
-        Possibility of changing the sensitivy of the mouse, and perhaps, related settings.
-      </li>
-    </ul>
+    <div id="Dates-Tab" role="tablist">
+      <div class="tab-buttons">
+        <button class="active" id="second-tab" data-bs-toggle="tab" data-bs-target="#second-display" type="button" role="tab" aria-controls="second-display" aria-selected="false">Nov 24-26</button>
+        <button id="first-tab" data-bs-toggle="tab" data-bs-target="#first-display" type="button" role="tab" aria-controls="first-display" aria-selected="true">Nov 17-19</button>
+      </div>
+    </div>
 
-    <h2>Skills:</h2>
-    <ul>
-      <li>
-        The description for the skills and the UI could receive some improvements. Like better explanation on what they do, or all the iterations. Sometimes it's a little bit hard to navigate through them.
-      </li>
-      <li>
-        <span class="explanation">Clarification</span> Explaining how the parry, block and horns work appropiately (there seems to be a lot of confusion around this).
-      </li>
-      <li>
-        <span class="priority">Priority</span> Whenever somebody gets parried, has an invulnerability frame on where they can't stagger. This promotes the behavior of getting parried to gain advantage, when the person getting parried should be at dis
-      </li>
-      <li>
-        <span class="priority">Priority</span> Rhyno infinite combo on "girl" and "guy" characters. LMB > RMB > RMB > Horns > Tail > 1 > 2 > repeat. If your ping is consistent, it can't be lifted at all.
-      </li>
-    </ul>
-  
-    <h2>Champions</h2>
-    <ul>
-      <li>
-        Girl characters: pretty hard to punish if they spam in range as Rhyno. Could permanently stall and attack on range.
-      </li>
-      <li>
-        Rhyno characters: have a huge disadvantage against full defensive "girls" & "guys" characters (understanding all 3 & 3 from all factions), as Rhyno is pretty slow when moving or "reacting" (in a way).
-      </li>
-    </ul>
+    <div class="tab-content second-container">
+
+      <!-- 2nd -->
+      <div id="second-display" class="tab-pane fade show active" role="tabpanel" aria-labelledby="second-tab" tabindex="0">
+        <span class="date">Feedback: November 24th, 25th & 26th</span>
+
+        <h2>General:</h2>
+        <ul>
+          <li>
+            <span class="bug">From last week</span> The server settings auto-changes after every match to the closest/lowest ping by default, instead of staying on the previously selected. <span class="note">Note: Could be helpful to have a preferred server, so it doesn't swap back all the time.</span>
+          </li>
+          <li>
+            <span class="bug">From last week</span> If somebody leaves the game in between transitions, or the loading screen, it takes some time for the server to respond, and goes some delayed transitions.
+          </li>
+          <li>
+            <span class="bug">From last week</span> Sometimes if somebody leaves, the game freezes and does nothing. <span class="note">Note: Sometimes it puts you on a 3+ minute timer back at the server opening, even when the server is already up.</span>
+          </li>
+          <li>
+            <span class="bug">From last week</span> Adding a timer to matches. People are abusing the fact of fast paced champions to stall as much as they want, or can, depending on the situation, extending matches sometimes to even 10 or 15 minutes. <span class="note">Note: not sure if intended or not, if it is, then it would be nice if you guys could communicate it as well!</span>
+          </li>
+          <li>
+            Possibility of seeing FPS or ping ingame (inside a match).
+          </li>
+        </ul>
+        <h2>Controls:</h2>
+        <ul>
+          <li>
+            <span class="bug">From last week</span> Possibility of changing the sensitivy of the mouse, and perhaps, related settings.
+          </li>
+        </ul>
+
+        <h2>Skills:</h2>
+        <ul>
+          <li>
+            <span class="bug">From last week</span> The description for the skills and the UI could receive some improvements. Like better explanation on what they do, or all the iterations. Sometimes it's a little bit hard to navigate through them.
+          </li>
+          <li>
+            <span class="bug">From last week</span> Explaining how the parry, block and horns work appropiately (there seems to be a lot of confusion around this).
+          </li>
+          <li>
+            <span class="explanation">Clarification</span> Whenever somebody gets parried, has an invulnerability frame on where they can't stagger. This promotes the behavior of getting parried to gain advantage, when the person getting parried should be at disadvantage.
+          </li>
+          <li>
+            <span class="priority">Priority</span> There's an Out of Focus bug (or perhaps an iteration) on where, depending on certain circumnstances, like being too close to the edge of the map, or performing certain attacks a certain speed, makes you lose the auto focus on the enemy, making you miss combos.
+          </li>
+          <li>
+            <span class="priority">Priority</span> <span class="requires">Requires testing</span> Sometimes Whisperer characters, specially Xerox, still has the "stun animation", but is able to move (around >1.5s span). Conditions are unclear at the moment.
+          </li>
+        </ul>
+
+        <h2>Champions</h2>
+        <ul>
+          <li>
+            Xeror: currently the most OP in the meta. Either the possibility of safe place (3 dashes), high damage or simply the perma-healing with bite & run, makes him really strong against, almost, everybody.
+
+            AOS characters: still feels a bit underwhelming, but it's going into the right direction. Perhaps a possibility of using their 3s light attack teleport in a way to improve their stability in the current meta.
+          </li>
+        </ul>
+      </div>
+
+      <!-- 1st -->
+      <div id="first-display" class="tab-pane fade" role="tabpanel" aria-labelledby="first-tab" tabindex="0">
+        <span class="date">Feedback: November 17th, 18th & 19th</span>
+
+        <h2>General:</h2>
+        <ul>
+          <li>
+            The server settings auto-changes after every match to the closest/lowest ping by default, instead of staying on the previously selected.
+          </li>
+          <li>
+            <span class="fixed">&#x2713 Fixed</span> The server settings are hard to click/takes some time to show the pop-up.
+          </li>
+          <li>
+            If somebody leaves the game in between transitions, or the loading screen, it takes some time for the server to respond, and goes some delayed transitions.
+          </li>
+          <li>
+            <span class="requires">Requires testing</span> Sometimes if somebody leaves, the game freezes and does nothing.
+          </li>
+          <li>
+            <span class="priority">Priority</span> Adding a timer to matches. People are abusing the fact of fast paced champions to stall as much as they want, or can, depending on the situation, extending matches sometimes to even 10 or 15 minutes.
+          </li>
+        </ul>
+        <h2>Controls:</h2>
+        <ul>
+          <li>
+            Possibility of changing the sensitivy of the mouse, and perhaps, related settings.
+          </li>
+        </ul>
+
+        <h2>Skills:</h2>
+        <ul>
+          <li>
+            The description for the skills and the UI could receive some improvements. Like better explanation on what they do, or all the iterations. Sometimes it's a little bit hard to navigate through them.
+          </li>
+          <li>
+            <span class="explanation">Clarification</span> Explaining how the parry, block and horns work appropiately (there seems to be a lot of confusion around this).
+          </li>
+          <li>
+            <span class="priority">Priority</span> Whenever somebody gets parried, has an invulnerability frame on where they can't stagger. This promotes the behavior of getting parried to gain advantage, when the person getting parried should be at disadvantage.
+          </li>
+          <li>
+            <span class="priority">Priority</span> Rhyno infinite combo on AOS and Whisperer characters. LMB > RMB > RMB > Horns > Tail > 1 > 2 > repeat. If your ping is consistent, it can't be lifted at all.
+          </li>
+          
+        </ul>
+
+        <h2>Champions</h2>
+        <ul>
+          <li>
+            <span class="fixed">&#x2713 Fixed</span> AOS characters: pretty hard to punish if they spam in range as Rhyno. Could permanently stall and attack on range.
+          </li>
+          <li>
+            <span class="fixed">&#x2713 Fixed</span> Karkadon characters: have a huge disadvantage against full defensive AOS & Whisperer characters (understanding all 3 & 3 from all factions), as Rhyno is pretty slow when moving or "reacting" (in a way).
+          </li>
+        </ul>
+      </div>
+
+
+
+    </div>
   </main>
 
+
+      <!-- Bootstrap JS -->
+      <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+      crossorigin="anonymous"
+    ></script>
 </body>
 </html>
