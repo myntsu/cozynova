@@ -127,6 +127,8 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5403992479456682"
       crossorigin="anonymous"
     ></script>
+
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
 
   <body>
@@ -229,6 +231,9 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
               </a>
             </li>
           </ul>
+          <div data-netlify-identity-menu class="mb-3 mb-lg-0">
+            
+          </div>
         </div>
       </div>
     </nav>
@@ -248,6 +253,44 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
     </footer>
 
     <style is:global>
+
+      [data-netlify-identity-menu] > * {
+        list-style: none;
+
+        margin: auto;
+        padding: 0;
+      
+        display: flex;
+        gap: .5em;
+      }
+
+      [data-netlify-identity-menu] > * > * > * {
+        text-decoration: none;
+        font-weight: 700;
+        padding: .25em 1em;
+        border-radius: .25em;
+      }
+
+      [data-netlify-identity-menu] > * >:nth-child(1) > * {
+        color: hsl(var(--text));
+        background-color: hsl(var(--main-light-2));
+      }
+
+      [data-netlify-identity-menu] > * >:nth-child(1) > *:is(:hover, :focus, :focus-within) {
+        color: hsl(var(--text));
+        outline: 2px solid hsl(var(--text));
+      }
+
+      [data-netlify-identity-menu] > * >:nth-child(2) > * {
+        color: hsl(var(--white));
+        background-color: hsl(var(--important));
+      }
+
+      [data-netlify-identity-menu] > * >:nth-child(2) > *is(:hover, :focus, :focus-within) {
+        color: hsl(var(--white));
+        outline: 2px solid hsl(var(--white));
+      }
+
       :root {
         --nav-link: 0, 0%, 100%; /* white */
 
