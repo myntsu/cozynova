@@ -1,28 +1,40 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import HeaderBuild from '../components/HeaderBuild.astro';
-import WindCutter from '../components/WindCutter.astro';
-import GoTopButton from '../components/utility/GoTopButton.astro';
-import '../styles/windcutter.css';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/guide/Header.astro";
+
+// Main components
+import Author from "../components/guide/Author.astro";
+import Data from "../components/guide/Data.astro";
+import Equipment from "../components/guide/Equipment.astro";
+import WindCutter from "../components/WindCutter.astro";
+import NewPlayerGuide from '../components/NewPlayerGuide.astro';
+
+// Utility components
+import GoTopButton from "../components/utility/GoTopButton.astro";
+import "../styles/windcutter.css";
 ---
 
-<Layout 
-title="Wind Cutter • Myndi"
-description="Ragnarok Online Rune Knight Wind Cutter guide."
-ogTitle="Wind Cutter Guide" 
-ogDescription="Comprehensive, concise and dynamic Ragnarok Online guide." 
-ogUrl="https://cozynova.online/wind-cutter/" 
-canonical="https://cozynova.online/wind-cutter/"
-favicon="/favicon/sword.svg"
-faviconLight="/favicon/sword_black.svg">
-	
-	<HeaderBuild></HeaderBuild>
-	<WindCutter></WindCutter>
-	<GoTopButton></GoTopButton>
-
+<Layout
+  title="Wind Cutter • Myndi"
+  description="Ragnarok Online Rune Knight Wind Cutter guide."
+  ogTitle="Wind Cutter Guide"
+  ogDescription="Comprehensive, concise and dynamic Ragnarok Online guide."
+  ogUrl="https://cozynova.online/windcutter/"
+  canonical="https://cozynova.online/windcutter/"
+  favicon="/favicon/sword.svg"
+  faviconLight="/favicon/sword_black.svg">
+  <Header />
+  <main id="Main" class="main-container" role="main">
+    <Author />
+    <Data />
+    <Equipment />
+    <WindCutter />
+    <NewPlayerGuide />
+  </main>
+  <GoTopButton />
 </Layout>
 
-<script>
-	import '/src/js/windcutter.js'
-</script>
 
+<script>
+  import "/src/js/windcutter.js";
+</script>

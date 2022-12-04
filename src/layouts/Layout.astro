@@ -128,7 +128,11 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
       crossorigin="anonymous"
     ></script>
 
-    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+    ></script>
   </head>
 
   <body>
@@ -231,8 +235,9 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
               </a>
             </li>
           </ul>
-          <div data-netlify-identity-menu class="mb-3 mb-lg-0">
-            
+          <div
+            data-netlify-identity-menu
+            class="mb-3 mb-lg-0">
           </div>
         </div>
       </div>
@@ -253,44 +258,26 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
     </footer>
 
     <style is:global>
-
-      [data-netlify-identity-menu] > * {
+      [data-netlify-identity-menu] ul {
         list-style: none;
 
-        margin: auto;
+        margin: 0;
         padding: 0;
-      
+
         display: flex;
-        gap: .5em;
       }
 
-      [data-netlify-identity-menu] > * > * > * {
+      [data-netlify-identity-menu] a {
+        color: hsl(var(--white));
         text-decoration: none;
-        font-weight: 700;
-        padding: .25em 1em;
-        border-radius: .25em;
+        padding: 0.25em 1em;
+        border-radius: 0.25em;
       }
 
-      [data-netlify-identity-menu] > * >:nth-child(1) > * {
-        color: hsl(var(--text));
-        background-color: hsl(var(--main-light-2));
+      [data-netlify-identity-menu] a:is(:hover, :focus, :focus-within) {
+        color: inherit;
+        opacity: 0.5;
       }
-
-      [data-netlify-identity-menu] > * >:nth-child(1) > *:is(:hover, :focus, :focus-within) {
-        color: hsl(var(--text));
-        outline: 2px solid hsl(var(--text));
-      }
-
-      [data-netlify-identity-menu] > * >:nth-child(2) > * {
-        color: hsl(var(--white));
-        background-color: hsl(var(--important));
-      }
-
-      [data-netlify-identity-menu] > * >:nth-child(2) > *is(:hover, :focus, :focus-within) {
-        color: hsl(var(--white));
-        outline: 2px solid hsl(var(--white));
-      }
-
       :root {
         --nav-link: 0, 0%, 100%; /* white */
 
@@ -521,6 +508,22 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         overflow-x: hidden;
       }
 
+      body::-webkit-scrollbar {
+        width: 1em;
+      }
+
+      body::-webkit-scrollbar-track {
+        border-left: 1px solid hsl(var(--white), 10%);
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: hsl(var(--white), 70%);
+      }
+
+      body::-webkit-scrollbar-thumb:is(:hover, :focus) {
+        filter: brightness(200%);
+      }
+
       .skip-link {
         position: fixed;
         top: 0;
@@ -704,12 +707,12 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         content: "\f0c1";
         font-family: "Font Awesome 6 Free";
         font-weight: 900;
-        margin-inline-start: .25em;
-        font-size: .75rem;
+        margin-inline-start: 0.25em;
+        font-size: 0.75rem;
       }
 
       .link.within::after {
-        content: '\f103';
+        content: "\f103";
         font-family: "Font Awesome 6 Free";
         font-weight: 900;
       }
@@ -731,20 +734,20 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         display: inline;
         align-items: center;
 
-        padding: .15em .5em;
+        padding: 0.15em 0.5em;
         background-color: hsl(var(--important));
         border-radius: 0.25em;
-        font-size: .9rem;
+        font-size: 0.9rem;
         user-select: none;
       }
 
       .focus-tag::after {
-        content: '\3f';
+        content: "\3f";
         font-family: "Font Awesome 6 Free";
         font-weight: 900;
         color: hsl(var(--white));
-        font-size: .75rem;
-        margin-inline-start: .25em;
+        font-size: 0.75rem;
+        margin-inline-start: 0.25em;
       }
 
       .tag {
@@ -840,33 +843,6 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
       .skill img {
         width: 24px;
         height: 24px;
-      }
-
-      #btn-back-to-top {
-        display: none;
-
-        bottom: 20px;
-        right: 20px;
-
-        width: 40px;
-        height: 40px;
-
-        color: hsl(var(--white));
-        background-color: hsl(var(--important));
-
-        border: none;
-        border-radius: 50%;
-        z-index: 9999;
-
-        position: fixed;
-      }
-
-      #btn-back-to-top:hover {
-        background-color: hsl(var(--important), 70%);
-      }
-
-      #btn-back-to-top:active {
-        scale: 1.1;
       }
 
       .text-default {
@@ -1047,4 +1023,3 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
     </script>
   </body>
 </html>
-

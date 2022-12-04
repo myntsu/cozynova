@@ -1,8 +1,8 @@
-// Content tables
-$(".deploy-content-table").click(function () {
-  $("#Content-Table").toggle("slow");
-  $(".shortcut-nav").toggle("slow");
-});
+  // Content tables
+  $(".deploy-content-table").click(function () {
+    $("#Content-Table").toggle("slow");
+    $(".shortcut-nav").toggle("slow");
+  });
 
 // Data (ACD)
 $(".data").click(function () {

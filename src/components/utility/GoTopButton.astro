@@ -5,6 +5,35 @@
     <i class="fas fa-arrow-up"></i>
 </button>
 
+<style>
+        #btn-back-to-top {
+    display: none;
+
+    bottom: 20px;
+    right: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    color: hsl(var(--white));
+    background-color: hsl(var(--important));
+
+    border: none;
+    border-radius: 50%;
+    z-index: 9999;
+
+    position: fixed;
+    }
+
+    #btn-back-to-top:hover {
+    background-color: hsl(var(--important), 70%);
+    }
+
+    #btn-back-to-top:active {
+    scale: 1.1;
+    }
+</style>
+
 <script>
-    import "/src/js/utility/gotopbutton.js";
+    import '/src/js/utility/gotopbutton.js';
 </script>
