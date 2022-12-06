@@ -131,8 +131,7 @@ input.code {
 }
 
 .item-desc {
-  display: inline-flex;
-  gap: .25em;
+  display: inline-block;
   text-decoration: dotted;
   text-decoration-line: underline;
   cursor: help;
@@ -147,6 +146,7 @@ input.code {
 }
 
 .item-desc:is(.img):hover {
+
   text-decoration: dotted;
   text-decoration-line: underline;
 }

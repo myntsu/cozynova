@@ -93,10 +93,21 @@
     gap: .25em;
   }
 
+  .items-obs > div {
+
+  }
+
   .grid-obs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0;
+    overflow: hidden;
+  }
+
+  .grid-obs .item-desc {
+    display: flex;
+    gap: .5em;
+    width: min-content;
   }
 
   .obs-swap {
