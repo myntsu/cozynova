@@ -508,19 +508,20 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         overflow-x: hidden;
       }
 
-      body::-webkit-scrollbar {
+      ::-webkit-scrollbar {
         width: 1em;
+        background-color: hsl(var(--main-dark));
       }
 
-      body::-webkit-scrollbar-track {
+      ::-webkit-scrollbar-track {
         border-left: 1px solid hsl(var(--white), 10%);
       }
 
-      body::-webkit-scrollbar-thumb {
+      ::-webkit-scrollbar-thumb {
         background-color: hsl(var(--white), 70%);
       }
 
-      body::-webkit-scrollbar-thumb:is(:hover, :focus) {
+      ::-webkit-scrollbar-thumb:is(:hover, :focus) {
         filter: brightness(200%);
       }
 
@@ -711,6 +712,10 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         font-size: 0.75rem;
       }
 
+      .link-small::after {
+        font-size: 0.6rem;
+      }
+
       .link.within::after {
         content: "\f103";
         font-family: "Font Awesome 6 Free";
@@ -817,18 +822,30 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
       }
 
       .skill {
-        display: grid;
-        grid-auto-flow: column;
-        grid-template-columns: repeat(1, 1fr);
-        place-content: center;
-        gap: 0.5em;
-        padding: 0.35em 0.65em;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 0.35em 1em;
         color: hsl(var(--white));
-        background-color: hsl(var(--main-dark), 80%);
+        background-color: hsl(var(--main-dark));
         border-radius: 0.5em;
         font-weight: 700;
         cursor: pointer;
         text-decoration: none;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .skill >:first-child {
+        padding-inline-end: .5em;
+      }
+
+      .skill >:last-child {
+        height: calc(100% - .25em);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
       .skill:hover {
@@ -946,6 +963,7 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
 
       .custom-tooltip {
         position: relative;
+        user-select: none;
       }
 
       .custom-tooltip::before,

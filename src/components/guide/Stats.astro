@@ -1,0 +1,310 @@
+<section id="Stats" class="mb-4">
+    <h2 class="fs-5">Stats</h2>
+    <div id="Stats-Container" class="shadow-container">
+      <!-- Status -->
+      <div id="Status" class="p-3 pb-0">
+        <div>
+          <h3 class="fs-5 header">
+            Status
+          </h3>
+          <p class="w-100">The core of any build. Although they can be minmaxed, <i>it's not a requirement</i>. Some points have direct influence in the total damage output of <img loading="lazy" src="https://static.divine-pride.net/images/skill/2005.png" alt="Wind Cutter" class="item"> <span class="focus">Wind Cutter</span>, as some others improve your efficiency while farming or doing content in general.</p>
+          <div class="status-container">
+            <!-- Regular status -->
+            <div class="status-wrapper shadow-container">
+              <h4 class="fs-6 header">
+                Primary
+              </h4>
+              <div class="status-grid shadow-container">
+                <div><b>Str</b> <span>120</span></div>
+                <div><b>Agi</b> <span>100</span></div>
+                <div><b>Vit</b> <span>80</span></div>
+                <div><b>Int</b> <span>90</span></div>
+                <div><b>Dex</b> <span>120</span></div>
+                <div><b>Luk</b> <span>75</span></div>
+              </div>
+              <div>
+                <ul>
+                  <li><span class="header">Str</span> <span class="tag">Important</span> maximizes your damage and weight.</li>
+                  <li><span class="header">Agi</span> <span class="tag">Important</span> provides extra damage thanks to <span class="item-desc text custom-tooltip" data-custom-tooltip="+2 Atk for every 5 points of base Agi">Black Ribbon</span>.</li>
+                  <li><span class="header">Vit</span> attones your survival & potion effifency.</li>
+                  <li><span class="header">Int</span> if you lack or run out of SP.</li>
+                  <li><span class="header">Dex</span> <span class="tag">Important</span> increases your hit rate.</li>
+                  <li><span class="header">Luk</span> increases your hit rate and damage slightly.</li>
+                </ul>
+              </div>
+              <a href="https://www.novaragnarok.com/wiki/Stats" target="_blank" class="link link-small">Stats & Sub Stats</a>
+            </div>
+            <!-- 4th job status -->
+            <div class="status-wrapper shadow-container">
+              <h4 class="fs-6 header">
+                Traits
+              </h4>
+              <div class="status-grid shadow-container">
+                <div><b>Pow</b> <span>100</span></div>
+                <div><b>Sta</b> <span>0</span></div>
+                <div><b>Wis</b> <span>0</span></div>
+                <div><b>Spl</b> <span>0</span></div>
+                <div><b>Con</b> <span>97</span></div>
+                <div><b>Crt</b> <span>0</span></div>
+              </div>
+              <div>
+                <ul>
+                  <li><span class="header">Pow</span> <span class="tag">Important</span> skyrockets your damage.</li>
+                  <li><span class="header">Sta</span> provides <span class="item-desc text custom-tooltip" data-custom-tooltip="1 point equals to 1%">percentual</span> physical resistance.</li>
+                  <li><span class="header">Wis</span> provides <span class="item-desc text custom-tooltip" data-custom-tooltip="1 point equals to 1%">percentual</span> magical resistance.</li>
+                  <li><span class="header">Spl</span> useless as this boosts magical damage.</li>
+                  <li><span class="header">Con</span> <span class="tag">Important</span> increases both your damage and hit rate.</li>
+                  <li><span class="header">Crt</span> useful if you plan to play hybrid critical build.</li>
+                </ul>
+              </div>
+              <a href="https://www.novaragnarok.com/forum/news/4th-job-patch-notes-188-r391/" target="_blank" class="link link-small">Traits</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  
+      <!-- Battle Stats -->
+      <div id="Battle-Stats" class="p-3">
+        <div>
+          <h3 class="fs-5 header">Battle Stats</h3>
+          <p>
+            The better the balance between them, the higher the efficiency.
+          </p>
+        </div>
+        <div class="battle-stats-grid shadow-container">
+          <div>
+            <h4 class="header">Attack</h4>
+            <div class="shadow-container">
+              <p><span>Atk</span> <span>593</span></p>
+              <p><span class="item-desc text custom-tooltip" data-custom-tooltip="Normal & Boss %">Class</span> <span>74%</span></p>
+              <p><span>P.ATK</span> <span>52</span></p>
+            </div>
+          </div>
+          <div>
+            <h4 class="header">Size</h4>
+            <div class="shadow-container">
+              <p><span>Small</span> <span>42%</span></p>
+              <p><span>Medium</span> <span>72%</span></p>
+              <p><span>Large</span> <span>72%</span></p>
+            </div>
+          </div>
+          <div>
+            <h4 class="header">Race</h4>
+            <div class="shadow-container">
+              <p><span>All</span> <span>14%</span></p>
+              <p><span>Demon</span> <span>34%</span></p>
+              <p><span>Angel</span> <span>34%</span></p>
+            </div>
+          </div>
+          <div>
+            <h4 class="header">Others</h4>
+            <div class="shadow-container">
+              <p><span>Melee</span> <span>125%</span></p>
+              <p><span>WC</span> <span>85%</span></p>
+              <p><span class="item-desc text custom-tooltip" data-custom-tooltip="Attack from the skill">Mastery</span> <span>40</span></p>
+            </div>
+          </div>
+        </div>
+        <a href="https://www.novaragnarok.com/wiki/Damage_Formula" target="_blank" class="link link-small ms-auto">Damage Formula</a>
+  
+      </div>
+  
+    </div>
+</section>
+
+<style>
+  /* Status, Battle Stats*/
+  #Stats {
+    display: flex;
+    flex-direction: column;
+    color: hsl(var(--text));
+  }
+
+  #Stats-Container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.25em;
+    border-radius: 0.5em;
+
+    background-color: hsl(var(--main-light-2));
+    border-radius: 0.5em;
+  }
+
+  #Stats-Container > div {
+    width: 100%;
+  }
+
+  /* Status */
+  #Status {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .status-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .5em;
+  }
+
+  .status-wrapper {
+    width: calc(50% - .5em);
+    display: flex;
+    align-items: flex-start;
+    place-content: start;
+    flex-wrap: wrap;
+    padding: 1em;
+    background-color: hsl(var(--main-light-3));
+    border-radius: 0.5em;
+
+    position: relative;
+  }
+
+  .status-wrapper a {
+    width: fit-content;
+    position: absolute;
+    bottom: -1.5em;
+    right: 0;
+  }
+
+  @media only screen and (max-width: 770px) {
+    .status-wrapper {
+      width: 100%;
+    }
+
+    .status-wrapper:nth-of-type(1) {
+      margin-block-end: 1.5em;
+    }
+  }
+
+  .status-wrapper > * {
+    width: 100%;
+  }
+
+  .status-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-block-end: 0.5em;
+    padding: 0.5em;
+    background-color: hsl(var(--main-light));
+    border-radius: 0.5em;
+  }
+
+  .status-grid > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    width: 100%;
+    padding: 0.15em 0.75em;
+  }
+
+  .status-grid > div:nth-of-type(-n + 3) {
+    border-bottom: 1px solid hsl(var(--text), 30%);
+  }
+
+  .status-grid > div:nth-of-type(1),
+  .status-grid > div:nth-of-type(4) {
+    border-right: 1px solid hsl(var(--text), 30%);
+  }
+
+  .status-grid > div:nth-of-type(3),
+  .status-grid > div:nth-of-type(6) {
+    border-left: 1px solid hsl(var(--text), 30%);
+  }
+
+  .status-grid span {
+    color: hsl(var(--number));
+  }
+
+  .status-wrapper ul {
+    margin: 0;
+  }
+
+  /* Battle stats */
+  #Battle-Stats {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .battle-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    padding: 1em;
+    background-color: hsl(var(--main-light-3));
+    border-radius: 0.5em;
+  }
+
+  .battle-stats-grid h4 {
+    font-size: 1rem;
+  }
+
+  .battle-stats-grid > div > div {
+    padding: 0.5em 1em;
+    background-color: hsl(var(--main-light));
+    border-radius: 0.5em;
+  }
+
+  .battle-stats-grid p {
+    display: flex;
+    margin: 0;
+  }
+
+  .battle-stats-grid span:nth-of-type(1) {
+    font-weight: 700;
+  }
+
+  .battle-stats-grid span:nth-of-type(2) {
+    margin-inline-start: auto;
+    color: hsl(var(--number));
+  }
+
+  @media only screen and (max-width: 766px) {
+    #Stats-Container > div {
+      width: 100%;
+    }
+
+    .status-wrapper > *:nth-child(1) {
+      flex: 0 0 100%;
+    }
+
+    .status-grid {
+      width: 100%;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .status-grid > div {
+      width: 100%;
+      padding: 0 0.5em;
+    }
+
+    .battle-stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .battle-stats-grid > div {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 570px) {
+    #Status,
+    #Battle-Stats {
+      min-width: 100%;
+    }
+
+    #Status .stats-wrapper {
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+
+    .battle-stats-grid {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+    }
+  }
+</style>

@@ -1,7 +1,3 @@
----
-import '../styles/newplayerguide.css';
----
-
 <div id="New-Player">
   <h2 class="fs-5">New Player</h2>
   <div class="p-3 shadow-container intro-new-player mb-4">
@@ -238,3 +234,316 @@ import '../styles/newplayerguide.css';
       </div>
     </div>
 </div>
+
+<style>
+  /* Guide */
+  #New-Player > div {
+    color: hsl(var(--text));
+    background-color: hsl(var(--main-dark));
+    border-radius: 0.5em;
+  }
+
+  #New-Player > section > div {
+    padding: 1em;
+    color: hsl(var(--text));
+    background-color: hsl(var(--main-light-2));
+    border-radius: 0.5em;
+  }
+
+  .item {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-inline-start: .25em;
+    margin-inline-end: .25em;
+  }
+
+  .intro-new-player {
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;
+
+    background-image: linear-gradient(0deg, hsl(var(--main-dark)) 5%, transparent),
+      url("../assets/img/bg/tinywow_wallpaperflare.com_wallpaper_8458767.webp");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .intro-new-player::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background-color: hsl(var(--main-dark));
+    opacity: 0.75;
+  }
+
+  .intro-new-player > div {
+    color: hsl(var(--white));
+    position: relative;
+  }
+
+  .selection {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    position: relative;
+  }
+
+  .selection::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 5px;
+    height: 120%;
+    background-color: hsl(var(--main-light-1));
+    z-index: 2;
+  }
+
+  .selection .article {
+    display: block;
+    margin: 0;
+    width: 100%;
+    position: relative;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+
+    background-color: hsl(var(--main-light-1));
+    border-radius: 0.5em;
+    position: relative;
+
+    box-shadow: 0 1px 2px hsl(var(--main-dark), 30%),
+      0 1px 3px hsl(var(--main-dark), 30%);
+    z-index: 10;
+  }
+
+  .content::before {
+    content: "";
+    position: absolute;
+    background-color: hsl(var(--main-light-1));
+    width: 10px;
+    height: 10px;
+    rotate: 45deg;
+  }
+
+  .content .content-table {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+
+    margin: 0;
+    padding: 0;
+    background-color: hsl(var(--main-dark));
+  }
+
+  .content .content-link {
+    width: 50%;
+    padding: .5em;
+    color: hsl(var(--nav-link));
+    outline: .1ex solid hsl(var(--white), 5%);
+    outline-offset: -.2ex;
+    font-size: 1.1rem;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .content-table .content-link:is(:hover, :focus, :focus-within) {
+    background-color: hsl(var(--important));
+  }
+
+  .content .content-link:nth-of-type(odd):last-child {
+    width: 100%;
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 13.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: hsl(var(--white));
+    background-color: hsl(var(--important));
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    z-index: 3;
+    text-decoration: none;
+  }
+
+  .icon:is(:hover, :focus, :focus-within) {
+    color: inherit;
+    scale: 1.1;
+    opacity: .9;
+  }
+
+  .icon:is(:active) {
+    scale: 0.95;
+  }
+
+  .selection > :not(:first-child) {
+    margin-block-start: clamp(-50px, 1vh + 1rem, -150px);
+  }
+
+  .selection > :nth-of-type(odd) .content::before {
+    top: 10px;
+    right: -5px;
+  }
+
+  .selection > :nth-of-type(odd) .content {
+    margin-inline-end: auto;
+    width: calc(50% - 2rem);
+  }
+
+  .selection > :nth-of-type(even) .content::before {
+    top: 10px;
+    left: -5px;
+  }
+
+  .selection > :nth-of-type(even) .content {
+    margin-inline-start: auto;
+    width: calc(50% - 2.5rem);
+  }
+
+  @media only screen and (max-width: 880px) {
+    .selection {
+      gap: 1.5rem;
+      padding-inline-start: 3rem;
+    }
+
+    .selection::after {
+      left: 0.5rem;
+    }
+
+    .icon {
+      left: -54px;
+    }
+
+    .selection > :nth-of-type(odd) .content::before {
+      top: 10px;
+      left: -5px;
+    }
+
+    .selection > :not(:first-child) {
+      margin-block-start: 0;
+    }
+
+    .selection > :nth-of-type(odd) .content {
+      width: 100%;
+      margin-inline-start: 0;
+    }
+
+    .selection > :nth-of-type(even) .content {
+      width: 100%;
+      margin-inline-start: 0;
+    }
+  }
+
+  @media only screen and (max-width: 570px) {
+    .content .content-link {
+      width: 100%;
+    }
+  }
+
+  .new-player-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 0 0 0.5em 0.5em;
+  }
+
+  /* Tutorial */
+  #Basics-Section > div {
+    display: flex;
+    gap: 1em;
+  }
+
+  #Tutorial,
+  #Eden-Academy {
+    width: 50%;
+  }
+
+  #Tutorial > div:nth-of-type(1),
+  #Eden-Academy > div:nth-of-type(1) {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  #Tutorial ul,
+  #Eden-Academy ul {
+    display: grid;
+    gap: .5em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  #Tutorial li,
+  #Eden-Academy li {
+    display: flex;
+    padding: .5em;
+    background-color: hsl(var(--main-light));
+    border-radius: 0.25em;
+    box-shadow: 0 1px 2px hsl(var(--main-dark), 30%),
+      0 1px 3px hsl(var(--main-dark), 30%);
+  }
+
+  #Tutorial li::before,
+  #Eden-Academy li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    padding-inline-end: 0.5em;
+    color: hsl(var(--header));
+  }
+
+  #Tutorial .tutorial-rewards li::before,
+  #Eden-Academy .eden-academy-rewards li::before {
+    content: '\f06b';
+  }
+
+  #Tutorial .float {
+    float: right;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: none;
+    object-position: 50% 10%;
+  }
+
+  .tutorial-rewards,
+  .eden-academy-rewards {
+    display: none;
+  }
+
+  #Tutorial .tutorial-rewards ul,
+  #Eden-Academy .eden-academy-rewards ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media only screen and (max-width: 880px) {
+    #Basics-Section > div {
+      flex-wrap: wrap;
+    }
+
+    #Basics-Section hr {
+      display: none;
+    }
+
+    #Tutorial,
+    #Eden-Academy {
+      width: 100%;
+    }
+  }
+
+</style>

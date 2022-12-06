@@ -1,8 +1,8 @@
-  // Content tables
-  $(".deploy-content-table").click(function () {
-    $("#Content-Table").toggle("slow");
-    $(".shortcut-nav").toggle("slow");
-  });
+// Content tables
+$(".deploy-content-table").click(function () {
+  $("#Content-Table").toggle("slow");
+  $(".shortcut-nav").toggle("slow");
+});
 
 // Data (ACD)
 $(".data").click(function () {
@@ -10,9 +10,16 @@ $(".data").click(function () {
   $(".text-swap").toggle();
 });
 
+// Observations
+$(".observations").click(function () {
+  $(".items-obs").toggleClass("grid-obs");
+  $(".obs-swap").toggle();
+});
+
 // Skills
 $(".skills").click(function () {
   $(".name-toggle").toggle();
+  $(".skill-icons").toggleClass("grid-expanded");
 });
 
 // Consumables

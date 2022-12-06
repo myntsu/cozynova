@@ -79,179 +79,8 @@ h3 {
   }
 }
 
-/* Status, Battle Stats, Pets */
-#Stats {
-  display: flex;
-  flex-direction: column;
-  color: hsl(var(--text));
-}
-
-#Stats-Container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.25em;
-  border-radius: 0.5em;
-}
-
-#Stats-Container > div {
-  width: calc(50% - 0.25em);
-  background-color: hsl(var(--main-light-2));
-  border-radius: 0.5em;
-}
-
-/* Status */
-#Status {
-  display: flex;
-  flex-direction: column;
-}
-
-.status-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1em;
-  background-color: hsl(var(--main-light-3));
-  border-radius: 0.5em;
-}
-
-.status-wrapper > * {
-  width: 100%;
-}
-
-.status-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-block-end: 0.5em;
-  padding: 0.5em;
-  background-color: hsl(var(--main-light));
-  border-radius: 0.5em;
-}
-
-.status-grid > div {
-  display: flex;
-  justify-content: space-between;
-  gap: 1em;
-  width: 100%;
-  padding: 0.15em 0.75em;
-}
-
-.status-grid > div:nth-of-type(-n + 3) {
-  border-bottom: 1px solid hsl(var(--text), 30%);
-}
-
-.status-grid > div:nth-of-type(1),
-.status-grid > div:nth-of-type(4) {
-  border-right: 1px solid hsl(var(--text), 30%);
-}
-
-.status-grid > div:nth-of-type(3),
-.status-grid > div:nth-of-type(6) {
-  border-left: 1px solid hsl(var(--text), 30%);
-}
-
-.status-grid span {
-  color: hsl(var(--number));
-}
-
-.status-wrapper ul {
-  margin: 0;
-}
-
-/* Battle stats */
-#Battle-Stats {
-  display: flex;
-  flex-direction: column;
-}
-
-.battle-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1em;
-  padding: 1em;
-  background-color: hsl(var(--main-light-3));
-  border-radius: 0.5em;
-}
-
-.battle-stats-grid h4 {
-  font-size: 1rem;
-}
-
-.battle-stats-grid > div > div {
-  padding: 0.5em 1em;
-  background-color: hsl(var(--main-light));
-  border-radius: 0.5em;
-}
-
-.battle-stats-grid p {
-  display: flex;
-  margin: 0;
-}
-
-.battle-stats-grid span:nth-of-type(1) {
-  font-weight: 700;
-}
-
-.battle-stats-grid span:nth-of-type(2) {
-  margin-inline-start: auto;
-  color: hsl(var(--number));
-}
-
-@media only screen and (max-width: 766px) {
-  #Stats-Container > div {
-    width: 100%;
-  }
-
-  .status-wrapper > *:nth-child(1) {
-    flex: 0 0 100%;
-  }
-
-  .status-grid {
-    width: 100%;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .status-grid > div {
-    width: 100%;
-    padding: 0 0.5em;
-  }
-
-  .battle-stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
-
-  .battle-stats-grid > div {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-@media only screen and (max-width: 570px) {
-  #Status,
-  #Battle-Stats {
-    min-width: 100%;
-  }
-
-  #Status .stats-wrapper {
-    flex-wrap: wrap;
-    gap: 1em;
-  }
-
-  .battle-stats-grid {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-  }
-}
-
-/* Skills */
-#Skills > div {
-  border-radius: 0.5em;
-  color: hsl(var(--text));
-  background-color: hsl(var(--main-light-2));
-}
-
-/* Light toggle */
-.toggle:is(.dark, .pros, .cons, .data, .skills, .consumables, .autoloot, .copy, .starting-point, .tutorial, .eden-academy) {
+/* Buttons toggle */
+.toggle:is(.dark, .pros, .cons, .data, .observations, .skills, .consumables, .autoloot, .copy, .starting-point, .tutorial, .eden-academy) {
   align-self: flex-start;
 
   display: flex;
@@ -270,11 +99,11 @@ h3 {
   box-shadow: 2px 2px 0 0 hsl(var(--black), 70%);
 }
 
-.toggle:hover:is(.data, .pros, .cons, .skills, .consumables, .autoloot, .copy, .starting-point, .tutorial, .eden-academy) {
+.toggle:hover:is(.data, .observations, .pros, .cons, .skills, .consumables, .autoloot, .copy, .starting-point, .tutorial, .eden-academy) {
   background-color: hsl(var(--important), 80%);
 }
 
-.toggle:active:is(.data, .pros, .cons, .skills, .consumables, .autoloot, .copy, .starting-point, .tutorial, .eden-academy) {
+.toggle:active:is(.data, .observations, .pros, .cons, .skills, .consumables, .autoloot, .copy, .starting-point, .tutorial, .eden-academy) {
   translate: 2px 2px;
   box-shadow: none;
   background-color: hsl(var(--important));
@@ -295,221 +124,6 @@ h3 {
   visibility: visible;
 }
 
-/* End toggle */
-.skills-intro-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.skill-priority {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-
-  width: 100%;
-  padding: 0 1em .5em;
-  background-color: hsl(var(--main-light-3));
-  border-radius: .5em;
-}
-
-.skill-priority-cont {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0;
-}
-
-.skill-priority-cont .tag {
-  font-size: 0.75rem;
-  font-weight: 400;
-  text-transform: initial;
-}
-
-.skill-priority-cont > div:nth-child(1) {
-  flex: 0 0 100%;
-}
-
-.skill-priority-cont > div:nth-child(1) p {
-  display: flex;
-  align-items: flex-end;
-  gap: 0.25em;
-
-  width: 100%;
-  margin: 0.5em 0 0.25em;
-  color: hsl(var(--header));
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-align: start;
-}
-
-.skill-priority-cont > div:nth-child(1) p img {
-  display: inline-block;
-  width: 33px;
-  height: 33px;
-}
-
-.skill-priority-cont > div:nth-child(2) {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.4em;
-  width: 100%;
-  padding: 0.5em;
-  background-color: hsl(var(--main-light));
-  border-radius: 0.5em;
-}
-
-.skill-priority-cont > div:nth-child(2) > div {
-  display: flex;
-  align-items: center;
-  gap: 0.25em;
-}
-
-.skill-priority-cont .name-toggle {
-  display: none;
-}
-
-.skills-usage {
-  display: grid;
-  grid-column: auto;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  place-content: center;
-  gap: 1em;
-}
-
-.skills-usage > div {
-  display: flex;
-  flex-direction: column;
-}
-
-.skills-usage > div > div {
-  flex: 1 0 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 0.5em;
-
-  padding: 1em;
-
-  background-color: hsl(var(--main-light-3));
-  border-radius: 0.5em;
-}
-
-.skills-usage > div:nth-child(2) > div {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0;
-}
-
-.skills-usage > div:nth-child(2) > div p {
-  margin: 0;
-}
-
-/* Item farming */
-#Farming img {
-  width: 24px;
-  height: 24px;
-}
-
-#Farming > div {
-  color: hsl(var(--text));
-  background-color: hsl(var(--main-light-2));
-  border-radius: 0.5em;
-}
-
-.farming-container-grid {
-  display: grid;
-  grid-column: auto;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1em;
-}
-
-.farming-container-grid p {
-  margin: 0;
-  margin-block-end: 0.25em;
-}
-
-.farming-container {
-  background-color: hsl(var(--main-light-3));
-  border-radius: 0.5em;
-}
-
-.farming-container ul {
-  list-style: none;
-  margin: 0;
-  padding: 0.5em 1em;
-}
-
-.autoloot-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5em;
-
-  border-radius: 0.5em;
-  margin: 0 0 1em;
-}
-
-.autoloot-list p {
-  margin: 0;
-}
-
-.autoloot-list > div {
-  display: flex;
-  flex-direction: column;
-
-  width: calc(50% - 5px);
-
-  margin: 0;
-  padding: 0.75em;
-  background-color: hsl(var(--main-light-3));
-  border-radius: 0.5em;
-
-  overflow-x: auto;
-}
-
-.autoloot-list > div div:nth-child(1) {
-  display: flex;
-  align-items: center;
-  gap: 0.25em;
-}
-
-.autoloot-list > div div:nth-child(1) span:nth-child(1) {
-  font-weight: 700;
-}
-
-.autoloot-list > div div:nth-child(2) {
-  margin-block-start: 0.5em;
-  margin-block-end: 0.25em;
-}
-
-.autoloot-list button {
-  color: hsl(var(--white));
-  background-color: transparent;
-  border: none;
-}
-
-.autoloot-text {
-  display: none;
-}
-
-@media only screen and (max-width: 880px) {
-  .farming-container-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .autoloot-list > div {
-    width: 100%;
-  }
-
-  .toggle.copy {
-    display: none;
-  }
-}
-
 input.code {
   border: none;
   box-shadow: 0 0 0;
@@ -517,13 +131,24 @@ input.code {
 }
 
 .item-desc {
-  display: inline-block;
+  display: inline-flex;
+  gap: .25em;
   text-decoration: dotted;
   text-decoration-line: underline;
+  cursor: help;
 }
 
 .item-desc:is(.text) {
+  text-underline-offset: 3px;
+}
+
+.item-desc:is(.img) {
   text-decoration: none;
+}
+
+.item-desc:is(.img):hover {
+  text-decoration: dotted;
+  text-decoration-line: underline;
 }
 
 .item-desc img {
