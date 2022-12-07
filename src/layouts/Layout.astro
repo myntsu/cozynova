@@ -749,15 +749,6 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         user-select: none;
       }
 
-      .focus-tag::after {
-        content: "\3f";
-        font-family: "Font Awesome 6 Free";
-        font-weight: 900;
-        color: hsl(var(--white));
-        font-size: 0.75rem;
-        margin-inline-start: 0.25em;
-      }
-
       .tag {
         display: inline-block;
         padding: 0.1em 0.4em;
@@ -829,7 +820,7 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
         justify-content: center;
         align-items: flex-start;
         flex-wrap: wrap;
-        padding: 0.35em 1em;
+        padding: 0.35em;
         color: hsl(var(--white));
         background-color: hsl(var(--main-dark));
         border-radius: 0.25em;
@@ -841,7 +832,7 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
       }
 
       .skill >:first-child {
-        padding-inline-end: .5em;
+        width: 2ch;
       }
 
       .skill >:last-child {
@@ -1014,8 +1005,16 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
 
       @media only screen and (max-width: 570px) {
         .custom-tooltip::before {
-          max-width: 150px;
+          /* max-width: min-content; */
         }
+      }
+      
+      .tooltip {
+        --bs-tooltip-opacity: 1;
+      }
+
+      .tooltip-inner {
+        font-family: var(--bs-font-monospace);
       }
     </style>
 
