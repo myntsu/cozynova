@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://cozynova.online/windcutter"
+  to = "https://cozynova.online/hackandslasher"
+  status = 301
+  force = true
