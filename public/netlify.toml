@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "https://cozynova.online/windcutter"
-  to = "https://cozynova.online/hackandslasher"
+  from = "https://cozynova.online/hackandslasher"
+  to = "https://cozynova.online/windcutter"
   status = 301
   force = true
