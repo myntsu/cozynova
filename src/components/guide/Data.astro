@@ -90,30 +90,32 @@
 
   .items-obs {
     display: flex;
+    flex-wrap: wrap;
     gap: .25em;
   }
 
-  .items-obs > div {
+  .decorator {
+    padding: 1em;
+    background-color: hsl(var(--main-light-3));
+    border-radius: .5em;
 
+    box-shadow: 
+      0 1px 2px hsl(var(--main-dark), 30%),
+      0 1px 3px hsl(var(--main-dark), 30%);
   }
 
-  .grid-obs {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 0;
-    overflow: hidden;
-  }
-
-  .grid-obs .item-desc {
+  .decorator .item-desc {
     display: flex;
     gap: .5em;
-    width: min-content;
+    width: fit-content;
+    white-space: nowrap;
+  }
+
+  .items-obs:is(.decorator) > div {
+    flex: 1 0 33%;
   }
 
   .obs-swap {
     display: none;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
   }
 </style>

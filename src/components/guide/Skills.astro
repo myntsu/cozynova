@@ -28,7 +28,10 @@
                   <a href="https://www.divine-pride.net/database/skill/3/two-handed-sword-mastery" target="_blank" class="skill"><span>10</span> <img loading="lazy" src="https://static.divine-pride.net/images/skill/3.png" alt="Two-Handed Sword Mastery"><span class="name-toggle">Two-Handed Sword Mastery</span></a>
                   <a href="https://www.divine-pride.net/database/skill/7/magnum-break" target="_blank" class="skill"><span>10</span> <img loading="lazy" src="https://static.divine-pride.net/images/skill/7.png" alt="Magnum Break"><span class="name-toggle">Magnum Break</span></a>
                   <a href="https://www.divine-pride.net/database/skill/8/endure" target="_blank" class="skill"><span>1</span> <img loading="lazy" src="https://static.divine-pride.net/images/skill/8.png" alt="Endure"><span class="name-toggle">Endure</span></a>
-              </div>
+                  <a class="skill opacity-75"></a>
+                  <a class="skill opacity-75"></a>
+                  <a class="skill opacity-75"></a>
+                </div>
             </div>
           </div>
           <!-- 2nd job -->
@@ -66,6 +69,9 @@
                   <a href="https://www.divine-pride.net/database/skill/2007/dragon-training" target="_blank" class="skill"><span>5</span> <img loading="lazy" src="https://static.divine-pride.net/images/skill/2007.png" alt="Dragon Training"><span class="name-toggle">Dragon Training</span></a>
                   <a href="https://www.divine-pride.net/database/skill/2001/enchant-blade" target="_blank" class="skill"><span>10</span> <img loading="lazy" src="https://static.divine-pride.net/images/skill/2001.png" alt="Enchant Blade"><span class="name-toggle">Enchant Blade</span></a>
                   <a href="https://www.divine-pride.net/database/skill/2005/wind-cutter" target="_blank" class="skill"><span>5</span> <img loading="lazy" src="https://static.divine-pride.net/images/skill/2005.png" alt="Wind Cutter"><span class="name-toggle">Wind Cutter</span></a>
+                  <a class="skill opacity-75"></a>
+                  <a class="skill opacity-75"></a>
+                  <a class="skill opacity-75"></a>
               </div>
             </div>
           </div>
@@ -74,7 +80,7 @@
             <div class="job-name-title">
               <img loading="lazy" src="/assets/img/icons/dragonknight.webp" alt="Dragon Knight icon">
               <h4>Dragon Knight</h4>
-              <span class="tag ms-auto">53 points</span>
+              <span class="tag ms-auto">43 points</span>
             </div>
             <div class="skill-icons-wrapper shadow-container">
               <div class="skill-icons">
@@ -85,7 +91,6 @@
                   <a href="https://www.divine-pride.net/database/skill/5204/servant-weapon-phantom" target="_blank" class="skill"><span>5</span><img loading="lazy" src="https://static.divine-pride.net/images/skill/5204.png" alt="Servant Weapon - Phantom"><span class="name-toggle">Servant Weapon - Phantom</span></a>
                   <a href="https://www.divine-pride.net/database/skill/5213/storm-slash" target="_blank" class="skill"><span>5</span><img loading="lazy" src="https://static.divine-pride.net/images/skill/5213.png" alt="Storm Slash"><span class="name-toggle">Storm Slash</span></a>
                   <a href="https://www.divine-pride.net/database/skill/5205/servant-weapon-demolition" target="_blank" class="skill"><span>3</span><img loading="lazy" src="https://static.divine-pride.net/images/skill/5205.png" alt="Servant Weapon - Demolition"><span class="name-toggle">Servant Weapon - Demolition</span></a>
-                  <a href="https://www.divine-pride.net/database/skill/5212/vigor" target="_blank" class="skill"><span>10</span><img loading="lazy" src="https://static.divine-pride.net/images/skill/5212.png" alt="Vigor"><span class="name-toggle">Vigor</span></a>
               </div>
             </div>
           </div>
@@ -152,14 +157,29 @@
   }
 
   .skill-icons {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-auto-rows: auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+    /* grid-auto-rows: 1fr; */
     gap: .25em;
   }
 
+  /* remove this to go back */
+  .skill-icons a {
+    flex: 1 0 100px;
+    height: 2.5em;
+  }
+
   .grid-expanded {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* width: 50%; */
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  }
+
+  /* remove this to go back */
+  .grid-expanded > a {
+    flex: 1 0 175px;
+    height: 3.5em;
   }
 
   .name-toggle {

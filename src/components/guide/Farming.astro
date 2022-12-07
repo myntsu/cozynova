@@ -108,7 +108,7 @@
             <p class="autoloot-text"><code id="Horror-Toy-Autoloot" class="code contrast">@alootid +969|+7230|+7642</code></p>
           </div>
           <!-- All Illusion -->
-          <div class="shadow-container w-100">
+          <div class="autoloot-selector shadow-container">
             <div>
               <span>All Illusion Dungeons</span>
               <span class="tag">Quest/Farm</span>
@@ -154,6 +154,14 @@
           <p class="header">Thanatos</p>
           <div class="farming-container shadow-container">
             <ul>
+              <li><span class="item-desc img text custom-tooltip" data-custom-tooltip="Combo +15% vs Angel/Demon"><img loading="lazy" src="https://www.novaragnarok.com/data/items/icons2/490056.png" alt="Brilliant Light Ruby Ring"> Brilliant Light Ruby Ring</span> </li>
+              <li><span class="item-desc img text custom-tooltip" data-custom-tooltip="Combo +15% vs Angel/Demon"><img loading="lazy" src="https://www.novaragnarok.com/data/items/icons2/490057.png" alt="Brilliant Light Ruby Necklace"> Brilliant Light Ruby Necklace</span> </li>
+              <li><span class="item-desc img text custom-tooltip" data-custom-tooltip="Earth property"><img loading="lazy" src="https://www.novaragnarok.com/data/items/icons2/29991.png" alt="Earth Elemental Converter"> Earth Elemental Converter</span>  <span class="tag">Thanatos F11</span></li>
+              <li><span class="item-desc img text custom-tooltip" data-custom-tooltip="Holy property"><img loading="lazy" src="https://www.novaragnarok.com/data/items/icons2/32107.png" alt="Holy Elemental Converter"> Holy Elemental Converter</span>  <span class="tag">Thanatos F12</span></li>
+              <li><span class="item-desc img text custom-tooltip" data-custom-tooltip="Combo +15% vs Angel/Demon"><img loading="lazy" src="https://www.novaragnarok.com/data/items/icons2/490056.png" alt="Brilliant Light Ruby Ring"> Brilliant Light Ruby Ring</span> </li>
+              <li><span class="item-desc img text custom-tooltip" data-custom-tooltip="Combo +15% vs Angel/Demon"><img loading="lazy" src="https://www.novaragnarok.com/data/items/icons2/490057.png" alt="Brilliant Light Ruby Necklace"> Brilliant Light Ruby Necklace</span> </li>
+              <li><span class="item-desc img text custom-tooltip" data-custom-tooltip="Earth property"><img loading="lazy" src="https://www.novaragnarok.com/data/items/icons2/29991.png" alt="Earth Elemental Converter"> Earth Elemental Converter</span>  <span class="tag">Thanatos F11</span></li>
+              <li><span class="item-desc img text custom-tooltip" data-custom-tooltip="Holy property"><img loading="lazy" src="https://www.novaragnarok.com/data/items/icons2/32107.png" alt="Holy Elemental Converter"> Holy Elemental Converter</span>  <span class="tag">Thanatos F12</span></li>
               <li><span class="item-desc img text custom-tooltip" data-custom-tooltip="Combo +15% vs Angel/Demon"><img loading="lazy" src="https://www.novaragnarok.com/data/items/icons2/490056.png" alt="Brilliant Light Ruby Ring"> Brilliant Light Ruby Ring</span> </li>
               <li><span class="item-desc img text custom-tooltip" data-custom-tooltip="Combo +15% vs Angel/Demon"><img loading="lazy" src="https://www.novaragnarok.com/data/items/icons2/490057.png" alt="Brilliant Light Ruby Necklace"> Brilliant Light Ruby Necklace</span> </li>
               <li><span class="item-desc img text custom-tooltip" data-custom-tooltip="Earth property"><img loading="lazy" src="https://www.novaragnarok.com/data/items/icons2/29991.png" alt="Earth Elemental Converter"> Earth Elemental Converter</span>  <span class="tag">Thanatos F11</span></li>
@@ -220,6 +228,8 @@
   .farming-container {
     background-color: hsl(var(--main-light-3));
     border-radius: 0.5em;
+    max-height: 7.25em;
+    overflow-y: auto;
   }
 
   .farming-container ul {
@@ -277,8 +287,16 @@
     border: none;
   }
 
+  .autoloot-list >:nth-child(odd):is(:last-child) {
+    width: 100%;
+  }
+
   .autoloot-text {
     display: none;
+  }
+
+  .autoloot-text .code {
+    white-space: nowrap;
   }
 
   @media only screen and (max-width: 880px) {
@@ -289,8 +307,10 @@
     .autoloot-list > div {
       width: 100%;
     }
+  }
 
-    .toggle.copy {
+  @media only screen and (max-width: 570px) {
+    .autoloot-selector .toggle:is(.copy) {
       display: none;
     }
   }

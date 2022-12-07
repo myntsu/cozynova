@@ -12,7 +12,7 @@ $(".data").click(function () {
 
 // Observations
 $(".observations").click(function () {
-  $(".items-obs").toggleClass("grid-obs");
+  $(".items-obs").toggleClass("decorator");
   $(".obs-swap").toggle();
 });
 
