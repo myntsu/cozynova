@@ -1,10 +1,12 @@
 <div id="New-Player">
   <h2 class="fs-5">New Player</h2>
+
+  <!-- Introduction -->
   <div class="p-3 shadow-container intro-new-player mb-4">
     <div>
       <h3 class="fs-5 header">Introduction</h3>
       <p>First and foremost, this section is made both for new and returning players with a more in depth explanations on what you have seen above, to answer common questions, teach you new things and much more. <span class="focus">If you like learning, this is your place.</span></p>
-      <p><span class="focus-tag">Skip</span> If you don't care about the basics, and you want to jump right into gameplay experience, start from the <a href="#Section-4-Skip" class="link within">section number 4</a>.</p>
+      <p><span class="focus-tag">Skip</span> If you don't care about the basics, and you want to jump right into gameplay experience, then start from the <a href="#Section-4-Skip" class="link within">4th section</a></p>
     </div>
     <section class="selection">
       <!-- Basics -->
@@ -123,7 +125,7 @@
           </div>
           <div>
             <p class="mb-1">The tutorial is your introduction to <span class="focus">NovaRO</span>. It starts with <span class="focus">Mom</span> entering your room and it unfolds a small series of events where she teaches you the basics of the game.</p>
-            <p><span class="header">Article:</span> <a href="https://www.novaragnarok.com/wiki/Mom" target="_blank" class="link">Mom</a></p>
+            <p><span class="article-link">Article:</span> <a href="https://www.novaragnarok.com/wiki/Mom" target="_blank" class="link">Mom</a></p>
             <div class="basics-container tutorial-swappable">
               <h4 class="fs-6 header">Useful for</h4>
               <ul>
@@ -174,10 +176,11 @@
           </div>
           <div>
             <p class="mb-1">Eden Academy effectively counts as the next step of the tutorial. We will dive into this later, as this goes all the way up to level 150.</p>
-            <p><span class="header">Article:</span> <a href="https://www.novaragnarok.com/wiki/Eden_Academy" target="_blank" class="link">Eden Academy</a></p>
+            <p><span class="article-link">Article:</span> <a href="https://www.novaragnarok.com/wiki/Eden_Academy" target="_blank" class="link">Eden Academy</a></p>
             <div class="basics-container eden-academy-swappable">
               <h4 class="fs-6 header">Useful for</h4>
               <ul>
+                <li>New and returning players</li>
                 <li>Learning the most essential things in the game</li>
                 <li>Acquisition of free midgame to lategame gear</li>
                 <li>Getting into early Instances & Dungeons</li>
@@ -246,47 +249,116 @@
         <div id="Basics-Leveling">
           <div>
             <h3 class="header fs-5">Leveling <a href="https://www.novaragnarok.com/wiki/Mom" target="_blank" class="link" aria-label="Link to the Wikipedia article"></a></h3>
-t
+            <p>In development.</p>
         </div>
 
         <!-- Farming -->
         <div id="Basics-Farming">
           <div>
             <h3 class="header fs-5">Farming <a href="https://www.novaragnarok.com/wiki/Mom" target="_blank" class="link" aria-label="Link to the Wikipedia article"></a></h3>
-
+            <p>In development.</p>
         </div>
       </div>
-    
+      
+      <!-- Useful stuff -->
+      <div class="d-flex flex-wrap" id="Useful-Basics" role="tablist">
+        <h3 class="fs-5 me-auto header">Useful</h3>
+        <div class="tab-buttons">
+          <button class="active" id="useful-links-tab" data-bs-toggle="tab" data-bs-target="#Useful-Links" type="button" role="tab" aria-controls="Useful-Links" aria-selected="true">Links</button>
+          <button id="useful-commands-tab" data-bs-toggle="tab" data-bs-target="#Useful-Commands" type="button" role="tab" aria-controls="Useful-Commands" aria-selected="false">Commands</button>
+          <button id="useful-npcs-tab" data-bs-toggle="tab" data-bs-target="#Useful-NPCs" type="button" role="tab" aria-controls="Useful-NPCs" aria-selected="false">NPCs</button>
+        </div>
+      </div>
+
+      <div class="tab-content p-3 shadow-container">
+
+        <!-- Useful links -->
+        <div id="Useful-Links" class="tab-pane fade show active" role="tabpanel" aria-labelledby="useful-links-tab" tabindex="0">
+          <p>To begin with, you need to be wary of the most useful links <span class="low-focus">(to my own consideration)</span> we have here. You will see them in throughout the guide as well.</p>
+          <ul>
+            <li><a href="https://www.novaragnarok.com/?module=main" target="_blank" class="link">NovaRO Main Site</a> - Useful to check news, your character, the market & spending your well earned real life money.</li>
+            <li><a href="https://www.novaragnarok.com/wiki/Main_Page" target="_blank" class="link">NovaRO Wikipedia</a> - The all-in-one site for the majority of your questions, thanks to all the contributors.
+              <ul>
+                <li><a href="https://www.novaragnarok.com/wiki/Troubleshooting" target="_blank" class="link">Troubleshooting</a> - Make sure you check this in case you have any technical issue.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Instances" target="_blank" class="link">Instances</a> - Useful when doing research about loot or mobs.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Costume_Enchants" target="_blank" class="link">Costume Stones</a> - All the available costume stones in the server.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Shadow_Gear" target="_blank" class="link">Shadow Gear</a> - All the available shadow gear in the server.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Leinarth%27s_Rune_Knight_Class_Guide" target="_blank" class="link">Leinarth's DK Guide</a> - The all-in-one guide for DK <strike>and my competition.</strike> <span class="hover">IT'S JUST A JOKE</span></li>
+                <li><a href="https://www.novaragnarok.com/wiki/Refinement_System" target="_blank" class="link">Refinement System</a> - Frankly the best place to understand how refinement works.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Creation_Database" target="_blank" class="link">Creation Database</a> - We all make potions or runes, and this place has it all.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Pet_System" target="_blank" class="link">Pet System</a> - Always a good thing to have all the available pets.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Palette_Colors" target="_blank" class="link">Outfit Colors</a> - Fashion is part of the game, so might as well have it recommended.</li>
+              </ul>
+            </li>
+            <li><a href="https://www.novaragnarok.com/forum/" target="_blank" class="link">NovaRO Forum</a> - Perfect to report a bug, write a suggestion or complain, besides that, ignore it.</li>
+            <li><a href="https://discord.com/invite/eqHzVK9" target="_blank" class="link">NovaRO Discord</a> - Specially useful if you join a class specific channel.</li>
+            <li><a href="https://irowiki.org/wiki/Quests" target="_blank" class="link">IronRO Wiki Quest List</a> - This is only useful if you're all about nostalgia and want to do old forgotten quests.</li>
+            <li><a href="https://www.divine-pride.net/" target="_blank" class="link">Divine Pride</a> - Amazing database. You can check almost anything and most importnatly, future content.</li>
+            <li><a href="https://_miel.gitlab.io/ncs/#/" target="_blank" class="link">Various Tools</a> - A bit outdated, but still present useful tools for you to use.</li>
+            <li><a href="https://zzyx.de/ro/atk" target="_blank" class="link">Muh Calculator</a> - Significant calculator both for ATK and MATK. Let's you plan ahead.</li>
+            <li><a href="https://ratemyserver.net/" target="_blank" class="link">RateMyServer</a> - Honestly, with all the above, useless, but might as well throw it out there.</li>
+          </ul>
+        </div>
+
+        <!-- Useful Commands -->
+        <div id="Useful-Commands" class="tab-pane fade" role="tabpanel" aria-labelledby="useful-commands-tab" tabindex="0">
+          <p class="fs-1 header">In development.</p>
+          <ul>
+            <li><a href="https://www.novaragnarok.com/?module=main" target="_blank" class="link">NovaRO Main Site</a> - Useful to check news, your character, the market & spending your well earned real life money.</li>
+            <li><a href="https://www.novaragnarok.com/wiki/Main_Page" target="_blank" class="link">NovaRO Wikipedia</a> - The all-in-one site for the majority of your questions, thanks to all the contributors.
+              <ul>
+                <li><a href="https://www.novaragnarok.com/wiki/Troubleshooting" target="_blank" class="link">Troubleshooting</a> - Make sure you check this in case you have any technical issue.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Instances" target="_blank" class="link">Instances</a> - Useful when doing research about loot or mobs.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Costume_Enchants" target="_blank" class="link">Costume Stones</a> - All the available costume stones in the server.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Shadow_Gear" target="_blank" class="link">Shadow Gear</a> - All the available shadow gear in the server.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Leinarth%27s_Rune_Knight_Class_Guide" target="_blank" class="link">Leinarth's DK Guide</a> - The all-in-one guide for DK <strike>and my competition.</strike> <span class="hover">IT'S JUST A JOKE</span></li>
+                <li><a href="https://www.novaragnarok.com/wiki/Refinement_System" target="_blank" class="link">Refinement System</a> - Frankly the best place to understand how refinement works.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Creation_Database" target="_blank" class="link">Creation Database</a> - We all make potions or runes, and this place has it all.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Pet_System" target="_blank" class="link">Pet System</a> - Always a good thing to have all the available pets.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Palette_Colors" target="_blank" class="link">Outfit Colors</a> - Fashion is part of the game, so might as well have it recommended.</li>
+              </ul>
+            </li>
+            <li><a href="https://www.novaragnarok.com/forum/" target="_blank" class="link">NovaRO Forum</a> - Perfect to report a bug, write a suggestion or complain, besides that, ignore it.</li>
+            <li><a href="https://discord.com/invite/eqHzVK9" target="_blank" class="link">NovaRO Discord</a> - Specially useful if you join a class specific channel.</li>
+            <li><a href="https://irowiki.org/wiki/Quests" target="_blank" class="link">IronRO Wiki Quest List</a> - This is only useful if you're all about nostalgia and want to do old forgotten quests.</li>
+            <li><a href="https://www.divine-pride.net/" target="_blank" class="link">Divine Pride</a> - Amazing database. You can check almost anything and most importnatly, future content.</li>
+            <li><a href="https://_miel.gitlab.io/ncs/#/" target="_blank" class="link">Various Tools</a> - A bit outdated, but still present useful tools for you to use.</li>
+            <li><a href="https://zzyx.de/ro/atk" target="_blank" class="link">Muh Calculator</a> - Significant calculator both for ATK and MATK. Let's you plan ahead.</li>
+            <li><a href="https://ratemyserver.net/" target="_blank" class="link">RateMyServer</a> - Honestly, with all the above, useless, but might as well throw it out there.</li>
+          </ul>
+        </div>
+
+        <!-- Useful NPCs -->
+        <div id="Useful-NPCs" class="tab-pane fade" role="tabpanel" aria-labelledby="useful-npcs-tab" tabindex="0">
+          <p class="fs-1 header">In development.</p>
+          <ul>
+            <li><a href="https://www.novaragnarok.com/?module=main" target="_blank" class="link">NovaRO Main Site</a> - Useful to check news, your character, the market & spending your well earned real life money.</li>
+            <li><a href="https://www.novaragnarok.com/wiki/Main_Page" target="_blank" class="link">NovaRO Wikipedia</a> - The all-in-one site for the majority of your questions, thanks to all the contributors.
+              <ul>
+                <li><a href="https://www.novaragnarok.com/wiki/Troubleshooting" target="_blank" class="link">Troubleshooting</a> - Make sure you check this in case you have any technical issue.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Instances" target="_blank" class="link">Instances</a> - Useful when doing research about loot or mobs.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Costume_Enchants" target="_blank" class="link">Costume Stones</a> - All the available costume stones in the server.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Shadow_Gear" target="_blank" class="link">Shadow Gear</a> - All the available shadow gear in the server.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Leinarth%27s_Rune_Knight_Class_Guide" target="_blank" class="link">Leinarth's DK Guide</a> - The all-in-one guide for DK <strike>and my competition.</strike> <span class="hover">IT'S JUST A JOKE</span></li>
+                <li><a href="https://www.novaragnarok.com/wiki/Refinement_System" target="_blank" class="link">Refinement System</a> - Frankly the best place to understand how refinement works.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Creation_Database" target="_blank" class="link">Creation Database</a> - We all make potions or runes, and this place has it all.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Pet_System" target="_blank" class="link">Pet System</a> - Always a good thing to have all the available pets.</li>
+                <li><a href="https://www.novaragnarok.com/wiki/Palette_Colors" target="_blank" class="link">Outfit Colors</a> - Fashion is part of the game, so might as well have it recommended.</li>
+              </ul>
+            </li>
+            <li><a href="https://www.novaragnarok.com/forum/" target="_blank" class="link">NovaRO Forum</a> - Perfect to report a bug, write a suggestion or complain, besides that, ignore it.</li>
+            <li><a href="https://discord.com/invite/eqHzVK9" target="_blank" class="link">NovaRO Discord</a> - Specially useful if you join a class specific channel.</li>
+            <li><a href="https://irowiki.org/wiki/Quests" target="_blank" class="link">IronRO Wiki Quest List</a> - This is only useful if you're all about nostalgia and want to do old forgotten quests.</li>
+            <li><a href="https://www.divine-pride.net/" target="_blank" class="link">Divine Pride</a> - Amazing database. You can check almost anything and most importnatly, future content.</li>
+            <li><a href="https://_miel.gitlab.io/ncs/#/" target="_blank" class="link">Various Tools</a> - A bit outdated, but still present useful tools for you to use.</li>
+            <li><a href="https://zzyx.de/ro/atk" target="_blank" class="link">Muh Calculator</a> - Significant calculator both for ATK and MATK. Let's you plan ahead.</li>
+            <li><a href="https://ratemyserver.net/" target="_blank" class="link">RateMyServer</a> - Honestly, with all the above, useless, but might as well throw it out there.</li>
+          </ul>
+        </div>
+      </div>
 
     </section>
     
-    <div class="d-none">
-      <h4 id="Useful-Links" class="header fs-6">Useful links</h4>
-      <p>To begin with, you need to be wary of the most useful links <span class="low-focus">(to my own consideration)</span> we have here. You will see them in throughout the guide as well.</p>
-      <ul>
-        <li><a href="https://www.novaragnarok.com/?module=main" target="_blank" class="link">NovaRO Main Site</a> - Useful to check news, your character, the market & spending your well earned real life money.</li>
-        <li><a href="https://www.novaragnarok.com/wiki/Main_Page" target="_blank" class="link">NovaRO Wikipedia</a> - The all-in-one site for the majority of your questions, thanks to all the contributors.
-          <ul>
-            <li><a href="https://www.novaragnarok.com/wiki/Troubleshooting" target="_blank" class="link">Troubleshooting</a> - Make sure you check this in case you have any technical issue.</li>
-            <li><a href="https://www.novaragnarok.com/wiki/Instances" target="_blank" class="link">Instances</a> - Useful when doing research about loot or mobs.</li>
-            <li><a href="https://www.novaragnarok.com/wiki/Costume_Enchants" target="_blank" class="link">Costume Stones</a> - All the available costume stones in the server.</li>
-            <li><a href="https://www.novaragnarok.com/wiki/Shadow_Gear" target="_blank" class="link">Shadow Gear</a> - All the available shadow gear in the server.</li>
-            <li><a href="https://www.novaragnarok.com/wiki/Leinarth%27s_Rune_Knight_Class_Guide" target="_blank" class="link">Leinarth's RK Guide</a> - The all-in-one guide for RK <strike>and my competition.</strike> <span class="hover">IT'S JUST A JOKE</span></li>
-            <li><a href="https://www.novaragnarok.com/wiki/Refinement_System" target="_blank" class="link">Refinement System</a> - Frankly the best place to understand how refinement works.</li>
-            <li><a href="https://www.novaragnarok.com/wiki/Creation_Database" target="_blank" class="link">Creation Database</a> - We all make potions or runes, and this place has it all.</li>
-            <li><a href="https://www.novaragnarok.com/wiki/Pet_System" target="_blank" class="link">Pet System</a> - Always a good thing to have all the available pets.</li>
-            <li><a href="https://www.novaragnarok.com/wiki/Palette_Colors" target="_blank" class="link">Outfit Colors</a> - Fashion is part of the game, so might as well have it recommended.</li>
-          </ul>
-        </li>
-        <li><a href="https://www.novaragnarok.com/forum/" target="_blank" class="link">NovaRO Forum</a> - Perfect to report a bug, write a suggestion or complain, besides that, ignore it.</li>
-        <li><a href="https://discord.com/invite/eqHzVK9" target="_blank" class="link">NovaRO Discord</a> - Specially useful if you join a class specific channel.</li>
-        <li><a href="https://irowiki.org/wiki/Quests" target="_blank" class="link">IronRO Wiki Quest List</a> - This is only useful if you're all about nostalgia and want to do old forgotten quests.</li>
-        <li><a href="https://www.divine-pride.net/" target="_blank" class="link">Divine Pride</a> - Amazing database. You can check almost anything and most importnatly, future content.</li>
-        <li><a href="https://_miel.gitlab.io/ncs/#/" target="_blank" class="link">Various Tools</a> - A bit outdated, but still present useful tools for you to use.</li>
-        <li><a href="https://zzyx.de/ro/atk" target="_blank" class="link">Muh Calculator</a> - Significant calculator both for ATK and MATK. Let's you plan ahead.</li>
-        <li><a href="https://ratemyserver.net/" target="_blank" class="link">RateMyServer</a> - Honestly, with all the above, useless, but might as well throw it out there.</li>
-      </ul>
-    </div>
     <div class="d-none">
       <b>To add:</b> Acronyms list.
       Structure:
@@ -634,5 +706,52 @@ t
   #Tutorial .tutorial-rewards ul,
   #Eden-Academy .eden-academy-rewards ul {
     grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  }
+
+  /* Useful stuff */
+  #Useful-Basics {
+    display: flex;
+    gap: 0;
+  }
+
+  .tab-content {
+    color: hsl(var(--text));
+    background-color: hsl(var(--main-light-3));
+    border-radius: 0.5em 0 0.5em 0.5em;
+  }
+
+  .tab-buttons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tab-buttons button {
+    text-decoration: none;
+    border: none;
+
+    color: hsl(var(--white));
+    background-color: hsl(var(--main-dark));
+
+    padding: 0.25em 1em;
+  }
+
+  .tab-buttons button:is(:hover, :focus) {
+    background-color: hsl(var(--important));
+  }
+
+  .tab-buttons button:is(:active) {
+    background-color: hsl(var(--important), 80%);
+  }
+
+  @media only screen and (max-width: 570px) {
+    .tab-buttons {
+      width: 100%;
+    }
+
+    .tab-buttons button {
+      flex: 1;
+      outline: 0.1ex solid hsl(var(--white), 5%);
+      outline-offset: -0.1ex;
+    }
   }
 </style>

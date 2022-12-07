@@ -184,15 +184,33 @@ input.code {
 }
 
 .expand-btn:is(:hover, :focus, :focus-within) {
-  opacity: .8;
+  opacity: .5;
 }
 
 .expand-btn::after {
   content: 'Read more...';
+  opacity: .8;
   font-family: inherit;
   color: hsl(var(--text));
 }
 
 .expand-btn:checked::after {
   content: 'Collapse';
+}
+
+.article-link {
+  color: hsl(var(--header));
+  font-weight: 700;
+}
+
+.article-link::before {
+  content: "\f1ea";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-inline-end: 0.25em;
+  font-size: 1rem;
+}
+
+.article-link-small::before {
+  font-size: 0.6rem;
 }
