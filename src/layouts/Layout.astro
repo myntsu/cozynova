@@ -123,8 +123,8 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
     ></script>
 
     <!-- Google tag (gtag.js) -->
-    <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-JHZT2VX9C8"></script>
-    <script defer>
+    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-JHZT2VX9C8"></script>
+    <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -133,6 +133,7 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
     </script>
 
     <script
+      type="text/partytown"
       defer
       type="text/javascript"
       src="https://identity.netlify.com/v1/netlify-identity-widget.js"
@@ -1042,7 +1043,7 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
     ></script>
 
     <!-- JS -->
-    <script>
+    <script type="text/partytown">
       import "/src/js/global.js";
     </script>
   </body>
