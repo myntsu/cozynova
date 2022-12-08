@@ -180,22 +180,27 @@ input.code {
   appearance: none;
   margin-block-start: auto;
   margin-inline-start: auto;
-  padding-inline-end: .5em;
+  margin-inline-end: .5em;
+
+  position: relative;
 }
 
 .expand-btn:is(:hover, :focus, :focus-within) {
-  opacity: .5;
+  filter: brightness(200%);
+  text-decoration: underline dotted;
+  text-decoration-color: hsl(var(--text));
+  text-underline-offset: 3px;
 }
 
 .expand-btn::after {
-  content: 'Read more...';
+  content: 'View more';
   opacity: .8;
   font-family: inherit;
   color: hsl(var(--text));
 }
 
 .expand-btn:checked::after {
-  content: 'Collapse';
+  content: 'View less';
 }
 
 .article-link {
