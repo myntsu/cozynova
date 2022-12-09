@@ -214,6 +214,7 @@ input.code {
   font-weight: 900;
   margin-inline-end: 0.25em;
   font-size: 1rem;
+  color: hsl(var(--text));
 }
 
 .article-link-small::before {
