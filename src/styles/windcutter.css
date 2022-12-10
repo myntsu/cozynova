@@ -135,6 +135,7 @@ input.code {
   text-decoration: dotted;
   text-decoration-line: underline;
   cursor: help;
+  user-select: none;
 }
 
 .item-desc:is(.text) {
@@ -154,6 +155,11 @@ input.code {
   display: inline-block;
   width: 24px;
   height: 24px;
+  object-fit: none;
+}
+
+.item-desc svg {
+  fill: hsl(var(--number));
 }
 
 .item {
