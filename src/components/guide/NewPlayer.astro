@@ -2,16 +2,13 @@
   <h2 class="fs-5">New Player</h2>
 
   <!-- Introduction -->
-  <div class="shadow-container intro-new-player mb-4">
+  <div class="shadow-container intro-new-player mb-4 p-3">
 
-    <div class="new-player-bg p-3">
-      <h3 class="fs-5 header">Introduction</h3>
-      <p>First and foremost, this section is made both for new and returning players with a more in depth explanations on what you have seen above, to answer common questions, teach you new things and much more. <span class="focus">If you like learning, this is your place.</span></p>
-      <p><span class="focus-tag">Skip</span> If you don't care about the basics jump directly to <a href="#Section-Skip" class="link within">Earlygame</a></p> 
-    </div>
+    <h3 class="fs-5 header">Introduction</h3>
+    <p>First and foremost, this section is made both for new and returning players with a more in depth explanations on what you have seen above, to answer common questions, teach you new things and much more. <span class="number">If you like learning, this is your place.</span></p>
+    <p><span class="focus-tag">Skip</span> If you don't care about the basics jump directly to <a href="#Section-Skip" class="link within">Earlygame</a></p> 
 
-
-    <div class="p-3" style="border-radius: 1em 1em 0 0;">
+    <div>
       <section class="selection">
         <!-- Basics -->
         <article class="article">
@@ -70,7 +67,7 @@
             <h4 class="fs-5 header">Earlygame</h4>
             <p class="m-0">From level <span class="number">0 to 100</span>.</p>
             <p>
-              From <span class="focus">Swordman</span> to <span class="focus">Lord Knight</span>.
+              From <img loading="lazy" src="/assets/img/icons/swordman.webp" alt="Swordman icon" class="class-icon"> <span class="focus">Swordman</span> to <img loading="lazy" src="/assets/img/icons/knight.webp" alt="Knight icon" class="class-icon"> <span class="focus">Lord Knight</span>.
             </p>
             <div class="content-table">
               <a href="#Earlygame-Stats" class="content-link">Stats</a>
@@ -87,7 +84,7 @@
           <div class="content">
             <h4 class="fs-5 header">Midgame</h4>
             <p class="m-0">From level <span class="number">100 to 175</span>.</p>
-            <p>Amidst your <span class="focus">Rune Knight</span> journey.</p>
+            <p>Amidst your <img loading="lazy" src="/assets/img/icons/runeknight.webp" alt="Rune Knight icon" class="class-icon"> <span class="focus">Rune Knight</span> journey.</p>
             <div class="content-table">
               <a href="#Midgame-Stats" class="content-link">Stats</a>
               <a href="#Midgame-Leveling" class="content-link">Leveling</a>
@@ -102,7 +99,7 @@
           <a href="#Lategame-Section" class="icon" aria-label="Links directly to the main section of Lategame"> <i class="fa-solid fa-6"></i></a>
           <div class="content">
             <h4 class="fs-5 header">Lategame</h4>
-            <p class="m-0">From Level <span class="number">175</span> and forward.</p>
+            <p class="m-0">From Level <img loading="lazy" src="/assets/img/icons/dragonknight.webp" alt="Dragon Knight icon" class="class-icon"> <span class="number">175</span> and forward.</p>
             <p>Starting as a <span class="focus">Dragon Knight</span> at the gates of endgame.</p>
             <div class="content-table">
               <a href="#Lategame-Stats" class="content-link">Stats</a>
@@ -129,7 +126,7 @@
             <button class="toggle tutorial ms-auto" type="button" aria-label="Toggle information in and out" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Swap information"><i class="fa-solid fa-right-left"></i></button>
           </div>
           <div>
-            <p>The tutorial is your introduction to <span class="focus">Ragnarok</span>. It starts with <span class="focus">Mom</span> <code class="code">Warper NPC > Special Areas > Home</code> entering your room and it unfolds a small series of events where she teaches you the basics of the game, gives you some gear walks you through the starter classes and finishes it off by sending you to the Eden Group <code class="code">@go eden / @go 39</code>.</p>
+            <p>The tutorial is your introduction to Nova Ragnarok. It starts with <span class="number">Mom</span> <code class="low-focus">(Warper NPC > Special Areas > Home)</code> entering your room and it unfolds a small series of events where she teaches you the basics of the game, gives you some gear walks you through the starter classes and finishes it off by sending you to the Eden Group <code class="code small">@go eden / @go 39</code>.</p>
             <p class="m-0"><span class="article-link">Article:</span> <a href="https://www.novaragnarok.com/wiki/Mom" target="_blank" class="link">Tutorial / Mom</a></p>
             <div class="basics-container tutorial-swappable">
               <h4 class="fs-6 header">Useful for</h4>
@@ -438,11 +435,11 @@
     background-image: 
       linear-gradient(
         0deg, 
-        hsl(var(--main-dark)) 60%, 
+        hsl(var(--main-dark)) 70%, 
         transparent
         ),
       url("../assets/img/bg/tinywow_wallpaperflare.com_wallpaper_8458767.webp");
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-position: top center;
     background-size: contain;
 

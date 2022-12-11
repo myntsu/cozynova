@@ -226,3 +226,9 @@ input.code {
 .article-link-small::before {
   font-size: 0.6rem;
 }
+
+.class-icon {
+  width: 33px;
+  height: 33px;
+  object-fit: none;
+}
