@@ -168,6 +168,10 @@ input.code {
   object-fit: none;
 }
 
+.item-fix {
+  object-fit: initial;
+}
+
 .expand-div {
   padding: 0 2em;
   visibility: collapse;
