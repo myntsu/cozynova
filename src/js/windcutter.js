@@ -33,11 +33,6 @@ $(".autoloot").click(function () {
   $(".autoloot-text").slideToggle("slow");
 });
 
-//Starting point
-$(".starting-point").click(function () {
-  $(".starting-point-text").slideToggle("slow");
-});
-
 // Tutorial
 $(".tutorial").click(function () {
   $(".tutorial-rewards").toggle();
@@ -72,20 +67,3 @@ lootList.addEventListener("click", (e) => {
   console.dir(text);
   copyClipBoard(text);
 });
-
-// Collapsible content or accordion
-// document.querySelectorAll(".button-collapse").forEach((button) => {
-//   button.addEventListener("click", () => {
-//     const collapseBox = button.nextElementSibling;
-
-//     document
-//       .querySelectorAll(".active-cont")
-//       .forEach((el) => el.classList.remove("active-cont"));
-//     document
-//       .querySelectorAll(".active-btn")
-//       .forEach((el) => el.classList.remove("active-btn"));
-
-//     button.classList.toggle("active-btn");
-//     collapseBox.classList.toggle("active-cont");
-//   });
-// });
