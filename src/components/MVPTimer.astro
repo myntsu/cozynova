@@ -4,10 +4,18 @@
     <h1>MVP Respawn Locations</h1>
     <div>
       <label for="mvp-select">Select an MVP:</label>
-      <select id="mvp-select"></select>
+      <select id="mvp-select">
+        <option value="None">None selected</option>
+      </select>
       <div id="respawn-select-container">
         <label for="respawn-select">Select a Respawn Location:</label>
-        <select id="respawn-select"></select>
+        <select id="respawn-select">
+          <option value="None">None selected</option>
+        </select>
+      </div>
+      <div id="cdr-input-container">
+        <label for="cdr-input">Custom CDR (in ms):</label>
+        <input type="text" id="cdr-input" placeholder="Enter custom CDR value">
       </div>
       <button id="show-mvp-btn">Show Respawn Location</button>
     </div>
