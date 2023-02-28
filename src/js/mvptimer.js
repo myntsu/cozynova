@@ -4,7 +4,7 @@ const showMvpBtn = document.getElementById("show-mvp-btn");
 const respawnSelect = document.getElementById("respawn-select");
 
 async function getMvps() {
-  const response = await fetch("../json/mvplist.json");
+  const response = await fetch("../mvplist.json");
   const mvps = await response.json();
   return mvps;
 }
@@ -17,7 +17,7 @@ function createOption(mvp, selectElement) {
   selectElement.appendChild(option);
 }
 
-fetch("../json/mvplist.json")
+fetch("../mvplist.json")
   .then((response) => response.json())
   .then((data) => {
     data.forEach((mvp) => {
