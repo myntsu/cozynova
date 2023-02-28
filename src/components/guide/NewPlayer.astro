@@ -604,83 +604,160 @@
             <table class="table table-striped table-responsive">
               <thead>
                 <tr>
-                  <th class="text-center header">List</th>
-                  <th class="text-center header"></th>
+                  <th class="text-center header" style="min-width: 10rem;">Category</th>
+                  <th class="text-center header" style="min-width: 10rem;">Command</th>
+                  <th class="text-center header" style="min-width: 15rem;">Description</th>
+                  <th class="text-center header" style="min-width: 10rem;">Usage</th>
                 </tr>
               </thead>
               <tbody>
+                <!-- Navigation -->
                 <tr>
-                  <td class="text-center" style="min-width: 10rem;">Navigation</td>
-                  <!-- Moving around -->
-                  <td class="p-0">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th class="text-center header" style="min-width: 10rem;">Command</th>
-                          <th class="text-center header" style="min-width: 20rem;">Description</th>
-                          <th class="text-center header" style="min-width: 10rem;">Usage</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>@go</td>
-                          <td><span class="focus">Gives you the ability to teleport to any town.</span> If you don't type any city, you will get a full list of the available locations.</td>
-                          <td class="text-center align-middle"><code class="code contrast">@go prontera</code></td>
-                        </tr>
-                        <tr>
-                          <td>@navi</td>
-                          <td><span class="focus">Pinpoints the location of a coordinate.</span></td>
-                          <td class="text-center align-middle">
-                            <code class="code contrast mb-1">@navi prontera 100,100</code>
-                            <code class="code contrast">/navi prontera 100/100</code>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="border-bottom-0">@return</td>
-                          <td class="border-bottom-0"><span class="focus">Teleports you back to your save point.</span> Specially useful to leave instances.</td>
-                          <td class="text-center border-bottom-0 align-middle"><code class="code contrast">@return</code></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <td class="text-center" rowspan="3">Navigation</td>
+                  <td>@go</td>
+                  <td>Gives you the ability to teleport to any town. If you don't type any city, you will get a full list of the available locations.</td>
+                  <td class="text-center align-middle"><code class="code contrast">@go prontera</code></td>
+                </tr>
+                <tr>
+                  <td>@navi</td>
+                  <td>Pinpoints the location of a coordinate.</td>
+                  <td class="text-center align-middle">
+                    <div><code class="code contrast mb-1">@navi prontera 100,100</code></div>
+                    <div><code class="code contrast">/navi prontera 100/100</code></div>
                   </td>
                 </tr>
                 <tr>
-                  <td class="text-center" style="min-width: 10rem;">Information</td>
-                  <td class="p-0">
-                    <!-- Information -->
-                    <table class="table table-striped">
-                      <tbody>
-                        <tr>
-                          <td style="min-width: 10rem;">@bs / @battlestats</td>
-                          <td><span class="focus">Gives you the ability to teleport to any town.</span> If you don't type anything after the @go you will get a full list of available locations.</td>
-                        </tr>
-                        <tr>
-                          <td>@ii / @iteminfo</td>
-                          <td><span class="focus">Pinpoints the location of a coordinate.</span> The usage follows this pattern "/navi prontera 13/13" or "@navi prontera 13,13".</td>
-                        </tr>
-                        <tr>
-                          <td class="border-bottom-0">@return</td>
-                          <td class="border-bottom-0"><span class="focus">Teleports you back to your save point.</span> Specially useful to leave instances.</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <td>@return</td>
+                  <td>Teleports you back to your save point. Specially useful to leave instances.</td>
+                  <td class="text-center align-middle"><code class="code contrast">@return</code></td>
+                </tr>
+                <!-- Information -->
+                <tr>
+                  <td class="text-center" rowspan="6">Information</td>
+                  <td>
+                    <div><span>@bs</span></div>
+                    <div><span>@battlestats</span></div>
+                  </td>
+                  <td>Gives you detailed information about your all your stats. Pretty helpful to understand formulas and behaviors.</td>
+                  <td class="text-center align-middle"><code class="code contrast">@bs</code></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div><span>@ii</span></div>
+                    <div><span>@iteminfo</span></div>
+                  </td>
+                  <td>Resourceful command to check every single item in the game. You can even preview outfit this way, to avoid misunderstandings.</td>
+                  <td class="text-center align-middle">
+                    <div><code class="code contrast mb-1">@ii enriched elunium</code></div>
+                    <div><code class="code contrast">@ii 12345</code></div>
                   </td>
                 </tr>
-                  <!-- Looting -->
-                  <tr>
-                    <table>
-                      <tr>
-                        <td></td>
-                      </tr>
-                    </table>
-                  </tr>
+                <tr>
+                  <td>
+                    <div><span>@wn</span></div>
+                    <div><span>@whatnpc</span></div>
+                  </td>
+                  <td>My go-to option to verify if an NPC is selling an specific item that I'm looking for. Always good to use this command before @ws.</td>
+                  <td class="text-center align-middle">
+                    <div><code class="code contrast mb-1" style="min-width: 10rem;">@wn enriched oridecon</code></div>
+                    <div><code class="code contrast">@wn 54321</code></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div><span>@ws</span></div>
+                    <div><span>@whosells</span></div>
+                  </td>
+                  <td>Directly aimed towards players selling specific items. The UI is compelling enough for you to understand it form the get go.</td>
+                  <td class="text-center align-middle">
+                    <div><code class="code contrast mb-1">@ws new wave sunglasses</code></div>
+                    <div><code class="code contrast">@ws 55555</code></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div><span>@wi</span></div>
+                    <div><span>@whereis</span></div>
+                  </td>
+                  <td>A mob finder. Quite useful when doing weeklies.</td>
+                  <td class="text-center align-middle">
+                    <div><code class="code contrast mb-1">@wi poring</code></div>
+                    <div><code class="code contrast">@wi 123</code></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div><span>@mi</span></div>
+                    <div><span>@mobinfo</span></div>
+                  </td>
+                  <td>To validate stats from a specific mob. Could be used to verify the LUK required to crit, or the DEX needed to hit, even the PEN or MPEN.</td>
+                  <td class="text-center align-middle">
+                    <div><code class="code contrast mb-1">@mi valkyrie</code></div>
+                    <div><code class="code contrast">@mi 9999</code></div>
+                  </td>
+                </tr>
+                <!-- Farming -->
+                <tr>
+                  <td class="text-center" rowspan="6">Farming</td>
+                  <td>
+                    <div><span>@autoloot</span></div>
+                  </td>
+                  <td>The shorten version works, but sometimes the values don't work properly, so stick to the longhand name.</td>
+                  <td class="text-center align-middle"><code class="code contrast">@autoloot 85.5</code></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div><span>@alootid</span></div>
+                  </td>
+                  <td>This is quite essential when farming for specific loots. You can either whitelist or blacklist up to 20 of them in any combination. It's quite finnicky to reset, so the best way is simply going to character selection and coming back.</td>
+                  <td class="text-center align-middle">
+                    <div><code class="code contrast mb-1">@alootid +123</code></div>
+                    <div><code class="code contrast">@alootid -123|-143|+1465</code></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div><span>@nopickup</span></div>
+                  </td>
+                  <td>You would be surprised how handy could this be specially when you're clicking a lot. The name references to what it does, really.</td>
+                  <td class="text-center align-middle">
+                    <div><code class="code contrast mb-1">@nopickup</code></div>
+                  </td>
+                </tr>
+                <!-- Party play -->
+                <tr>
+                  <td class="text-center" rowspan="6">Party</td>
+                  <td>
+                    <div><span>@autoloot</span></div>
+                  </td>
+                  <td>The shorten version works, but sometimes the values don't work properly, so stick to the longhand name.</td>
+                  <td class="text-center align-middle"><code class="code contrast">@autoloot 85.5</code></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div><span>@alootid</span></div>
+                  </td>
+                  <td>This is quite essential when farming for specific loots. You can either whitelist or blacklist up to 20 of them in any combination. It's quite finnicky to reset, so the best way is simply going to character selection and coming back.</td>
+                  <td class="text-center align-middle">
+                    <div><code class="code contrast mb-1">@alootid +123</code></div>
+                    <div><code class="code contrast">@alootid -123|-143|+1465</code></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div><span>@nopickup</span></div>
+                  </td>
+                  <td>You would be surprised how handy could this be specially when you're clicking a lot. The name references to what it does, really.</td>
+                  <td class="text-center align-middle">
+                    <div><code class="code contrast mb-1">@nopickup</code></div>
+                  </td>
+                </tr>
+
                   <!-- Extras -->
-                  <tr>
-                    <table>
-                    </table>
-                  </tr>
+
               </tbody>
             </table>
+
             <div class="d-flex w-100">
               <a href="https://www.novaragnarok.com/wiki/Player_Commands" target="_blank" class="link ms-auto" style="font-size: .75rem;">Commands</a>
             </div>

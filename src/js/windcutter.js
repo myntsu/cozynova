@@ -66,4 +66,37 @@ lootList.addEventListener("click", (e) => {
 
   console.dir(text);
   copyClipBoard(text);
+  showToast(text);
 });
+
+// Toast from copying to clipboard
+function showToast(text) {
+  const toast = document.createElement("div");
+  toast.innerText = `Copied ${text}`;
+  toast.style.position = "fixed";
+  toast.style.bottom = "-50px";
+  toast.style.left = "50%";
+  toast.style.transform = "translateX(-50%)";
+  toast.style.padding = "10px 15px";
+  toast.style.backgroundColor = "hsl(var(--important))";
+  toast.style.color = "hsl(var(--white))";
+  toast.style.borderRadius = "5px";
+  toast.style.zIndex = "1000";
+  toast.classList.add("shadow-container");
+  document.body.appendChild(toast);
+
+  // Animate toast message
+  let pos = -50;
+  const interval = setInterval(frame, 1);
+  function frame() {
+    if (pos === 10) {
+      clearInterval(interval);
+      setTimeout(() => {
+        toast.remove();
+      }, 2000);
+    } else {
+      pos++;
+      toast.style.bottom = pos + "px";
+    }
+  }
+}

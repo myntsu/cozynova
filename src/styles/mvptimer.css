@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+    width: 100vw;
+    min-height: 120vh;
+    margin: auto;
+    padding: 0;
+
+    font-size: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+
+    color: hsl(var(--white));
+    background-color: hsl(var(--main-dark));
+}
+
+main {
+    width: 1000px;
+    max-width: 100%;
+
+    margin: 0 auto;
+    padding: 3em 0;
+}
+
+/* Add styles for the MVP card here */
+#mvp-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mvp-card {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 300px;
+}

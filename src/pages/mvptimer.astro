@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MVPTimer from "../components/MVPTimer.astro";
+import "../styles/mvptimer.css";
+---
+
+<Layout
+  title="MVP Timer"
+  description="MVP Timer for Nova Ragnarok."
+  ogTitle="MVP Timer"
+  ogDescription="Looking to set up a timer for an MVP?"
+  ogUrl="https://cozynova.online/mvptimer/"
+  canonical="https://cozynova.online/mvptimer/"
+  favicon="/favicon/sword.svg"
+  faviconLight="/favicon/sword_black.svg">
+  <MVPTimer />
+</Layout>
+
+<script>
+  import "/src/js/mvptimer.js";
+</script>

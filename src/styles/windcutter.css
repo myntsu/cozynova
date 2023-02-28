@@ -236,3 +236,7 @@ input.code {
   height: 33px;
   object-fit: none;
 }
+
+[role="tablist"] .active {
+  background-color: hsl(var(--important)) !important;
+}
