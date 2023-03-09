@@ -1,0 +1,38 @@
+[
+  {
+    "id": 20775,
+    "name": "Anger of Thanatos",
+    "level": 203,
+    "hp": "3,845,405",
+    "size": "Large",
+    "race": "Demon",
+    "element": "Fire 4"
+  },
+  {
+    "id": 20776,
+    "name": "Anger of Thanatos",
+    "level": 201,
+    "hp": "3,807,368",
+    "size": "Small",
+    "race": "Demon",
+    "element": "Poison 4"
+  },
+  {
+    "id": 20777,
+    "name": "Resentment of Thanatos",
+    "level": 205,
+    "hp": "3,883,906",
+    "size": "Medium",
+    "race": "Demon",
+    "element": "Ghost 4"
+  },
+  {
+    "id": 20778,
+    "name": "Regret of Thanatos",
+    "level": 202,
+    "hp": "3,831,631",
+    "size": "Large",
+    "race": "Demon",
+    "element": "Ghost 4"
+  }
+]

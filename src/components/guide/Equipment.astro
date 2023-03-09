@@ -217,7 +217,10 @@
             </div>
           </div>
         </div>
-  
+      </div>
+
+      <div class="excel-gear" style="width: 800px; max-width: 100%; margin: auto;">
+        <p class="ms-auto text-end" style="font-size: .75rem;"><a href="https://docs.google.com/spreadsheets/d/1S5BAe6W0QMcTv47DdrwgKBH0DQAzMSrLu2wSc9ZgZf4/edit?usp=sharing" target="_blank" class="link link-small">Gear listed</a></p>
       </div>
   
       <!-- Damage calculations -->
@@ -340,19 +343,19 @@
             <div class="col-12 col-md-6 m-0 p-0 p-2 mob-calc">
               <p class="header"><a href="https://www.novaragnarok.com/wiki/Thanatos_Tower" target="_blank" class="hidden-link">Thanatos F12</a> <span class="item-desc img position-absolute ms-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" data-bs-title="<b><u>Using</u></b>: Water Elemental Converter"><img loading="lazy" src="https://www.novaragnarok.com/data/items/icons2/12115.png" alt="Water Elemental Converter"></span></p>
               <div class="d-flex flex-wrap gap-1">
-                <p class="me-auto">Anger <span class="low-focus">(Fire 4)</span></p>
+                <p class="me-auto" data-mob-card="20775">Anger <span class="low-focus">(Fire 4)</span></p>
                 <p class="number">4,489,231</p>
               </div>
               <div class="d-flex flex-wrap gap-1">
-                <p class="me-auto">Horror <span class="low-focus">(Poison 4)</span></p>
+                <p class="me-auto" data-mob-card="20776">Horror <span class="low-focus">(Poison 4)</span></p>
                 <p class="number">3,117,341</p>
               </div>
               <div class="d-flex flex-wrap gap-1">
-                <p class="me-auto">Resentment <span class="low-focus">(Ghost 4)</span></p>
+                <p class="me-auto" data-mob-card="20777">Resentment <span class="low-focus">(Ghost 4)</span></p>
                 <p class="number">2,953,838</p>
               </div>
               <div class="d-flex flex-wrap gap-1">
-                <p class="me-auto">Regret <span class="low-focus">(Ghost 4)</span></p>
+                <p class="me-auto" data-mob-card="20778">Regret <span class="low-focus">(Ghost 4)</span></p>
                 <p class="number">3,304,905</p>
               </div>
               <hr class="d-block d-md-none">
@@ -566,8 +569,11 @@
     background-color: hsl(var(--main-light-3));
   }
 
-  .mob-calc {
-    max-height: 200px;
-    overflow: auto;
+  @media only screen and (min-width: 1131px) {
+    .excel-gear p {
+      position: relative;
+      top: -1.25rem;
+    }
   }
+
 </style>
