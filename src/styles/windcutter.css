@@ -240,3 +240,25 @@ input.code {
 [role="tablist"] .active {
   background-color: hsl(var(--important)) !important;
 }
+
+.hidden-link {
+  position: relative;
+  color: unset;
+  text-decoration: none;
+}
+
+.hidden-link:is(:hover, :focus) {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.hidden-link:hover::after {
+  position: absolute;
+  content: "\f0c1";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  right: -1.5rem;
+  color: hsl(var(--link));
+  font-size: .75rem;
+  top: .15rem;
+}

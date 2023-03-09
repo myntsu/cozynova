@@ -100,3 +100,14 @@ function showToast(text) {
     }
   }
 }
+
+const parentDivs = document.querySelectorAll('.select-dynamic-title');
+  
+parentDivs.forEach((parentDiv) => {
+  const selectElement = parentDiv.querySelector('.select-title');
+  
+  selectElement.addEventListener('change', (event) => {
+    const parentDiv = event.target.closest('.select-dynamic-title');
+    parentDiv.setAttribute('title', event.target.selectedOptions[0].title);
+  });
+});
