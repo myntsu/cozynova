@@ -88,8 +88,11 @@ body {
     width: 1200px;
     max-width: 100%;
 
-    margin: 0 auto;
-    padding: 3em 0;
+    margin: 2.5rem auto;
+    padding: 1rem 1rem 0;
+
+    background-color: hsl(var(--main-light-1));
+    border-radius: .5rem;
 }
 
 .body-container h1 {
@@ -97,7 +100,7 @@ body {
   margin: 0;
   margin-inline-end: .25em;
 
-  color: hsl(var(--white));
+  color: hsl(var(--header));
 
   font-size: 2rem;
   font-weight: 700;
@@ -125,7 +128,8 @@ body {
 
 @media only screen and (max-width: 1200px) {
     .body-container {
-        padding: 3em .5em;
+        padding: 1rem .5rem 0;
+        border-radius: 0;
     }
 }
 
@@ -238,7 +242,6 @@ label > img {
 }
 
 .ingredients-container > div {
-    margin-block-end: 1em;
     padding: 1em;
     background-color: hsl(var(--main-light-2));
     border-radius: .5em;
@@ -273,6 +276,11 @@ label > img {
     grid-template-columns: repeat(4, 1fr);
     gap: .5em;
     place-content: center;
+    margin-block-start: 1rem;
+}
+
+.grid-ingredient-wrapper:has(div:is(.visible)) {
+    padding-block-end: 1rem;
 }
 
 @media only screen and (max-width: 1200px) {

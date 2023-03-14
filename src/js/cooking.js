@@ -11,6 +11,7 @@ $(function() {
   // 1
   $(".hide-one").click(function(){
     $(".first-dish").toggle();
+    $(".first-dish").toggleClass('visible');
   });
   
   $(".collapse-one").click(function(){
@@ -22,6 +23,7 @@ $(function() {
   // 2
   $(".hide-two").click(function(){
     $(".second-dish").toggle();
+    $(".second-dish").toggleClass('visible');
   });
   
   $(".collapse-two").click(function(){
@@ -33,6 +35,7 @@ $(function() {
   // 3
   $(".hide-three").click(function(){
     $(".third-dish").toggle();
+    $(".third-dish").toggleClass('visible');
   });
   
   $(".collapse-three").click(function(){
@@ -44,6 +47,7 @@ $(function() {
   // 4
   $(".hide-four").click(function(){
     $(".fourth-dish").toggle();
+    $(".fourth-dish").toggleClass('visible');
   });
   
   $(".collapse-four").click(function(){
@@ -55,6 +59,7 @@ $(function() {
   // 5
   $(".hide-five").click(function(){
     $(".fifth-dish").toggle();
+    $(".fifth-dish").toggleClass('visible');
   });
   
   $(".collapse-five").click(function(){
@@ -66,6 +71,7 @@ $(function() {
   // 6
   $(".hide-six").click(function(){
     $(".sixth-dish").toggle();
+    $(".sixth-dish").toggleClass('visible');
   });
   
   $(".collapse-six").click(function(){
@@ -77,6 +83,7 @@ $(function() {
   // 7
   $(".hide-seven").click(function(){
     $(".seventh-dish").toggle();
+    $(".seventh-dish").toggleClass('visible');
   });
   
   $(".collapse-seven").click(function(){
@@ -88,6 +95,7 @@ $(function() {
   // 8
   $(".hide-eight").click(function(){
     $(".eight-dish").toggle();
+    $(".eight-dish").toggleClass('visible');
   });
   
   $(".collapse-eight").click(function(){
@@ -99,6 +107,7 @@ $(function() {
   // 9
   $(".hide-nine").click(function(){
     $(".nine-dish").toggle();
+    $(".nine-dish").toggleClass('visible');
   });
   
   $(".collapse-nine").click(function(){
@@ -110,6 +119,7 @@ $(function() {
   // 10
   $(".hide-ten").click(function(){
     $(".tenth-dish").toggle();
+    $(".tenth-dish").toggleClass('visible');
   });
   
   $(".collapse-ten").click(function(){
@@ -121,6 +131,7 @@ $(function() {
   // 11
   $(".hide-eleven").click(function(){
     $(".eleven-dish").toggle();
+    $(".eleven-dish").toggleClass('visible');
   });
   
   $(".collapse-eleven").click(function(){
@@ -132,6 +143,7 @@ $(function() {
   // 12
   $(".hide-twelve").click(function(){
     $(".twelve-dish").toggle();
+    $(".twelve-dish").toggleClass('visible');
   });
   
   $(".collapse-twelve").click(function(){

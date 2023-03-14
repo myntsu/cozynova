@@ -233,8 +233,17 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
               <a
                 class="nav-link"
                 href="/mvptimer">
-                MVP Timer
+                <img src="../assets/img/icons/mvp.webp" alt="" style="width: 24px; height: 24px;"> Timer
               </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://novarocalc.com/"
+                target="bl
+              "
+                >Calculator</a
+              >
             </li>
             <li class="nav-item">
               <a
@@ -1020,6 +1029,15 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
       .tooltip-inner {
         font-family: var(--bs-font-monospace);
       }
+
+      .nav-item:is(:hover, :focus-visible) {
+        background-color: hsl(var(--important), 90%) !important;
+      }
+
+      .nav-item:is(:hover, :focus-visible) .nav-link {
+        color: hsl(var(--white)) !important;  
+      }
+
     </style>
 
     <!-- Bootstrap JS -->
