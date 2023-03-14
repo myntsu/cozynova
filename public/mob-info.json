@@ -1,12 +1,213 @@
 [
   {
+    "id": 20594,
+    "name": "Green Mineral",
+    "level": 190,
+    "hp": "2,435,702",
+    "size": "Large",
+    "race": "Formless",
+    "element": "Neutral 4",
+    "novaImg": ""
+  },
+  {
+    "id": 20595,
+    "name": "Red Mineral",
+    "level": 190,
+    "hp": "2,435,702",
+    "size": "Large",
+    "race": "Formless",
+    "element": "Neutral 4",
+    "novaImg": ""
+  },
+  {
+    "id": 20596,
+    "name": "White Mineral",
+    "level": 190,
+    "hp": "2,436,177",
+    "size": "Large",
+    "race": "Formless",
+    "element": "Neutral 4",
+    "novaImg": ""
+  },
+  {
+    "id": 20597,
+    "name": "Purple Mineral",
+    "level": 190,
+    "hp": "2,435,702",
+    "size": "Large",
+    "race": "Formless",
+    "element": "Neutral 4",
+    "novaImg": ""
+  },
+  {
+    "id": 20602,
+    "name": "White Porcellio",
+    "level": 206,
+    "hp": "2,403,326",
+    "size": "Small",
+    "race": "Insect",
+    "element": "Earth 4",
+    "novaImg": ""
+  },
+  {
+    "id": 20603,
+    "name": "Abyssman",
+    "level": 190,
+    "hp": "2,428,277",
+    "size": "Large",
+    "race": "Beast",
+    "element": "Neutral 4",
+    "novaImg": ""
+  },
+  {
+    "id": 20118,
+    "name": "Ancient Apocalypse",
+    "level": 203,
+    "hp": "4,682,350",
+    "size": "Large",
+    "race": "Formless",
+    "element": "Holy 2",
+    "novaImg": "https://www.novaragnarok.com/w/images/7/77/JF_apocalips_br.gif"
+  },
+  {
+    "id": 20119,
+    "name": "Ancient Archdam",
+    "level": 205,
+    "hp": "5,276,311",
+    "size": "Large",
+    "race": "Demi-Human",
+    "element": "Ghost 2",
+    "novaImg": "https://www.novaragnarok.com/w/images/0/0c/JF_archdam_b.gif"
+  },
+  {
+    "id": 20120,
+    "name": "Ancient Robot",
+    "level": 202,
+    "hp": "5,560,000",
+    "size": "Large",
+    "race": "Formless",
+    "element": "Dark 2",
+    "novaImg": "https://www.novaragnarok.com/w/images/e/e6/JF_recon_robot_r.gif"
+  },
+  {
+    "id": 20121,
+    "name": "Ancient Excavator",
+    "level": 206,
+    "hp": "5,466,860",
+    "size": "Medium",
+    "race": "Formless",
+    "element": "Poison 2",
+    "novaImg": "https://www.novaragnarok.com/w/images/5/5c/Ancient_Juperos_Excavator.gif"
+  },
+  {
+    "id": 20250,
+    "name": "Hallucigenia Fortis",
+    "level": 258,
+    "hp": "14,577,250",
+    "size": "Small",
+    "race": "Insect",
+    "element": "Poison 2",
+    "novaImg": "https://www.novaragnarok.com/w/images/d/d4/Hallucigenia_fortis.gif"
+  },
+  {
+    "id": 20248,
+    "name": "Assassin Fly",
+    "level": 254,
+    "hp": "16,965,513",
+    "size": "Medium",
+    "race": "Insect",
+    "element": "Poison 2",
+    "novaImg": "https://www.novaragnarok.com/w/images/f/ff/Assassin_fly.gif"
+  },
+  {
+    "id": 20249,
+    "name": "Sand Striker",
+    "level": 257,
+    "hp": "15,946,942",
+    "size": "Medium",
+    "race": "Insect",
+    "element": "Earth 2",
+    "novaImg": "https://www.novaragnarok.com/w/images/4/4e/Sand_striker.gif"
+  },
+  {
+    "id": 20253,
+    "name": "Evolved Gazeti",
+    "level": 257,
+    "hp": "14,447,250",
+    "size": "Medium",
+    "race": "Insect",
+    "element": "Earth 2",
+    "novaImg": "https://www.novaragnarok.com/w/images/b/b8/Evolved_gazeti.gif"
+  },
+  {
+    "id": 20252,
+    "name": "Evolved Pupa",
+    "level": 258,
+    "hp": "14,577,250",
+    "size": "Small",
+    "race": "Beast",
+    "element": "Earth 2",
+    "novaImg": "https://www.novaragnarok.com/w/images/0/0c/Evolved_pupa.gif"
+  },
+  {
+    "id": 20251,
+    "name": "Mutated Pupa",
+    "level": 253,
+    "hp": "13,577,250",
+    "size": "Small",
+    "race": "Beast",
+    "element": "Earth 2",
+    "novaImg": "https://www.novaragnarok.com/w/images/3/35/Mutated_pupa.gif"
+  },
+  {
+    "id": 20938,
+    "name": "Ghost Cube",
+    "level": 213,
+    "hp": "4,439,942",
+    "size": "Small",
+    "race": "Undead",
+    "element": "Undead 1",
+    "novaImg": ""
+  },
+  {
+    "id": 20939,
+    "name": "Lude Gal",
+    "level": 213,
+    "hp": "4,439,942",
+    "size": "Small",
+    "race": "Undead",
+    "element": "Undead 2",
+    "novaImg": ""
+  },
+  {
+    "id": 20937,
+    "name": "Brutal Murderer",
+    "level": 214,
+    "hp": "4,960,787",
+    "size": "Large",
+    "race": "Demi Human",
+    "element": "Neutral 2",
+    "novaImg": ""
+  },
+  {
+    "id": 20935,
+    "name": "Gan Ceann",
+    "level": 214,
+    "hp": "4,681,632",
+    "size": "Medium",
+    "race": "Formless",
+    "element": "Neutral 1",
+    "novaImg": ""
+  },
+  {
     "id": 20775,
     "name": "Anger of Thanatos",
     "level": 203,
     "hp": "3,845,405",
     "size": "Large",
     "race": "Demon",
-    "element": "Fire 4"
+    "element": "Fire 4",
+    "novaImg": ""
   },
   {
     "id": 20776,
@@ -15,7 +216,8 @@
     "hp": "3,807,368",
     "size": "Small",
     "race": "Demon",
-    "element": "Poison 4"
+    "element": "Poison 4",
+    "novaImg": ""
   },
   {
     "id": 20777,
@@ -24,15 +226,17 @@
     "hp": "3,883,906",
     "size": "Medium",
     "race": "Demon",
-    "element": "Ghost 4"
+    "element": "Ghost 4",
+    "novaImg": ""
   },
   {
     "id": 20778,
     "name": "Regret of Thanatos",
-    "level": 202,
+    "level": 999,
     "hp": "3,831,631",
     "size": "Large",
     "race": "Demon",
-    "element": "Ghost 4"
+    "element": "Ghost 4",
+    "novaImg": ""
   }
 ]

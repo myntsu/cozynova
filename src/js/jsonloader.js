@@ -39,7 +39,7 @@ fetch('../mob-info.json')
             contentContainer.appendChild(imgContainer);
 
             const textContainer = document.createElement('div');
-            textContainer.style.flex = '1 0 50%';
+            // textContainer.style.flex = '1 0 50%';
             textContainer.style.display = 'grid';
             textContainer.style.placeContent = 'center';
             contentContainer.appendChild(textContainer);
@@ -48,11 +48,19 @@ fetch('../mob-info.json')
             const name = document.createElement('h2');
             name.textContent = mob.name;
             name.classList.add('header');
+            name.style.textAlign = 'center';
             card.appendChild(name);
 
             // Create an image element
             const image = document.createElement('img');
-            image.src = `https://static.divine-pride.net/images/mobs/png/${mob.id}.png`; // Replace with the URL of the image you want to use
+            const jsonImage = (mob) => {
+              if (mob.novaImg && mob.novaImg.trim() !== "") {
+                return mob.novaImg;
+              } else {
+                return `https://static.divine-pride.net/images/mobs/png/${mob.id}.png`;
+              }
+            };
+            image.src = jsonImage(mob);
             image.alt = mob.name;
             image.style.maxWidth = '150px';
             image.style.height = 'auto';
@@ -69,7 +77,7 @@ fetch('../mob-info.json')
                                 <span class="header">Race:</span> ${mob.race}<br>
                                 <span class="header">Element:</span> ${mob.element}`;
             details.style.flex = 'flex';
-            details.style.placeContent = 'center';
+            details.style.whiteSpace = 'nowrap';
             details.style.margin = '0';
             textContainer.appendChild(details);
 
@@ -83,6 +91,7 @@ fetch('../mob-info.json')
           card.style.color = 'hsl(var(--white))';
           card.style.padding = '.5rem';
           card.style.borderRadius = ".5rem";
+          card.style.minWidth = '300px'
           card.style.top = `${event.clientY + window.scrollY + 10}px`;
           card.style.left = `${event.clientX + window.scrollX + 10}px`;
         });
