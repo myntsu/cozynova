@@ -1,154 +1,137 @@
-$(function() {
-    $(".clickable").click( function() {
-      $(this).toggleClass("container-switch");
-    } );
-  } );
-  
-  $(".ingredient-list li").click(function() {
-    $(this).toggleClass('stroked');
+function updateGridIngredientWrapperPadding() {
+  const gridIngredientWrapper = document.querySelector('.grid-ingredient-wrapper');
+  const dishSelectors = [
+    '.first-dish', '.second-dish', '.third-dish', '.fourth-dish', '.fifth-dish',
+    '.sixth-dish', '.seventh-dish', '.eight-dish', '.nine-dish', '.tenth-dish',
+    '.eleven-dish', '.twelve-dish',
+  ];
+
+  const hasVisibleDish = dishSelectors.some(selector => {
+    const dish = document.querySelector(selector);
+    return dish && dish.style.display !== 'none';
   });
+
+  if (hasVisibleDish) {
+    gridIngredientWrapper.style.paddingBottom = '1rem';
+  } else {
+    gridIngredientWrapper.style.paddingBottom = '';
+  }
+}
+
+function updateContainerSwitchClass(hideClass, dishClass) {
+  const hideElement = document.querySelector(hideClass);
+  const dishElement = document.querySelector(dishClass);
+
+  if (hideElement && dishElement) {
+    const dishVisible = localStorage.getItem(`${dishClass.slice(1)}-visible`);
+
+    if (dishVisible !== 'none') {
+      hideElement.classList.add('container-switch');
+    } else {
+      hideElement.classList.remove('container-switch');
+    }
+  }
+}
+
+function addToggleListeners(hideClass, dishClass, collapseClass) {
+  const hideElement = document.querySelector(hideClass);
+  const dishElement = document.querySelector(dishClass);
+  const collapseElement = document.querySelector(collapseClass);
+
+  hideElement.addEventListener("click", () => {
+    dishElement.style.display = dishElement.style.display === "none" ? "" : "none";
   
-  // 1
-  $(".hide-one").click(function(){
-    $(".first-dish").toggle();
-    $(".first-dish").toggleClass('visible');
+    // Store the visibility state in local storage
+    localStorage.setItem(`${dishClass.slice(1)}-visible`, dishElement.style.display);
+  
+    // Update container-switch after storing the visibility state in local storage
+    updateContainerSwitchClass(hideClass, dishClass);
+    updateGridIngredientWrapperPadding();
   });
+
+  collapseElement.addEventListener("click", () => {
+    dishElement.style.display = "none";
+    hideElement.classList.remove("container-switch");
+
+    // Store the visibility state in local storage
+    localStorage.setItem(`${dishClass.slice(1)}-visible`, dishElement.style.display);
+    updateGridIngredientWrapperPadding();
+  });
+}
+
+function restoreUserSelections() {
+  const numberStrings = [
+    '', 'first', 'second', 'third', 'fourth', 'fifth',
+    'sixth', 'seventh', 'eight', 'nine', 'tenth',
+    'eleven', 'twelve'
+  ];
+
+  for (let i = 1; i <= 12; i++) {
+    const hideClass = `.hide-${numberStrings[i]}`;
+    const dishClass = `.${numberStrings[i]}-dish`;
+
+    const hideElement = document.querySelector(hideClass);
+    const dishElement = document.querySelector(dishClass);
+
+    if (dishElement) {
+      const dishVisible = localStorage.getItem(`${dishClass.slice(1)}-visible`);
+
+      if (dishVisible !== null) {
+        dishElement.style.display = dishVisible;
+        updateContainerSwitchClass(hideClass, dishClass);;
+      }
+    }
   
-  $(".collapse-one").click(function(){
-    $(".first-dish").toggle(0, function(){
-      $(".hide-one").toggleClass("container-switch");
+    if (hideElement && dishElement) {
+      if (dishElement.style.display !== 'none') { // Update this line
+        hideElement.classList.add('container-switch');
+      } else {
+        hideElement.classList.remove('container-switch');
+      }
+      updateGridIngredientWrapperPadding();
+    }
+  }
+
+  const ingredientListItems = document.querySelectorAll(".ingredient-list li");
+  ingredientListItems.forEach((item, index) => {
+    const stroked = JSON.parse(
+      localStorage.getItem(`ingredient-${index}-stroked`)
+    );
+    if (stroked !== null && stroked) {
+      item.classList.add("stroked");
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const ingredientListItems = document.querySelectorAll(".ingredient-list li");
+
+  ingredientListItems.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      item.classList.toggle("stroked");
+
+      // Store the 'stroked' state in local storage
+      localStorage.setItem(
+        `ingredient-${index}-stroked`,
+        item.classList.contains("stroked")
+      );
     });
-  })
-  
-  // 2
-  $(".hide-two").click(function(){
-    $(".second-dish").toggle();
-    $(".second-dish").toggleClass('visible');
   });
-  
-  $(".collapse-two").click(function(){
-    $(".second-dish").toggle(0, function(){
-      $(".hide-two").toggleClass("container-switch");
-    });
-  })
-  
-  // 3
-  $(".hide-three").click(function(){
-    $(".third-dish").toggle();
-    $(".third-dish").toggleClass('visible');
-  });
-  
-  $(".collapse-three").click(function(){
-    $(".third-dish").toggle(0, function(){
-      $(".hide-three").toggleClass("container-switch");
-    });
-  })
-  
-  // 4
-  $(".hide-four").click(function(){
-    $(".fourth-dish").toggle();
-    $(".fourth-dish").toggleClass('visible');
-  });
-  
-  $(".collapse-four").click(function(){
-    $(".fourth-dish").toggle(0, function(){
-      $(".hide-four").toggleClass("container-switch");
-    });
-  })
-  
-  // 5
-  $(".hide-five").click(function(){
-    $(".fifth-dish").toggle();
-    $(".fifth-dish").toggleClass('visible');
-  });
-  
-  $(".collapse-five").click(function(){
-    $(".fifth-dish").toggle(0, function(){
-      $(".hide-five").toggleClass("container-switch");
-    });
-  })
-  
-  // 6
-  $(".hide-six").click(function(){
-    $(".sixth-dish").toggle();
-    $(".sixth-dish").toggleClass('visible');
-  });
-  
-  $(".collapse-six").click(function(){
-    $(".sixth-dish").toggle(0, function(){
-      $(".hide-six").toggleClass("container-switch");
-    });
-  })
-  
-  // 7
-  $(".hide-seven").click(function(){
-    $(".seventh-dish").toggle();
-    $(".seventh-dish").toggleClass('visible');
-  });
-  
-  $(".collapse-seven").click(function(){
-    $(".seventh-dish").toggle(0, function(){
-      $(".hide-seven").toggleClass("container-switch");
-    });
-  })
-  
-  // 8
-  $(".hide-eight").click(function(){
-    $(".eight-dish").toggle();
-    $(".eight-dish").toggleClass('visible');
-  });
-  
-  $(".collapse-eight").click(function(){
-    $(".eight-dish").toggle(0, function(){
-      $(".hide-eight").toggleClass("container-switch");
-    });
-  })
-  
-  // 9
-  $(".hide-nine").click(function(){
-    $(".nine-dish").toggle();
-    $(".nine-dish").toggleClass('visible');
-  });
-  
-  $(".collapse-nine").click(function(){
-    $(".nine-dish").toggle(0, function(){
-      $(".hide-nine").toggleClass("container-switch");
-    });
-  })
-  
-  // 10
-  $(".hide-ten").click(function(){
-    $(".tenth-dish").toggle();
-    $(".tenth-dish").toggleClass('visible');
-  });
-  
-  $(".collapse-ten").click(function(){
-    $(".tenth-dish").toggle(0, function(){
-      $(".hide-ten").toggleClass("container-switch");
-    });
-  })
-  
-  // 11
-  $(".hide-eleven").click(function(){
-    $(".eleven-dish").toggle();
-    $(".eleven-dish").toggleClass('visible');
-  });
-  
-  $(".collapse-eleven").click(function(){
-    $(".eleven-dish").toggle(0, function(){
-      $(".hide-eleven").toggleClass("container-switch");
-    });
-  })
-  
-  // 12
-  $(".hide-twelve").click(function(){
-    $(".twelve-dish").toggle();
-    $(".twelve-dish").toggleClass('visible');
-  });
-  
-  $(".collapse-twelve").click(function(){
-    $(".twelve-dish").toggle(0, function(){
-      $(".hide-twelve").toggleClass("container-switch");
-    });
-  })
-  
+
+  // Restore user selections
+  restoreUserSelections();
+});
+
+// Usage
+addToggleListeners(".hide-first", ".first-dish", ".collapse-one");
+addToggleListeners(".hide-second", ".second-dish", ".collapse-two");
+addToggleListeners(".hide-third", ".third-dish", ".collapse-three");
+addToggleListeners(".hide-fourth", ".fourth-dish", ".collapse-four");
+addToggleListeners(".hide-fifth", ".fifth-dish", ".collapse-five");
+addToggleListeners(".hide-sixth", ".sixth-dish", ".collapse-six");
+addToggleListeners(".hide-seventh", ".seventh-dish", ".collapse-seven");
+addToggleListeners(".hide-eight", ".eight-dish", ".collapse-eight");
+addToggleListeners(".hide-nine", ".nine-dish", ".collapse-nine");
+addToggleListeners(".hide-tenth", ".tenth-dish", ".collapse-ten");
+addToggleListeners(".hide-eleven", ".eleven-dish", ".collapse-eleven");
+addToggleListeners(".hide-twelve", ".twelve-dish", ".collapse-twelve");
