@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/partytown": "^1.0.2",
-    "astro": "^1.6.0"
+    "astro": "^1.6.0",
+    "luxon": "^3.3.0"
   }
 }

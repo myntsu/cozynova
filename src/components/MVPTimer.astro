@@ -1,5 +1,8 @@
 <main>
-    <p>This is me testing</p>
+    <p>This is me testing - <b>THERE IS STILL SOME BUGS</b></p>
+
+    <h2>Ingame clock</h2>
+    <div id="current-time-gmt-7"></div>
 
     <h1>MVP Respawn Locations</h1>
     <div>
@@ -14,9 +17,12 @@
         </select>
       </div>
       <div id="cdr-input-container">
-        <label for="cdr-input">Custom CDR (in ms):</label>
-        <input type="text" id="cdr-input" placeholder="Enter custom CDR value">
+        <label for="cdr-input">Custom timer (optional):</label>
+        <input type="text" id="cdr-input-hours" placeholder="Hours" size="4">
+        <input type="text" id="cdr-input-minutes" placeholder="Minutes" size="4">
+        <input type="text" id="cdr-input-seconds" placeholder="Seconds" size="4">
       </div>
+
       <button id="show-mvp-btn">Show Respawn Location</button>
     </div>
     <div id="mvp-container"></div>

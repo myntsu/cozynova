@@ -1,3 +1,5 @@
+import { DateTime } from "luxon";
+
 const mvpSelect = document.getElementById("mvp-select");
 const mvpContainer = document.getElementById("mvp-container");
 const showMvpBtn = document.getElementById("show-mvp-btn");
@@ -51,12 +53,24 @@ function showMvp(mvp, selectedRespawn) {
   const mvpCard = document.createElement("div");
   const respawnContainer = document.createElement("div");
 
+  // Get the custom cdr value from the input field in seconds
+  const customCdrHours =
+    parseInt(document.getElementById("cdr-input-hours").value) || 0;
+  const customCdrMinutes =
+    parseInt(document.getElementById("cdr-input-minutes").value) || 0;
+  const customCdrSeconds =
+    parseInt(document.getElementById("cdr-input-seconds").value) || 0;
+
   // Get the custom cdr value from the input field
-  const customCdr = parseInt(document.getElementById("cdr-input").value);
+  const customCdr =
+    customCdrHours * 3600000 +
+    customCdrMinutes * 60000 +
+    customCdrSeconds * 1000;
 
   // Determine which cdr value to use
-  const respawn =
-    customCdr || mvp.respawn.find((r) => r.map === selectedRespawn)?.cdr;
+  const respawnInfo = mvp.respawn.find((r) => r.map === selectedRespawn);
+  const respawn = customCdr || respawnInfo?.cdr;
+  const maxDelay = respawnInfo?.max_delay;
   if (!respawn) {
     const errorText = document.createElement("p");
     errorText.textContent = "MVP not found";
@@ -83,7 +97,7 @@ function showMvp(mvp, selectedRespawn) {
     respawnContainer.appendChild(countdownLabel);
     respawnContainer.appendChild(countdownValue);
 
-    startTimer(respawn, countdownValue);
+    startTimer(respawn, countdownValue, maxDelay, countdownLabel);
   }
 
   mvpCard.appendChild(document.createElement("h2")).textContent = mvp.name;
@@ -99,10 +113,6 @@ function showMvp(mvp, selectedRespawn) {
   const removeButton = document.createElement("button");
   removeButton.textContent = "Remove";
   removeButton.addEventListener("click", () => {
-    const optionToRemove = mvpSelect.querySelector(`option[value="${mvp.id}"]`);
-    if (optionToRemove) {
-      mvpSelect.removeChild(optionToRemove);
-    }
     mvpContainer.removeChild(mvpCard);
   });
   mvpCard.appendChild(removeButton);
@@ -119,16 +129,34 @@ function msToHours(ms) {
     .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 }
 
-function startTimer(ms, countdownCell) {
+function startTimer(ms, countdownCell, maxDelay, countdownLabel) {
   const interval = setInterval(() => {
     ms -= 1000;
     if (ms < 0) {
       clearInterval(interval);
       const audio = new Audio("/assets/sound/omori-heal-sound.mp3"); // Replace with actual sound file path
       audio.play();
-      countdownCell.textContent = "Done!";
+      countdownCell.textContent = "0% chance";
+      countdownLabel.textContent = "Respawning with a:";
+      startMaxDelayTimer(maxDelay, countdownCell);
     } else {
       countdownCell.textContent = msToHours(ms);
+    }
+  }, 1000);
+}
+
+function startMaxDelayTimer(ms, countdownCell) {
+  const maxDelayMs = ms;
+  let elapsedMs = 0;
+  const interval = setInterval(() => {
+    ms -= 1000;
+    elapsedMs += 1000;
+    if (ms < 0) {
+      clearInterval(interval);
+      countdownCell.textContent = `100% chance (${msToHours(maxDelayMs)})`;
+    } else {
+      const percentage = Math.round(((maxDelayMs - ms) / maxDelayMs) * 100);
+      countdownCell.textContent = `${percentage}% chance (${msToHours(elapsedMs)})`;
     }
   }, 1000);
 }
@@ -151,30 +179,28 @@ function showToast(text) {
   toast.innerText = `${text}`;
   toast.style.position = "fixed";
   toast.style.left = "50%";
+  toast.style.bottom = "-50px";
   toast.style.transform = "translateX(-50%)";
-  toast.style.padding = "10px 15px";
+  toast.style.padding = ".75rem 1rem";
   toast.style.backgroundColor = "hsl(var(--important))";
   toast.style.color = "hsl(var(--white))";
-  toast.style.borderRadius = "5px";
+  toast.style.borderRadius = ".25rem";
   toast.style.zIndex = "1000";
   toast.style.textAlign = "center";
   toast.classList.add("shadow-container");
   document.body.appendChild(toast);
 
   // Animate toast message
-  let pos = -50;
-  const interval = setInterval(frame, 1);
-  function frame() {
-    if (pos === 30) {
-      clearInterval(interval);
-      setTimeout(() => {
-        toast.remove();
-      }, 2000);
-    } else {
-      pos++;
-      toast.style.bottom = pos + "px";
-    }
-  }
+  toast.animate([{ bottom: "-50px" }, { bottom: "30px" }], {
+    duration: 300,
+    easing: "ease-out",
+    fill: "forwards",
+  });
+
+  // Remove the toast after 2 seconds
+  setTimeout(() => {
+    toast.remove();
+  }, 2000);
 }
 
 showMvpBtn.addEventListener("click", async () => {
@@ -188,3 +214,18 @@ showMvpBtn.addEventListener("click", async () => {
     showToast("Please select an MVP!"); // show the toast
   }
 });
+
+
+function getCurrentTimeInGMT7() {
+  const now = DateTime.utc();
+  const gmt7Time = now.set({ hour: now.hour - 7 });
+  return gmt7Time.toFormat("HH:mm:ss");
+}
+
+function updateClock() {
+  const currentTime = getCurrentTimeInGMT7();
+  document.getElementById("current-time-gmt-7").textContent = currentTime;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
