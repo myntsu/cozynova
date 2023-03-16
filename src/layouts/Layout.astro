@@ -5,7 +5,7 @@ export interface Props {
   ogTitle?: string;
   ogDescription?: string;
   ogUrl: string;
-  canonical: string;
+  canonicalURL: string;
   favicon?: string;
   faviconLight?: string;
 }
@@ -18,9 +18,8 @@ const {
   ogDescription = "Cozy Nova content page. No additional fetched information.",
 } = Astro.props as Props;
 const { ogUrl } = Astro.props as Props;
-const { canonical } = Astro.props as Props;
-const { favicon = "/favicon/sword.svg" } = Astro.props as Props;
-const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
+const { canonicalURL } = Astro.props as Props;
+const { favicon = "/favicon/sword.svg", faviconLight = "/img/favicon/sword_black.svg" } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -87,7 +86,7 @@ const { faviconLight = "/favicon/sword_black.svg" } = Astro.props as Props;
 
     <link
       rel="canonical"
-      href={canonical}
+      href={canonicalURL}
     />
 
     <!-- Bootstrap CSS -->

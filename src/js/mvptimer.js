@@ -5,6 +5,10 @@ const mvpContainer = document.getElementById("mvp-container");
 const showMvpBtn = document.getElementById("show-mvp-btn");
 const respawnSelect = document.getElementById("respawn-select");
 
+const deathTimeHours = document.getElementById("death-time-hours");
+const deathTimeMinutes = document.getElementById("death-time-minutes");
+const deathTimeSeconds = document.getElementById("death-time-seconds");
+
 async function getMvps() {
   const response = await fetch("../mvplist.json");
   const mvps = await response.json();
@@ -19,6 +23,7 @@ function createOption(mvp, selectElement) {
   selectElement.appendChild(option);
 }
 
+// Data fetch from MVP list JSON file
 fetch("../mvplist.json")
   .then((response) => response.json())
   .then((data) => {
@@ -49,7 +54,7 @@ fetch("../mvplist.json")
     });
   });
 
-function showMvp(mvp, selectedRespawn) {
+function showMvp(mvp, selectedRespawn, deathTime) {
   const mvpCard = document.createElement("div");
   const respawnContainer = document.createElement("div");
 
@@ -76,34 +81,37 @@ function showMvp(mvp, selectedRespawn) {
     errorText.textContent = "MVP not found";
     mvpCard.appendChild(errorText);
   } else {
-    const mapLabel = document.createElement("div");
     const mapValue = document.createElement("div");
+    const mapImage = document.createElement("img");
     const cdrLabel = document.createElement("div");
     const cdrValue = document.createElement("div");
     const countdownLabel = document.createElement("div");
     const countdownValue = document.createElement("div");
 
-    mapLabel.textContent = "Map:";
     mapValue.textContent = selectedRespawn;
+    mapImage.setAttribute("src", `../assets/img/maps/${selectedRespawn}.png`);
+    mapImage.style.width = "150px";
+    mapImage.style.height = "150px";
     cdrLabel.textContent = "Cooldown (minutes):";
     cdrValue.textContent = `${Math.floor(respawn / (60 * 1000))}`;
     countdownLabel.textContent = "Respawn in:";
     countdownValue.classList.add("countdown-timer");
 
-    respawnContainer.appendChild(mapLabel);
     respawnContainer.appendChild(mapValue);
+    respawnContainer.appendChild(mapValue);
+    respawnContainer.appendChild(mapImage);
     respawnContainer.appendChild(cdrLabel);
     respawnContainer.appendChild(cdrValue);
     respawnContainer.appendChild(countdownLabel);
     respawnContainer.appendChild(countdownValue);
 
-    startTimer(respawn, countdownValue, maxDelay, countdownLabel);
+    startTimer(respawn, countdownValue, maxDelay, countdownLabel, deathTime);
   }
 
   mvpCard.appendChild(document.createElement("h2")).textContent = mvp.name;
-  mvpCard
-    .appendChild(document.createElement("img"))
-    .setAttribute("src", mvp.image);
+  const mvpImage = document.createElement("img");
+  mvpImage.setAttribute("src", `../assets/img/mobs/${mvp.id}.gif`);
+  mvpCard.appendChild(mvpImage);
   mvpCard.appendChild(
     document.createElement("p")
   ).textContent = `ID: ${mvp.id}`;
@@ -120,6 +128,17 @@ function showMvp(mvp, selectedRespawn) {
   mvpContainer.appendChild(mvpCard);
 }
 
+// Verification to see if cards exist
+function cardExists(id, selectedRespawn) {
+  const mvpCards = Array.from(mvpContainer.children);
+  return mvpCards.some((card) => {
+    const mvpId = card.querySelector("p").textContent.slice(4);
+    const mapName = card.querySelectorAll("div")[1].textContent;
+    return mvpId === id && mapName === selectedRespawn;
+  });
+}
+
+// MS to Hours converting
 function msToHours(ms) {
   const hours = Math.floor(ms / 3600000);
   const minutes = Math.floor((ms % 3600000) / 60000);
@@ -129,7 +148,30 @@ function msToHours(ms) {
     .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 }
 
-function startTimer(ms, countdownCell, maxDelay, countdownLabel) {
+// Timer start
+function startTimer(ms, countdownCell, maxDelay, countdownLabel, deathTime) {
+  const currentTime = DateTime.utc().minus({ hours: 7 });
+
+  const deathTimeInGMT7 = currentTime.startOf("day").plus({
+    hours: deathTime.hours,
+    minutes: deathTime.minutes,
+    seconds: deathTime.seconds,
+  });
+
+  const timeDifferenceMs = currentTime.diff(deathTimeInGMT7, "milliseconds").milliseconds;
+
+  if (deathTime.hours === 0 && deathTime.minutes === 0 && deathTime.seconds === 0) {
+    startCDRTimer(ms, countdownCell, maxDelay, countdownLabel);
+  } else if (timeDifferenceMs < ms) {
+    startCDRTimer(ms - timeDifferenceMs, countdownCell, maxDelay, countdownLabel);
+  } else if (timeDifferenceMs >= ms && timeDifferenceMs < ms + maxDelay) {
+    startMaxDelayTimer(ms + maxDelay - timeDifferenceMs, countdownCell);
+  } else {
+    showToast("The MVP is alive!");
+  }
+}
+
+function startCDRTimer(ms, countdownCell, maxDelay, countdownLabel) {
   const interval = setInterval(() => {
     ms -= 1000;
     if (ms < 0) {
@@ -161,33 +203,21 @@ function startMaxDelayTimer(ms, countdownCell) {
   }, 1000);
 }
 
-getMvps().then((mvps) => {
-  mvps.forEach((mvp) => {
-    createOption(mvp, mvpSelect);
-  });
-});
-
-function createToast(message) {
-  const toast = document.createElement("div");
-  toast.classList.add("toast");
-  toast.textContent = message;
-  return toast;
-}
-
+// Toast function
+let toastActive = false;
 function showToast(text) {
+  if (toastActive) return;
+
+  toastActive = true;
+
+  // Create toast element and set the text
   const toast = document.createElement("div");
   toast.innerText = `${text}`;
-  toast.style.position = "fixed";
-  toast.style.left = "50%";
-  toast.style.bottom = "-50px";
-  toast.style.transform = "translateX(-50%)";
-  toast.style.padding = ".75rem 1rem";
-  toast.style.backgroundColor = "hsl(var(--important))";
-  toast.style.color = "hsl(var(--white))";
-  toast.style.borderRadius = ".25rem";
-  toast.style.zIndex = "1000";
-  toast.style.textAlign = "center";
-  toast.classList.add("shadow-container");
+
+  // Add CSS classes
+  toast.classList.add("quick-toast", "shadow-container");
+
+  // Append toast to the body
   document.body.appendChild(toast);
 
   // Animate toast message
@@ -200,22 +230,11 @@ function showToast(text) {
   // Remove the toast after 2 seconds
   setTimeout(() => {
     toast.remove();
+    toastActive = false;
   }, 2000);
 }
 
-showMvpBtn.addEventListener("click", async () => {
-  const selectedMvpId = parseInt(mvpSelect.value, 10);
-  const selectedRespawn = respawnSelect.value;
-  const mvps = await getMvps();
-  const mvp = mvps.find((m) => m.id === selectedMvpId);
-  if (mvp) {
-    showMvp(mvp, selectedRespawn);
-  } else {
-    showToast("Please select an MVP!"); // show the toast
-  }
-});
-
-
+// Clock
 function getCurrentTimeInGMT7() {
   const now = DateTime.utc();
   const gmt7Time = now.set({ hour: now.hour - 7 });
@@ -229,3 +248,115 @@ function updateClock() {
 
 updateClock();
 setInterval(updateClock, 1000);
+
+// MVP search
+const mvpSearch = document.getElementById("mvp-search");
+
+mvpSearch.addEventListener("input", async () => {
+  const searchText = mvpSearch.value.toLowerCase();
+  const mvps = await getMvps();
+  const filteredMvps = mvps.filter((mvp) =>
+    mvp.name.toLowerCase().includes(searchText)
+  );
+
+  // Clear the current options in the select element
+  while (mvpSelect.firstChild) {
+    mvpSelect.removeChild(mvpSelect.firstChild);
+  }
+
+  // Create an option for each filtered MVP
+  filteredMvps.forEach((mvp) => {
+    createOption(mvp, mvpSelect);
+  });
+
+  // Trigger a change event to refresh the respawn locations
+  mvpSelect.dispatchEvent(new Event("change"));
+});
+
+// Death timer
+function formatTime(hours, minutes, seconds) {
+  return `${hours.toString().padStart(2, "0")}:${minutes
+    .toString()
+    .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+}
+
+function convertToGMT7(hours, minutes, seconds) {
+  const now = DateTime.utc();
+  const gmt7Time = now.set({ hour: hours - 7, minute: minutes, second: seconds });
+  return {
+    hours: gmt7Time.hour,
+    minutes: gmt7Time.minute,
+    seconds: gmt7Time.second,
+  };
+}
+
+function handleDeathTimeChange() {
+  const hours = parseInt(deathTimeHours.value) || 0;
+  const minutes = parseInt(deathTimeMinutes.value) || 0;
+  const seconds = parseInt(deathTimeSeconds.value) || 0;
+
+  const gmt7Time = convertToGMT7(hours, minutes, seconds);
+  const totalSeconds = gmt7Time.hours * 3600 + gmt7Time.minutes * 60 + gmt7Time.seconds;
+
+  const formattedTime = formatTime(gmt7Time.hours, gmt7Time.minutes, gmt7Time.seconds);
+  console.log(`Total seconds: ${totalSeconds}, Formatted time: ${formattedTime}`);
+}
+
+deathTimeHours.addEventListener("change", handleDeathTimeChange);
+deathTimeMinutes.addEventListener("change", handleDeathTimeChange);
+deathTimeSeconds.addEventListener("change", handleDeathTimeChange);
+
+// Validation for death timer
+function validateInput(input, min, max) {
+  input.addEventListener("input", () => {
+    const value = parseInt(input.value, 10);
+    if (value < min) {
+      input.value = min;
+    } else if (value > max) {
+      input.value = max;
+    }
+  });
+}
+
+validateInput(deathTimeHours, 0, 23);
+validateInput(deathTimeMinutes, 0, 59);
+validateInput(deathTimeSeconds, 0, 59);
+
+// Cards generator on click
+showMvpBtn.addEventListener("click", async () => {
+  const selectedMvpId = parseInt(mvpSelect.value, 10);
+  const selectedRespawn = respawnSelect.value;
+  const mvps = await getMvps();
+  const deathTime = {
+    hours: parseInt(deathTimeHours.value) || 0,
+    minutes: parseInt(deathTimeMinutes.value) || 0,
+    seconds: parseInt(deathTimeSeconds.value) || 0,
+  };
+  const mvp = mvps.find((m) => m.id === selectedMvpId);
+
+  const respawnInfo = mvp.respawn.find((r) => r.map === selectedRespawn);
+  const cdr = respawnInfo?.cdr;
+  const maxDelay = respawnInfo?.max_delay;
+  const totalDelay = cdr + maxDelay;
+
+  const currentTime = DateTime.utc().minus({ hours: 7 });
+  const deathTimeInGMT7 = currentTime.startOf("day").plus({
+    hours: deathTime.hours,
+    minutes: deathTime.minutes,
+    seconds: deathTime.seconds,
+  });
+
+  const timeDifferenceMs = currentTime.diff(deathTimeInGMT7, "milliseconds").milliseconds;
+
+  if (deathTimeInGMT7 > currentTime) {
+    showToast("The MVP is alive!");
+  } else if (timeDifferenceMs > totalDelay) {
+    showToast("The MVP is alive!");
+  } else if (cardExists(selectedMvpId.toString(), selectedRespawn)) {
+    showToast("This MVP already exists!");
+  } else if (mvp) {
+    showMvp(mvp, selectedRespawn, deathTime);
+  } else {
+    showToast("Please select an MVP!");
+  }
+});
