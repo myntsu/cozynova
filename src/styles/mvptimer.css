@@ -23,7 +23,7 @@ body {
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
 
-    color: hsl(var(--white));
+    color: hsl(var(--text));
     background-color: hsl(var(--main-dark));
 
     position: relative;
@@ -39,11 +39,18 @@ body::after {
   opacity: 0.91;
 }
 
+@media only screen and (max-width: 870px) {
+  body {
+    padding: 0;
+  }
+}
+
 main {
     width: 1000px;
     max-width: 100%;
 
     margin: 0 auto;
+    margin-block-end: 5rem;
     background-color: hsl(var(--main-light-1));
     border-radius: .5rem;
 
@@ -153,13 +160,15 @@ main {
   url('../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp');
   background-position: 50% 35%;
   background-size: cover;
+  
+  overflow: hidden;
 }
 
 .top-information::after {
   content: '';
   position: absolute;
   z-index: -1;
-  inset: 0;
+  inset: -1px;
   background-color: hsl(var(--main-dark));
   opacity: 0.75;
 }
@@ -177,10 +186,11 @@ main {
   text-align: center;
   
   color: hsl(var(--header));
+  filter: contrast(200%) brightness(125%);
 }
 
 .clock span {
-  color: hsl(var(--text));
+  color: hsl(var(--white));
   font-size: .75rem;
   text-transform: uppercase;
   font-weight: 900;
@@ -220,12 +230,87 @@ h1 .timer > span span {
   padding: 1rem;
 }
 
+#sort-container {
+  display: flex;
+
+  margin-block-start: 1rem;
+}
+
+#sort-container h2 {
+  color: hsl(var(--header));
+  font-size: 1.25rem;
+  align-self: center;
+}
+
+#sort-container h3 {
+  color: hsl(var(--text));
+  font-size: 1rem;
+  align-self: flex-end;
+  margin-inline-end: 1rem;
+}
+
+#sort-container >:nth-child(2) {
+  margin-inline-start: auto;
+}
+
+#sort-container button {
+  text-decoration: none;
+    border: none;
+
+    color: hsl(var(--white));
+    background-color: hsl(var(--main-dark));
+
+    padding: 0.25em 1em;
+}
+
+#sort-container button:is(:hover, :focus-visible) {
+  background-color: hsl(var(--important));
+}
+
+#sort-container button:is(:active) {
+  background-color: hsl(var(--important), 80%);
+}
+
+.active {
+  background-color: hsl(var(--important)) !important;
+}
 
 #mvp-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  justify-content: space-around;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
+
+  min-height: 500px;
+
+  padding: 1rem;
+  border: 1px solid hsl(var(--text), 10%);
+  border-radius: .25rem 0 .25rem .25rem;
+}
+
+@media only screen and (max-width: 570px) {
+  #sort-container {
+    flex-wrap: wrap;
+  }
+
+  #sort-container >:nth-child(1) {
+    width: 50%;
+  }
+
+  #sort-container >:nth-child(2) {
+    width: 50%;
+    text-align: end;
+    margin: 0;
+  }
+
+  #sort-container button {
+    width: 50%;
+      outline: 0.1ex solid hsl(var(--white), 5%);
+      outline-offset: -0.1ex;
+  }
+
+  #mvp-container {
+    border-radius: 0 0 .25rem .25rem;
+  }
 }
 
 .mvp-card {
@@ -236,7 +321,7 @@ h1 .timer > span span {
   text-align: center;
   padding: 1rem;
 
-  max-width: 300px;
+  max-width: 250px;
 
   background-color: hsl(var(--main-light-2));
   border-radius: .5rem;
@@ -248,10 +333,8 @@ h1 .timer > span span {
 
 .mvp-card .mvp-header {
   display: flex;
+  align-items: center;
   width: 100%;
-
-  margin-block-end: .25rem;
-  overflow: hidden;
 }
 
 .mvp-card .mvp-header h2 {
@@ -259,6 +342,11 @@ h1 .timer > span span {
   font-weight: 900;
   font-size: 1.5rem;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  margin: 0;
+  max-width: 8ch;
 }
 
 .mvp-card .mvp-header >:nth-child(2) {
@@ -278,7 +366,7 @@ h1 .timer > span span {
   max-width: 100%;
   max-height: 150px;
   aspect-ratio: 1/1;
-  object-fit: none;
+  object-fit: scale-down;
 }
 
 .mvp-card .mvp-map {
@@ -292,7 +380,6 @@ h1 .timer > span span {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: .5rem;
 
   margin-block-start: .5rem;
 }
@@ -301,6 +388,7 @@ h1 .timer > span span {
   order: 2;
   flex: 1 0 50%;
   color: hsl(var(--text), 70%);
+  white-space: nowrap;
 }
 
 .mvp-card .mvp-respawn >:nth-child(2) {
@@ -310,7 +398,7 @@ h1 .timer > span span {
 }
 
 .mvp-card .respawn-timer {
-  flex: 1 0 0;
+  flex: 1 0 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -342,7 +430,7 @@ h1 .timer > span span {
   text-align: center;
 }
 
-.restart-button, .remove-button {
+.restart-button, .remove-button, #show-mvp-btn {
   align-self: flex-start;
 
   display: flex;
@@ -374,12 +462,14 @@ h1 .timer > span span {
 }
 
 .restart-button:is(:hover, :focus-visible),
-.remove-button:is(:hover, :focus-visible) {
+.remove-button:is(:hover, :focus-visible),
+#show-mvp-btn:is(:hover, :focus-visible) {
   background-color: hsl(var(--important), 80%);
 }
 
 .restart-button:active,
-.remove-button:active {
+.remove-button:active,
+#show-mvp-btn:active {
   translate: 2px 2px;
   box-shadow: none;
   background-color: hsl(var(--important));

@@ -25,7 +25,7 @@
         <h1>
           <img src="../assets/img/icons/mvp.webp" alt="MVP Timer Logo"> 
           <span class="timer">Timer
-            <span>Version 0.6<span>a</span></span>
+            <span>Version 0.7<span>a</span></span>
           </span>
         </h1>
 
@@ -62,9 +62,15 @@
           <label for="death-time-seconds">Seconds:</label>
           <input type="number" id="death-time-seconds" name="death-time-seconds" min="0" max="59" step="1">
         </div>
-        <button id="show-mvp-btn">Respawn timer</button>
+        <button id="show-mvp-btn">Add</button>
       </div>
 
+      <div id="sort-container">
+        <h2>Respawn list</h2>
+        <h3>Sort by</h3>
+        <button id="sort-by-name">Name</button>
+        <button id="sort-by-respawn">Respawn</button>
+      </div>
       <div id="mvp-container"></div>
     </div>
 </main>

@@ -8,6 +8,9 @@ const deathTimeHours = document.getElementById("death-time-hours");
 const deathTimeMinutes = document.getElementById("death-time-minutes");
 const deathTimeSeconds = document.getElementById("death-time-seconds");
 
+const sortByNameBtn = document.getElementById("sort-by-name");
+const sortByRespawnBtn = document.getElementById("sort-by-respawn");
+
 const mvpSelect = document.getElementById("mvp-select");
 async function getMvps() {
   const response = await fetch("../mvplist.json");
@@ -19,7 +22,7 @@ async function getMvps() {
 function createOption(mvp, selectElement) {
   const option = document.createElement("option");
   option.value = mvp.id;
-  option.textContent = `${mvp.id} - ${mvp.name}`;
+  option.textContent = `${mvp.name} [${mvp.id}]`;
   option.setAttribute("data-respawn", JSON.stringify(mvp.respawn));
   selectElement.appendChild(option);
 }
@@ -59,6 +62,8 @@ fetch("../mvplist.json")
 function showMvp(mvp, selectedRespawn, deathTime) {
   const mvpCard = document.createElement("div");
   mvpCard.classList.add("mvp-card");
+  mvpCard.setAttribute("data-mvp-id", mvp.id);
+  mvpCard.setAttribute("data-map", selectedRespawn);
 
   const mvpHeader = document.createElement("div");
   mvpHeader.classList.add("mvp-header");
@@ -75,6 +80,7 @@ function showMvp(mvp, selectedRespawn, deathTime) {
   // Header
   const mvpName = document.createElement("h2");
   mvpName.textContent = mvp.name;
+  mvpName.title = `${mvp.name}`;
   mvpHeader.appendChild(mvpName);
 
   const restartButton = document.createElement("button");
@@ -151,13 +157,13 @@ function showMvp(mvp, selectedRespawn, deathTime) {
   mvpContainer.appendChild(mvpCard);
 }
 
-// Verification to see if cards exist
+// Verification to see if cards exists
 function cardExists(id, selectedRespawn) {
   const mvpCards = Array.from(mvpContainer.children);
   return mvpCards.some((card) => {
-    const mvpId = card.querySelector("p").textContent.slice(4);
-    const mapName = card.querySelectorAll("div")[1].textContent;
-    return mvpId === id && mapName === selectedRespawn;
+    const mvpId = card.getAttribute("data-mvp-id");
+    const mapName = card.getAttribute("data-map");
+    return mvpId === id.toString() && mapName === selectedRespawn;
   });
 }
 
@@ -212,7 +218,7 @@ function startCDRTimer(ms, countdownCell, maxDelay, countdownLabel) {
     ms -= 1000;
     if (ms < 0) {
       clearInterval(interval);
-      const audio = new Audio("/assets/sound/omori-heal-sound.mp3"); // Replace with actual sound file path
+      const audio = new Audio("/assets/sound/omori-heal-sound.mp3");
       audio.play();
       countdownCell.textContent = "0% chance";
       countdownLabel.textContent = "Chance to respawn:";
@@ -350,6 +356,13 @@ function validateInput(input, min, max) {
 showMvpBtn.addEventListener("click", async () => {
   const selectedMvpId = parseInt(mvpSelect.value, 10);
   const selectedRespawn = respawnSelect.value;
+
+  // Check if selectedMvpId is NaN and show the toast message
+  if (isNaN(selectedMvpId)) {
+    showToast("Please select an MVP!");
+    return;
+  }
+
   const mvps = await getMvps();
   const deathTime = {
     hours: parseInt(deathTimeHours.value) || 0,
@@ -372,17 +385,56 @@ showMvpBtn.addEventListener("click", async () => {
 
   const timeDifferenceMs = currentTime.diff(deathTimeInGMT7, "milliseconds").milliseconds;
 
-  if (deathTimeInGMT7 > currentTime) {
-    showToast("The MVP is alive!");
-  } else if (timeDifferenceMs > totalDelay) {
+  if ((deathTimeInGMT7 > currentTime) || (timeDifferenceMs > totalDelay)) {
     showToast("The MVP is alive!");
   } else if (cardExists(selectedMvpId.toString(), selectedRespawn)) {
     showToast("This MVP already exists!");
-  } else if (mvp) {
-    showMvp(mvp, selectedRespawn, deathTime);
   } else {
-    showToast("Please select an MVP!");
+    showMvp(mvp, selectedRespawn, deathTime);
   }
+});
+
+// Card sorting
+function sortCards(type) {
+  const mvpCards = Array.from(mvpContainer.children);
+
+  const sortedCards = mvpCards.sort((a, b) => {
+    if (type === "name") {
+      const aName = a.querySelector(".mvp-header h2").textContent;
+      const bName = b.querySelector(".mvp-header h2").textContent;
+      return aName.localeCompare(bName);
+    } else if (type === "respawn") {
+      const aRespawn = getTimeRemaining(a.querySelector(".countdown-timer"));
+      const bRespawn = getTimeRemaining(b.querySelector(".countdown-timer"));
+      return aRespawn - bRespawn;
+    }
+  });
+
+  mvpContainer.innerHTML = "";
+  sortedCards.forEach((card) => {
+    mvpContainer.appendChild(card);
+  });
+}
+
+function getTimeRemaining(timerElement) {
+  const timeText = timerElement.textContent;
+  const [hours, minutes, seconds] = timeText.split(":").map(Number);
+  return hours * 3600 + minutes * 60 + seconds;
+}
+
+// Event listeners
+// For "Sort by Name" button
+sortByNameBtn.addEventListener("click", () => {
+  sortCards("name");
+  sortByNameBtn.classList.add("active");
+  sortByRespawnBtn.classList.remove("active");
+});
+
+// For "Sort by Respawn Time" button
+sortByRespawnBtn.addEventListener("click", () => {
+  sortCards("respawn");
+  sortByRespawnBtn.classList.add("active");
+  sortByNameBtn.classList.remove("active");
 });
 
 deathTimeHours.addEventListener("change", handleDeathTimeChange);
@@ -394,3 +446,12 @@ validateInput(deathTimeSeconds, 0, 59);
 
 updateClock();
 setInterval(updateClock, 1000);
+
+let showAlert = true;
+
+window.addEventListener('beforeunload', (e) => {
+    if (showAlert) {
+        e.preventDefault();
+        e.returnValue = 'Are you sure you want to do that?';
+    }
+});
