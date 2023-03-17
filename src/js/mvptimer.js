@@ -1,6 +1,5 @@
 import { DateTime } from "luxon";
 
-const mvpSelect = document.getElementById("mvp-select");
 const mvpContainer = document.getElementById("mvp-container");
 const showMvpBtn = document.getElementById("show-mvp-btn");
 const respawnSelect = document.getElementById("respawn-select");
@@ -9,12 +8,14 @@ const deathTimeHours = document.getElementById("death-time-hours");
 const deathTimeMinutes = document.getElementById("death-time-minutes");
 const deathTimeSeconds = document.getElementById("death-time-seconds");
 
+const mvpSelect = document.getElementById("mvp-select");
 async function getMvps() {
   const response = await fetch("../mvplist.json");
   const mvps = await response.json();
   return mvps;
 }
 
+// Populating options
 function createOption(mvp, selectElement) {
   const option = document.createElement("option");
   option.value = mvp.id;
@@ -54,77 +55,99 @@ fetch("../mvplist.json")
     });
   });
 
+// Populating card
 function showMvp(mvp, selectedRespawn, deathTime) {
   const mvpCard = document.createElement("div");
-  const respawnContainer = document.createElement("div");
+  mvpCard.classList.add("mvp-card");
 
-  // Get the custom cdr value from the input field in seconds
-  const customCdrHours =
-    parseInt(document.getElementById("cdr-input-hours").value) || 0;
-  const customCdrMinutes =
-    parseInt(document.getElementById("cdr-input-minutes").value) || 0;
-  const customCdrSeconds =
-    parseInt(document.getElementById("cdr-input-seconds").value) || 0;
+  const mvpHeader = document.createElement("div");
+  mvpHeader.classList.add("mvp-header");
 
-  // Get the custom cdr value from the input field
-  const customCdr =
-    customCdrHours * 3600000 +
-    customCdrMinutes * 60000 +
-    customCdrSeconds * 1000;
+  const mvpInfo = document.createElement("div");
+  mvpInfo.classList.add("mvp-info");
 
-  // Determine which cdr value to use
+  const mvpMap = document.createElement("div");
+  mvpMap.classList.add("mvp-map");
+
+  const mvpRespawn = document.createElement("div");
+  mvpRespawn.classList.add("mvp-respawn");
+
+  // Header
+  const mvpName = document.createElement("h2");
+  mvpName.textContent = mvp.name;
+  mvpHeader.appendChild(mvpName);
+
+  const restartButton = document.createElement("button");
+  restartButton.classList.add("restart-button");
+  mvpHeader.appendChild(restartButton);
+
+  const removeButton = document.createElement("button");
+  removeButton.classList.add("remove-button");
+  mvpHeader.appendChild(removeButton);
+
+  // Info
+  const mvpImage = document.createElement("img");
+  mvpImage.setAttribute("src", `../assets/img/mobs/${mvp.id}.gif`);
+  mvpInfo.appendChild(mvpImage);
+
+  const mvpId = document.createElement("p");
+  mvpId.textContent = `ID: ${mvp.id}`;
+  mvpInfo.appendChild(mvpId);
+
+  // Map
+  const mapImage = document.createElement("img");
+  mapImage.setAttribute("src", `../assets/img/maps/${selectedRespawn}.png`);
+  mapImage.style.width = "150px";
+  mapImage.style.height = "150px";
+  mvpMap.appendChild(mapImage);
+
+  const mapValue = document.createElement("div");
+  mapValue.textContent = selectedRespawn;
+  mvpMap.appendChild(mapValue);
+
+  // Respawn
   const respawnInfo = mvp.respawn.find((r) => r.map === selectedRespawn);
-  const respawn = customCdr || respawnInfo?.cdr;
+  const respawn = respawnInfo?.cdr;
   const maxDelay = respawnInfo?.max_delay;
   if (!respawn) {
     const errorText = document.createElement("p");
     errorText.textContent = "MVP not found";
-    mvpCard.appendChild(errorText);
+    mvpRespawn.appendChild(errorText);
   } else {
-    const mapValue = document.createElement("div");
-    const mapImage = document.createElement("img");
-    const cdrLabel = document.createElement("div");
-    const cdrValue = document.createElement("div");
-    const countdownLabel = document.createElement("div");
-    const countdownValue = document.createElement("div");
+    const cdrLabel = document.createElement("i");
+    cdrLabel.textContent = `Cooldown: ${Math.floor(respawn / (60 * 1000))}min.`;
+    mvpRespawn.appendChild(cdrLabel);
 
-    mapValue.textContent = selectedRespawn;
-    mapImage.setAttribute("src", `../assets/img/maps/${selectedRespawn}.png`);
-    mapImage.style.width = "150px";
-    mapImage.style.height = "150px";
-    cdrLabel.textContent = "Cooldown (minutes):";
-    cdrValue.textContent = `${Math.floor(respawn / (60 * 1000))}`;
-    countdownLabel.textContent = "Respawn in:";
+    const respawnTimer = document.createElement("div");
+    respawnTimer.classList.add("respawn-timer");
+    
+    const countdownLabel = document.createElement("span");
+    countdownLabel.textContent = "Respawn:";
+    respawnTimer.appendChild(countdownLabel);
+    
+    const countdownValue = document.createElement("span");
     countdownValue.classList.add("countdown-timer");
+    respawnTimer.appendChild(countdownValue);
+    
+    mvpRespawn.appendChild(respawnTimer);
 
-    respawnContainer.appendChild(mapValue);
-    respawnContainer.appendChild(mapValue);
-    respawnContainer.appendChild(mapImage);
-    respawnContainer.appendChild(cdrLabel);
-    respawnContainer.appendChild(cdrValue);
-    respawnContainer.appendChild(countdownLabel);
-    respawnContainer.appendChild(countdownValue);
+    countdownValue.timerInterval = startTimer(respawn, countdownValue, maxDelay, countdownLabel, deathTime);
 
-    startTimer(respawn, countdownValue, maxDelay, countdownLabel, deathTime);
+    restartButton.addEventListener("click", () => {
+      clearInterval(countdownValue.timerInterval);
+      countdownValue.timerInterval = startTimer(respawn, countdownValue, maxDelay, countdownLabel, { hours: 0, minutes: 0, seconds: 0 });
+    });
+
+    removeButton.addEventListener("click", () => {
+      clearInterval(countdownValue.timerInterval);
+      mvpContainer.removeChild(mvpCard);
+    });
   }
-
-  mvpCard.appendChild(document.createElement("h2")).textContent = mvp.name;
-  const mvpImage = document.createElement("img");
-  mvpImage.setAttribute("src", `../assets/img/mobs/${mvp.id}.gif`);
-  mvpCard.appendChild(mvpImage);
-  mvpCard.appendChild(
-    document.createElement("p")
-  ).textContent = `ID: ${mvp.id}`;
-  mvpCard.appendChild(document.createElement("h3")).textContent = "Respawn";
-  mvpCard.appendChild(respawnContainer);
-
-  const removeButton = document.createElement("button");
-  removeButton.textContent = "Remove";
-  removeButton.addEventListener("click", () => {
-    mvpContainer.removeChild(mvpCard);
-  });
-  mvpCard.appendChild(removeButton);
-
+  mvpCard.appendChild(mvpHeader);
+  mvpCard.appendChild(mvpInfo);
+  mvpCard.appendChild(mvpMap);
+  mvpCard.appendChild(mvpRespawn);
+  
   mvpContainer.appendChild(mvpCard);
 }
 
@@ -149,7 +172,16 @@ function msToHours(ms) {
 }
 
 // Timer start
+let activeTimer = null;
+let activeMaxDelayTimer = null;
 function startTimer(ms, countdownCell, maxDelay, countdownLabel, deathTime) {
+  if (activeTimer) {
+    clearTimeout(activeTimer);
+  }
+  if (activeMaxDelayTimer) {
+    clearTimeout(activeMaxDelayTimer);
+  }
+
   const currentTime = DateTime.utc().minus({ hours: 7 });
 
   const deathTimeInGMT7 = currentTime.startOf("day").plus({
@@ -160,18 +192,22 @@ function startTimer(ms, countdownCell, maxDelay, countdownLabel, deathTime) {
 
   const timeDifferenceMs = currentTime.diff(deathTimeInGMT7, "milliseconds").milliseconds;
 
+  let interval;
   if (deathTime.hours === 0 && deathTime.minutes === 0 && deathTime.seconds === 0) {
-    startCDRTimer(ms, countdownCell, maxDelay, countdownLabel);
+    interval = startCDRTimer(ms, countdownCell, maxDelay, countdownLabel);
   } else if (timeDifferenceMs < ms) {
-    startCDRTimer(ms - timeDifferenceMs, countdownCell, maxDelay, countdownLabel);
+    interval = startCDRTimer(ms - timeDifferenceMs, countdownCell, maxDelay, countdownLabel);
   } else if (timeDifferenceMs >= ms && timeDifferenceMs < ms + maxDelay) {
-    startMaxDelayTimer(ms + maxDelay - timeDifferenceMs, countdownCell);
+    interval = startMaxDelayTimer(ms + maxDelay - timeDifferenceMs, countdownCell);
   } else {
     showToast("The MVP is alive!");
   }
-}
 
+  return interval;
+}
+// CDR start
 function startCDRTimer(ms, countdownCell, maxDelay, countdownLabel) {
+  console.log("CDR Timer Started");
   const interval = setInterval(() => {
     ms -= 1000;
     if (ms < 0) {
@@ -179,15 +215,17 @@ function startCDRTimer(ms, countdownCell, maxDelay, countdownLabel) {
       const audio = new Audio("/assets/sound/omori-heal-sound.mp3"); // Replace with actual sound file path
       audio.play();
       countdownCell.textContent = "0% chance";
-      countdownLabel.textContent = "Respawning with a:";
+      countdownLabel.textContent = "Chance to respawn:";
       startMaxDelayTimer(maxDelay, countdownCell);
     } else {
       countdownCell.textContent = msToHours(ms);
     }
   }, 1000);
+  return interval;
 }
-
+// Delay start
 function startMaxDelayTimer(ms, countdownCell) {
+  console.log("Max Delay Timer Started");
   const maxDelayMs = ms;
   let elapsedMs = 0;
   const interval = setInterval(() => {
@@ -201,6 +239,7 @@ function startMaxDelayTimer(ms, countdownCell) {
       countdownCell.textContent = `${percentage}% chance (${msToHours(elapsedMs)})`;
     }
   }, 1000);
+  return interval;
 }
 
 // Toast function
@@ -240,18 +279,13 @@ function getCurrentTimeInGMT7() {
   const gmt7Time = now.set({ hour: now.hour - 7 });
   return gmt7Time.toFormat("HH:mm:ss");
 }
-
 function updateClock() {
   const currentTime = getCurrentTimeInGMT7();
   document.getElementById("current-time-gmt-7").textContent = currentTime;
 }
 
-updateClock();
-setInterval(updateClock, 1000);
-
 // MVP search
 const mvpSearch = document.getElementById("mvp-search");
-
 mvpSearch.addEventListener("input", async () => {
   const searchText = mvpSearch.value.toLowerCase();
   const mvps = await getMvps();
@@ -279,7 +313,6 @@ function formatTime(hours, minutes, seconds) {
     .toString()
     .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 }
-
 function convertToGMT7(hours, minutes, seconds) {
   const now = DateTime.utc();
   const gmt7Time = now.set({ hour: hours - 7, minute: minutes, second: seconds });
@@ -289,7 +322,6 @@ function convertToGMT7(hours, minutes, seconds) {
     seconds: gmt7Time.second,
   };
 }
-
 function handleDeathTimeChange() {
   const hours = parseInt(deathTimeHours.value) || 0;
   const minutes = parseInt(deathTimeMinutes.value) || 0;
@@ -302,10 +334,6 @@ function handleDeathTimeChange() {
   console.log(`Total seconds: ${totalSeconds}, Formatted time: ${formattedTime}`);
 }
 
-deathTimeHours.addEventListener("change", handleDeathTimeChange);
-deathTimeMinutes.addEventListener("change", handleDeathTimeChange);
-deathTimeSeconds.addEventListener("change", handleDeathTimeChange);
-
 // Validation for death timer
 function validateInput(input, min, max) {
   input.addEventListener("input", () => {
@@ -317,10 +345,6 @@ function validateInput(input, min, max) {
     }
   });
 }
-
-validateInput(deathTimeHours, 0, 23);
-validateInput(deathTimeMinutes, 0, 59);
-validateInput(deathTimeSeconds, 0, 59);
 
 // Cards generator on click
 showMvpBtn.addEventListener("click", async () => {
@@ -360,3 +384,13 @@ showMvpBtn.addEventListener("click", async () => {
     showToast("Please select an MVP!");
   }
 });
+
+deathTimeHours.addEventListener("change", handleDeathTimeChange);
+deathTimeMinutes.addEventListener("change", handleDeathTimeChange);
+deathTimeSeconds.addEventListener("change", handleDeathTimeChange);
+validateInput(deathTimeHours, 0, 23);
+validateInput(deathTimeMinutes, 0, 59);
+validateInput(deathTimeSeconds, 0, 59);
+
+updateClock();
+setInterval(updateClock, 1000);

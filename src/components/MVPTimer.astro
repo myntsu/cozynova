@@ -1,42 +1,70 @@
+<div class="utility-toolbar">
+  <span class="pick-a-theme">Choose a theme</span>
+
+  <form class="theme-changer" action="">
+      <fieldset>
+          <legend class="visually-hidden">Pick a color scheme</legend>
+          <label class="visually-hidden" for="dark-blue">Blue Dark</label>
+          <input id="dark-blue" type="radio" name="theme">
+
+          <label class="visually-hidden" for="green">Green</label>
+          <input id="green" type="radio" name="theme">
+          
+          <label class="visually-hidden" for="dark">Dark</label>
+          <input id="dark" type="radio" name="theme">
+
+          <label class="visually-hidden" for="light">Light</label>
+          <input id="light" type="radio" name="theme">
+      </fieldset>
+  </form>
+</div>
+
 <main>
-    <p>THIS IS CURRENTLY A DEMO</p>
-    <h2>Version 0.5</h2>
-
-    <h2>Ingame clock</h2>
-    <div id="current-time-gmt-7"></div>
-
-    <h1>MVP Respawn Locations</h1>
-    <div>
+    <div class="top-information">
       <div>
-        <label for="mvp-search">Search MVP:</label>
-        <input type="text" id="mvp-search" placeholder="Search by name" />
+        <h1>
+          <img src="../assets/img/icons/mvp.webp" alt="MVP Timer Logo"> 
+          <span class="timer">Timer
+            <span>Version 0.6<span>a</span></span>
+          </span>
+        </h1>
+
       </div>
 
-      <label for="mvp-select">Select an MVP:</label>
-      <select id="mvp-select">
-        <option value="None">None selected</option>
-      </select>
-      <div id="respawn-select-container">
-        <label for="respawn-select">Select a Respawn Location:</label>
-        <select id="respawn-select">
+      <div class="clock">
+        <div id="current-time-gmt-7"></div>
+        <span>Server time</span>
+      </div>
+    </div>
+
+
+    <div class="mvp-timer">
+      <div>
+        <div>
+          <label for="mvp-search">Search MVP:</label>
+          <input type="text" id="mvp-search" placeholder="Search by name" />
+        </div>
+        <label for="mvp-select">Select an MVP:</label>
+        <select id="mvp-select">
           <option value="None">None selected</option>
         </select>
+        <div id="respawn-select-container">
+          <label for="respawn-select">Select a Respawn Location:</label>
+          <select id="respawn-select">
+            <option value="None">None selected</option>
+          </select>
+        </div>
+        <div id="death-time-container">
+          <label for="death-time-hours">Hours:</label>
+          <input type="number" id="death-time-hours" name="death-time-hours" min="0" max="23" step="1">
+          <label for="death-time-minutes">Minutes:</label>
+          <input type="number" id="death-time-minutes" name="death-time-minutes" min="0" max="59" step="1">
+          <label for="death-time-seconds">Seconds:</label>
+          <input type="number" id="death-time-seconds" name="death-time-seconds" min="0" max="59" step="1">
+        </div>
+        <button id="show-mvp-btn">Respawn timer</button>
       </div>
-      <div id="cdr-input-container">
-        <label for="cdr-input">Custom timer (optional):</label>
-        <input type="text" id="cdr-input-hours" placeholder="Hours" size="4" disabled>
-        <input type="text" id="cdr-input-minutes" placeholder="Minutes" size="4" disabled>
-        <input type="text" id="cdr-input-seconds" placeholder="Seconds" size="4" disabled>
-      </div>
-      <div id="death-time-container">
-        <label for="death-time-hours">Hours:</label>
-        <input type="number" id="death-time-hours" name="death-time-hours" min="0" max="23" step="1">
-        <label for="death-time-minutes">Minutes:</label>
-        <input type="number" id="death-time-minutes" name="death-time-minutes" min="0" max="59" step="1">
-        <label for="death-time-seconds">Seconds:</label>
-        <input type="number" id="death-time-seconds" name="death-time-seconds" min="0" max="59" step="1">
-      </div>
-      <button id="show-mvp-btn">Respawn timer</button>
+
+      <div id="mvp-container"></div>
     </div>
-    <div id="mvp-container"></div>
 </main>

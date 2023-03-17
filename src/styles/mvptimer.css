@@ -1,12 +1,23 @@
 body {
+      background-image: linear-gradient(
+        0deg,
+        hsl(var(--main-dark)) 30%,
+        transparent
+      ),
+      url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
+
     display: flex;
     flex-direction: column;
-    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    background-repeat: repeat-x;
+    background-position: top center;
     
     width: 100vw;
     min-height: 120vh;
     margin: auto;
-    padding: 0;
+    padding: 0 1rem;
 
     font-size: 1rem;
     font-family: 'DM Sans', sans-serif;
@@ -14,6 +25,18 @@ body {
 
     color: hsl(var(--white));
     background-color: hsl(var(--main-dark));
+
+    position: relative;
+    isolation: isolate;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  background-color: hsl(var(--main-dark));
+  inset: 0;
+  z-index: -2;
+  opacity: 0.91;
 }
 
 main {
@@ -21,21 +44,289 @@ main {
     max-width: 100%;
 
     margin: 0 auto;
-    padding: 3em 0;
+    background-color: hsl(var(--main-light-1));
+    border-radius: .5rem;
+
+    box-shadow: 
+    0 1px 2px hsl(var(--main-dark), 30%),
+    0 1px 3px hsl(var(--main-dark), 30%);
+}
+.utility-toolbar {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 1000px;
+  margin: 5rem 0 0;
 }
 
-/* Add styles for the MVP card here */
-#mvp-container {
+.pick-a-theme {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+
+  margin-inline-start: auto;
+  padding: .25em .25em .25em .75em;
+  
+  background-color: hsl(var(--main-dark));
+  border-radius: .5em 0 0 0;
+  font-size: 1rem;
+}
+
+.theme-changer>fieldset {
+  display: flex;
+  gap: 2rem;
+
+  width: fit-content;
+  margin-inline: auto;
+  padding: .5em 1.5em;
+
+  background-color: hsl(var(--main-dark));
+  border: 0;
+  border-radius: 0 .5em 0 0;
+}
+
+.theme-changer input[type="radio"] {
+  appearance: none;
+  width: 1em;
+  height: 1em;
+
+  outline: 2px solid var(--radio-color, currentColor);
+  outline-offset: 2px;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.theme-changer input[type="radio"]:checked {
+  background-color: var(--radio-color);
+}
+
+@media only screen and (max-width: 570px) {
+  body {
+    background-image:
+      linear-gradient(0deg,
+        hsl(var(--main-dark)) 70%, transparent),
+      url("../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp");
+  }
+
+  .utility-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .pick-a-theme {
+    justify-content: center;
+    width: 100%;
+    padding: .25em .5em .25em .5em !important;
+    border-radius: 0 !important;
+    border-top: 1px solid hsl(var(--main-light-2), 80%);
+  }
+
+  .theme-changer {
+    width: 100%;
+
+  }
+
+  .theme-changer>fieldset {
+    justify-content: space-around;
+    width: 100%;
+    border-radius: 0;
+    padding-bottom: 1em;
+  }
+
+  .theme-changer input[type="radio"] {
+    width: 2em;
+    height: 2em;
+  }
+}
+
+.top-information {
+  display: flex;
+
+  position: relative;
+  isolation: isolate;
+  
+  padding: 1rem;
+
+  background-image:
+  linear-gradient(90deg,
+    hsl(var(--main-dark)) -10%, transparent),
+  url('../assets/img/bg/tinywow_ragnarok-x-game-class-hd-wallpaper-1920x1080-uhdpaper.com-31.0_b_6942489.webp');
+  background-position: 50% 35%;
+  background-size: cover;
+}
+
+.top-information::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-color: hsl(var(--main-dark));
+  opacity: 0.75;
+}
+
+.clock {
+  margin-inline-start: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 150px;
+  
+  font-size: 1.5rem;
+  text-align: center;
+  
+  color: hsl(var(--header));
+}
+
+.clock span {
+  color: hsl(var(--text));
+  font-size: .75rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+
+  color: hsl(var(--header));
+  font-size: 2rem;
+  border-radius: .5rem 0 0 0;
+}
+
+h1 img {
+  width: 64px;
+  height: auto;
+}
+
+h1 .timer {
+  position: relative;
+}
+
+h1 .timer > span {
+  position: absolute;
+  font-size: .75rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  bottom: -.5rem; right: 0;
+}
+
+h1 .timer > span span {
+  text-transform: lowercase;
+}
+
+.mvp-timer {
+  padding: 1rem;
+}
+
+
+#mvp-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: space-around;
+  gap: 1rem;
 }
 
 .mvp-card {
-  border: 1px solid black;
-  margin: 10px;
-  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  width: 300px;
+  padding: 1rem;
+
+  max-width: 300px;
+
+  background-color: hsl(var(--main-light-2));
+  border-radius: .5rem;
+
+  box-shadow: 
+  0 1px 2px hsl(var(--main-dark), 30%),
+  0 1px 3px hsl(var(--main-dark), 30%);
+}
+
+.mvp-card .mvp-header {
+  display: flex;
+  width: 100%;
+
+  margin-block-end: .25rem;
+  overflow: hidden;
+}
+
+.mvp-card .mvp-header h2 {
+  color: hsl(var(--header));
+  font-weight: 900;
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+.mvp-card .mvp-header >:nth-child(2) {
+  margin-inline-start: auto;
+  margin-inline-end: .5rem;
+}
+
+.mvp-card .mvp-info {
+  flex: 1 0 45%;
+
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+.mvp-card .mvp-info img {
+  max-width: 100%;
+  max-height: 150px;
+  aspect-ratio: 1/1;
+  object-fit: none;
+}
+
+.mvp-card .mvp-map {
+  flex: 1 0 40%;
+}
+
+.mvp-card .mvp-respawn {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+
+  margin-block-start: .5rem;
+}
+
+.mvp-card .mvp-respawn >:nth-child(1) {
+  order: 2;
+  flex: 1 0 50%;
+  color: hsl(var(--text), 70%);
+}
+
+.mvp-card .mvp-respawn >:nth-child(2) {
+  order: 1;
+  flex: 1 0 50%;
+  white-space: nowrap;
+}
+
+.mvp-card .respawn-timer {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: .25rem;
+  background-color: hsl(var(--main-light));
+  border-radius: .25rem;
+
+  box-shadow: 
+  0 1px 2px hsl(var(--main-dark), 30%),
+  0 1px 3px hsl(var(--main-dark), 30%);
+}
+
+.mvp-card .respawn-timer >:nth-child(1) {
+  color: hsl(var(--header));
+  font-weight: 900;
 }
 
 .quick-toast {
@@ -49,4 +340,47 @@ main {
   border-radius: .25rem;
   z-index: 1000;
   text-align: center;
+}
+
+.restart-button, .remove-button {
+  align-self: flex-start;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 34px;
+  min-height: 34px;
+
+  color: hsl(var(--white));
+  background-color: hsl(var(--important));
+  border: none;
+  border-radius: 0.25em;
+
+  font-size: 1rem;
+  box-shadow: 2px 2px 0 0 hsl(var(--text), 70%);
+}
+
+.restart-button::before {
+  content: '\f2f9';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+
+.remove-button::before {
+  content: '\f00d';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+
+.restart-button:is(:hover, :focus-visible),
+.remove-button:is(:hover, :focus-visible) {
+  background-color: hsl(var(--important), 80%);
+}
+
+.restart-button:active,
+.remove-button:active {
+  translate: 2px 2px;
+  box-shadow: none;
+  background-color: hsl(var(--important));
 }
