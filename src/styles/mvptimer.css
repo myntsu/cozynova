@@ -230,6 +230,117 @@ h1 .timer > span span {
   padding: 1rem;
 }
 
+.general-information {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  margin-block-end: 1rem;
+}
+
+.general-information h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+button[data-bs-target="#Changelog"]::before {
+  content: 'Changelog';
+}
+
+button[data-bs-target="#KnownIssues"]::before {
+  content: 'Known Issues';
+}
+
+@media only screen and (max-width: 570px) {
+  button[data-bs-target="#Changelog"]::before {
+    content: '\f46d';
+    font-weight: 900;
+    font-family: 'Font Awesome 6 Free';
+  }
+  
+  button[data-bs-target="#KnownIssues"]::before {
+    content: '\f188';
+    font-weight: 900;
+    font-family: 'Font Awesome 6 Free';
+  }
+}
+
+#user-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.search-and-select {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.search-and-select > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-and-select label {
+  color: hsl(var(--header));
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+#mvp-search, #mvp-select, #respawn-select, #death-time-container input {
+  height: 3ch;
+  border-radius: .25rem;
+  font-family: inherit;
+  padding-inline-start: .5rem;
+  border: none;
+}
+
+#mvp-search:is(:hover, :focus, :focus-visible), 
+#mvp-select:is(:hover, :focus, :focus-visible), 
+#respawn-select:is(:hover, :focus, :focus-visible),
+#death-time-container input:is(:hover, :focus, :focus-visible) {
+  border: none;
+  outline: 2px solid hsl(var(--important));
+  outline-offset: 2px;
+}
+
+@media only screen and (max-width: 870px) {
+  .search-and-select {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+#death-time-container {
+  color: hsl(var(--text));
+  font-weight: 900;
+}
+
+#death-time-container > div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#death-time-container > div > div {
+  flex: 0 0 10ch;
+
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 570px) {
+  #death-time-container > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10ch, 1fr));
+  }
+
+  #death-time-container > div > div {
+    flex: 1 0 10ch;
+  }
+}
+
 #sort-container {
   display: flex;
 
@@ -430,7 +541,7 @@ h1 .timer > span span {
   text-align: center;
 }
 
-.restart-button, .remove-button, #show-mvp-btn {
+.restart-button, .remove-button, #show-mvp-btn, .generic-button {
   align-self: flex-start;
 
   display: flex;
@@ -463,14 +574,59 @@ h1 .timer > span span {
 
 .restart-button:is(:hover, :focus-visible),
 .remove-button:is(:hover, :focus-visible),
-#show-mvp-btn:is(:hover, :focus-visible) {
+#show-mvp-btn:is(:hover, :focus-visible),
+.generic-button:is(:hover, :focus-visible) {
   background-color: hsl(var(--important), 80%);
 }
 
 .restart-button:active,
 .remove-button:active,
-#show-mvp-btn:active {
+#show-mvp-btn:active,
+.generic-button:active {
   translate: 2px 2px;
   box-shadow: none;
   background-color: hsl(var(--important));
+}
+
+#show-mvp-btn {
+  width: 10ch;
+}
+
+@media only screen and (max-width: 570px) {
+  #show-mvp-btn {
+    width: 100%;
+  }
+}
+
+.modal-content {
+  background-color: hsl(var(--main-light-1), 70%);
+  color: hsl(var(--text));
+}
+
+.modal-header {
+  align-items: baseline;
+  padding-bottom: 0;
+}
+
+.modal-body {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: hsl(var(--main-light-3), 70%);
+  border-radius: .5rem;
+}
+
+.modal-body > div:last-of-type ul {
+  margin: 0;
+}
+
+.modal-header, .modal-footer {
+  border: 0;
+}
+
+.modal-footer {
+  padding-top: 0;
+}
+
+.number-span {
+  color: hsl(var(--text)) !important;
 }

@@ -25,7 +25,7 @@
         <h1>
           <img src="../assets/img/icons/mvp.webp" alt="MVP Timer Logo"> 
           <span class="timer">Timer
-            <span>Version 0.7<span>a</span></span>
+            <span>Version 0.7<span>b</span></span>
           </span>
         </h1>
 
@@ -39,34 +39,58 @@
 
 
     <div class="mvp-timer">
-      <div>
-        <div>
-          <label for="mvp-search">Search MVP:</label>
-          <input type="text" id="mvp-search" placeholder="Search by name" />
-        </div>
-        <label for="mvp-select">Select an MVP:</label>
-        <select id="mvp-select">
-          <option value="None">None selected</option>
-        </select>
-        <div id="respawn-select-container">
-          <label for="respawn-select">Select a Respawn Location:</label>
-          <select id="respawn-select">
-            <option value="None">None selected</option>
-          </select>
+
+      <div class="general-information">
+        <h2 class="header"><span class="number-span">1.</span> Fill up the information <i class="fa-solid fa-pen fa-xs number-span"></i></h2>
+        <button type="button" class="generic-button ms-auto" data-bs-toggle="modal" data-bs-target="#Changelog" aria-label="Changelog list">
+         
+        </button>
+        <button type="button" class="generic-button" data-bs-toggle="modal" data-bs-target="#KnownIssues" aria-label="Known issues list">
+          
+        </button>
+      </div>
+
+      <div id="user-selection">
+        <div class="search-and-select">
+          <div>
+            <label for="mvp-search">Search for the MVP</label>
+            <input type="text" id="mvp-search" placeholder="Search by name" />
+          </div>
+          <div>
+            <label for="mvp-select">Select the MVP</label>
+            <select id="mvp-select">
+              <option value="None">None selected</option>
+            </select>
+          </div>
+          <div>
+            <label for="respawn-select">Select the respawn location</label>
+            <select id="respawn-select">
+              <option value="None">None selected</option>
+            </select>
+          </div>
         </div>
         <div id="death-time-container">
-          <label for="death-time-hours">Hours:</label>
-          <input type="number" id="death-time-hours" name="death-time-hours" min="0" max="23" step="1">
-          <label for="death-time-minutes">Minutes:</label>
-          <input type="number" id="death-time-minutes" name="death-time-minutes" min="0" max="59" step="1">
-          <label for="death-time-seconds">Seconds:</label>
-          <input type="number" id="death-time-seconds" name="death-time-seconds" min="0" max="59" step="1">
-        </div>
+          <span class="header">Input the time of death <span class="low-focus">(Optional)</span></span>
+          <div>
+            <div>
+              <label for="death-time-hours">Hour</label>
+              <input type="number" id="death-time-hours" name="death-time-hours" min="0" max="23" step="1" placeholder="23">
+            </div>
+            <div>
+              <label for="death-time-minutes">Minutes</label>
+              <input type="number" id="death-time-minutes" name="death-time-minutes" min="0" max="59" step="1" placeholder="59">
+            </div>
+            <div>
+              <label for="death-time-seconds">Seconds</label>
+              <input type="number" id="death-time-seconds" name="death-time-seconds" min="0" max="59" step="1" placeholder="59">
+            </div>
+                    </div>
+          </div>
         <button id="show-mvp-btn">Add</button>
       </div>
 
       <div id="sort-container">
-        <h2>Respawn list</h2>
+        <h2><span class="number-span">2.</span> Check the respawn time <i class="fa-solid fa-check fa-xs number-span"></i></h2>
         <h3>Sort by</h3>
         <button id="sort-by-name">Name</button>
         <button id="sort-by-respawn">Respawn</button>
@@ -74,3 +98,118 @@
       <div id="mvp-container"></div>
     </div>
 </main>
+
+<!-- Modal Changelog -->
+<div class="modal fade" id="Changelog" tabindex="-1" aria-labelledby="ChangelogTitle" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="ChangelogTitle">Changelog</h1>
+        <button type="button" class="generic-button" data-bs-dismiss="modal" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <h3 class="header fs-5">Version 0.7b</h3>
+          <ul>
+            <li><span class="header">Changelog</span> - Added a display to check changelogs for current & past versions (Hello you, this is a recursive message).</li>
+            <li><span class="header">Known Issues</span> - Added a display to check currently live known issues a.k.a bugs within the app itself.</li>
+            <li>Improved the visual display of the search, select bars and input.</li>
+            <li>Adjusted the padding values for some buttons.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="header fs-5">Version 0.7a</h3>
+          <ul>
+            <li>Adjusted the naming convention of the death timer input, simplifying it.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="header fs-5">Version 0.7</h3>
+          <ul>
+            <li><span class="header">Sort function</span> - Added buttons to sort both by name [a-z] and respawn [0-9], in an asceding order.</li>
+            <li>Improved the visuals of the respawn list to have a minimum height.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="header fs-5">Version 0.6</h3>
+          <ul>
+            <li><span class="header">Search bar</span> - Auto-select the closest & matching criteria, alongside with the first map from the JSON file by default.</li>
+            <li><span class="header">Toast messages</span> - Displaying if the user hasn't selected an MVP, preventing duplicated MVPs and to indicate if the MVP is alive (in case the user input's an incorrect death time).</li>
+            <li>Polished last details regarding the layout of the whole page.</li>
+            <li><span class="number fw-bold">Removed custom timer</span> - Its functionality has been deprecated by the custom death timer.</li>
+            <li><class class="focus fw-bold">Fixed card's titles and size</class> - Cutting words and cutting the buttons. Adjusted the size for them to span properly in a grid layout, and to not break in smaller devices.</li>
+            <li><span class="focus fw-bold">Fixed remove button</span> - Previously not removing the active timer, just the card visually. Now it removes both.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="header fs-5">Version 0.5b</h3>
+          <ul>
+            <li><span class="header">Restart button</span> - </li>
+            <li>Improved the respawn list layout.</li>
+            <li>Improved the visibility of the cards for each MVP With the structure of: Name, Buttons, Image, ID, Map, Map Name, Respawn Time & Cooldown of respawn.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="header fs-5">Version 0.5a</h3>
+          <ul>
+            <li><span class="header">Close Button</span> - With the mere functionality of removing the card's vissibility.</li>
+            <li>Implemented the layout from all the other pages.</li>
+            <li>Added a decorative background to the body.</li>
+            <li>Customized a decorative header with its own background.</li>
+            <li><span class="number fw-bold">Disabled custom timer</span> - Merely for testing purposes, so the user can't access it easily, but visible.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="header fs-5">Version 0.5</h3>
+          <ul>
+            <li><span class="header">Custom death timer</span> - Capable of selecting a death time (based on GMT-7 / server time) and adjust the current's respawn cooldown.</li>
+            <li><span class="number fw-bold">Adjuster custom timer</span> - Distributed it with a ratio of hours, minutes and seconds.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="header fs-5">Version 0.3</h3>
+          <ul>
+            <li><span class="header">Custom timer</span> - Based on miliseconds in which the user can input any time to adjust the current default to their desired.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="header fs-5">Version 0.1</h3>
+          <ul>
+            <li><span class="header">First demo</span> - First public demo release. You can select and MVP and its respawn location, and add it.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="generic-button" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Known Issues -->
+<div class="modal fade" id="KnownIssues" tabindex="-1" aria-labelledby="KnownIssuesTitle" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-4" id="KnownIssuesTitle">Known Issues</h1>
+        <button type="button" class="generic-button" data-bs-dismiss="modal" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <ul>
+            <li><span class="header">Blank inputs</span> - Leaving the inputs for Leaving the inputs for <span class="number">"Hours", "Minutes" and "Seconds"</span> empty assumes the time of death is 00:00:00, instead of using the default <span class="number">Respawn Cooldown value</span>.</li>
+            <li><span class="header">Timer reset</span> -  Resetting the timer after the mob has spawned and the % timer triggers, makes them run simultaneously, instead of <span class="number">resetting both</span>.</li>
+            <li><span class="header">MVP GIFs</span> - Certain MVP have missing GIFs or poor quality ones.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="generic-button" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
