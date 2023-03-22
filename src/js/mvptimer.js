@@ -126,34 +126,52 @@ function showMvp(mvp, selectedRespawn, deathTime) {
 
     const respawnTimer = document.createElement("div");
     respawnTimer.classList.add("respawn-timer");
-    
+
     const countdownLabel = document.createElement("span");
     countdownLabel.textContent = "Respawn:";
     respawnTimer.appendChild(countdownLabel);
-    
+
     const countdownValue = document.createElement("span");
     countdownValue.classList.add("countdown-timer");
     respawnTimer.appendChild(countdownValue);
-    
+
     mvpRespawn.appendChild(respawnTimer);
 
-    countdownValue.timerInterval = startTimer(respawn, countdownValue, maxDelay, countdownLabel, deathTime);
+    countdownValue.timerInterval = startTimer(
+      respawn,
+      countdownValue,
+      maxDelay,
+      countdownLabel,
+      deathTime
+    );
 
     restartButton.addEventListener("click", () => {
-      clearInterval(countdownValue.timerInterval);
-      countdownValue.timerInterval = startTimer(respawn, countdownValue, maxDelay, countdownLabel, { hours: 0, minutes: 0, seconds: 0 });
+      clearInterval(countdownValue.currentInterval);
+      countdownValue.timerInterval = startTimer(
+        respawn,
+        countdownValue,
+        maxDelay,
+        countdownLabel,
+        { hours: 0, minutes: 0, seconds: 0 }
+      );
     });
+    
 
     removeButton.addEventListener("click", () => {
-      clearInterval(countdownValue.timerInterval);
+      // Clear the timer interval before removing the card
+      if (countdownValue.currentInterval) {
+        clearInterval(countdownValue.currentInterval);
+      }
+      console.log(Boolean(startCDRTimer));
       mvpContainer.removeChild(mvpCard);
     });
+    
   }
   mvpCard.appendChild(mvpHeader);
   mvpCard.appendChild(mvpInfo);
   mvpCard.appendChild(mvpMap);
   mvpCard.appendChild(mvpRespawn);
-  
+
   mvpContainer.appendChild(mvpCard);
 }
 
@@ -178,16 +196,7 @@ function msToHours(ms) {
 }
 
 // Timer start
-let activeTimer = null;
-let activeMaxDelayTimer = null;
 function startTimer(ms, countdownCell, maxDelay, countdownLabel, deathTime) {
-  if (activeTimer) {
-    clearTimeout(activeTimer);
-  }
-  if (activeMaxDelayTimer) {
-    clearTimeout(activeMaxDelayTimer);
-  }
-
   const currentTime = DateTime.utc().minus({ hours: 7 });
 
   const deathTimeInGMT7 = currentTime.startOf("day").plus({
@@ -196,57 +205,95 @@ function startTimer(ms, countdownCell, maxDelay, countdownLabel, deathTime) {
     seconds: deathTime.seconds,
   });
 
-  const timeDifferenceMs = currentTime.diff(deathTimeInGMT7, "milliseconds").milliseconds;
+  const timeDifferenceMs = currentTime
+    .diff(deathTimeInGMT7, "milliseconds")
+    .toObject().milliseconds;
+
+  const timerInstance = {
+    cdrInterval: null,
+    maxDelayInterval: null,
+  };
 
   let interval;
-  if (deathTime.hours === 0 && deathTime.minutes === 0 && deathTime.seconds === 0) {
-    interval = startCDRTimer(ms, countdownCell, maxDelay, countdownLabel);
+  if (
+    deathTime.hours === 0 &&
+    deathTime.minutes === 0 &&
+    deathTime.seconds === 0
+  ) {
+    interval = startCDRTimer(ms, countdownCell, maxDelay, countdownLabel, timerInstance);
   } else if (timeDifferenceMs < ms) {
-    interval = startCDRTimer(ms - timeDifferenceMs, countdownCell, maxDelay, countdownLabel);
+    interval = startCDRTimer(
+      ms - timeDifferenceMs,
+      countdownCell,
+      maxDelay,
+      countdownLabel,
+      timerInstance
+    );
   } else if (timeDifferenceMs >= ms && timeDifferenceMs < ms + maxDelay) {
-    interval = startMaxDelayTimer(ms + maxDelay - timeDifferenceMs, countdownCell);
+    interval = startMaxDelayTimer(
+      ms + maxDelay - timeDifferenceMs,
+      countdownCell
+    );
   } else {
     showToast("The MVP is alive!");
   }
 
-  return interval;
+  return timerInstance;
 }
+
 // CDR start
 function startCDRTimer(ms, countdownCell, maxDelay, countdownLabel) {
   console.log("CDR Timer Started");
-  const interval = setInterval(() => {
-    ms -= 1000;
-    if (ms < 0) {
-      clearInterval(interval);
+
+  const startTime = performance.now();
+  const targetEndTime = startTime + ms;
+
+  const updateCountdown = () => {
+    const currentTime = performance.now();
+    const remainingMs = Math.max(targetEndTime - currentTime, 0);
+
+    if (remainingMs <= 0) {
       const audio = new Audio("/assets/sound/omori-heal-sound.mp3");
       audio.play();
       countdownCell.textContent = "0% chance";
       countdownLabel.textContent = "Chance to respawn:";
-      startMaxDelayTimer(maxDelay, countdownCell);
+      countdownCell.currentInterval = startMaxDelayTimer(maxDelay, countdownCell);
     } else {
-      countdownCell.textContent = msToHours(ms);
+      countdownCell.textContent = msToHours(remainingMs);
+      requestAnimationFrame(updateCountdown);
     }
-  }, 1000);
-  return interval;
+  };
+
+  requestAnimationFrame(updateCountdown);
+  countdownCell.currentInterval = null; // Since we're not using setInterval, set currentInterval to null
 }
+
 // Delay start
 function startMaxDelayTimer(ms, countdownCell) {
   console.log("Max Delay Timer Started");
+
   const maxDelayMs = ms;
-  let elapsedMs = 0;
-  const interval = setInterval(() => {
-    ms -= 1000;
-    elapsedMs += 1000;
-    if (ms < 0) {
-      clearInterval(interval);
+  const startTime = performance.now();
+
+  const updateCountdown = () => {
+    const currentTime = performance.now();
+    const elapsedMs = currentTime - startTime;
+    const remainingMs = Math.max(maxDelayMs - elapsedMs, 0);
+
+    if (remainingMs <= 0) {
       countdownCell.textContent = `100% chance (${msToHours(maxDelayMs)})`;
     } else {
-      const percentage = Math.round(((maxDelayMs - ms) / maxDelayMs) * 100);
+      const percentage = Math.round((elapsedMs / maxDelayMs) * 100);
       countdownCell.textContent = `${percentage}% chance (${msToHours(elapsedMs)})`;
+      requestAnimationFrame(updateCountdown);
     }
-  }, 1000);
-  return interval;
+  };
+
+  requestAnimationFrame(updateCountdown);
+  countdownCell.currentInterval = null; // Since we're not using setInterval, set currentInterval to null
 }
+
+
 
 // Toast function
 let toastActive = false;
@@ -313,38 +360,13 @@ mvpSearch.addEventListener("input", async () => {
   mvpSelect.dispatchEvent(new Event("change"));
 });
 
-// Death timer
-function formatTime(hours, minutes, seconds) {
-  return `${hours.toString().padStart(2, "0")}:${minutes
-    .toString()
-    .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-}
-function convertToGMT7(hours, minutes, seconds) {
-  const now = DateTime.utc();
-  const gmt7Time = now.set({ hour: hours - 7, minute: minutes, second: seconds });
-  return {
-    hours: gmt7Time.hour,
-    minutes: gmt7Time.minute,
-    seconds: gmt7Time.second,
-  };
-}
-function handleDeathTimeChange() {
-  const hours = parseInt(deathTimeHours.value) || 0;
-  const minutes = parseInt(deathTimeMinutes.value) || 0;
-  const seconds = parseInt(deathTimeSeconds.value) || 0;
-
-  const gmt7Time = convertToGMT7(hours, minutes, seconds);
-  const totalSeconds = gmt7Time.hours * 3600 + gmt7Time.minutes * 60 + gmt7Time.seconds;
-
-  const formattedTime = formatTime(gmt7Time.hours, gmt7Time.minutes, gmt7Time.seconds);
-  console.log(`Total seconds: ${totalSeconds}, Formatted time: ${formattedTime}`);
-}
-
 // Validation for death timer
 function validateInput(input, min, max) {
   input.addEventListener("input", () => {
     const value = parseInt(input.value, 10);
-    if (value < min) {
+    if (isNaN(value)) {
+      input.value = "";
+    } else if (value < min) {
       input.value = min;
     } else if (value > max) {
       input.value = max;
@@ -352,47 +374,104 @@ function validateInput(input, min, max) {
   });
 }
 
+function clearInputFields() {
+  deathTimeHours.value = "";
+  deathTimeMinutes.value = "";
+  deathTimeSeconds.value = "";
+}
+
 // Cards generator on click
 showMvpBtn.addEventListener("click", async () => {
   const selectedMvpId = parseInt(mvpSelect.value, 10);
   const selectedRespawn = respawnSelect.value;
 
-  // Check if selectedMvpId is NaN and show the toast message
+  // Condition 1: Check if selectedMvpId is NaN and show a toast message
   if (isNaN(selectedMvpId)) {
-    showToast("Please select an MVP!");
+    showToast("Error: You didn't select anything");
     return;
   }
 
   const mvps = await getMvps();
-  const deathTime = {
-    hours: parseInt(deathTimeHours.value) || 0,
-    minutes: parseInt(deathTimeMinutes.value) || 0,
-    seconds: parseInt(deathTimeSeconds.value) || 0,
-  };
   const mvp = mvps.find((m) => m.id === selectedMvpId);
-
   const respawnInfo = mvp.respawn.find((r) => r.map === selectedRespawn);
   const cdr = respawnInfo?.cdr;
   const maxDelay = respawnInfo?.max_delay;
-  const totalDelay = cdr + maxDelay;
+  const sumOfCDRandMaxDelayMs = (cdr ?? 0) + (maxDelay ?? 0);
 
   const currentTime = DateTime.utc().minus({ hours: 7 });
-  const deathTimeInGMT7 = currentTime.startOf("day").plus({
-    hours: deathTime.hours,
-    minutes: deathTime.minutes,
-    seconds: deathTime.seconds,
-  });
 
-  const timeDifferenceMs = currentTime.diff(deathTimeInGMT7, "milliseconds").milliseconds;
+  // Condition 2: Use CDR value by default if user inputs nothing in the death time
+  const hasUserInput =
+    deathTimeHours.value.trim() !== "" ||
+    deathTimeMinutes.value.trim() !== "" ||
+    deathTimeSeconds.value.trim() !== "";
 
-  if ((deathTimeInGMT7 > currentTime) || (timeDifferenceMs > totalDelay)) {
-    showToast("The MVP is alive!");
-  } else if (cardExists(selectedMvpId.toString(), selectedRespawn)) {
-    showToast("This MVP already exists!");
-  } else {
-    showMvp(mvp, selectedRespawn, deathTime);
+  const deathTime = hasUserInput
+    ? {
+        hours: parseInt(deathTimeHours.value) || 0,
+        minutes: parseInt(deathTimeMinutes.value) || 0,
+        seconds: parseInt(deathTimeSeconds.value) || 0,
+      }
+    : null;
+
+  if (deathTime) {
+    const deathTimeInGMT7 = currentTime.startOf("day").plus({
+      hours: deathTime.hours,
+      minutes: deathTime.minutes,
+      seconds: deathTime.seconds,
+    });
+
+    const timeDifferenceMs = currentTime.diff(
+      deathTimeInGMT7,
+      "milliseconds"
+    ).milliseconds;
+
+    // Condition 3: If the Time Difference is greater than the sum of CDR and MaxDelay
+    if (timeDifferenceMs > sumOfCDRandMaxDelayMs) {
+      showToast("Error: Looks like it has respawned");
+      return;
+    }
+
+    // Condition 4: If the time of death is greater than the current time
+    if (deathTimeInGMT7 > currentTime) {
+      showToast("Error: Cannot set a time in the future");
+      return;
+    }
   }
+
+  if (cardExists(selectedMvpId.toString(), selectedRespawn)) {
+    showToast("Error: You can't add duplicates");
+  } else {
+    showMvp(
+      mvp,
+      selectedRespawn,
+      deathTime || { hours: 0, minutes: 0, seconds: 0 }
+    );
+  }
+  clearInputFields();
 });
+
+// Phone auto-skip inputs
+const isPhone = window.innerWidth < 768;
+if (isPhone) {
+  // Add event listeners to the input fields
+  deathTimeHours.addEventListener("input", () => {
+    if (deathTimeHours.value.length === 2) {
+      deathTimeMinutes.focus();
+    }
+  });
+  deathTimeMinutes.addEventListener("input", () => {
+    if (deathTimeMinutes.value.length === 2) {
+      deathTimeSeconds.focus();
+    }
+  });
+  deathTimeSeconds.addEventListener("input", () => {
+    if (deathTimeSeconds.value.length === 2) {
+      // Do something when all input fields have been filled
+    }
+  });
+}
+
 
 // Card sorting
 function sortCards(type) {
@@ -437,9 +516,6 @@ sortByRespawnBtn.addEventListener("click", () => {
   sortByNameBtn.classList.remove("active");
 });
 
-deathTimeHours.addEventListener("change", handleDeathTimeChange);
-deathTimeMinutes.addEventListener("change", handleDeathTimeChange);
-deathTimeSeconds.addEventListener("change", handleDeathTimeChange);
 validateInput(deathTimeHours, 0, 23);
 validateInput(deathTimeMinutes, 0, 59);
 validateInput(deathTimeSeconds, 0, 59);
@@ -449,9 +525,9 @@ setInterval(updateClock, 1000);
 
 let showAlert = true;
 
-window.addEventListener('beforeunload', (e) => {
-    if (showAlert) {
-        e.preventDefault();
-        e.returnValue = 'Are you sure you want to do that?';
-    }
+window.addEventListener("beforeunload", (e) => {
+  if (showAlert) {
+    e.preventDefault();
+    e.returnValue = "Are you sure you want to do that?";
+  }
 });
