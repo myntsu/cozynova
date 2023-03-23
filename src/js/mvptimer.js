@@ -155,7 +155,6 @@ function showMvp(mvp, selectedRespawn, deathTime) {
         { hours: 0, minutes: 0, seconds: 0 }
       );
     });
-    
 
     removeButton.addEventListener("click", () => {
       // Clear the timer interval before removing the card
@@ -165,7 +164,6 @@ function showMvp(mvp, selectedRespawn, deathTime) {
       console.log(Boolean(startCDRTimer));
       mvpContainer.removeChild(mvpCard);
     });
-    
   }
   mvpCard.appendChild(mvpHeader);
   mvpCard.appendChild(mvpInfo);
@@ -220,7 +218,13 @@ function startTimer(ms, countdownCell, maxDelay, countdownLabel, deathTime) {
     deathTime.minutes === 0 &&
     deathTime.seconds === 0
   ) {
-    interval = startCDRTimer(ms, countdownCell, maxDelay, countdownLabel, timerInstance);
+    interval = startCDRTimer(
+      ms,
+      countdownCell,
+      maxDelay,
+      countdownLabel,
+      timerInstance
+    );
   } else if (timeDifferenceMs < ms) {
     interval = startCDRTimer(
       ms - timeDifferenceMs,
@@ -248,51 +252,59 @@ function startCDRTimer(ms, countdownCell, maxDelay, countdownLabel) {
   const startTime = performance.now();
   const targetEndTime = startTime + ms;
 
-  const updateCountdown = () => {
+  const interval = setInterval(() => {
     const currentTime = performance.now();
     const remainingMs = Math.max(targetEndTime - currentTime, 0);
 
     if (remainingMs <= 0) {
+      clearInterval(interval);
       const audio = new Audio("/assets/sound/omori-heal-sound.mp3");
-      audio.play();
+      audio.play().catch((error) => {
+        console.error("Audio playback error:", error);
+      });
       countdownCell.textContent = "0% chance";
       countdownLabel.textContent = "Chance to respawn:";
-      countdownCell.currentInterval = startMaxDelayTimer(maxDelay, countdownCell);
+      countdownCell.currentInterval = startMaxDelayTimer(
+        maxDelay,
+        countdownCell
+      );
     } else {
       countdownCell.textContent = msToHours(remainingMs);
-      requestAnimationFrame(updateCountdown);
+      // console.log('CDR Timer tick:', msToHours(remainingMs));
     }
-  };
+  }, 1000);
 
-  requestAnimationFrame(updateCountdown);
-  countdownCell.currentInterval = null; // Since we're not using setInterval, set currentInterval to null
+  countdownCell.currentInterval = interval;
+  return interval;
 }
+
+
 
 // Delay start
 function startMaxDelayTimer(ms, countdownCell) {
   console.log("Max Delay Timer Started");
 
-  const maxDelayMs = ms;
   const startTime = performance.now();
+  const targetEndTime = startTime + ms;
 
-  const updateCountdown = () => {
+  const interval = setInterval(() => {
     const currentTime = performance.now();
     const elapsedMs = currentTime - startTime;
-    const remainingMs = Math.max(maxDelayMs - elapsedMs, 0);
+    const remainingMs = Math.max(targetEndTime - currentTime, 0);
 
     if (remainingMs <= 0) {
-      countdownCell.textContent = `100% chance (${msToHours(maxDelayMs)})`;
+      clearInterval(interval);
+      countdownCell.textContent = `100% chance (${msToHours(ms)})`;
     } else {
-      const percentage = Math.round((elapsedMs / maxDelayMs) * 100);
+      const percentage = Math.round((elapsedMs / ms) * 100);
       countdownCell.textContent = `${percentage}% chance (${msToHours(elapsedMs)})`;
-      requestAnimationFrame(updateCountdown);
+    //  console.log('Max Delay Timer tick:', `${percentage}% chance (${msToHours(elapsedMs)})`);
     }
-  };
+  }, 1000);
 
-  requestAnimationFrame(updateCountdown);
-  countdownCell.currentInterval = null; // Since we're not using setInterval, set currentInterval to null
+  countdownCell.currentInterval = interval;
+  return interval;
 }
-
 
 
 // Toast function
@@ -428,19 +440,19 @@ showMvpBtn.addEventListener("click", async () => {
 
     // Condition 3: If the Time Difference is greater than the sum of CDR and MaxDelay
     if (timeDifferenceMs > sumOfCDRandMaxDelayMs) {
-      showToast("Error: Looks like it has respawned");
+      showToast("Error: The MVP is alive");
       return;
     }
 
     // Condition 4: If the time of death is greater than the current time
     if (deathTimeInGMT7 > currentTime) {
-      showToast("Error: Cannot set a time in the future");
+      showToast("Error: Can't set a time in the future");
       return;
     }
   }
 
   if (cardExists(selectedMvpId.toString(), selectedRespawn)) {
-    showToast("Error: You can't add duplicates");
+    showToast("Error: Can't add duplicates");
   } else {
     showMvp(
       mvp,
@@ -471,7 +483,6 @@ if (isPhone) {
     }
   });
 }
-
 
 // Card sorting
 function sortCards(type) {
