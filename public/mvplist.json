@@ -1,4 +1,15 @@
 [
+  {
+    "id": 1,
+    "name": "Test subject",
+    "respawn": [
+      {
+        "map": "gef_fild03",
+        "cdr": 300000,
+        "max_delay": 300000
+      }
+    ]
+  },
     {
       "id": 1087,
       "name": "Orc Hero",

@@ -1,4 +1,8 @@
 <div class="utility-toolbar">
+  <a href="/mvptimerbeta">
+    <button type="button" class="swap-pages-button"><i class="fa-solid fa-flask"></i> BETA</button>
+  </a>
+
   <span class="pick-a-theme">Choose a theme</span>
 
   <form class="theme-changer" action="">
@@ -25,7 +29,7 @@
         <h1>
           <img src="../assets/img/icons/mvp.webp" alt="MVP Timer Logo"> 
           <span class="timer">Timer
-            <span>Version 0.7<span>e</span></span>
+            <span>Version 0.8<span></span></span>
           </span>
         </h1>
 
@@ -84,9 +88,16 @@
               <label for="death-time-seconds">Seconds</label>
               <input type="number" id="death-time-seconds" name="death-time-seconds" min="0" max="59" step="1" placeholder="59">
             </div>
+            <div class="temporary-settings">
+                <div>
+                  <span class="small">Toggle card elements</span>
+                  <button id="hide-card-elements-button" class="generic-butto" aria-pressed="false"></button>
+                </div>
+            </div>
           </div>
         </div>
         <button id="show-mvp-btn">Add</button>
+        
       </div>
 
       <div id="sort-container">
@@ -110,6 +121,15 @@
         </button>
       </div>
       <div class="modal-body">
+        <div>
+          <h3 class="header fs-5">Version 0.8</h3>
+          <ul>
+            <li><span class="header">Toggle elements button</span> - Gives the user the capability of toggling the extra information within the cards while keeping the important elements. The grid adapts to these changes, and there's local storage to rememeber the user's choice.</li>
+            <li><span class="header">Beta and Live pages</span> - Mainly to try new additions that might have page breaking features.</li>
+            <li>Adjusted the position of the cards to be centered on smaller devices, and their grid-child criteria to fill across.</li>
+            <li>Other types of adjustments to fixated or wrong values for display purposes.</li>
+          </ul>
+        </div>
         <div>
           <h3 class="header fs-5">Version 0.7e</h3>
           <ul>

@@ -255,7 +255,7 @@ h1 .timer > span span {
 }
 
 button[data-bs-target="#Changelog"]::before {
-  content: "Changelog";
+  content: "Working on";
 }
 
 button[data-bs-target="#KnownIssues"]::before {
@@ -264,7 +264,7 @@ button[data-bs-target="#KnownIssues"]::before {
 
 @media only screen and (max-width: 570px) {
   button[data-bs-target="#Changelog"]::before {
-    content: "\f46d";
+    content: "\f6e3";
     font-weight: 900;
     font-family: "Font Awesome 6 Free";
   }
@@ -439,11 +439,11 @@ button[data-bs-target="#KnownIssues"]::before {
   }
 
   #sort-container > :nth-child(1) {
-    width: 80%;
+    width: 50%;
   }
 
   #sort-container > :nth-child(2) {
-    width: 20%;
+    width: 50%;
     text-align: end;
     margin: 0;
   }
@@ -674,6 +674,12 @@ button[data-bs-target="#KnownIssues"]::before {
 #hide-card-elements-button[aria-pressed="true"]::before {
   left: 50%;
   background-color: hsl(var(--white));
+}
+
+#hide-card-elements-button:is(.generic-button) {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem
 }
 
 .modal-content {

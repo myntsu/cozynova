@@ -616,7 +616,7 @@ const { favicon = "/favicon/sword.svg", faviconLight = "/img/favicon/sword_black
       }
 
       .dropdown-menu a {
-        color: hsl(var(--text));
+        color: hsl(var(--white));
       }
 
       .dropdown-menu a:hover {
@@ -1016,12 +1016,6 @@ const { favicon = "/favicon/sword.svg", faviconLight = "/img/favicon/sword_black
         transform-origin: top center;
       }
 
-      @media only screen and (max-width: 570px) {
-        .custom-tooltip::before {
-          /* max-width: min-content; */
-        }
-      }
-
       .tooltip {
         --bs-tooltip-opacity: 1;
       }
@@ -1030,9 +1024,19 @@ const { favicon = "/favicon/sword.svg", faviconLight = "/img/favicon/sword_black
         font-family: var(--bs-font-monospace);
       }
 
-      .nav-item:is(:hover, :focus-visible) {
+      .dropdown-menu:is(.show) {
+          border: 1px solid hsl(var(--main-light-2), 80%);
+          background-color: hsl(var(--main-dark)) !important;
+          margin-block-start: .5rem;
+      }
+
+      @media only screen and (min-width: 992px) {
+
+      .nav-item:is(:hover, :focus-visible) > a {
         background-color: hsl(var(--important), 90%) !important;
       }
+
+    }
 
       .nav-item:is(:hover, :focus-visible) .nav-link {
         color: hsl(var(--white)) !important;  

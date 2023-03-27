@@ -1,0 +1,150 @@
+<div class="utility-toolbar">
+  <a href="/mvptimer">
+    <button type="button" class="swap-pages-button"><i class="fa-solid fa-square-check"></i> LIVE</button>
+  </a>
+  <span class="pick-a-theme">Choose a theme</span>
+
+  <form class="theme-changer" action="">
+      <fieldset>
+          <legend class="visually-hidden">Pick a color scheme</legend>
+          <label class="visually-hidden" for="dark-blue">Blue Dark</label>
+          <input id="dark-blue" type="radio" name="theme">
+
+          <label class="visually-hidden" for="green">Green</label>
+          <input id="green" type="radio" name="theme">
+          
+          <label class="visually-hidden" for="dark">Dark</label>
+          <input id="dark" type="radio" name="theme">
+
+          <label class="visually-hidden" for="light">Light</label>
+          <input id="light" type="radio" name="theme">
+      </fieldset>
+  </form>
+</div>
+  
+<main>
+    <div class="top-information">
+      <div>
+        <h1>
+          <img src="../assets/img/icons/mvp.webp" alt="MVP Timer Logo"> 
+          <span class="timer" style="color: hsl(var(--white));">BETA
+            <span>Test <span>features</span></span>
+          </span>
+        </h1>
+
+      </div>
+
+      <div class="clock">
+        <div id="current-time-gmt-7"></div>
+        <span>Server time</span>
+      </div>
+    </div>
+
+
+    <div class="mvp-timer">
+
+      <div class="general-information">
+        <h2 class="header"><span class="number-span">1.</span> Fill up the information <i class="fa-solid fa-pen fa-xs number-span"></i></h2>
+        <button type="button" class="generic-button ms-auto" data-bs-toggle="modal" data-bs-target="#Changelog" aria-label="Changelog list">
+          
+        </button>
+        <button type="button" class="generic-button" data-bs-toggle="modal" data-bs-target="#KnownIssues" aria-label="Known issues list">
+          
+        </button>
+      </div>
+
+      <div id="user-selection">
+        <div class="search-and-select">
+          <div>
+            <label for="mvp-search">Search for the MVP</label>
+            <input type="text" id="mvp-search" placeholder="Search by name" />
+          </div>
+          <div>
+            <label for="mvp-select">Select the MVP</label>
+            <select id="mvp-select">
+              <option value="None">None selected</option>
+            </select>
+          </div>
+          <div>
+            <label for="respawn-select">Select the respawn location</label>
+            <select id="respawn-select">
+              <option value="None">None selected</option>
+            </select>
+          </div>
+        </div>
+        <div id="death-time-container">
+          <span class="header">Input the time of death <span class="low-focus">(Optional)</span></span>
+          <div>
+            <div>
+              <label for="death-time-hours">Hour</label>
+              <input type="number" id="death-time-hours" name="death-time-hours" min="0" max="23" step="1" placeholder="23">
+            </div>
+            <div>
+              <label for="death-time-minutes">Minutes</label>
+              <input type="number" id="death-time-minutes" name="death-time-minutes" min="0" max="59" step="1" placeholder="59">
+            </div>
+            <div>
+              <label for="death-time-seconds">Seconds</label>
+              <input type="number" id="death-time-seconds" name="death-time-seconds" min="0" max="59" step="1" placeholder="59">
+            </div>
+            <div class="temporary-settings">
+              <div>
+                <span class="small">Toggle card elements</span>
+                <button id="hide-card-elements-button" class="generic-butto" aria-pressed="false"></button>
+              </div>
+          </div>
+          </div>
+        </div>
+        <button id="show-mvp-btn">Add</button>
+      </div>
+
+      <div id="sort-container">
+        <h2><span class="number-span">2.</span> Check the respawn time <i class="fa-solid fa-check fa-xs number-span"></i></h2>
+        <h3>Sort by</h3>
+        <button id="sort-by-name">Name</button>
+        <button id="sort-by-respawn">Respawn</button>
+      </div>
+      <div id="mvp-container"></div>
+    </div>
+</main>
+  
+  <!-- Modal Changelog -->
+  <div class="modal fade" id="Changelog" tabindex="-1" aria-labelledby="ChangelogTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="ChangelogTitle">Working on</h1>
+          <button type="button" class="generic-button" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <span>Pretty much local storage to save the cards. Currently the data resets if it's set to default. I'm having a hard time processing the logic behind it, perhaps it was the use of MS into HH:MM:SS format with the current time.
+          </span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="generic-button" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Known Issues -->
+  <div class="modal fade" id="KnownIssues" tabindex="-1" aria-labelledby="KnownIssuesTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-4" id="KnownIssuesTitle">Known Issues</h1>
+          <button type="button" class="generic-button" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+            <span>:(</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="generic-button" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
