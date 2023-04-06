@@ -211,6 +211,10 @@ function msToHours(ms) {
 
 // Timer start
 function startTimer(ms, countdownCell, maxDelay, countdownLabel, deathTime) {
+  if (countdownCell.currentTimeout) {
+    clearTimeout(countdownCell.currentTimeout);
+  }
+
   const currentTime = DateTime.utc().minus({ hours: 7 });
 
   const storedDeathTimestamp = currentTime.startOf("day").plus({
@@ -261,6 +265,23 @@ function startTimer(ms, countdownCell, maxDelay, countdownLabel, deathTime) {
   return timerInstance;
 }
 
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+const audioBuffer = new Promise((resolve, reject) => {
+  fetch("/assets/sound/omori-heal-sound.mp3")
+    .then((response) => response.arrayBuffer())
+    .then((buffer) => audioContext.decodeAudioData(buffer, resolve, reject))
+    .catch((error) => console.error("Audio fetch error:", error));
+});
+
+function playAudio() {
+  audioBuffer.then((buffer) => {
+    const source = audioContext.createBufferSource();
+    source.buffer = buffer;
+    source.connect(audioContext.destination);
+    source.start();
+  });
+}
+
 // CDR start
 function startCDRTimer(ms, countdownCell, maxDelay, countdownLabel) {
   console.log("CDR Timer Started");
@@ -268,45 +289,23 @@ function startCDRTimer(ms, countdownCell, maxDelay, countdownLabel) {
   const startTime = performance.now();
   const targetEndTime = startTime + ms;
 
-  const interval = setInterval(() => {
+  function cdrTick() {
     const currentTime = performance.now();
     const remainingMs = Math.max(targetEndTime - currentTime, 0);
 
-    const audioContext = new (window.AudioContext ||
-      window.webkitAudioContext)();
-    const audioBuffer = new Promise((resolve, reject) => {
-      fetch("/assets/sound/omori-heal-sound.mp3")
-        .then((response) => response.arrayBuffer())
-        .then((buffer) => audioContext.decodeAudioData(buffer, resolve, reject))
-        .catch((error) => console.error("Audio fetch error:", error));
-    });
-
-    function playAudio() {
-      audioBuffer.then((buffer) => {
-        const source = audioContext.createBufferSource();
-        source.buffer = buffer;
-        source.connect(audioContext.destination);
-        source.start();
-      });
-    }
-
     if (remainingMs <= 0) {
-      clearInterval(interval);
       playAudio();
       countdownCell.textContent = "0% chance";
       countdownLabel.textContent = "Chance to respawn:";
-      countdownCell.currentInterval = startMaxDelayTimer(
-        maxDelay,
-        countdownCell
-      );
+      countdownCell.currentTimeout = startMaxDelayTimer(maxDelay, countdownCell);
     } else {
       countdownCell.textContent = msToHours(remainingMs);
-      // console.log('CDR Timer tick:', msToHours(remainingMs));
+      countdownCell.currentTimeout = setTimeout(cdrTick, 1000);
     }
-  }, 1000);
+  }
 
-  countdownCell.currentInterval = interval;
-  return interval;
+  countdownCell.currentTimeout = setTimeout(cdrTick, 1000);
+  return countdownCell.currentTimeout;
 }
 
 // Delay start
@@ -316,25 +315,22 @@ function startMaxDelayTimer(ms, countdownCell) {
   const startTime = performance.now();
   const targetEndTime = startTime + ms;
 
-  const interval = setInterval(() => {
+  function maxDelayTick() {
     const currentTime = performance.now();
     const elapsedMs = currentTime - startTime;
     const remainingMs = Math.max(targetEndTime - currentTime, 0);
 
     if (remainingMs <= 0) {
-      clearInterval(interval);
       countdownCell.textContent = `100% chance (${msToHours(ms)})`;
     } else {
       const percentage = Math.round((elapsedMs / ms) * 100);
-      countdownCell.textContent = `${percentage}% chance (${msToHours(
-        elapsedMs
-      )})`;
-      //  console.log('Max Delay Timer tick:', `${percentage}% chance (${msToHours(elapsedMs)})`);
+      countdownCell.textContent = `${percentage}% chance (${msToHours(elapsedMs)})`;
+      countdownCell.currentTimeout = setTimeout(maxDelayTick, 1000);
     }
-  }, 1000);
+  }
 
-  countdownCell.currentInterval = interval;
-  return interval;
+  countdownCell.currentTimeout = setTimeout(maxDelayTick, 1000);
+  return countdownCell.currentTimeout;
 }
 
 // Toast function
