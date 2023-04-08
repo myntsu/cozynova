@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MVPTimer from "../components/MVPTimer.astro";
+
+// Utility components
+import Settings from "../components/utility/Settings.astro";
 import "../styles/mvptimer.css";
 ---
 
@@ -14,6 +17,7 @@ import "../styles/mvptimer.css";
   favicon="/favicon/sword.svg"
   faviconLight="/favicon/sword_black.svg">
   <MVPTimer />
+  <Settings />
 </Layout>
 
 <script>

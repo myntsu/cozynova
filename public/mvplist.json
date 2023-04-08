@@ -1,15 +1,4 @@
 [
-  {
-    "id": 1,
-    "name": "Test subject",
-    "respawn": [
-      {
-        "map": "gef_fild03",
-        "cdr": 300000,
-        "max_delay": 300000
-      }
-    ]
-  },
     {
       "id": 1087,
       "name": "Orc Hero",
@@ -680,6 +669,39 @@
         {
           "map": "gl_cas01_",
           "cdr": 7200000,
+          "max_delay": 600000
+        }
+      ]
+    },
+    {
+      "id": 3074,
+      "name": "Time Holder",
+      "respawn": [
+        {
+          "map": "c_tower3_",
+          "cdr": 7200000,
+          "max_delay": 600000
+        }
+      ]
+    },
+    {
+      "id": 20125,
+      "name": "Ancient Anomaly",
+      "respawn": [
+        {
+          "map": "jup_fild02",
+          "cdr": 3600000,
+          "max_delay": 600000
+        }
+      ]
+    },
+    {
+      "id": 20253,
+      "name": "Ancient Golem",
+      "respawn": [
+        {
+          "map": "jup_fild03",
+          "cdr": 3600000,
           "max_delay": 600000
         }
       ]

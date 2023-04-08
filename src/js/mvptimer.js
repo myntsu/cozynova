@@ -146,8 +146,13 @@ function showMvp(mvp, selectedRespawn, deathTime) {
     );
 
     restartButton.addEventListener("click", () => {
-      clearInterval(countdownValue.currentInterval);
-      countdownValue.timerInterval = startTimer(
+      if (countdownValue.currentTimeout) {
+        console.log("Stopping Current Timeout");
+        clearTimeout(countdownValue.currentTimeout);
+        countdownValue.currentTimeout = null;
+      }
+
+      countdownValue.timerInstance = startTimer(
         respawn,
         countdownValue,
         maxDelay,
@@ -157,9 +162,10 @@ function showMvp(mvp, selectedRespawn, deathTime) {
     });
 
     removeButton.addEventListener("click", () => {
-      // Clear the timer interval before removing the card
-      if (countdownValue.currentInterval) {
-        clearInterval(countdownValue.currentInterval);
+      // Clear the timer timeout before removing the card
+      if (countdownValue.currentTimeout) {
+        clearTimeout(countdownValue.currentTimeout);
+        countdownValue.currentTimeout = null;
       }
       console.log(Boolean(startCDRTimer));
       mvpContainer.removeChild(mvpCard);
@@ -171,16 +177,6 @@ function showMvp(mvp, selectedRespawn, deathTime) {
   mvpCard.appendChild(mvpRespawn);
 
   mvpContainer.appendChild(mvpCard);
-}
-
-// Verification to see if cards exists
-function cardExists(id, selectedRespawn) {
-  const mvpCards = Array.from(mvpContainer.children);
-  return mvpCards.some((card) => {
-    const mvpId = card.getAttribute("data-mvp-id");
-    const mapName = card.getAttribute("data-map");
-    return mvpId === id.toString() && mapName === selectedRespawn;
-  });
 }
 
 // MS to Hours converting
@@ -203,9 +199,11 @@ function startTimer(ms, countdownCell, maxDelay, countdownLabel, deathTime) {
     seconds: deathTime.seconds,
   });
 
-  const timeDifferenceMs = currentTime
-    .diff(deathTimeInGMT7, "milliseconds")
-    .toObject().milliseconds;
+  const elapsedTimeMs =
+    deathTime && currentTime.diff(deathTimeInGMT7, "milliseconds").milliseconds;
+
+  const remainingCDRTimer = ms - elapsedTimeMs;
+  const remainingMaxDelayTimer = maxDelay - (elapsedTimeMs - ms);
 
   const timerInstance = {
     cdrInterval: null,
@@ -226,184 +224,108 @@ function startTimer(ms, countdownCell, maxDelay, countdownLabel, deathTime) {
       timerInstance
     );
   } else {
-    const remainingTimeMs = ms + maxDelay - timeDifferenceMs;
-    if (remainingTimeMs > maxDelay) {
+    if (remainingCDRTimer > 0) {
       interval = startCDRTimer(
-        remainingTimeMs - maxDelay,
+        remainingCDRTimer,
         countdownCell,
         maxDelay,
         countdownLabel,
         timerInstance
       );
-    } else if (remainingTimeMs > 0) {
-      interval = startMaxDelayTimer(remainingTimeMs, countdownCell);
+    } else if (remainingMaxDelayTimer > 0) {
+      interval = startMaxDelayTimer(
+        countdownCell,
+        maxDelay,
+        elapsedTimeMs - ms
+      );
     } else {
       showToast("The MVP is alive!");
     }
   }
 
+  countdownCell.timerInstance = timerInstance;
   return timerInstance;
+}
+
+// Audio play
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+const audioBuffer = new Promise((resolve, reject) => {
+  fetch("/assets/sound/omori-heal-sound.mp3")
+    .then((response) => response.arrayBuffer())
+    .then((buffer) => audioContext.decodeAudioData(buffer, resolve, reject))
+    .catch((error) => console.error("Audio fetch error:", error));
+});
+
+function playAudio() {
+  audioBuffer.then((buffer) => {
+    const source = audioContext.createBufferSource();
+    source.buffer = buffer;
+    source.connect(audioContext.destination);
+    source.start();
+  });
 }
 
 // CDR start
 function startCDRTimer(ms, countdownCell, maxDelay, countdownLabel) {
-  console.log("CDR Timer Started");
+  // console.log("Countdown started.");
 
   const startTime = performance.now();
   const targetEndTime = startTime + ms;
 
-  const interval = setInterval(() => {
-    const currentTime = performance.now();
-    const remainingMs = Math.max(targetEndTime - currentTime, 0);
-
-    const audioContext = new (window.AudioContext ||
-      window.webkitAudioContext)();
-    const audioBuffer = new Promise((resolve, reject) => {
-      fetch("/assets/sound/omori-heal-sound.mp3")
-        .then((response) => response.arrayBuffer())
-        .then((buffer) => audioContext.decodeAudioData(buffer, resolve, reject))
-        .catch((error) => console.error("Audio fetch error:", error));
-    });
-
-    function playAudio() {
-      audioBuffer.then((buffer) => {
-        const source = audioContext.createBufferSource();
-        source.buffer = buffer;
-        source.connect(audioContext.destination);
-        source.start();
-      });
-    }
-
-    if (remainingMs <= 0) {
-      clearInterval(interval);
-      playAudio();
-      countdownCell.textContent = "0% chance";
-      countdownLabel.textContent = "Chance to respawn:";
-      countdownCell.currentInterval = startMaxDelayTimer(
-        maxDelay,
-        countdownCell
-      );
-    } else {
-      countdownCell.textContent = msToHours(remainingMs);
-      // console.log('CDR Timer tick:', msToHours(remainingMs));
-    }
-  }, 1000);
-
-  countdownCell.currentInterval = interval;
-  return interval;
-}
-
-// Delay start
-function startMaxDelayTimer(ms, countdownCell) {
-  console.log("Max Delay Timer Started");
-
-  const startTime = performance.now();
-  const targetEndTime = startTime + ms;
-
-  const interval = setInterval(() => {
+  function cdrTick() {
     const currentTime = performance.now();
     const elapsedMs = currentTime - startTime;
     const remainingMs = Math.max(targetEndTime - currentTime, 0);
 
     if (remainingMs <= 0) {
-      clearInterval(interval);
-      countdownCell.textContent = `100% chance (${msToHours(ms)})`;
+      playAudio();
+      countdownCell.textContent = `0% chance (${msToHours(ms)})`;
+      countdownLabel.textContent = "Chance to respawn:";
+      clearTimeout(countdownCell.currentTimeout);
+      countdownCell.currentTimeout = startMaxDelayTimer(
+        countdownCell,
+        maxDelay,
+        0
+      );
     } else {
-      const percentage = Math.round((elapsedMs / ms) * 100);
+      countdownCell.textContent = `${msToHours(ms - elapsedMs)}`;
+      countdownCell.currentTimeout = setTimeout(cdrTick, 1000);
+    }
+  }
+
+  countdownCell.currentTimeout = setTimeout(cdrTick, 1000);
+  return countdownCell.currentTimeout;
+}
+
+// Delay start
+function startMaxDelayTimer(countdownCell, maxDelay, elapsedTimeMs) {
+  // console.log("Delay time started.");
+  const startTime = performance.now() - (elapsedTimeMs || 0);
+  const targetEndTime = startTime + maxDelay;
+
+  function maxDelayTick() {
+    // console.log("Max Delay Timer tick");
+    const currentTime = performance.now();
+    const elapsedMs = currentTime - startTime;
+    const remainingMs = Math.max(targetEndTime - currentTime, 0);
+
+    // Add the console log here
+    console.log("elapsedMs:", elapsedMs, "maxDelay:", maxDelay);
+
+    if (remainingMs <= 0) {
+      countdownCell.textContent = `100% chance (${msToHours(maxDelay)})`;
+      clearTimeout(countdownCell.currentTimeout);
+    } else {
+      const percentage = Math.round((elapsedMs / maxDelay) * 100);
       countdownCell.textContent = `${percentage}% chance (${msToHours(
         elapsedMs
       )})`;
-      //  console.log('Max Delay Timer tick:', `${percentage}% chance (${msToHours(elapsedMs)})`);
+      countdownCell.currentTimeout = setTimeout(maxDelayTick, 1000);
     }
-  }, 1000);
-
-  countdownCell.currentInterval = interval;
-  return interval;
-}
-
-// Toast function
-let toastActive = false;
-function showToast(text) {
-  if (toastActive) return;
-
-  toastActive = true;
-
-  // Create toast element and set the text
-  const toast = document.createElement("div");
-  toast.innerText = `${text}`;
-
-  // Add CSS classes
-  toast.classList.add("quick-toast", "shadow-container");
-
-  // Append toast to the body
-  document.body.appendChild(toast);
-
-  // Animate toast message
-  toast.animate([{ bottom: "-50px" }, { bottom: "30px" }], {
-    duration: 300,
-    easing: "ease-out",
-    fill: "forwards",
-  });
-
-  // Remove the toast after 2 seconds
-  setTimeout(() => {
-    toast.remove();
-    toastActive = false;
-  }, 2000);
-}
-
-// Clock
-function getCurrentTimeInGMT7() {
-  const now = DateTime.utc();
-  const gmt7Time = now.set({ hour: now.hour - 7 });
-  return gmt7Time.toFormat("HH:mm:ss");
-}
-function updateClock() {
-  const currentTime = getCurrentTimeInGMT7();
-  document.getElementById("current-time-gmt-7").textContent = currentTime;
-}
-
-// MVP search
-const mvpSearch = document.getElementById("mvp-search");
-mvpSearch.addEventListener("input", async () => {
-  const searchText = mvpSearch.value.toLowerCase();
-  const mvps = await getMvps();
-  const filteredMvps = mvps.filter((mvp) =>
-    mvp.name.toLowerCase().includes(searchText)
-  );
-
-  // Clear the current options in the select element
-  while (mvpSelect.firstChild) {
-    mvpSelect.removeChild(mvpSelect.firstChild);
   }
 
-  // Create an option for each filtered MVP
-  filteredMvps.forEach((mvp) => {
-    createOption(mvp, mvpSelect);
-  });
-
-  // Trigger a change event to refresh the respawn locations
-  mvpSelect.dispatchEvent(new Event("change"));
-});
-
-// Validation for death timer
-function validateInput(input, min, max) {
-  input.addEventListener("input", () => {
-    const value = parseInt(input.value, 10);
-    if (isNaN(value)) {
-      input.value = "";
-    } else if (value < min) {
-      input.value = min;
-    } else if (value > max) {
-      input.value = max;
-    }
-  });
-}
-
-function clearInputFields() {
-  deathTimeHours.value = "";
-  deathTimeMinutes.value = "";
-  deathTimeSeconds.value = "";
+  countdownCell.currentTimeout = setTimeout(maxDelayTick, 1000);
+  return countdownCell.currentTimeout;
 }
 
 // Cards generator on click
@@ -477,25 +399,111 @@ showMvpBtn.addEventListener("click", async () => {
   clearInputFields();
 });
 
-// Phone auto-skip inputs
-const isPhone = window.innerWidth < 768;
-if (isPhone) {
-  // Add event listeners to the input fields
-  deathTimeHours.addEventListener("input", () => {
-    if (deathTimeHours.value.length === 2) {
-      deathTimeMinutes.focus();
+// Verification to see if cards exists
+function cardExists(id, selectedRespawn) {
+  const mvpCards = Array.from(mvpContainer.children);
+  return mvpCards.some((card) => {
+    const mvpId = card.getAttribute("data-mvp-id");
+    const mapName = card.getAttribute("data-map");
+    return mvpId === id.toString() && mapName === selectedRespawn;
+  });
+}
+
+// Toast function
+let toastActive = false;
+function showToast(text) {
+  if (toastActive) return;
+
+  toastActive = true;
+
+  // Create toast element and set the text
+  const toast = document.createElement("div");
+  toast.innerText = `${text}`;
+
+  // Add CSS classes
+  toast.classList.add("quick-toast", "shadow-container");
+
+  // Append toast to the body
+  document.body.appendChild(toast);
+
+  // Animate toast message
+  toast.animate([{ bottom: "-50px" }, { bottom: "30px" }], {
+    duration: 300,
+    easing: "ease-out",
+    fill: "forwards",
+  });
+
+  // Remove the toast after 2 seconds
+  setTimeout(() => {
+    toast.remove();
+    toastActive = false;
+  }, 2000);
+}
+
+// Clock
+function getCurrentTimeInGMT7() {
+  const now = DateTime.utc();
+  const gmt7Time = now.set({ hour: now.hour - 7 });
+  return gmt7Time.toFormat("HH:mm:ss");
+}
+function updateClock() {
+  const currentTime = getCurrentTimeInGMT7();
+  document.getElementById("current-time-gmt-7").textContent = currentTime;
+}
+
+// MVP search
+const mvpSearch = document.getElementById("mvp-search");
+mvpSearch.addEventListener("input", async () => {
+  const searchText = mvpSearch.value.toLowerCase();
+  const mvps = await getMvps();
+  const filteredMvps = mvps.filter((mvp) =>
+    mvp.name.toLowerCase().includes(searchText)
+  );
+
+  // Clear the current options in the select element
+  while (mvpSelect.firstChild) {
+    mvpSelect.removeChild(mvpSelect.firstChild);
+  }
+
+  // Create an option for each filtered MVP
+  filteredMvps.forEach((mvp) => {
+    createOption(mvp, mvpSelect);
+  });
+
+  // Trigger a change event to refresh the respawn locations
+  mvpSelect.dispatchEvent(new Event("change"));
+});
+
+// Enter key listener to fire the card creation
+function triggerShowMvpBtn(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    showMvpBtn.click();
+  }
+}
+
+mvpSearch.addEventListener("keydown", triggerShowMvpBtn);
+mvpSelect.addEventListener("keydown", triggerShowMvpBtn);
+respawnSelect.addEventListener("keydown", triggerShowMvpBtn);
+
+// Validation for death timer
+function validateInput(input, min, max) {
+  input.addEventListener("input", () => {
+    const value = parseInt(input.value, 10);
+    if (isNaN(value)) {
+      input.value = "";
+    } else if (value < min) {
+      input.value = min;
+    } else if (value > max) {
+      input.value = max;
     }
   });
-  deathTimeMinutes.addEventListener("input", () => {
-    if (deathTimeMinutes.value.length === 2) {
-      deathTimeSeconds.focus();
-    }
-  });
-  deathTimeSeconds.addEventListener("input", () => {
-    if (deathTimeSeconds.value.length === 2) {
-      // Do something when all input fields have been filled
-    }
-  });
+}
+
+function clearInputFields() {
+  deathTimeHours.value = "";
+  deathTimeMinutes.value = "";
+  deathTimeSeconds.value = "";
 }
 
 // Card sorting
@@ -527,6 +535,26 @@ function getTimeRemaining(timerElement) {
 }
 
 // Event listeners
+// Auto-skip inputs
+deathTimeHours.addEventListener("input", () => {
+  if (deathTimeHours.value.length === 2) {
+    deathTimeMinutes.focus();
+  }
+});
+
+deathTimeMinutes.addEventListener("input", () => {
+  if (deathTimeMinutes.value.length === 2) {
+    deathTimeSeconds.focus();
+  }
+});
+
+deathTimeSeconds.addEventListener("input", () => {
+  if (deathTimeSeconds.value.length === 2) {
+    // Trigger the event listener for the showMvpBtn
+    showMvpBtn.click();
+  }
+});
+
 // For "Sort by Name" button
 sortByNameBtn.addEventListener("click", () => {
   sortCards("name");
@@ -559,17 +587,29 @@ window.addEventListener("beforeunload", (e) => {
 
 // Hiding elements from within the cards
 function hideCardElements(hide) {
-  const cards = document.querySelectorAll('.mvp-card');
+  const cards = document.querySelectorAll(".mvp-card");
 
   cards.forEach((card) => {
     const elementsAndClasses = [
       { element: card.querySelector(".mvp-header"), className: "toggled" },
       { element: card.querySelector(".mvp-info"), className: "toggled" },
       { element: card.querySelector(".respawn-timer"), className: "toggled" },
-      { element: card.querySelector(".mvp-header h2"), className: "hiding-card-elements" },
-      { element: card.querySelector(".mvp-info p"), className: "hiding-card-elements" },
-      { element: card.querySelector(".mvp-map"), className: "hiding-card-elements" },
-      { element: card.querySelector(".mvp-respawn i"), className: "hiding-card-elements" },
+      {
+        element: card.querySelector(".mvp-header h2"),
+        className: "hiding-card-elements",
+      },
+      {
+        element: card.querySelector(".mvp-info p"),
+        className: "hiding-card-elements",
+      },
+      {
+        element: card.querySelector(".mvp-map"),
+        className: "hiding-card-elements",
+      },
+      {
+        element: card.querySelector(".mvp-respawn i"),
+        className: "hiding-card-elements",
+      },
     ];
 
     elementsAndClasses.forEach(({ element, className }) => {
@@ -596,7 +636,7 @@ hideElementsButton.setAttribute("aria-pressed", isHiddenOnInit);
 
 const observer = new MutationObserver((mutations) => {
   mutations.forEach((mutation) => {
-    if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+    if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
       const isHidden = localStorage.getItem("hideCardElements") === "true";
       hideCardElements(isHidden);
     }

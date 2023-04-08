@@ -1,0 +1,68 @@
+<button type="button" id="settings" aria-label="Page settings">
+    <div aria-hidden="true">
+      <i class="fa-solid fa-gear"></i>
+    </div>
+    <div class="menu">
+
+    </div>
+</button>
+
+<style>
+    #settings {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        filter: drop-shadow(2px 2px 0 hsl(var(--white), 90%));
+
+        background-color: transparent;
+        border: none;
+    }
+
+    #settings > :first-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+    }
+
+    #settings i {
+        color: hsl(var(--important));
+        font-size: 2.5rem;
+    }
+
+    #settings i:is(.gear-active) {
+        color: hsl(var(--white));
+    }
+
+    .menu {
+        visibility: collapse;
+        opacity: 0;
+
+        position: absolute;
+        bottom: 4rem;
+        right: .5rem;
+
+        min-width: 175px;
+    }
+
+    #settings:has(.gear-active) .menu {
+        visibility: visible;
+        opacity: 1;
+    }
+
+
+    .settings-animation {
+        animation: rotation .9s ease-out forwards;
+    }
+
+    @keyframes rotation {
+        0% {rotate: 0deg;}
+        100% {rotate: 360deg;}
+    }
+
+</style>
+
+<script>
+        import '/src/js/utility/settings.js';
+</script>
