@@ -120,22 +120,10 @@ const { favicon = "/favicon/sword.svg", faviconLight = "/img/favicon/sword_black
       crossorigin="anonymous"
     ></script>
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      defer
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-JHZT2VX9C8"
-    ></script>
-    <script defer>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+    <!-- Plausible analytics -->
+    <script defer data-domain="cozynova.online" src="https://plausible.io/js/script.js"></script>
 
-      gtag("config", "G-JHZT2VX9C8");
-    </script>
-
+    <!-- Netlify -->
     <script
       defer
       type="text/javascript"
