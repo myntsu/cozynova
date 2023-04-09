@@ -124,9 +124,10 @@
         <div>
           <h3 class="header fs-5">Version 0.8d</h3>
           <ul>
-            <li><span class="header">Auto skip function</span> - Enabled across all devices, as default. Will auto-skip inputs when 2 numbers are typed down.</li>
-            <li><span class="header">Auto add function</span> - When inputting the seconds, in the time of death user input, it will automatically attempt to add the MVP.</li>
-            <li><span class="header">Enabled enter usage</span> -  Pressing "enter" when searching or selecting the MVP, additionally to selecting the location, will attempt to add the MVP.</li>
+            <li><span class="header">Auto skip function</span> - Now enabled across all devices (previously only phone) by default. Inputting 2 digits will automatically skip to the next slot.</li>
+            <li><span class="header">Auto add function</span> - When finishing the HH:MM:SS input, it will automatically attempt to add the selected MVP, instead of manually adding it.</li>
+            <li><span class="header">Enabled enter usage</span> -  Now possible to press enter when searching, selecting or choosing a respawn location. This will automatically attempt to add the selected MVP, instead of manually adding it.</li>
+            <li>Added the missing GIFs and map locations, additionally to the Time Holder MVP <span class="low-focus">(Thanks to astroty, Tokei & Yorutia).</span></li>
             <li>Improved overall performance of the webpage <i>(see below)</i>.</li>
             <li><span class="focus fw-bold">Adjusted the timers functions</span> - Removed the audio play inside the timer function, and made its own function callback for when the respawn timer reaches 0, instead of being inside the loop of every single one of them.</li>
             <li><span class="focus fw-bold">Fixed delay timer</span> - Now it takes the user input time into consideration to caculate the remaining delay time instead of defaulting it everytime.</li>
