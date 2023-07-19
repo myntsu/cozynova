@@ -440,17 +440,6 @@ function showToast(text) {
   }, 2000);
 }
 
-// Clock
-function getCurrentTimeInGMT7() {
-  const now = DateTime.utc();
-  const gmt7Time = now.set({ hour: now.hour - 7 });
-  return gmt7Time.toFormat("HH:mm:ss");
-}
-function updateClock() {
-  const currentTime = getCurrentTimeInGMT7();
-  document.getElementById("current-time-gmt-7").textContent = currentTime;
-}
-
 // MVP search
 const mvpSearch = document.getElementById("mvp-search");
 mvpSearch.addEventListener("input", async () => {
@@ -572,9 +561,6 @@ sortByRespawnBtn.addEventListener("click", () => {
 validateInput(deathTimeHours, 0, 23);
 validateInput(deathTimeMinutes, 0, 59);
 validateInput(deathTimeSeconds, 0, 59);
-
-updateClock();
-setInterval(updateClock, 1000);
 
 let showAlert = true;
 

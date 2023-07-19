@@ -1,3 +1,9 @@
+---
+import MVPClock from './mvp/MVPClock.astro';
+import MVPChangelog from "./mvp/MVPChangelog.astro";
+import MVPKnownIssues from "./mvp/MVPKnownIssues.astro";
+---
+
 <div class="utility-toolbar">
   <a href="/mvptimerbeta">
     <button type="button" class="swap-pages-button"><i class="fa-solid fa-flask"></i> BETA</button>
@@ -35,10 +41,7 @@
 
       </div>
 
-      <div class="clock">
-        <div id="current-time-gmt-7"></div>
-        <span>Server time</span>
-      </div>
+      <MVPClock />
     </div>
 
 
@@ -110,147 +113,5 @@
     </div>
 </main>
 
-<!-- Modal Changelog -->
-<div class="modal fade" id="Changelog" tabindex="-1" aria-labelledby="ChangelogTitle" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="ChangelogTitle">Changelog</h1>
-        <button type="button" class="generic-button" data-bs-dismiss="modal" aria-label="Close">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div>
-          <h3 class="header fs-5">Version 0.8d</h3>
-          <ul>
-            <li><span class="header">Auto skip function</span> - Now enabled across all devices (previously only phone) by default. Inputting 2 digits will automatically skip to the next slot.</li>
-            <li><span class="header">Auto add function</span> - When finishing the HH:MM:SS input, it will automatically attempt to add the selected MVP, instead of manually adding it.</li>
-            <li><span class="header">Enabled enter usage</span> -  Now possible to press enter when searching, selecting or choosing a respawn location. This will automatically attempt to add the selected MVP, instead of manually adding it.</li>
-            <li>Added the missing GIFs and map locations, additionally to the Time Holder MVP <span class="low-focus">(Thanks to astroty, Tokei & Yorutia).</span></li>
-            <li>Improved overall performance of the webpage <i>(see below)</i>.</li>
-            <li><span class="focus fw-bold">Adjusted the timers functions</span> - Removed the audio play inside the timer function, and made its own function callback for when the respawn timer reaches 0, instead of being inside the loop of every single one of them.</li>
-            <li><span class="focus fw-bold">Fixed delay timer</span> - Now it takes the user input time into consideration to caculate the remaining delay time instead of defaulting it everytime.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="header fs-5">Version 0.8</h3>
-          <ul>
-            <li><span class="header">Toggle elements button</span> - Gives the user the capability of toggling the extra information within the cards while keeping the important elements. The grid adapts to these changes, and there's local storage to rememeber the user's choice.</li>
-            <li><span class="header">Beta and Live pages</span> - Mainly to try new additions that might have page breaking features.</li>
-            <li>Adjusted the position of the cards to be centered on smaller devices, and their grid-child criteria to fill across.</li>
-            <li>Adjusted the parameters of certain CSS variables, instead of having fixed values, used calc.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="header fs-5">Version 0.7e</h3>
-          <ul>
-            <li><span class="header">Auto-clean inputs</span> - After successfully inputting a new MVP to the list, it will automatically clear the Hour, Minutes and Seconds inputs.</li>
-            <li><span class="header">Auto-skip inputs</span> - For phone users, it will auto-skip the Hour, Minutes and Seconds inputs as soon as you type 2 numbers.</li>
-            <li>Optimized the timers to consume less resources and update properly in real time, avoiding desync.</li>
-            <li><span class="focus fw-bold">Fixed empty inputs</span> - If the user didn't input anything, it would prompt an error message.</li>
-            <li><span class="focus fw-bold">Fixed restart timer</span> - If the timer after the MVP timer respawn reached 0, and the extra random time triggered, the restart button wouldn't properly restart the second timer, flickering between the two.</li>
-
-          </ul>
-        </div>
-        <div>
-          <h3 class="header fs-5">Version 0.7b</h3>
-          <ul>
-            <li><span class="header">Changelog</span> - Added a display to check changelogs for current & past versions (Hello you, this is a recursive message).</li>
-            <li><span class="header">Known Issues</span> - Added a display to check currently live known issues a.k.a bugs within the app itself.</li>
-            <li>Improved the visual display of the search, select bars and input.</li>
-            <li>Adjusted the padding values for some buttons.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="header fs-5">Version 0.7a</h3>
-          <ul>
-            <li>Adjusted the naming convention of the death timer input, simplifying it.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="header fs-5">Version 0.7</h3>
-          <ul>
-            <li><span class="header">Sort function</span> - Added buttons to sort both by name [a-z] and respawn [0-9], in an asceding order.</li>
-            <li>Improved the visuals of the respawn list to have a minimum height.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="header fs-5">Version 0.6</h3>
-          <ul>
-            <li><span class="header">Search bar</span> - Auto-select the closest & matching criteria, alongside with the first map from the JSON file by default.</li>
-            <li><span class="header">Toast messages</span> - Displaying if the user hasn't selected an MVP, preventing duplicated MVPs and to indicate if the MVP is alive (in case the user input's an incorrect death time).</li>
-            <li>Polished last details regarding the layout of the whole page.</li>
-            <li><span class="number fw-bold">Removed custom timer</span> - Its functionality has been deprecated by the custom death timer.</li>
-            <li><class class="focus fw-bold">Fixed card's titles and size</class> - Cutting words and cutting the buttons. Adjusted the size for them to span properly in a grid layout, and to not break in smaller devices.</li>
-            <li><span class="focus fw-bold">Fixed remove button</span> - Previously not removing the active timer, just the card visually. Now it removes both.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="header fs-5">Version 0.5b</h3>
-          <ul>
-            <li><span class="header">Restart button</span> - </li>
-            <li>Improved the respawn list layout.</li>
-            <li>Improved the visibility of the cards for each MVP With the structure of: Name, Buttons, Image, ID, Map, Map Name, Respawn Time & Cooldown of respawn.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="header fs-5">Version 0.5a</h3>
-          <ul>
-            <li><span class="header">Close Button</span> - With the mere functionality of removing the card's vissibility.</li>
-            <li>Implemented the layout from all the other pages.</li>
-            <li>Added a decorative background to the body.</li>
-            <li>Customized a decorative header with its own background.</li>
-            <li><span class="number fw-bold">Disabled custom timer</span> - Merely for testing purposes, so the user can't access it easily, but visible.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="header fs-5">Version 0.5</h3>
-          <ul>
-            <li><span class="header">Custom death timer</span> - Capable of selecting a death time (based on GMT-7 / server time) and adjust the current's respawn cooldown.</li>
-            <li><span class="number fw-bold">Adjuster custom timer</span> - Distributed it with a ratio of hours, minutes and seconds.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="header fs-5">Version 0.3</h3>
-          <ul>
-            <li><span class="header">Custom timer</span> - Based on miliseconds in which the user can input any time to adjust the current default to their desired.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="header fs-5">Version 0.1</h3>
-          <ul>
-            <li><span class="header">First demo</span> - First public demo release. You can select and MVP and its respawn location, and add it.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="generic-button" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Known Issues -->
-<div class="modal fade" id="KnownIssues" tabindex="-1" aria-labelledby="KnownIssuesTitle" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-4" id="KnownIssuesTitle">Known Issues</h1>
-        <button type="button" class="generic-button" data-bs-dismiss="modal" aria-label="Close">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div>
-          <ul>
-            <li>None at this very moment - Although, I have in observation the performance of it, as there was reports regarding the page crashing.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="generic-button" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+<MVPChangelog />
+<MVPKnownIssues />

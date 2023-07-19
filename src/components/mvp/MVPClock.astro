@@ -1,0 +1,91 @@
+<div class="clock">
+  <div id="current-time"></div>
+  <div class="server-time-wrapper">
+    <span>Server time</span>
+    <select id="timezone-select"></select>
+  </div>
+</div>
+
+<style>
+  .clock {
+    margin-inline-start: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 200px;
+
+    font-size: 1.5rem;
+    text-align: center;
+
+    color: hsl(var(--header));
+  }
+
+  .clock span {
+    color: hsl(var(--white));
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  .server-time-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  #timezone-select {
+    border-radius: 0.25rem;
+    font-family: inherit;
+    padding-block: 0.25rem;
+    padding-inline-start: 0.5rem;
+    border: none;
+    font-size: 0.9rem;
+  }
+
+  #timezone-select:is(:hover, :focus-visible) {
+    border: none;
+    outline: 2px solid hsl(var(--important));
+    outline-offset: 2px;
+  }
+</style>
+
+<script lang="js">
+  function getCurrentTimeInTimeZone(timezoneOffset) {
+    const now = new Date();
+    let offsetTime = new Date(now.getTime() + timezoneOffset * 60 * 60 * 1000);
+    return offsetTime.toLocaleTimeString();
+  }
+
+  function updateClock() {
+    const timezoneSelect = document.getElementById("timezone-select");
+    const selectedOffset = parseInt(timezoneSelect.value);
+    localStorage.setItem("selectedOffset", selectedOffset);
+    const currentTime = getCurrentTimeInTimeZone(selectedOffset);
+    document.getElementById("current-time").textContent = currentTime;
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const timezoneSelect = document.getElementById("timezone-select");
+    const timeZones = Array.from({ length: 26 }, (_, i) => i - 12);
+
+    timeZones.forEach((offset) => {
+      const option = document.createElement("option");
+      option.value = offset;
+      option.textContent = `GMT${offset >= 0 ? `+${offset}` : offset}`;
+      timezoneSelect.appendChild(option);
+    });
+
+    // Retrieve the saved timezone offset from localStorage
+    const savedOffset = localStorage.getItem("selectedOffset");
+    if (savedOffset !== null) {
+      // Set the value of the timezone-select element to the saved offset
+      timezoneSelect.value = savedOffset;
+    }
+
+    timezoneSelect.addEventListener("change", updateClock);
+    updateClock();
+    setInterval(updateClock, 1000);
+  });
+</script>

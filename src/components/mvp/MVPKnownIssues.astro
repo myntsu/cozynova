@@ -1,0 +1,77 @@
+<!-- Modal Known Issues -->
+<div
+  class="modal fade"
+  id="KnownIssues"
+  tabindex="-1"
+  aria-labelledby="KnownIssuesTitle"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1
+          class="modal-title fs-4"
+          id="KnownIssuesTitle">
+          Known Issues
+        </h1>
+        <button
+          type="button"
+          class="generic-button"
+          data-bs-dismiss="modal"
+          aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <ul>
+            <li>
+              None at this very moment - Although, I have in observation the
+              performance of it, as there was reports regarding the page
+              crashing.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="generic-button"
+          data-bs-dismiss="modal"
+          >Close</button
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal-content {
+    background-color: hsl(var(--main-light-1), 70%);
+    color: hsl(var(--text));
+  }
+
+  .modal-header {
+    align-items: baseline;
+    padding-bottom: 0;
+  }
+
+  .modal-body {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: hsl(var(--main-light-3), 70%);
+    border-radius: 0.5rem;
+  }
+
+  .modal-body > div:last-of-type ul {
+    margin: 0;
+  }
+
+  .modal-header,
+  .modal-footer {
+    border: 0;
+  }
+
+  .modal-footer {
+    padding-top: 0;
+  }
+</style>

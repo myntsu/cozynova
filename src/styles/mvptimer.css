@@ -183,29 +183,6 @@ main {
   opacity: 0.75;
 }
 
-.clock {
-  margin-inline-start: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  width: 150px;
-
-  font-size: 1.5rem;
-  text-align: center;
-
-  color: hsl(var(--header));
-  filter: contrast(200%) brightness(125%);
-}
-
-.clock span {
-  color: hsl(var(--white));
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  font-weight: 900;
-}
-
 h1 {
   display: flex;
   align-items: center;
@@ -674,36 +651,6 @@ button[data-bs-target="#KnownIssues"]::before {
 #hide-card-elements-button[aria-pressed="true"]::before {
   left: 50%;
   background-color: hsl(var(--white));
-}
-
-.modal-content {
-  background-color: hsl(var(--main-light-1), 70%);
-  color: hsl(var(--text));
-}
-
-.modal-header {
-  align-items: baseline;
-  padding-bottom: 0;
-}
-
-.modal-body {
-  margin: 1rem;
-  padding: 1rem;
-  background-color: hsl(var(--main-light-3), 70%);
-  border-radius: 0.5rem;
-}
-
-.modal-body > div:last-of-type ul {
-  margin: 0;
-}
-
-.modal-header,
-.modal-footer {
-  border: 0;
-}
-
-.modal-footer {
-  padding-top: 0;
 }
 
 .number-span {
