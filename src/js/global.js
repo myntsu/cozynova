@@ -36,18 +36,3 @@ colorThemes.forEach((themeOption) => {
 });
 
 document.DOMDocumentLoad = setTheme();
-
-// Cookie consent
-const cookieContainer = document.querySelector(".cookie-container");
-const cookieButton = document.querySelector(".cookie-button");
-
-cookieButton.addEventListener("click", () => {
-  cookieContainer.classList.remove("active-cookie");
-  localStorage.setItem("cookieBannerDisplayed", "true");
-});
-
-setTimeout(() => {
-  if (!localStorage.getItem("cookieBannerDisplayed", "true")) {
-    cookieContainer.classList.add("active-cookie");
-  }
-}, 2000);
