@@ -209,10 +209,6 @@ const { favicon = "/favicon/sword.svg", faviconLight = "/img/favicon/sword_black
               </a>
             </li>
           </ul>
-          <div
-            data-netlify-identity-menu
-            class="mb-3 mb-lg-0">
-          </div>
         </div>
       </div>
     </nav>
@@ -221,13 +217,13 @@ const { favicon = "/favicon/sword.svg", faviconLight = "/img/favicon/sword_black
     <slot />
 
     <footer>
-      <p>Created by <i class="fa-brands fa-discord"></i> Myndi#5041</p>
+      <p>Created by <a href="https://discord.com/users/124421052569878528/" target="blank" class="link"><i class="fa-brands fa-discord"></i> Myndi</a></p>
       <span class="d-none d-md-inline">|</span>
       <a
         href="https://www.buymeacoffee.com/myndi"
         class="link">
         <i class="fa-solid fa-mug-saucer"></i>
-        <span>Buy me a coffee</span>
+        <span>Donate me a coffee</span>
       </a>
     </footer>
 
@@ -601,18 +597,10 @@ const { favicon = "/favicon/sword.svg", faviconLight = "/img/favicon/sword_black
 
         border-top: 1px solid hsl(var(--main-light-2), 80%);
       }
+
       footer p {
         margin: 0;
         padding: 0;
-      }
-
-      footer a {
-        text-decoration: none;
-        color: hsl(var(--important));
-      }
-
-      footer a:hover {
-        color: hsl(var(--important), 60%);
       }
 
       @media only screen and (max-width: 570px) {
