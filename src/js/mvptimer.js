@@ -562,15 +562,6 @@ validateInput(deathTimeHours, 0, 23);
 validateInput(deathTimeMinutes, 0, 59);
 validateInput(deathTimeSeconds, 0, 59);
 
-let showAlert = true;
-
-window.addEventListener("beforeunload", (e) => {
-  if (showAlert) {
-    e.preventDefault();
-    e.returnValue = "Are you sure you want to do that?";
-  }
-});
-
 // Hiding elements from within the cards
 function hideCardElements(hide) {
   const cards = document.querySelectorAll(".mvp-card");
