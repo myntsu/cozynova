@@ -631,85 +631,96 @@ const observer = new MutationObserver((mutations) => {
 
 observer.observe(mvpContainer, { childList: true });
 
-  // Get references to DOM elements
-  const select = document.querySelector("#timezone-select");
-  const currentTimeElement = document.querySelector("#current-time");
-  const timeText = document.querySelector(".time-text");
+// Get references to DOM elements
+const select = document.querySelector("#timezone-select");
+const currentTimeElement = document.querySelector("#current-time");
+const timeText = document.querySelector(".time-text");
 
-  // Populate the timezone select element with options
-  for (let i = -12; i <= 14; i++) {
-    const date = new Date();
-    const offset = i * 60;
-    date.setUTCMinutes(date.getUTCMinutes() + offset);
-    const timeString = date.toUTCString().split(" ")[4];
-    const hoursAndMinutes = timeString.slice(0, 5);
+// Populate the timezone select element with options
+for (let i = -12; i <= 14; i++) {
+  const date = new Date();
+  const offset = i * 60;
+  date.setUTCMinutes(date.getUTCMinutes() + offset);
+  const timeString = date.toUTCString().split(" ")[4];
+  const hoursAndMinutes = timeString.slice(0, 5);
 
-    const option = document.createElement("option");
-    option.value = i;
-    option.textContent = `GMT${i >= 0 ? "+" : ""}${i} (${hoursAndMinutes})`;
-    select.appendChild(option);
-  }
+  const option = document.createElement("option");
+  option.value = i;
+  option.textContent = `GMT${i >= 0 ? "+" : ""}${i} (${hoursAndMinutes})`;
+  select.appendChild(option);
+}
 
-  // Retrieve the saved timezone from local storage and set the select element value
-  const savedTimezone = localStorage.getItem("timezone");
-  if (savedTimezone !== null) {
-    select.value = savedTimezone;
+// Retrieve the saved timezone from local storage and set the select element value
+const savedTimezone = localStorage.getItem("timezone");
+if (savedTimezone !== null) {
+  select.value = savedTimezone;
+} else {
+  // If no saved timezone is found, set the select element value to the user's current timezone
+  const date = new Date();
+  const offset = date.getTimezoneOffset();
+  const gmtOffset = -offset / 60;
+  select.value = gmtOffset;
+}
+
+// Add an event listener to the select element to save the selected timezone to local storage and update the timeText element
+select.addEventListener("change", () => {
+  localStorage.setItem("timezone", select.value);
+  if (select.value === "-7") {
+    timeText.textContent = "Server time";
+    localStorage.setItem("timeText", "Server time");
+  } else if (select.value === localStorage.getItem("timezone")) {
+    timeText.textContent = "Your selection";
+    localStorage.setItem("timeText", "Your selection");
   } else {
-    // If no saved timezone is found, set the select element value to the user's current timezone
-    const date = new Date();
-    const offset = date.getTimezoneOffset();
-    const gmtOffset = -offset / 60;
-    select.value = gmtOffset;
+    timeText.textContent = "Default time";
+    localStorage.setItem("timeText", "Default time");
   }
+});
 
-  // Add an event listener to the select element to save the selected timezone to local storage and update the timeText element
-  select.addEventListener("change", () => {
-    localStorage.setItem("timezone", select.value);
-    if (select.value === "-7") {
-      timeText.textContent = "Server time";
-      localStorage.setItem("timeText", "Server time");
-    } else if (select.value === localStorage.getItem("timezone")) {
-      timeText.textContent = "Your selection";
-      localStorage.setItem("timeText", "Your selection");
-    } else {
-      timeText.textContent = "Default time";
-      localStorage.setItem("timeText", "Default time");
-    }
-  });
+// Retrieve the saved value for the "server time", "your time" and "local time" options from local storage and update the timeText element
+const savedTimeText = localStorage.getItem("timeText");
+if (savedTimeText !== null) {
+  timeText.textContent = savedTimeText;
+}
 
-  // Retrieve the saved value for the "server time", "your time" and "local time" options from local storage and update the timeText element
-  const savedTimeText = localStorage.getItem("timeText");
-  if (savedTimeText !== null) {
-    timeText.textContent = savedTimeText;
+// Define the clock function to update the current time element with the selected timezone
+function clock() {
+  const date = new Date();
+  const offset = parseInt(select.value, 10) * 60;
+  date.setUTCMinutes(date.getUTCMinutes() + offset);
+  const timeString = date.toUTCString().split(" ")[4];
+  currentTimeElement.textContent = timeString;
+}
+
+// Call the clock function every second to update the current time element
+setInterval(clock, 1000);
+
+// Select the settings button and the temporary settings div
+const settingsButton = document.querySelector("#settings");
+const temporarySettingsDiv = document.querySelector(".temporary-settings");
+
+// Define a function to handle clicks on the settings button
+function handleButtonClick() {
+  // Toggle the "show" class on the temporary settings div
+  temporarySettingsDiv.classList.toggle("show");
+}
+
+// Define a function to handle clicks on the document
+function handleDocumentClick(event) {
+  // Check if the click happened outside of the temporary settings div and the settings button
+  if (
+    !temporarySettingsDiv.contains(event.target) &&
+    !settingsButton.contains(event.target)
+  ) {
+    // Remove the "show" class from the temporary settings div
+    temporarySettingsDiv.classList.remove("show");
   }
+}
 
-  // Define the clock function to update the current time element with the selected timezone
-  function clock() {
-    const date = new Date();
-    const offset = parseInt(select.value, 10) * 60;
-    date.setUTCMinutes(date.getUTCMinutes() + offset);
-    const timeString = date.toUTCString().split(" ")[4];
-    currentTimeElement.textContent = timeString;
-  }
+// Add event listeners for the click and touchend events to the settings button
+settingsButton.addEventListener("click", handleButtonClick);
+settingsButton.addEventListener("touchend", handleButtonClick);
 
-  // Call the clock function every second to update the current time element
-  setInterval(clock, 1000);
-
-  const settingsButton = document.querySelector("#settings");
-  const temporarySettingsDiv = document.querySelector(".temporary-settings");
-  
-  function handleButtonClick() {
-    temporarySettingsDiv.classList.toggle("show");
-  }
-  
-  function handleDocumentClick(event) {
-    if (!temporarySettingsDiv.contains(event.target) && !settingsButton.contains(event.target)) {
-      temporarySettingsDiv.classList.remove("show");
-    }
-  }
-  
-  settingsButton.addEventListener("click", handleButtonClick);
-  settingsButton.addEventListener("touchend", handleButtonClick);
-  document.addEventListener("click", handleDocumentClick);
-  document.addEventListener("touchend", handleDocumentClick);
-  
+// Add event listeners for the click and touchend events to the document
+document.addEventListener("click", handleDocumentClick);
+document.addEventListener("touchend", handleDocumentClick);
