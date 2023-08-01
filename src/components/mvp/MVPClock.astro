@@ -56,10 +56,12 @@
 </style>
 
 <script lang="js">
+// Get references to DOM elements
 const timeText = document.querySelector(".time-text");
 const select = document.querySelector("#timezone-select");
 const currentTimeElement = document.querySelector("#current-time");
 
+// Populate the timezone select element with options
 for (let i = -12; i <= 14; i++) {
   const date = new Date();
   const offset = i * 60;
@@ -73,16 +75,19 @@ for (let i = -12; i <= 14; i++) {
   select.appendChild(option);
 }
 
+// Retrieve the saved timezone from local storage and set the select element value
 const savedTimezone = localStorage.getItem("timezone");
 if (savedTimezone !== null) {
   select.value = savedTimezone;
 } else {
+  // If no saved timezone is found, set the select element value to the user's current timezone
   const date = new Date();
   const offset = date.getTimezoneOffset();
   const gmtOffset = -offset / 60;
   select.value = gmtOffset;
 }
 
+// Add an event listener to the select element to save the selected timezone to local storage and update the timeText element
 select.addEventListener("change", () => {
     localStorage.setItem("timezone", select.value);
     if (select.value === "-7") {
@@ -97,11 +102,7 @@ select.addEventListener("change", () => {
     }
 });
 
-const savedTimeText = localStorage.getItem("timeText");
-if (savedTimeText !== null) {
-    timeText.textContent = savedTimeText;
-}
-
+// Define the clock function to update the current time element with the selected timezone
 function clock() {
   const date = new Date();
   const offset = parseInt(select.value, 10) * 60;
@@ -110,6 +111,12 @@ function clock() {
   currentTimeElement.textContent = timeString;
 }
 
-setInterval(clock, 1000);
+// Retrieve the saved value for the "server time", "your time" and "local time" options from local storage and update the timeText element
+const savedTimeText = localStorage.getItem("timeText");
+if (savedTimeText !== null) {
+    timeText.textContent = savedTimeText;
+}
 
+// Call the clock function every second to update the current time element
+setInterval(clock, 1000);
 </script>
