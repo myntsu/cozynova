@@ -279,7 +279,8 @@ button[data-bs-target="#KnownIssues"]::before {
 #mvp-search,
 #mvp-select,
 #respawn-select,
-#death-time-container input {
+#death-time-container input,
+#timezone-select {
   height: 3ch;
   border-radius: 0.25rem;
   font-family: inherit;
@@ -290,7 +291,8 @@ button[data-bs-target="#KnownIssues"]::before {
 #mvp-search:is(:hover, :focus, :focus-visible),
 #mvp-select:is(:hover, :focus, :focus-visible),
 #respawn-select:is(:hover, :focus, :focus-visible),
-#death-time-container input:is(:hover, :focus, :focus-visible) {
+#death-time-container input:is(:hover, :focus, :focus-visible),
+#timezone-select:is(:hover, :focus, :focus-visible) {
   border: none;
   outline: 2px solid hsl(var(--important));
   outline-offset: 2px;
@@ -302,7 +304,13 @@ button[data-bs-target="#KnownIssues"]::before {
   }
 }
 
+#optional-settings {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #death-time-container {
+  flex: 0 0 380px;
   color: hsl(var(--text));
   font-weight: 900;
 }
@@ -322,23 +330,90 @@ button[data-bs-target="#KnownIssues"]::before {
 }
 
 .temporary-settings {
-  flex: 1 0 0 !important;
+  position: fixed;
+  bottom: 5.25rem;
+  right: 2.25rem;
+  visibility: collapse;
+  opacity: 0;
+  pointer-events: none;
+
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  color: hsl(var(--text));
-  text-align: center;
+  flex-wrap: wrap;
+}
+
+.temporary-settings:is(.show) {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity .4s linear;
 }
 
 .temporary-settings > div {
   display: flex;
   flex-direction: column;
+  align-items: flex-center;
+
+  margin-inline-start: auto;
+  padding: 2rem;
+
+  background-color: hsl(var(--main-dark));
+  outline: 1px solid hsl(var(--text), .5);
+  border-radius: .25rem;
+  color: hsl(var(--text));
+  text-align: center;
+
+  box-shadow: 2px 2px 0 0 hsl(var(--text), 70%);
+}
+
+.temporary-settings .settings {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.settings span.small {
+  max-width: 20ch;
+  font-size: .75rem;
+  color: hsl(var(--text), .8);
+  margin-block-start: .5rem;
+}
+
+.settings > * {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: .25rem;
-  
+  user-select: none;
 }
 
 @media only screen and (max-width: 570px) {
+  #optional-settings {
+    gap: 1rem;
+  }
+
+  .temporary-settings > div {
+    width: 100%;
+    margin: 0 !important;
+  }
+
+  .temporary-settings > div > div {
+    justify-content: center;
+  }
+
+  .settings .clock {
+    width: 100%;
+  }
+
+  .server-time-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #death-time-container {
+    flex: 1 0 100%;
+  }
+
   #death-time-container > div {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10ch, 1fr));

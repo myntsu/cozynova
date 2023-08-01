@@ -76,26 +76,23 @@ import MVPKnownIssues from "./mvp/MVPKnownIssues.astro";
             </select>
           </div>
         </div>
-        <div id="death-time-container">
-          <span class="header">Input the time of death <span class="low-focus">(Optional)</span></span>
-          <div>
+        <div id="optional-settings">
+          <!-- death time container -->
+          <div id="death-time-container">
+            <span class="header">Input the time of death <span class="low-focus">(Optional)</span></span>
             <div>
-              <label for="death-time-hours">Hour</label>
-              <input type="number" id="death-time-hours" name="death-time-hours" min="0" max="23" step="1" placeholder="23">
-            </div>
-            <div>
-              <label for="death-time-minutes">Minutes</label>
-              <input type="number" id="death-time-minutes" name="death-time-minutes" min="0" max="59" step="1" placeholder="59">
-            </div>
-            <div>
-              <label for="death-time-seconds">Seconds</label>
-              <input type="number" id="death-time-seconds" name="death-time-seconds" min="0" max="59" step="1" placeholder="59">
-            </div>
-            <div class="temporary-settings">
-                <div>
-                  <span class="small">Toggle card elements</span>
-                  <button id="hide-card-elements-button" class="generic-butto" aria-pressed="false"></button>
-                </div>
+              <div>
+                <label for="death-time-hours">Hour</label>
+                <input type="number" id="death-time-hours" name="death-time-hours" min="0" max="23" step="1" placeholder="23">
+              </div>
+              <div>
+                <label for="death-time-minutes">Minutes</label>
+                <input type="number" id="death-time-minutes" name="death-time-minutes" min="0" max="59" step="1" placeholder="59">
+              </div>
+              <div>
+                <label for="death-time-seconds">Seconds</label>
+                <input type="number" id="death-time-seconds" name="death-time-seconds" min="0" max="59" step="1" placeholder="59">
+              </div>
             </div>
           </div>
         </div>
@@ -115,3 +112,25 @@ import MVPKnownIssues from "./mvp/MVPKnownIssues.astro";
 
 <MVPChangelog />
 <MVPKnownIssues />
+
+<!-- temporary settings -->
+<div class="temporary-settings " data-settings>
+  <div>
+    <span class="header">Settings</span>
+    <hr>
+    <div class="settings">
+      <div class="clock mb-4">
+        <label for="#timezone-select" class="header">Select a timezone</label>
+        <div class="server-time-wrapper">
+          <select id="timezone-select"></select>
+        </div>
+        <span class="small">Used to calculate the MVP respawn times.</span>
+      </div>
+      <div class="toggle-elements">
+        <span class="header">Toggle information</span>
+        <button id="hide-card-elements-button" class="generic-butto" aria-pressed="false"></button>
+        <span class="small">Toggles addtional information inside the cards.</span>
+      </div>
+    </div>
+  </div>
+</div>
