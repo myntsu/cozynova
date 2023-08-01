@@ -1,5 +1,5 @@
 <div class="clock">
-  <span>Local time</span>
+  <span class="time-text">Local time</span>
   <div id="current-time"></div>
   <div class="server-time-wrapper">
     <select id="timezone-select"></select>
@@ -22,17 +22,13 @@
     color: hsl(var(--header));
   }
 
-  .clock span {
+  .time-text {
     color: hsl(var(--white));
     font-size: 0.75rem;
     text-transform: uppercase;
     font-weight: 900;
     position: relative;
-    bottom: -.25rem;
-  }
-
-  #current-time {
-    /* margin-inline-start: auto; */
+    bottom: -0.25rem;
   }
 
   .server-time-wrapper {
@@ -60,44 +56,52 @@
 </style>
 
 <script lang="js">
-  document.addEventListener("DOMContentLoaded", () => {
-    const select = document.querySelector("#timezone-select");
-    for (let i = -12; i <= 14; i++) {
-      const date = new Date();
-      const offset = i * 60;
-      date.setUTCMinutes(date.getUTCMinutes() + offset);
-      const timeString = date.toUTCString().split(" ")[4];
-      const hoursAndMinutes = timeString.slice(0, 5);
+const timeText = document.querySelector(".time-text");
+const select = document.querySelector("#timezone-select");
+const currentTimeElement = document.querySelector("#current-time");
 
-      const option = document.createElement("option");
-      option.value = i;
-      option.textContent = `GMT${i >= 0 ? "+" : ""}${i} (${hoursAndMinutes})`;
-      select.appendChild(option);
-    }
+for (let i = -12; i <= 14; i++) {
+  const date = new Date();
+  const offset = i * 60;
+  date.setUTCMinutes(date.getUTCMinutes() + offset);
+  const timeString = date.toUTCString().split(" ")[4];
+  const hoursAndMinutes = timeString.slice(0, 5);
 
-    const savedTimezone = localStorage.getItem("timezone");
-    if (savedTimezone !== null) {
-      select.value = savedTimezone;
+  const option = document.createElement("option");
+  option.value = i;
+  option.textContent = `GMT${i >= 0 ? "+" : ""}${i} (${hoursAndMinutes})`;
+  select.appendChild(option);
+}
+
+const savedTimezone = localStorage.getItem("timezone");
+if (savedTimezone !== null) {
+  select.value = savedTimezone;
+} else {
+  const date = new Date();
+  const offset = date.getTimezoneOffset();
+  const gmtOffset = -offset / 60;
+  select.value = gmtOffset;
+}
+
+select.addEventListener("change", () => {
+    localStorage.setItem("timezone", select.value);
+    if (select.value === "-7") {
+        timeText.textContent = "Server time";
+    } else if (select.value === localStorage.getItem("timezone")) {
+        timeText.textContent = "Your time";
     } else {
-      const date = new Date();
-      const offset = date.getTimezoneOffset();
-      const gmtOffset = -offset / 60;
-      select.value = gmtOffset;
+        timeText.textContent = "Local time";
     }
+});
 
-    select.addEventListener("change", () => {
-      localStorage.setItem("timezone", select.value);
-    });
+function clock() {
+  const date = new Date();
+  const offset = parseInt(select.value, 10) * 60;
+  date.setUTCMinutes(date.getUTCMinutes() + offset);
+  const timeString = date.toUTCString().split(" ")[4];
+  currentTimeElement.textContent = timeString;
+}
 
-    function clock() {
-      const currentTimeElement = document.querySelector("#current-time");
-      const date = new Date();
-      const offset = parseInt(select.value, 10) * 60;
-      date.setUTCMinutes(date.getUTCMinutes() + offset);
-      const timeString = date.toUTCString().split(" ")[4];
-      currentTimeElement.textContent = timeString;
-    }
+setInterval(clock, 1000);
 
-    setInterval(clock, 1000);
-  });
 </script>
