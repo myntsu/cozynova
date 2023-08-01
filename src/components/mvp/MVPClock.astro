@@ -87,12 +87,20 @@ select.addEventListener("change", () => {
     localStorage.setItem("timezone", select.value);
     if (select.value === "-7") {
         timeText.textContent = "Server time";
+        localStorage.setItem("timeText", "Server time");
     } else if (select.value === localStorage.getItem("timezone")) {
         timeText.textContent = "Your time";
+        localStorage.setItem("timeText", "Your time");
     } else {
         timeText.textContent = "Local time";
+        localStorage.setItem("timeText", "Local time");
     }
 });
+
+const savedTimeText = localStorage.getItem("timeText");
+if (savedTimeText !== null) {
+    timeText.textContent = savedTimeText;
+}
 
 function clock() {
   const date = new Date();
