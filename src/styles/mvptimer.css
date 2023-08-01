@@ -375,7 +375,7 @@ button[data-bs-target="#KnownIssues"]::before {
 .settings span.small {
   max-width: 20ch;
   font-size: .75rem;
-  color: hsl(var(--text), .8);
+  color: hsl(var(--white), .8);
   margin-block-start: .5rem;
 }
 
