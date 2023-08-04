@@ -60,11 +60,6 @@ html {
     grid-template-columns: 1fr;
 }
 
-.alert {
-  margin: 0;
-  padding: 0;
-}
-
 /* Body */
 body {
     display: flex;
