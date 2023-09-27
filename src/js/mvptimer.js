@@ -59,11 +59,15 @@ fetch("../mvplist.json")
   });
 
 // Populating card
-function showMvp(mvp, selectedRespawn, deathTime) {
+function showMvp(mvp, selectedRespawn, deathTime, existingCardData) {
   const mvpCard = document.createElement("div");
   mvpCard.classList.add("mvp-card");
   mvpCard.setAttribute("data-mvp-id", mvp.id);
   mvpCard.setAttribute("data-map", selectedRespawn);
+  mvpCard.setAttribute(
+    "data-card-id",
+    existingCardData ? existingCardData.cardId : generateUniqueId()
+  );
 
   const mvpHeader = document.createElement("div");
   mvpHeader.classList.add("mvp-header");
@@ -169,6 +173,9 @@ function showMvp(mvp, selectedRespawn, deathTime) {
       }
       console.log(Boolean(startCDRTimer));
       mvpContainer.removeChild(mvpCard);
+
+      // Remove the card from local storage
+      localStorage.removeItem(`card-${mvpCard.getAttribute("data-card-id")}`);
     });
   }
   mvpCard.appendChild(mvpHeader);
@@ -177,6 +184,15 @@ function showMvp(mvp, selectedRespawn, deathTime) {
   mvpCard.appendChild(mvpRespawn);
 
   mvpContainer.appendChild(mvpCard);
+
+  if (!existingCardData) {
+    saveCardData(
+      mvp,
+      selectedRespawn,
+      deathTime,
+      mvpCard.getAttribute("data-card-id")
+    );
+  }
 }
 
 // MS to Hours converting
@@ -532,6 +548,52 @@ function getTimeRemaining(timerElement) {
   return hours * 3600 + minutes * 60 + seconds;
 }
 
+// Fetching the MVP ID
+function getMvpById(mvpList, mvpId) {
+  return mvpList.find((mvp) => mvp.id === mvpId);
+}
+
+// Saving cards into local storage
+function saveCardData(mvp, selectedRespawn, deathTime, cardId) {
+  const cardData = {
+    cardId: cardId,
+    mvpId: mvp.id,
+    map: selectedRespawn,
+    deathTime: deathTime,
+  };
+
+  localStorage.setItem(`card-${cardId}`, JSON.stringify(cardData));
+}
+
+// Loading saved cards
+function loadCards() {
+  fetch("../mvplist.json")
+    .then((response) => response.json())
+    .then((mvpList) => {
+      const savedCards = Object.keys(localStorage)
+        .filter((key) => key.startsWith("card-"))
+        .map((key) => JSON.parse(localStorage.getItem(key)));
+
+      if (savedCards.length > 0) {
+        // Clear the mvpContainer before appending the cards from local storage
+        mvpContainer.innerHTML = "";
+
+        savedCards.forEach((cardData) => {
+          const mvp = getMvpById(mvpList, cardData.mvpId);
+          const selectedRespawn = cardData.map;
+          const deathTime = cardData.deathTime;
+
+          // Pass the existing card data
+          showMvp(mvp, selectedRespawn, deathTime, cardData);
+        });
+      }
+    });
+}
+
+function generateUniqueId() {
+  return Date.now().toString(36) + Math.random().toString(36).substring(2, 7);
+}
+
 // Event listeners
 // Auto-skip inputs
 deathTimeHours.addEventListener("input", () => {
@@ -570,6 +632,9 @@ sortByRespawnBtn.addEventListener("click", () => {
 validateInput(deathTimeHours, 0, 23);
 validateInput(deathTimeMinutes, 0, 59);
 validateInput(deathTimeSeconds, 0, 59);
+
+// Loading cards saved in local storage
+window.onload = loadCards;
 
 // Hiding elements from within the cards
 function hideCardElements(hide) {
