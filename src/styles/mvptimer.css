@@ -327,6 +327,8 @@ button[data-bs-target="#KnownIssues"]::before {
 
   display: flex;
   flex-direction: column;
+
+  max-width: 10ch;
 }
 
 .temporary-settings {
