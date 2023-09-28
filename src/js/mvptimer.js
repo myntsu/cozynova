@@ -155,7 +155,23 @@ function showMvp(mvp, selectedRespawn, deathTime, existingCardData) {
         clearTimeout(countdownValue.currentTimeout);
         countdownValue.currentTimeout = null;
       }
-
+    
+      // Get the current time
+      const select = document.querySelector("#timezone-select");
+      const selectedOption = select.options[select.selectedIndex];
+      const offset = parseInt(selectedOption.value);
+      const currentTime = DateTime.utc().plus({ hours: offset });
+    
+      // Update deathTime in local storage
+      const cardId = mvpCard.getAttribute("data-card-id");
+      const cardData = JSON.parse(localStorage.getItem(`card-${cardId}`));
+      cardData.deathTime = {
+        hours: currentTime.hour,
+        minutes: currentTime.minute,
+        seconds: currentTime.second,
+      };
+      localStorage.setItem(`card-${cardId}`, JSON.stringify(cardData));
+    
       countdownValue.timerInstance = startTimer(
         respawn,
         countdownValue,
@@ -164,7 +180,7 @@ function showMvp(mvp, selectedRespawn, deathTime, existingCardData) {
         { hours: 0, minutes: 0, seconds: 0 }
       );
     });
-
+    
     removeButton.addEventListener("click", () => {
       // Clear the timer timeout before removing the card
       if (countdownValue.currentTimeout) {
