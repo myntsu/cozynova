@@ -555,6 +555,25 @@ function getMvpById(mvpList, mvpId) {
 
 // Saving cards into local storage
 function saveCardData(mvp, selectedRespawn, deathTime, cardId) {
+  // If deathTime is not provided, assume deathTime is now
+  if (
+    deathTime.hours === 0 &&
+    deathTime.minutes === 0 &&
+    deathTime.seconds === 0
+  ) {
+    const select = document.querySelector("#timezone-select");
+    const selectedOption = select.options[select.selectedIndex];
+    const offset = parseInt(selectedOption.value);
+
+    const currentTime = DateTime.utc().plus({ hours: offset });
+    
+    deathTime = {
+      hours: currentTime.hour,
+      minutes: currentTime.minute,
+      seconds: currentTime.second,
+    };
+  }
+
   const cardData = {
     cardId: cardId,
     mvpId: mvp.id,
