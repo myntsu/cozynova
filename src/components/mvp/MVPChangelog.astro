@@ -23,17 +23,23 @@
       </div>
       <div class="modal-body">
         <div>
+          <h3 class="header fs-5">Version 1.1c</h3>
+          <ul>
+            <li><span class="number fw-bold">Changelog typos</span> - Fixed a bunch of typos in the changelog, alongside re-writing some of the sentences for better readability.</li>
+          </ul>
+        </div>
+        <div>
           <h3 class="header fs-5">Version 1.1b</h3>
           <ul>
-            <li><span class="header">Local storage when timer is default</span> - Whenever the user doesn't input any time at all the system will save locally the time from the clock as the variable to re-calculate the remaining time.</li>
-            <li><span class="header">Local storage when restarting timer</span> - Same logic applies from above, but instead, whenever the user restarts the timer.</li> 
+            <li><span class="header">Default time uses local storage</span> - Whenever the user doesn't input any time at all the system will save it locally. The time used will be the page's clock, wether it's the default or their selection.</li>
+            <li><span class="header">Restarting timer uses local storage</span> - Same logic applies from above, but instead, whenever the user restarts the timer.</li> 
           </ul>
         </div>
         <div>
           <h3 class="header fs-5">Version 1.1</h3>
           <ul>
-            <li><span class="header">Local storage for cards</span> - Now all cards have a designated ID to be saved on Local Storage. This feature currently only works whenever you input a time of death.</li>
-            <li><span class="focus fw-bold">Fixed input time container FireFox behavior</span> - FireFox wasn't recognizing the flex property of the "input the time of death" container, so it was adjusted to have a max width.</li>
+            <li><span class="header">Cards now have local storage</span> - Now all cards have a designated ID to be saved in local storage. This feature currently only works whenever you input a time of death.</li>
+            <li><span class="focus fw-bold">Fixed input time container behavior</span> - FireFox wasn't recognizing the flex property of the "input the time of death" container, so it was adjusted to have a max width instead.</li>
           </ul>
         </div>
         <div>
@@ -47,7 +53,7 @@
         <div>
           <h3 class="header fs-5">Version 1.0 - Release</h3>
           <ul>
-            <li><span class="header">Server time clock</span> - Correctly picks up the timezone selected from the user, and uses that value to do the respawn calculations in case the user inputs a time.</li>
+            <li><span class="header">Server time clock</span> - Correctly picks up the timezone selected from the user, and uses that value to do the respawn calculations whether it uses the default time or user's input.</li>
             <li><span class="header">Settings button</span> - The gear button for settings now correctly works in phone, also displays the settings for the current page. All the settings have local storage.</li>
             <li>Cleaned the layout a bit moving the elements to their corresponding place.</li>
             <li>Documented parts of the code.</li>
@@ -111,7 +117,7 @@
               <span class="header">Toggle elements button</span> - Gives the user
               the capability of toggling the extra information within the cards while
               keeping the important elements. The grid adapts to these changes, and
-              there's local storage to rememeber the user's choice.
+              there's local storage to remember the user's choice.
             </li>
             <li>
               <span class="header">Beta and Live pages</span> - Mainly to try new
@@ -229,7 +235,7 @@
         <div>
           <h3 class="header fs-5">Version 0.5b</h3>
           <ul>
-            <li><span class="header">Restart button</span> -</li>
+            <li><span class="header">Restart button</span> - Added to let the user restart the timer by simply clickiing on it. It uses the MVP's default value when restarting the timer.</li>
             <li>Improved the respawn list layout.</li>
             <li>
               Improved the visibility of the cards for each MVP With the
