@@ -1,0 +1,39 @@
+<div class="extract-data-container">
+  <span class="header">Extract your data <span class="low-focus">(Optional)</span></span>
+  <div>
+    <label for="output">Input the time</label>
+    <textarea
+      id="output"
+    ></textarea>
+  </div>
+</div>
+
+<style>
+  .extract-data-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .extract-data-container > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #output {
+    width: 100%;
+    height: 3ch;
+    border-radius: 0.25rem;
+    font-family: inherit;
+    padding-inline-start: 0.5rem;
+    border: none;
+    padding-block-start: .25rem;
+  }
+
+  #output:is(:hover, :focus-visible) {
+    border: none;
+    outline: 2px solid hsl(var(--important));
+    outline-offset: 2px;
+  }
+</style>

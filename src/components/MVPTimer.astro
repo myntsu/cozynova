@@ -2,6 +2,7 @@
 import MVPClock from './mvp/MVPClock.astro';
 import MVPChangelog from "./mvp/MVPChangelog.astro";
 import MVPKnownIssues from "./mvp/MVPKnownIssues.astro";
+import DataExtract from './mvp/DataExtract.astro';
 ---
 
 <div class="utility-toolbar">
@@ -95,9 +96,16 @@ import MVPKnownIssues from "./mvp/MVPKnownIssues.astro";
               </div>
             </div>
           </div>
+
+          <div class="data-extract">
+            <DataExtract />
+          </div>
+
         </div>
-        <button id="show-mvp-btn">Add</button>
-        
+        <div class="button-bottom-group">
+          <button id="show-mvp-btn">Add</button>
+          <button id="extract-button" class="generic-button">Extract</button>
+        </div>
       </div>
 
       <div id="sort-container">

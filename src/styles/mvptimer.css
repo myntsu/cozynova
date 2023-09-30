@@ -307,6 +307,7 @@ button[data-bs-target="#KnownIssues"]::before {
 #optional-settings {
   display: flex;
   flex-wrap: wrap;
+  gap: .3rem;
 }
 
 #death-time-container {
@@ -327,8 +328,12 @@ button[data-bs-target="#KnownIssues"]::before {
 
   display: flex;
   flex-direction: column;
+}
 
-  max-width: 10ch;
+@media (min-width: 570px) {
+  #death-time-container > div > div {
+    max-width: 10ch;
+  }
 }
 
 .temporary-settings {
@@ -820,3 +825,35 @@ button[data-bs-target="#KnownIssues"]::before {
 .respawn-timer:is(.toggled) span:nth-of-type(2) {
   white-space: pre-wrap;
 }
+
+.data-extract {
+  flex: 1 0 0;
+}
+
+.button-bottom-group {
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 1rem;
+}
+
+@media (max-width: 570px) {
+  .button-bottom-group :nth-child(1) {
+    order: 2;
+  }
+
+  .button-bottom-group :nth-child(2) {
+    order: 1;
+    width: 100%;
+  }
+}
+
+.button-bottom-group :nth-child(2) {
+  margin-inline-start: auto;
+  background-color: hsl(var(--important), .6);
+}
+
+.button-bottom-group :nth-child(2):is(:hover, :focus-visible) {
+  background-color: hsl(var(--important));
+}
+
+
