@@ -832,7 +832,6 @@ button[data-bs-target="#KnownIssues"]::before {
 
 .button-bottom-group {
   display: flex;
-  /* flex-wrap: wrap; */
   gap: 1rem;
 }
 
@@ -849,7 +848,7 @@ button[data-bs-target="#KnownIssues"]::before {
 
 .button-bottom-group :nth-child(2) {
   margin-inline-start: auto;
-  background-color: hsl(var(--important), .6);
+  background-color: hsl(var(--important));
 }
 
 .button-bottom-group :nth-child(2):is(:hover, :focus-visible) {
