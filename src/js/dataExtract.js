@@ -78,14 +78,12 @@ loadButton.addEventListener("click", () => {
 });
 
 function clearAllMvps() {
-  // Get all MVP cards
-  const mvpCards = document.querySelectorAll('.mvp-card'); // replace '.mvp-card' with the actual class of your MVP cards
+  const mvpCards = document.querySelectorAll('.mvp-card'); 
 
   mvpCards.forEach((mvpCard) => {
-    const countdownValue = mvpCard.querySelector('.countdown-timer'); // replace '.countdown-timer' with the actual class of your countdown value
+    const countdownValue = mvpCard.querySelector('.countdown-timer');
     clearMvp(mvpCard, countdownValue);
   });
 }
 
-// Add event listener to 'Clear All MVPs' button
 document.getElementById('clear-all-button').addEventListener('click', clearAllMvps);
