@@ -95,16 +95,23 @@ import DataExtract from './mvp/DataExtract.astro';
                 <input type="number" id="death-time-seconds" name="death-time-seconds" min="0" max="59" step="1" placeholder="59">
               </div>
             </div>
+
+            <button id="show-mvp-btn">Add</button>
           </div>
 
           <div class="data-extract">
             <DataExtract />
+            <div>
+              <button id="import-button" class="generic-button"> Import <i class="fa-solid fa-file-import fa-sm"></i></button>
+              <button id="extract-button" class="generic-button"> Export <i class="fa-solid fa-file-export fa-sm"></i></button>
+
+              <button id="clear-all-button" class="generic-button"> Clear All MVPs</button>
+            </div>
           </div>
 
         </div>
         <div class="button-bottom-group">
-          <button id="show-mvp-btn">Add</button>
-          <button id="extract-button" class="generic-button">Extract</button>
+          
         </div>
       </div>
 

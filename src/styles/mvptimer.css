@@ -316,11 +316,21 @@ button[data-bs-target="#KnownIssues"]::before {
   font-weight: 900;
 }
 
+@media (max-width: 570) {
+  #death-time-container {
+    button {
+      width: auto !important;
+    }
+  }
+}
+
 #death-time-container > div {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+
+  margin-block-end: 1rem;
 }
 
 #death-time-container > div > div {
@@ -689,8 +699,17 @@ button[data-bs-target="#KnownIssues"]::before {
 }
 
 @media only screen and (max-width: 570px) {
-  #show-mvp-btn {
-    width: 100%;
+  #show-mvp-btn, #extract-button, #import-button, #clear-all-button {
+    margin-inline: auto;
+    min-width: 12ch;
+
+    white-space: nowrap;
+  }
+}
+
+@media (max-width:400px) {
+  #show-mvp-btn, #extract-button, #import-button, #clear-all-button {
+    min-width: 100%;
   }
 }
 
@@ -830,29 +849,20 @@ button[data-bs-target="#KnownIssues"]::before {
   flex: 1 0 0;
 }
 
-.button-bottom-group {
+.data-extract > div:first-of-type {
+  margin-block-end: 1rem;
+}
+
+.data-extract > div:last-of-type {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 570px) {
-  .button-bottom-group :nth-child(1) {
-    order: 2;
-  }
-
-  .button-bottom-group :nth-child(2) {
-    order: 1;
-    width: 100%;
-  }
+.data-extract .generic-button {
+  gap: .5rem;
 }
 
-.button-bottom-group :nth-child(2) {
+.data-extract .generic-button:last-of-type {
   margin-inline-start: auto;
-  background-color: hsl(var(--important));
 }
-
-.button-bottom-group :nth-child(2):is(:hover, :focus-visible) {
-  background-color: hsl(var(--important));
-}
-
-
