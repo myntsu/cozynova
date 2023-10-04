@@ -1,3 +1,5 @@
+import { loadCards } from './mvptimer.js';
+
 // Extracting cards content
 const extractButton = document.querySelector("#extract-button");
 
@@ -24,6 +26,19 @@ function shortenKeys(obj) {
   }, {});
 }
 
+// Function to expand keys
+function expandKeys(obj) {
+  return Object.keys(obj).reduce((result, key) => {
+    const expandedKey = Object.keys(keyMapping).find(k => keyMapping[k] === key);
+    if (typeof obj[key] === "object" && obj[key] !== null) {
+      result[expandedKey] = expandKeys(obj[key]);
+    } else {
+      result[expandedKey] = obj[key];
+    }
+    return result;
+  }, {});
+}
+
 // Usage
 extractButton.addEventListener("click", () => {
   const savedCards = Object.keys(localStorage)
@@ -36,4 +51,17 @@ extractButton.addEventListener("click", () => {
   // Display the data on the webpage
   const outputElement = document.querySelector("#output");
   outputElement.textContent = savedCardsString;
+});
+
+// Importing data
+const loadButton = document.querySelector("#import-button");
+const output = document.querySelector("#output");
+loadButton.addEventListener("click", () => {
+  const cardsToLoad = JSON.parse(output.value);
+  cardsToLoad.forEach((cardData) => {
+    const expandedCardData = expandKeys(cardData);
+    localStorage.setItem(`card-${expandedCardData.cardId}`, JSON.stringify(expandedCardData));
+  });
+  // Call loadCards function after importing
+  loadCards();
 });

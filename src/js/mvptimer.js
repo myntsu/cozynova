@@ -601,7 +601,7 @@ function saveCardData(mvp, selectedRespawn, deathTime, cardId) {
 }
 
 // Loading saved cards
-function loadCards() {
+export function loadCards() {
   fetch("../mvplist.json")
     .then((response) => response.json())
     .then((mvpList) => {
