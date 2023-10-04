@@ -59,7 +59,7 @@ fetch("../mvplist.json")
   });
 
 // Populating card
-export function showMvp(mvp, selectedRespawn, deathTime, existingCardData) {
+function showMvp(mvp, selectedRespawn, deathTime, existingCardData) {
   const mvpCard = document.createElement("div");
   mvpCard.classList.add("mvp-card");
   mvpCard.setAttribute("data-mvp-id", mvp.id);
@@ -202,7 +202,7 @@ export function showMvp(mvp, selectedRespawn, deathTime, existingCardData) {
   }
 }
 
-function clearMvp(mvpCard, countdownValue) {
+export function clearMvp(mvpCard, countdownValue) {
   // Clear the timer timeout before removing the card
   if (countdownValue.currentTimeout) {
     clearTimeout(countdownValue.currentTimeout);
@@ -457,7 +457,7 @@ function cardExists(id, selectedRespawn) {
 
 // Toast function
 let toastActive = false;
-function showToast(text) {
+export function showToast(text) {
   if (toastActive) return;
 
   toastActive = true;

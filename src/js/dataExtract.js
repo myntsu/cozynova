@@ -1,4 +1,4 @@
-import { showMvp, loadCards } from './mvptimer.js';
+import { showToast, loadCards, clearMvp } from './mvptimer.js';
 
 // Extracting cards content
 const extractButton = document.querySelector("#extract-button");
@@ -39,12 +39,17 @@ function expandKeys(obj) {
   }, {});
 }
 
-// Usage
+// Exporting data
 extractButton.addEventListener("click", () => {
   const savedCards = Object.keys(localStorage)
     .filter((key) => key.startsWith("card-"))
     .map((key) => JSON.parse(localStorage.getItem(key)))
     .map((card) => shortenKeys(card));
+
+  if (savedCards.length === 0) {
+    showToast("There are no cards to export.");
+    return;
+  }
 
   const savedCardsString = JSON.stringify(savedCards);
 
@@ -57,16 +62,22 @@ extractButton.addEventListener("click", () => {
 const loadButton = document.querySelector("#import-button");
 const output = document.querySelector("#output");
 loadButton.addEventListener("click", () => {
+  if (output.value.trim() === "") {
+    showToast("You must add something to import.");
+    return;
+  }
+
   const cardsToLoad = JSON.parse(output.value);
   cardsToLoad.forEach((cardData) => {
     const expandedCardData = expandKeys(cardData);
     localStorage.setItem(`card-${expandedCardData.cardId}`, JSON.stringify(expandedCardData));
   });
+  
   // Call loadCards function after importing
   loadCards();
 });
 
-export function clearAllMvps() {
+function clearAllMvps() {
   // Get all MVP cards
   const mvpCards = document.querySelectorAll('.mvp-card'); // replace '.mvp-card' with the actual class of your MVP cards
 
