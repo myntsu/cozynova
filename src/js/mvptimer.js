@@ -59,7 +59,7 @@ fetch("../mvplist.json")
   });
 
 // Populating card
-function showMvp(mvp, selectedRespawn, deathTime, existingCardData) {
+export function showMvp(mvp, selectedRespawn, deathTime, existingCardData) {
   const mvpCard = document.createElement("div");
   mvpCard.classList.add("mvp-card");
   mvpCard.setAttribute("data-mvp-id", mvp.id);
@@ -182,16 +182,7 @@ function showMvp(mvp, selectedRespawn, deathTime, existingCardData) {
     });
     
     removeButton.addEventListener("click", () => {
-      // Clear the timer timeout before removing the card
-      if (countdownValue.currentTimeout) {
-        clearTimeout(countdownValue.currentTimeout);
-        countdownValue.currentTimeout = null;
-      }
-      console.log(Boolean(startCDRTimer));
-      mvpContainer.removeChild(mvpCard);
-
-      // Remove the card from local storage
-      localStorage.removeItem(`card-${mvpCard.getAttribute("data-card-id")}`);
+      clearMvp(mvpCard, countdownValue);
     });
   }
   mvpCard.appendChild(mvpHeader);
@@ -209,6 +200,19 @@ function showMvp(mvp, selectedRespawn, deathTime, existingCardData) {
       mvpCard.getAttribute("data-card-id")
     );
   }
+}
+
+function clearMvp(mvpCard, countdownValue) {
+  // Clear the timer timeout before removing the card
+  if (countdownValue.currentTimeout) {
+    clearTimeout(countdownValue.currentTimeout);
+    countdownValue.currentTimeout = null;
+  }
+  console.log(Boolean(startCDRTimer));
+  mvpContainer.removeChild(mvpCard);
+
+  // Remove the card from local storage
+  localStorage.removeItem(`card-${mvpCard.getAttribute("data-card-id")}`);
 }
 
 // MS to Hours converting
@@ -276,7 +280,8 @@ function startTimer(ms, countdownCell, maxDelay, countdownLabel, deathTime) {
         elapsedTimeMs - ms
       );
     } else {
-      showToast("The MVP is alive!");
+      showToast("One or more MVPs have respawned!");
+      countdownCell.textContent = "Respawned";
     }
   }
 

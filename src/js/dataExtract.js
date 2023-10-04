@@ -1,4 +1,4 @@
-import { loadCards } from './mvptimer.js';
+import { showMvp, loadCards } from './mvptimer.js';
 
 // Extracting cards content
 const extractButton = document.querySelector("#extract-button");
@@ -65,3 +65,16 @@ loadButton.addEventListener("click", () => {
   // Call loadCards function after importing
   loadCards();
 });
+
+export function clearAllMvps() {
+  // Get all MVP cards
+  const mvpCards = document.querySelectorAll('.mvp-card'); // replace '.mvp-card' with the actual class of your MVP cards
+
+  mvpCards.forEach((mvpCard) => {
+    const countdownValue = mvpCard.querySelector('.countdown-timer'); // replace '.countdown-timer' with the actual class of your countdown value
+    clearMvp(mvpCard, countdownValue);
+  });
+}
+
+// Add event listener to 'Clear All MVPs' button
+document.getElementById('clear-all-button').addEventListener('click', clearAllMvps);
